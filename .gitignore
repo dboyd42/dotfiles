@@ -1,0 +1,24 @@
+#Vim
+*~
+*.swp
+
+#C/C++
+*.o
+*.d
+*.exe
+testapp
+CPUfactory3
+
+#Python
+__pychache__
+_venv
+*.py[cod]
+_build
+
+#Mac
+.DS_Store
+
+# AVR
+*.hex
+*.obj
+*.lst

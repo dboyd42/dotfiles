@@ -1,15 +1,32 @@
 "=============================================================
+" Personal setup
+"
+set ruler           " show number line in bar
+set autoread        " watch for file changes
+set showmode        " show INSERT, VISUAL, etc
+filetype on         " enable filetype detection
+filetype plugin on  " enable filetype specific plugins
+
+set noerrorbells    " turn off error bells
+
+nnoremap " ""<left>
+nnoremap { {}<left>
+nnoremap ( ()<left>
+nnoremap [ []<left>
+
+" Make Braces.. act like Textmate<=>auto closing
+inoremap {<cr> {<cr>}<c-o>0<tab>
+inoremap [<cr> [<cr>]<c-o>0<tab>
+inoremap (<cr> (<cr>)<c-o>0<tab>
+
+"=============================================================
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 "
-" colorscheme badwolf " awesome colorscheme
 syntax enable       " enable syntax processing      --Colors
 set cursorline      " highlight current line        --UI Config
 set lazyredraw      " redraw only when we need to   --UI Config
 set showmatch       " highlight matching [{()}]     --UI Config
 
-
-
-"=============================================================
 "=============================================================
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " Authors: http://vim.wikia.com/wiki/Vim_on_Freenode

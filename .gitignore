@@ -6,8 +6,6 @@
 *.o
 *.d
 *.exe
-testapp
-CPUfactory3
 
 #Python
 __pychache__

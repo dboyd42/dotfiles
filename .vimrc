@@ -19,6 +19,9 @@ inoremap {<cr> {<cr>}<c-o>0<tab>
 inoremap [<cr> [<cr>]<c-o>0<tab>
 inoremap (<cr> (<cr>)<c-o>0<tab>
 
+" Configuring Spell Check
+set spelllang=en-US
+
 "=============================================================
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 "

@@ -9,7 +9,7 @@ filetype plugin on  " enable filetype specific plugins
 
 set noerrorbells    " turn off error bells
 
-nnoremap " ""<left>
+" nnoremap " ""<left> " !important: REMAPS your key to access your registers!
 nnoremap { {}<left>
 nnoremap ( ()<left>
 nnoremap [ []<left>

@@ -18,7 +18,7 @@ Link Files
 
 ::
 
-	ln -sv Existing-file New-name
+	ln -sf Existing-file New-name
 
 Additional Information
 ----------------------

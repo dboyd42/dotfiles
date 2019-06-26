@@ -1,15 +1,124 @@
+" Set statusline into a true information bar:
+"  fileName \ fileFormat \ fileType \ char ASCII \ char hex \ docPos \ docLEN
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+
+" console-meunu
+"  Pressing <F4> will start the menu.  You can now use the cursor keys to
+"  select a menu entry.  Hit <Enter> to execute it.  Hit <Esc> if you want to
+"  cancel.  This does require the +menu feature enabled at compile time.
+source $VIMRUNTIME/menu.vim
+set cpo-=<
+set wcm=<C-Z>
+map <F4> :emenu <C-Z>
+ 
+" Better command-line completion
+set wildmenu            " visual autocomplete for command menu
+
+" Always display the status line, even if only one window is displayed
+set laststatus=2        " 2 = ON, 0 = OFF
+
+" Abbreviations 
+source $VIM/abbreviations.vim
+
+"-------------------------------------------------------------------------------
+set number              " display current line number on left
+set numberwidth=4       " n cols to use for the line number
+set cursorline          " highlight current line
+" set relativenumber      " Show rnu to line 
+" set cursorcolumn        " highlight current column
+
+set spelllang=en        " Configuring Spell Check
+" set spell               " spell checker
+" set spellsuggest=5      " show n of alt spellings
+
+set showmatch           " highlight matching [{()}]                  --UI Config
+set matchtime=1         " decisec to showmatch ([{}]) | default=5    --UI Config
+
+"-------------------------------------------------------------------------------
+" 'mode'unmap
+
+:let mapleader = "-"
+
+" Edit my Vimrc | Source my Vimrc
+:nnoremap <leader>ev :split $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>:noh<cr>
+:nnoremap <leader>sa :source $VIM/abbreviations.vim<cr>
+
+" Set \"local leader\" prefix mappings that effect only certain filetypes
+:let maplocalleader = "["
+
+" Toggle case-sensitivity
+:inoremap <c-u> <esc><c-v>B~Ea
+:nnoremap <c-u> viW~E
+:nnoremap <S-u> viw~e
+
+" Make braces auto closing
+:inoremap {<cr> {<cr>}<esc>O
+:inoremap [ []<left>
+:inoremap ( ()<left>
+:inoremap " ""<left>
+
+" Disable old keys (no operation)
+:noremap <left>  <nop>
+:noremap <right> <nop>
+:noremap <up>    <nop>
+:noremap <down>  <nop>
+
+" Jump over braces/string
+:inoremap <c-j> <esc>%%a
+:inoremap <c-l> <end>
+
+" New line insert
+:nnoremap <c-j> o<esc>k
+:nnoremap <c-o> O<esc>j
+
+" Enwrap selected word/text in quotes // recursive: line 61
+:nmap <leader>" viWc"<esc>pf":noh<cr>
+:vmap <leader>" c"<esc>pf":noh<cr>
+":vnoremap <leader>" c""<esc>hpf"     // use without recursion
+
+"-------------------------------------------------------------------------------
+" Autocommands run whenever certain events happen
+" Auto wrtie new/txt file(s)
+":autocmd BufNewFile * :write
+":autocmd BufNewFile *.txt :write
+:autocmd BufWritePre,BufRead *.html :normal gg=G
+:autocmd BufWritePre,BufRead *.html setlocal nowrap
+
+" Comment out the line <localleader>c
+:autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
+:autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
+" Not working???
+":autocmd FileType cpp        nnoremap <buffer> <localleader>c I//<esc>
+":autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
+":autocmd FileType rst        nnoremap setlocal noet | setlocal spell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"-------------------------------------------------------------------------------
 set autoread            " watch for file changes
 set showmode            " show INSERT, VISUAL, etc
-set spelllang=en-US     " Configuring Spell Check
 
 syntax enable           " enable syntax processing      --Colors
-set cursorline          " highlight current line        --UI Config
 set lazyredraw          " redraw only when we need to   --UI Config
-set showmatch           " highlight matching [{()}]     --UI Config
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
-set nocompatible
+set nocompatible        " compatible makes Vim 99% compatible with vi
  
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -44,9 +153,6 @@ set hidden
 set confirm             " Instead of failing a command because of unsaved
                         " changes, instead raise a dialogue asking if you wish
                         " to save changed files.
- 
-" Better command-line completion
-set wildmenu            " visual autocomplete for command menu
  
 " Show partial commands in the last line of the screen
 set showcmd             " show command in bottom bar
@@ -86,8 +192,6 @@ set nostartofline
 " line of a window
 set ruler
  
-" Always display the status line, even if only one window is displayed
-set laststatus=2
  
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
@@ -105,8 +209,6 @@ set mouse=a
 " "press <Enter> to continue"
 set cmdheight=2
  
-" Display line numbers on the left
-set number
  
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
@@ -122,19 +224,4 @@ set softtabstop=4           " number of spaces in tab when editing
 set expandtab               " tabs are spaces
 set tabstop=4               " number of visual spaces per TAB, default=8
  
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-" map Y y$
- 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
-" next search
-nnoremap <C-L> :nohl<CR><C-L>
-nnoremap " ""<left>   " This line prevents access to your registers 
-nnoremap { {}<left>
-nnoremap ( ()<left>
-nnoremap [ []<left>
 
-" Make Braces.. act like Textmate<=>auto closing
-inoremap {<cr> {<cr>}<c-o>0<tab>
-inoremap [<cr> [<cr>]<c-o>0<tab>
-inoremap (<cr> (<cr>)<c-o>0<tab>

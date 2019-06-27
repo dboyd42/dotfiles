@@ -1,3 +1,5 @@
+" $VIM/abbreviations.vim
+
 " Easy commands in the command line:
 :cabbr csi colorscheme industry
 :cabbr csm colorscheme morning
@@ -12,7 +14,7 @@
 " Simple templates for programming:
 
 " User data
-:iabbrev ccopy Copyright 2019 David Boyd, all rights reserved.
-:iabbrev @b ***@gmail.com
-:iabbrev @m ***@gmail.com
-:iabbrev @p ***@gmail.com
+:iabbrev ccopy Copyright 2019 David Boyd, all rights reserved
+:iabbrev b@g ***@gmail.com
+:iabbrev m@g ***@gmail.com
+:iabbrev p@g ***@gmail.com

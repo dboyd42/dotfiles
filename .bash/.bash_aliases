@@ -3,6 +3,7 @@ alias com='g++ -std=c++1z -o main *.cpp'
 
 # Directorys
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
+alias VIM='cd ~/../../usr/share/vim'
 
 # Git
 alias gaR='git add README.rst; git commit -m "updated"; git push'

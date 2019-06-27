@@ -1,12 +1,19 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sources
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source $VIM/abbreviations.vim   " Used for abbreviations
+source $VIMRUNTIME/menu.vim     " Used for console-menu
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Menu(s)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set statusline into a true information bar:
-"  fileName \ fileFormat \ fileType \ char ASCII \ char hex \ docPos \ docLEN
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 
 " console-meunu
 "  Pressing <F4> will start the menu.  You can now use the cursor keys to
 "  select a menu entry.  Hit <Enter> to execute it.  Hit <Esc> if you want to
 "  cancel.  This does require the +menu feature enabled at compile time.
-source $VIMRUNTIME/menu.vim
 set cpo-=<
 set wcm=<C-Z>
 map <F4> :emenu <C-Z>
@@ -17,10 +24,70 @@ set wildmenu            " visual autocomplete for command menu
 " Always display the status line, even if only one window is displayed
 set laststatus=2        " 2 = ON, 0 = OFF
 
-" Abbreviations 
-source $VIM/abbreviations.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mapping
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Notes: use '<mode>:unmap' to unmap user key-bindings
 
-"-------------------------------------------------------------------------------
+" MapLeader default='\' |  LocalLeader effect only certain filetypes
+:let mapleader = "-"
+:let maplocalleader = "["
+
+" Enwrap selected word/text in quotes // recursive: line 59
+:nmap <leader>" viWc"<esc>pf":noh<cr>
+:vmap <leader>" c"<esc>pf":noh<cr>
+":vnoremap <leader>" c""<esc>hpf"     // use without recursion
+
+" Disable old keys (no operation)
+:noremap <left>  <nop>
+:noremap <right> <nop>
+:noremap <up>    <nop>
+:noremap <down>  <nop>
+
+" Edit my Vimrc | Source my Vimrc/Abbreviations
+:nnoremap <leader>ev :split $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>:noh<cr>
+:nnoremap <leader>sa :source $VIM/abbreviations.vim<cr>
+
+" Jump over braces/string
+:inoremap <c-j> <esc>%%a
+:inoremap <c-l> <end>
+
+" Make braces auto closing
+:inoremap {<cr> {<cr>}<esc>O
+:inoremap [ []<left>
+:inoremap ( ()<left>
+:inoremap " ""<left>
+
+" New line insert
+:nnoremap <c-j> o<esc>k
+:nnoremap <c-o> O<esc>j
+
+" Toggle word case-sensitivity
+:inoremap <c-u> <esc><c-v>B~Ea
+:nnoremap <c-u> viW~E
+:nnoremap <S-u> viw~e
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocommands (au)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Notes: run whenever certain events happen
+" Auto wrtie new/txt file(s)
+":autocmd BufNewFile * :write
+":autocmd BufNewFile *.txt :write
+:autocmd BufWritePre,BufRead *.html :normal gg=G
+:autocmd BufWritePre,BufRead *.html setlocal nowrap
+
+" Comment out the line <localleader>c
+:autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
+:autocmd FileType python     noremap <buffer> <localleader>c I#<esc>
+:autocmd FileType cpp        noremap <buffer> <localleader>c I//<esc>
+:autocmd FileType vim        noremap <buffer> <localleader>c I"<esc>
+:autocmd FileType rst        noremap setlocal noet | setlocal spell
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number              " display current line number on left
 set numberwidth=4       " n cols to use for the line number
 set cursorline          " highlight current line
@@ -34,82 +101,6 @@ set spelllang=en        " Configuring Spell Check
 set showmatch           " highlight matching [{()}]                  --UI Config
 set matchtime=1         " decisec to showmatch ([{}]) | default=5    --UI Config
 
-"-------------------------------------------------------------------------------
-" 'mode'unmap
-
-:let mapleader = "-"
-
-" Edit my Vimrc | Source my Vimrc
-:nnoremap <leader>ev :split $MYVIMRC<cr>
-:nnoremap <leader>sv :source $MYVIMRC<cr>:noh<cr>
-:nnoremap <leader>sa :source $VIM/abbreviations.vim<cr>
-
-" Set \"local leader\" prefix mappings that effect only certain filetypes
-:let maplocalleader = "["
-
-" Toggle case-sensitivity
-:inoremap <c-u> <esc><c-v>B~Ea
-:nnoremap <c-u> viW~E
-:nnoremap <S-u> viw~e
-
-" Make braces auto closing
-:inoremap {<cr> {<cr>}<esc>O
-:inoremap [ []<left>
-:inoremap ( ()<left>
-:inoremap " ""<left>
-
-" Disable old keys (no operation)
-:noremap <left>  <nop>
-:noremap <right> <nop>
-:noremap <up>    <nop>
-:noremap <down>  <nop>
-
-" Jump over braces/string
-:inoremap <c-j> <esc>%%a
-:inoremap <c-l> <end>
-
-" New line insert
-:nnoremap <c-j> o<esc>k
-:nnoremap <c-o> O<esc>j
-
-" Enwrap selected word/text in quotes // recursive: line 61
-:nmap <leader>" viWc"<esc>pf":noh<cr>
-:vmap <leader>" c"<esc>pf":noh<cr>
-":vnoremap <leader>" c""<esc>hpf"     // use without recursion
-
-"-------------------------------------------------------------------------------
-" Autocommands run whenever certain events happen
-" Auto wrtie new/txt file(s)
-":autocmd BufNewFile * :write
-":autocmd BufNewFile *.txt :write
-:autocmd BufWritePre,BufRead *.html :normal gg=G
-:autocmd BufWritePre,BufRead *.html setlocal nowrap
-
-" Comment out the line <localleader>c
-:autocmd FileType javascript nnoremap <buffer> <localleader>c I//<esc>
-:autocmd FileType python     nnoremap <buffer> <localleader>c I#<esc>
-" Not working???
-":autocmd FileType cpp        nnoremap <buffer> <localleader>c I//<esc>
-":autocmd FileType vim        nnoremap <buffer> <localleader>c I"<esc>
-":autocmd FileType rst        nnoremap setlocal noet | setlocal spell
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"-------------------------------------------------------------------------------
 set autoread            " watch for file changes
 set showmode            " show INSERT, VISUAL, etc
 
@@ -124,8 +115,8 @@ set nocompatible        " compatible makes Vim 99% compatible with vi
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 filetype indent plugin on           " load filetype-specific indent files
-" filetype on           " enable filetype detection
-" filetype plugin on    " enable filetype specific plugins
+filetype on           " enable filetype detection
+filetype plugin on    " enable filetype specific plugins
  
 " Enable syntax highlighting
 syntax on

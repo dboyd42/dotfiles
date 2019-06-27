@@ -38,6 +38,9 @@ set laststatus=2        " 2 = ON, 0 = OFF
 :vmap <leader>" c"<esc>pf":noh<cr>
 ":vnoremap <leader>" c""<esc>hpf"     // use without recursion
 
+" Delete
+:inoremap <F10> <del>
+
 " Disable old keys (no operation)
 :noremap <left>  <nop>
 :noremap <right> <nop>

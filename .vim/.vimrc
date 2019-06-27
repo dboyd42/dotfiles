@@ -26,8 +26,8 @@ set laststatus=2        " 2 = ON, 0 = OFF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
+"   Notes: use '<mode>:unmap' to unmap user key-bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Notes: use '<mode>:unmap' to unmap user key-bindings
 
 " MapLeader default='\' |  LocalLeader effect only certain filetypes
 :let mapleader = "-"
@@ -70,20 +70,20 @@ set laststatus=2        " 2 = ON, 0 = OFF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (au)
+"   Notes: run whenever certain events happen
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Notes: run whenever certain events happen
 " Auto wrtie new/txt file(s)
 ":autocmd BufNewFile * :write
 ":autocmd BufNewFile *.txt :write
 :autocmd BufWritePre,BufRead *.html :normal gg=G
-:autocmd BufWritePre,BufRead *.html setlocal nowrap
+:autocmd BufWritePre,BufRead *.html setlocal nowrap spell
+:autocmd BufWritePre,BufRead *.rst setlocal nowrap spell noet
 
 " Comment out the line <localleader>c
 :autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
 :autocmd FileType python     noremap <buffer> <localleader>c I#<esc>
 :autocmd FileType cpp        noremap <buffer> <localleader>c I//<esc>
 :autocmd FileType vim        noremap <buffer> <localleader>c I"<esc>
-:autocmd FileType rst        noremap setlocal noet | setlocal spell
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings

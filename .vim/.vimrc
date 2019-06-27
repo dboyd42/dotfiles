@@ -40,6 +40,7 @@ set laststatus=2        " 2 = ON, 0 = OFF
 
 " Delete
 :inoremap <F10> <del>
+:nnoremap <F10> <del>
 
 " Disable old keys (no operation)
 :noremap <left>  <nop>
@@ -80,11 +81,13 @@ set laststatus=2        " 2 = ON, 0 = OFF
 augroup filetype_cpp
     au!
     au FileType cpp noremap <buffer> <localleader>c I//<esc>
+    au FileType cpp noremap <buffer> <localleader>u 02x<esc>
 augroup END
 
 augroup filetype_javascript
     au!
     autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
+    autocmd FileType javascript noremap <buffer> <localleader>u 02x<esc>
     au FileType javascript :iabbrev <buffer> iff if:<left>
 augroup END
 
@@ -92,11 +95,14 @@ augroup filetype_html
     au!
     au BufWritePre,BufRead *.html :normal gg=G
     au BufWritePre,BufRead *.html setlocal nowrap spell
+    au FileType html noremap <buffer> <localleader>c I<!--<esc><s-a>--><esc>
+    au FileType html noremap <buffer> <localleader>u 04x<end>xxx
 augroup END
 
 augroup filetype_python
     au!
     au FileType python noremap <buffer> <localleader>c I#<esc>
+    au FileType python noremap <buffer> <localleader>u 0x<esc>
     au FileType python :iabbrev <buffer> iff if ()<left>
 augroup END
 
@@ -108,6 +114,7 @@ augroup END
 augroup filetype_vim
     au!
     au FileType vim noremap <buffer> <localleader>c I"<esc>
+    au FileType vim noremap <buffer> <localleader>u 0x<esc>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,8 +147,8 @@ set nocompatible        " compatible makes Vim 99% compatible with vi
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 filetype indent plugin on           " load filetype-specific indent files
-filetype on           " enable filetype detection
-filetype plugin on    " enable filetype specific plugins
+"filetype on           " enable filetype detection
+"filetype plugin on    " enable filetype specific plugins
  
 " Enable syntax highlighting
 syntax on

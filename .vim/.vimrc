@@ -71,19 +71,41 @@ set laststatus=2        " 2 = ON, 0 = OFF
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (au)
 "   Notes: run whenever certain events happen
+"    filetypes: BufNewFile,BufRead,BufWritePre
+"    augroup: au! that don't duplicate everytime we source it
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto wrtie new/txt file(s)
-":autocmd BufNewFile * :write
-":autocmd BufNewFile *.txt :write
-:autocmd BufWritePre,BufRead *.html :normal gg=G
-:autocmd BufWritePre,BufRead *.html setlocal nowrap spell
-:autocmd BufWritePre,BufRead *.rst setlocal nowrap spell noet
+augroup filetype_cpp
+    au!
+    au FileType cpp noremap <buffer> <localleader>c I//<esc>
+augroup END
 
-" Comment out the line <localleader>c
-:autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
-:autocmd FileType python     noremap <buffer> <localleader>c I#<esc>
-:autocmd FileType cpp        noremap <buffer> <localleader>c I//<esc>
-:autocmd FileType vim        noremap <buffer> <localleader>c I"<esc>
+augroup filetype_javascript
+    au!
+    autocmd FileType javascript noremap <buffer> <localleader>c I//<esc>
+    au FileType javascript :iabbrev <buffer> iff if:<left>
+augroup END
+
+augroup filetype_html
+    au!
+    au BufWritePre,BufRead *.html :normal gg=G
+    au BufWritePre,BufRead *.html setlocal nowrap spell
+augroup END
+
+augroup filetype_python
+    au!
+    au FileType python noremap <buffer> <localleader>c I#<esc>
+    au FileType python :iabbrev <buffer> iff if ()<left>
+augroup END
+
+augroup filetype_rst
+    au!
+    au BufWritePre,BufRead *.rst setlocal nowrap spell noet
+augroup END
+
+augroup filetype_vim
+    au!
+    au FileType vim noremap <buffer> <localleader>c I"<esc>
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings

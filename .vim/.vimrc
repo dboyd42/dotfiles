@@ -46,8 +46,8 @@ map <F4> :emenu <C-Z>
 :nnoremap <leader>sa :source $VIM/abbreviations.vim<cr>
 
 " Jump over braces/string
-:inoremap <c-j> <esc>%%a
-:inoremap <c-l> <end>
+:inoremap <c-j> <Right>
+:inoremap <c-l> <End>
 
 " Make braces auto closing
 :inoremap {<cr> {<cr>}<esc>O
@@ -57,10 +57,14 @@ map <F4> :emenu <C-Z>
 
 " Match Groups 
 "   Reset matches: :match none
-:nnoremap <leader>colwarn :3match LineNr /\%>74v.\+/
-:nnoremap <leader>colmax :3match ColorColumn /\%>80v.\+/
-:nnoremap <leader>tabs :3match TabLine /[\t]/
+:nnoremap <leader>colwarn :3match LineNr /\%>74v.\+/<CR>
+:nnoremap <leader>colmax :3match ColorColumn /\%>80v.\+/<CR>
+:nnoremap <leader>tabs :3match TabLine /[\t]/<CR>
 
+" Navigating
+:nnoremap <c-L> :bn<CR>
+:nnoremap <c-H> :bp<CR>
+ 
 " New line insert
 :nnoremap <c-j> o<esc>k
 :nnoremap <c-o> O<esc>j
@@ -87,8 +91,8 @@ map <F4> :emenu <C-Z>
 
 augroup filetype_cpp
     au!
-    au FileType cpp noremap <buffer> <localleader>c I//<esc>
-    au FileType cpp noremap <buffer> <localleader>u 02x<esc>
+    au FileType cpp noremap <buffer> <localleader>c I// <esc>
+    au FileType cpp noremap <buffer> <localleader>u 03x<esc>
 augroup END
 
 augroup filetype_css
@@ -123,13 +127,14 @@ augroup END
 
 augroup filetype_rst
     au!
+    " noet not working
     au BufWritePre,BufRead *.rst setlocal nowrap spell noet
 augroup END
 
 augroup filetype_vim
     au!
     au FileType vim noremap <buffer> <localleader>c I"<esc>
-    au FileType vim noremap <buffer> <localleader>u 0x<esc>
+    au FileType vim noremap <buffer> <localleader>u ^x<esc>
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -137,7 +142,7 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " --UI Config "
-"""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Always display the status line, even if only one window is displayed
 set laststatus=2        " 2 = ON, 0 = OFF
 

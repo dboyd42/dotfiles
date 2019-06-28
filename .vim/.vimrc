@@ -1,9 +1,17 @@
 "        _
 " __   _(_)_ __ ___  _ __ ____
 " \ \ / / | '_ ` _ \| '__/ __|
-"  \ V /  | | | | | | | | (__
-"   \_/   |_| |_| |_|_|  \___|
+"  \ V /| | | | | | | | | (__
+"   \_/ |_|_| |_| |_|_|  \___|
 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PlugIns
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"call plug#begin('~/.vim/plugged')
+"Plug 'jrebert/vimagit'
+"Plug 'terrma/vim-multiple-cursors'
+"call plug#end()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sources
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -17,10 +25,13 @@ source $VIMRUNTIME/menu.vim     " Used for console-menu
 "  select a menu entry.  Hit <Enter> to execute it.  Hit <Esc> if you want to
 "  cancel.  This does require the +menu feature enabled at compile time.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildmenu            " visual autocomplete for command menu
 set cpo-=<
 set wcm=<C-Z>
 map <F4> :emenu <C-Z>
+
+" Enable autocompletion
+set wildmenu            " visual autocomplete for command menu
+set wildmode=longest,list,full
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
@@ -149,6 +160,10 @@ augroup END
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Splits open at the bottom and right, whihc is non-retarded, unlike vim
+" defaults
+set splitbelow splitright
+
 " Always display the status line, even if only one window is displayed
 set laststatus=2        " 2 = ON, 0 = OFF
 
@@ -176,33 +191,6 @@ set isfname+=32         " Supports filenames with spaces when using gf
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-set autoread            " watch for file changes
-set showmode            " show INSERT, VISUAL, etc
-
-syntax enable           " enable syntax processing      --Colors
-set lazyredraw          " redraw only when we need to
-
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible        " compatible makes Vim 99% compatible with vi
@@ -211,9 +199,16 @@ set nocompatible        " compatible makes Vim 99% compatible with vi
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 filetype indent plugin on           " load filetype-specific indent files
-filetype on           " enable filetype detection
+""filetype on           " enable filetype detection
 filetype plugin on    " enable filetype specific plugins
  
+
+
+
+
+
+" Some basics: "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax on
  
@@ -311,4 +306,8 @@ set softtabstop=4           " number of spaces in tab when editing
 set expandtab               " tabs are spaces
 set tabstop=4               " number of visual spaces per TAB, default=8
  
+set autoread            " watch for file changes
+set showmode            " show INSERT, VISUAL, etc
 
+syntax enable           " enable syntax processing      --Colors
+set lazyredraw          " redraw only when we need to

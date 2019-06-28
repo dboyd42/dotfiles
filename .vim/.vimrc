@@ -162,6 +162,35 @@ set spelllang=en        " Configuring Spell Check
 set showmatch           " highlight matching [{()}]
 set matchtime=1         " decisec to showmatch ([{}]) | default=5
 
+" Files "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set isfname+=32         " Supports filenames with spaces when using gf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 set autoread            " watch for file changes
 set showmode            " show INSERT, VISUAL, etc
 

@@ -83,6 +83,8 @@ set wildmode=longest,list,full
 
 " Navigating
 :nnoremap <c-L> :bn<CR>
+:nnoremap <c-K> :ba<CR>
+:nnoremap <c-J> :b#<CR>
 :nnoremap <c-H> :bp<CR>
 
 " New line insert
@@ -95,7 +97,7 @@ set wildmode=longest,list,full
 :nnoremap <S-u> viw~e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Autocommands (au)
+" Autocommands (automcd || au)
 "   Notes: run whenever certain events happen
 "    filetypes: BufNewFile,BufRead,BufWritePre
 "    augroup: au! that don't duplicate everytime we source it
@@ -134,6 +136,7 @@ augroup END
 
 augroup filetype_html
     au!
+    au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
     au BufWritePre,BufRead *.html :normal gg=G
     au BufWritePre,BufRead *.html setlocal nowrap spell
     au FileType html noremap <buffer> <localleader>c I<!--<esc><s-a>--><esc>

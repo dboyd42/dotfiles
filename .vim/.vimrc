@@ -47,9 +47,12 @@ set wildmode=longest,list,full
 :vmap <leader>" c"<esc>pf":noh<cr>
 ":vnoremap <leader>" c""<esc>hpf"     // use without recursion
 
-" Delete
+" Function Keys
+"  Delete
 :inoremap <F10> <del>
 :nnoremap <F10> <del>
+"  ftp://ftp.vim.org/pub/vim/runtime/spell
+:nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
 
 " Disable old keys (no operation)
 :noremap <left>  <nop>
@@ -178,8 +181,7 @@ set cursorline          " highlight current line
 " set relativenumber      " Show rnu to line
 " set cursorcolumn        " highlight current column
 
-set spelllang=en        " Configuring Spell Check
-" set spell               " spell checker
+set spell               " spell checker
 " set spellsuggest=5      " show n of alt spellings
 
 set showmatch           " highlight matching [{()}]

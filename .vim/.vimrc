@@ -6,23 +6,15 @@ source $VIMRUNTIME/menu.vim     " Used for console-menu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Menu(s)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set statusline into a true information bar:
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
-
 " console-meunu
 "  Pressing <F4> will start the menu.  You can now use the cursor keys to
 "  select a menu entry.  Hit <Enter> to execute it.  Hit <Esc> if you want to
 "  cancel.  This does require the +menu feature enabled at compile time.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildmenu            " visual autocomplete for command menu
 set cpo-=<
 set wcm=<C-Z>
 map <F4> :emenu <C-Z>
- 
-" Better command-line completion
-set wildmenu            " visual autocomplete for command menu
-
-" Always display the status line, even if only one window is displayed
-set laststatus=2        " 2 = ON, 0 = OFF
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
@@ -63,6 +55,12 @@ set laststatus=2        " 2 = ON, 0 = OFF
 :inoremap ( ()<left>
 :inoremap " ""<left>
 
+" Match Groups 
+"   Reset matches: :match none
+:nnoremap <leader>colwarn :3match LineNr /\%>74v.\+/
+:nnoremap <leader>colmax :3match ColorColumn /\%>80v.\+/
+:nnoremap <leader>tabs :3match TabLine /[\t]/
+
 " New line insert
 :nnoremap <c-j> o<esc>k
 :nnoremap <c-o> O<esc>j
@@ -77,11 +75,28 @@ set laststatus=2        " 2 = ON, 0 = OFF
 "   Notes: run whenever certain events happen
 "    filetypes: BufNewFile,BufRead,BufWritePre
 "    augroup: au! that don't duplicate everytime we source it
+"    events: http://tech.saigonist.com/b/code/list-all-vim-script-events.html
+"    syntax: au EVENT\FilePattern\CMD
+"    list of color groups: :so $VIMRUNTIME/syntax/hitest.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"augroup filetype_all
+    "au!
+    "au BufWritePre,BufRead * :2match LineNr /\%>74v.\+/
+    "au BufWritePre,BufRead * :3match errorMsg /\%>80v.\+/
+"augroup END
+
 augroup filetype_cpp
     au!
     au FileType cpp noremap <buffer> <localleader>c I//<esc>
     au FileType cpp noremap <buffer> <localleader>u 02x<esc>
+augroup END
+
+augroup filetype_css
+    au!
+    au BufWritePre,BufRead *.css :normal gg=G
+    au BufWritePre,BufRead *.css setlocal wrap spell
+    au FileType css noremap <buffer> <localleader>c ^i/* <esc><s-a> */<esc>
+    au FileType css noremap <buffer> <localleader>u ^3x<end>xxx
 augroup END
 
 augroup filetype_javascript
@@ -96,7 +111,7 @@ augroup filetype_html
     au BufWritePre,BufRead *.html :normal gg=G
     au BufWritePre,BufRead *.html setlocal nowrap spell
     au FileType html noremap <buffer> <localleader>c I<!--<esc><s-a>--><esc>
-    au FileType html noremap <buffer> <localleader>u 04x<end>xxx
+    au FileType html noremap <buffer> <localleader>u ^4x<end>xxx
 augroup END
 
 augroup filetype_python
@@ -120,6 +135,15 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" --UI Config "
+"""""""""""""""
+" Always display the status line, even if only one window is displayed
+set laststatus=2        " 2 = ON, 0 = OFF
+
+" Set statusline into a true information bar:
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+
 set number              " display current line number on left
 set numberwidth=4       " n cols to use for the line number
 set cursorline          " highlight current line
@@ -130,14 +154,14 @@ set spelllang=en        " Configuring Spell Check
 " set spell               " spell checker
 " set spellsuggest=5      " show n of alt spellings
 
-set showmatch           " highlight matching [{()}]                  --UI Config
-set matchtime=1         " decisec to showmatch ([{}]) | default=5    --UI Config
+set showmatch           " highlight matching [{()}]
+set matchtime=1         " decisec to showmatch ([{}]) | default=5
 
 set autoread            " watch for file changes
 set showmode            " show INSERT, VISUAL, etc
 
 syntax enable           " enable syntax processing      --Colors
-set lazyredraw          " redraw only when we need to   --UI Config
+set lazyredraw          " redraw only when we need to
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
@@ -147,8 +171,8 @@ set nocompatible        " compatible makes Vim 99% compatible with vi
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
 filetype indent plugin on           " load filetype-specific indent files
-"filetype on           " enable filetype detection
-"filetype plugin on    " enable filetype specific plugins
+filetype on           " enable filetype detection
+filetype plugin on    " enable filetype specific plugins
  
 " Enable syntax highlighting
 syntax on

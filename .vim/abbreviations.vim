@@ -15,6 +15,6 @@
 
 " User data
 :iabbrev ccopy Copyright 2019 David Boyd, all rights reserved
-:iabbrev b@g ***@gmail.com
-:iabbrev m@g ***@gmail.com
-:iabbrev p@g ***@gmail.com
+:iabbrev @b ***@gmail.com
+:iabbrev @m ***@gmail.com
+:iabbrev @p ***@gmail.com

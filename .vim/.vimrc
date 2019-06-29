@@ -175,50 +175,44 @@ let g:netrw_winsize = 25
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set splitbelow splitright " Splits open at bottom and right
+" Set statusline into a true information bar:
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+set autoread            " watch for file changes
+set cmdheight=2         " Set the command window height to 2 lines
+set cursorline          " highlight current line
+set hlsearch            " highlight search matches
 set laststatus=2        " Display the status line
+set matchtime=1         " decisec to showmatch ([{}]) | default=5
 set number              " display current line number on Left
 set numberwidth=4       " n cols to use for the line number
-set cursorline          " highlight current line
+set showcmd             " show partial commands in bottom bar
 set showmatch           " highlight matching [{()}]
-set matchtime=1         " decisec to showmatch ([{}]) | default=5
-set hlsearch            " highlight search matches
-set autoread            " watch for file changes
 set showmode            " show INSERT, VISUAL, etc
+set splitbelow splitright " Splits open at bottom and right
+set visualbell          " Use visual bell instead of beeping
 syntax on               " Enable syntax highlighting
 syntax enable           " enable syntax processing      --Colors
-set showcmd             " show partial commands in bottom bar
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L] " Set statusline into a true information bar:
-set visualbell          " Use visual bell instead of beeping
-set cmdheight=2         " Set the command window height to 2 lines
 
 " Some basics: "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
-
-" Modelines have historically been a source of security vulnerabilities. As
-" such, it may be a good idea to disable them and use the securemodelines
-" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-set nomodeline
-
-set mouse=a              " Enable use of the mouse for all modes
-set nostartofline        " Off - cursor is kept in the same column
-
-set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
-
-set shiftwidth=4
-set softtabstop=4        " number of spaces in tab when editing
-set expandtab            " tabs are spaces
-set tabstop=4            " number of visual spaces per TAB, default=8
 set backspace=indent,eol,start " Allow backspacing over ai, \n, I
-set lazyredraw           " redraws screen only when we need to
+set ignorecase          " ignores the case of normal letters
+set smartcase           " identifies case specific patterns
+set nomodeline          " disabled due to security vulnerabilities
+set nostartofline       " Off - cursor is kept in the same column
+set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
+set lazyredraw          " redraws screen only when we need to
+set mouse=a             " Enable use of the mouse for all modes
+set expandtab           " tabs are spaces
+set softtabstop=4       " number of spaces in tab when editing
+set tabstop=4           " number of visual spaces per TAB, default=8
 
 " Files "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set confirm             " Use a dialog when an operation has to be confirmed
+set hidden              " Re-use the same win & switch from unsaved buffers
 set isfname+=32         " Supports filenames with spaces when using gf
 set nocompatible        " compatible makes Vim 99% compatible with vi
 filetype indent plugin on    " load filetype-specific indent files
-set hidden              " Re-use the same win & switch from unsaved buffers
-set confirm             " Use a dialog when an operation has to be confirmed
+filetype on             " enables filetype detection

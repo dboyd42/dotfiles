@@ -45,7 +45,6 @@ let maplocalleader = "["
 " Enwrap selected word/text in quotes // recursive to line 76
 nmap <Leader>" viWc"<Esc>pf"noh<CR>
 vmap <Leader>" c"<Esc>pf"noh<CR>
-":vnoremap <Leader>" c""<Esc>hpf"     // without recursion
 
 " Function Keys
 "  Delete
@@ -53,10 +52,10 @@ noremap  <F10> <Del>
 nnoremap <F6> :set spelllang=en_us<CR>
 
 " Disable old keys (no operation)
-noremap <Left>  <nop>
-noremap <Right> <nop>
-noremap <Up>    <nop>
-noremap <Down>  <nop>
+"noremap <Left>  <nop>
+"noremap <Right> <nop>
+"noremap <Up>    <nop>
+"noremap <Down>  <nop>
 
 " Edit my Vimrc | Source my Vimrc/Abbreviations
 nnoremap <Leader>ev :split $MYVIMRC<CR>
@@ -68,7 +67,7 @@ inoremap <C-j> <Right>
 inoremap <C-l> <End>
 
 " Jump between .tpl placeholders
-nnoremap <C-j> /<+.\{-1,}+<CR>c/+/>/e<CR>
+"nnoremap <C-j> /<+.\{-1,}+<CR>c/+/>/e<CR>
 
 " Make braces auto closing
 inoremap {<CR> {<CR>}<Esc>O
@@ -107,45 +106,70 @@ nnoremap <S-u> viw~e
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup filetype_all
     au!
-    "Automatically deletes all trailing whitepsace on save
+    " Deletes all trailing whitepsace on save
     au BufWritePre * %s/\s\+$//e
 augroup END
 
 augroup filetype_cpp
     au!
+    au BufRead,BufNewFile *.cpp setlocal tw=80
     au FileType cpp noremap <buffer> <LocalLeader>c I// <Esc>
     au FileType cpp noremap <buffer> <LocalLeader>u 03x<Esc>
 augroup END
 
 augroup filetype_css
     au!
+    au BufRead,BufNewFile *.css setlocal tw=80
     au BufWritePre,BufRead *.css normal gg=G
-    au BufWritePre,BufRead *.css setlocal wrap spell
     au FileType css noremap <buffer> <LocalLeader>c ^i/* <Esc><s-a> */<Esc>
     au FileType css noremap <buffer> <LocalLeader>u ^3x<end>xxx
 augroup END
 
 augroup filetype_javascript
     au!
-    autocmd FileType javascript noremap <buffer> <LocalLeader>c I//<Esc>
-    autocmd FileType javascript noremap <buffer> <LocalLeader>u 02x<Esc>
+    au BufRead,BufNewFile *.javascript setlocal tw=80
+    au FileType javascript noremap <buffer> <LocalLeader>c I//<Esc>
+    au FileType javascript noremap <buffer> <LocalLeader>u 02x<Esc>
 augroup END
 
 augroup filetype_html
     au!
-    au BufWritePre,BufRead *.html normal gg=G
+    au BufRead,BufNewFile * setlocal shiftwidth=2 softtabstop=2
+    au BufWritePre,BufRead *.html normal gg=G       " Align text
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><s-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
+    au FileType html inoremap <strong> <strong></strong><Esc>%i
+    au FileType html inoremap <em> <em></em><Esc>%i
+    au FileType html inoremap <h1> <h1></h1><Esc>%i
+    au FileType html inoremap <h2> <h2></h2><Esc>%i
+    au FileType html inoremap <h3> <h3></h3><Esc>%i
+    au FileType html inoremap <h4> <h4></h4><Esc>%i
+    au FileType html inoremap <h5> <h5></h5><Esc>%i
+    au FileType html inoremap <h6> <h6></h6><Esc>%i
+    au FileType html inoremap <p> <p></p><Esc>%i
+    au FileType html inoremap <a <a<Space>href="" alt=""></a><Esc>3hi
+    au FileType html inoremap <img<SPACE> <img src="" alt="">
+    au FileType html inoremap <ul> <ul><CR><li></li><CR></ul><Esc>k2f<i
+    au FileType html inoremap <li> <li></li><Esc>%i
+    au FileType html inoremap <ol> <ol><CR><li></li><CR></ol><Esc>k2f<i
+    au FileType html inoremap <table> <table><CR></table><Esc>k<S-a><CR>
+    au FileType html inoremap <thead> <thead><CR></thead><Esc>k<S-a><CR>
+    au FileType html inoremap <tbody> <tbody><CR></tbody><Esc>k<S-a><CR>
+    au FileType html inoremap <tr> <tr><CR></tr><Esc>k<S-a><CR>
+    au FileType html inoremap <th> <th></th><Esc>%i
+    au FileType html inoremap <td> <td></td><Esc>%i
 augroup END
 
 augroup filetype_python
     au!
+    au BufRead,BufNewFile *.python setlocal tw=80
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u 0x<Esc>
 augroup END
 
 augroup filetype_rst
     au!
+    au BufRead,BufNewFile *.rst setlocal tw=80
     au BufWritePre,BufRead *.rst setlocal noet
 augroup END
 
@@ -193,6 +217,7 @@ set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
 set lazyredraw          " redraws screen only when we need to
 set mouse=a             " Enable use of the mouse for all modes
 set expandtab           " tabs are spaces
+set shiftwidth=4
 set softtabstop=4       " number of spaces in tab when editing
 set tabstop=4           " number of visual spaces per TAB, default=8
 

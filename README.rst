@@ -22,5 +22,4 @@ Link Files
 
 Additional Information
 ----------------------
-
-Currently, abbreviations.vim is stored in $VIM home directory.
+:N/a: N/A

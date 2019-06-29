@@ -8,9 +8,14 @@ Keystrokes
 
 Search and Replace
 ------------------
-:. : select current line
-:, : range n,m
-:.,.+10 : current position plus 10 lines down
+
++--------+-------------------------------------+
+| .      | select current line				   |
++--------+-------------------------------------+
+| ,      | range n,m						   |
++--------+-------------------------------------+
+| .,.+10 | current position plus 10 lines down |
++--------+-------------------------------------+
 
 Directory Browsing
 ==================

@@ -9,27 +9,20 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PlugIns
+" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"call plug#begin('~/.vim/plugged')
-"Plug 'jrebert/vimagit'
-"Plug 'terrma/vim-multiple-cursors'
-"call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sources
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $VIM/abbreviations.vim   " Used for abbreviations
-source $VIMRUNTIME/menu.vim     " Used for console-menu
+source $VIM/abbrev/abbreviations.vim
+source $VIMRUNTIME/menu.vim
 au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Menu(s)
-" console-meunu
-"  Pressing <F4> will start the menu.  You can now use the cursor keys to
-"  select a menu entry.  Hit <Enter> to execute it.  Hit <Esc> if you want to
-"  cancel.  This does require the +menu feature enabled at compile time.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Console-Menu
 set cpo-=<
 set wcm=<C-Z>
 map <F4> :emenu <C-Z>
@@ -38,26 +31,26 @@ map <F4> :emenu <C-Z>
 set wildmenu            " visual autocomplete for command menu
 set wildmode=longest,list,full
 
+" Set statusline into a true information bar:
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
 "   Notes: use '<mode>:unmap' to unmap user key-bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " MapLeader default='\' |  LocalLeader effect only certain filetypes
 :let mapleader = "-"
 :let maplocalleader = "["
 
-" Enwrap selected word/text in quotes // recursive: line 59
+" Enwrap selected word/text in quotes // recursive to line 76
 :nmap <Leader>" viWc"<Esc>pf":noh<CR>
 :vmap <Leader>" c"<Esc>pf":noh<CR>
-":vnoremap <Leader>" c""<Esc>hpf"     // use without recursion
+":vnoremap <Leader>" c""<Esc>hpf"     // without recursion
 
 " Function Keys
 "  Delete
-:inoremap <F10> <Del>
-:nnoremap <F10> <Del>
-"  ftp://ftp.vim.org/pub/vim/runtime/spell
-:nnoremap <F6> :setLocal spell! spelllang=en_us<CR>
+:noremap  <F10> <Del>
+:nnoremap <F6> :set spelllang=en_us<CR>
 
 " Disable old keys (no operation)
 :noremap <Left>  <nop>
@@ -107,12 +100,8 @@ set wildmode=longest,list,full
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
-"   Notes: run whenever certain events happen
-"    filetypes: BufNewFile,BufRead,BufWritePre
-"    augroup: au! that don't duplicate everytime we source it
-"    events: http://tech.saigonist.com/b/code/list-all-vim-script-events.html
-"    syntax: au EVENT\FilePattern\CMD
-"    list of color groups: :so $VIMRUNTIME/syntax/hitest.vim
+"  color-groups: :so $VIMRUNTIME/syntax/hitest.vim
+"  events: http://tech.saigonist.com/b/code/list-all-vim-script-events.html
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup filetype_all
     au!
@@ -155,7 +144,7 @@ augroup END
 
 augroup filetype_rst
     au!
-    au BufWritePre,BufRead *.rst setLocal noet
+    au BufWritePre,BufRead *.rst :setlocal noet
 augroup END
 
 augroup filetype_vim
@@ -167,7 +156,6 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Directory Browsing "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw, ctags, tagbar
@@ -175,8 +163,6 @@ let g:netrw_winsize = 25
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set statusline into a true information bar:
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 set autoread            " watch for file changes
 set cmdheight=2         " Set the command window height to 2 lines
 set cursorline          " highlight current line

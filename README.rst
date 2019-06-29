@@ -18,7 +18,7 @@ Link Files
 
 ::
 
-	ln -sf Existing-file New-name
+	sudo ln -sf Existing-file New-name
 
 Additional Information
 ----------------------

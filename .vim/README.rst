@@ -53,7 +53,7 @@ Installed Plugins
 
 :vim-gtk3: For using '+' register for clipboard
 :ctags: for indexing methods, classes, vars, and other ids --storing index in a
-:     : tags file.
+:ctags: tags file.
 
 Additional Information
 ======================

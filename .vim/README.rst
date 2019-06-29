@@ -9,15 +9,15 @@ Keystrokes
 Search and Replace
 ------------------
 
-+--------+-------------------------------------+
-| Key    | Description                         |
-+========+=====================================+
-| .      | select current line				   |
-+--------+-------------------------------------+
-| ,      | range n,m						   |
-+--------+-------------------------------------+
-| .,.+10 | current position plus 10 lines down |
-+--------+-------------------------------------+
++---------+-------------------------------------+
+| Key     | Description                         |
++=========+=====================================+
+| \.      | select current line                 |
++---------+-------------------------------------+
+| \,      | range n,m                           |
++---------+-------------------------------------+
+| \.,.+10 | current position plus 10 lines down |
++---------+-------------------------------------+
 
 Directory Browsing
 ==================
@@ -53,7 +53,7 @@ Installed Plugins
 
 :vim-gtk3: For using '+' register for clipboard
 :ctags: for indexing methods, classes, vars, and other ids --storing index in a
-		tags file.
+:     : tags file.
 
 Additional Information
 ======================

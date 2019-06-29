@@ -10,6 +10,8 @@ Search and Replace
 ------------------
 
 +--------+-------------------------------------+
+| Key    | Description                         |
++========+=====================================+
 | .      | select current line				   |
 +--------+-------------------------------------+
 | ,      | range n,m						   |
@@ -22,6 +24,8 @@ Directory Browsing
 :NERDTree: Not needed
 
 +-------+------------------+
+| Prgm  | Descriptio       |
++=======+==================+
 | netrw | Default plugin   |
 |       | Ex, Sex, Vex     |
 |       | i - cycle view   |

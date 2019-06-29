@@ -12,7 +12,7 @@ Link Files
 
 ::
 
-	ln -s Existing-file New-name 
+	ln -s Existing-file New-name
 
 **+Remove Existing Destination Files**
 
@@ -23,4 +23,4 @@ Link Files
 Additional Information
 ----------------------
 
-Currently, abbreviations.vim is stored in $VIM home directory.  May consider moving to $VIM/vimfiles/ directory. 
+Currently, abbreviations.vim is stored in $VIM home directory.

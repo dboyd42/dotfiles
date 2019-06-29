@@ -39,64 +39,66 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%0
 "   Notes: use '<mode>:unmap' to unmap user key-bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MapLeader default='\' |  LocalLeader effect only certain filetypes
-:let mapleader = "-"
-:let maplocalleader = "["
+let mapleader = "-"
+let maplocalleader = "["
 
 " Enwrap selected word/text in quotes // recursive to line 76
-:nmap <Leader>" viWc"<Esc>pf":noh<CR>
-:vmap <Leader>" c"<Esc>pf":noh<CR>
+nmap <Leader>" viWc"<Esc>pf"noh<CR>
+vmap <Leader>" c"<Esc>pf"noh<CR>
 ":vnoremap <Leader>" c""<Esc>hpf"     // without recursion
 
 " Function Keys
 "  Delete
-:noremap  <F10> <Del>
-:nnoremap <F6> :set spelllang=en_us<CR>
+noremap  <F10> <Del>
+nnoremap <F6> :set spelllang=en_us<CR>
 
 " Disable old keys (no operation)
-:noremap <Left>  <nop>
-:noremap <Right> <nop>
-:noremap <Up>    <nop>
-:noremap <Down>  <nop>
+noremap <Left>  <nop>
+noremap <Right> <nop>
+noremap <Up>    <nop>
+noremap <Down>  <nop>
 
 " Edit my Vimrc | Source my Vimrc/Abbreviations
-:nnoremap <Leader>ev :split $MYVIMRC<CR>
-:nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
-:nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
+nnoremap <Leader>ev :split $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
+nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 
 " Jump over braces/string
-:inoremap <c-j> <Right>
-:inoremap <c-l> <End>
+inoremap <C-j> <Right>
+inoremap <C-l> <End>
+
+" Jump between .tpl placeholders
+nnoremap <C-j> /<+.\{-1,}+<CR>c/+/>/e<CR>
 
 " Make braces auto closing
-:inoremap {<CR> {<CR>}<Esc>O
-:inoremap [ []<Left>
-:inoremap ( ()<Left>
-:inoremap " ""<Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
 
 " Match Groups
 "   Reset matches: :match none
-:nnoremap <Leader>colwarn :3match LineNr /\%>74v.\+/<CR>
-:nnoremap <Leader>colmax :3match ColorColumn /\%>80v.\+/<CR>
-:nnoremap <Leader>tabs :3match TabLine /[\t]/<CR>
+nnoremap <Leader>colwarn :3match LineNr /\%>74v.\+/<CR>
+nnoremap <Leader>colmax :3match ColorColumn /\%>80v.\+/<CR>
+nnoremap <Leader>tabs :3match TabLine /[\t]/<CR>
 
 " Navigating
-:nnoremap <C-L> :bn<CR>
-:nnoremap <C-K> :ba<CR>
-:nnoremap <C-J> :b#<CR>
-:nnoremap <C-H> :bp<CR>
+nnoremap <C-l> :bn<CR>
+nnoremap <C-k> :b#<CR>     " Interferes w/ tpl jump
+nnoremap <C-h> :bp<CR>
 
 " New line insert
-:nnoremap <C-j> o<Esc>k
-:nnoremap <C-o> O<Esc>j
+nnoremap <C-n> o<Esc>k
+nnoremap <C-o> O<Esc>j
 
 " Tagbar
 "http://majutsushi.github.io/tagbar/
 "nnoremap <F8> :TagbarToggle<CR>
 
 " Toggle word case-sensitivity
-:inoremap <C-u> <Esc><C-v>B~Ea
-:nnoremap <C-u> viW~E
-:nnoremap <S-u> viw~e
+inoremap <C-u> <Esc><C-v>B~Ea
+nnoremap <C-u> viW~E
+nnoremap <S-u> viw~e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
@@ -117,8 +119,8 @@ augroup END
 
 augroup filetype_css
     au!
-    au BufWritePre,BufRead *.css :normal gg=G
-    au BufWritePre,BufRead *.css setLocal wrap spell
+    au BufWritePre,BufRead *.css normal gg=G
+    au BufWritePre,BufRead *.css setlocal wrap spell
     au FileType css noremap <buffer> <LocalLeader>c ^i/* <Esc><s-a> */<Esc>
     au FileType css noremap <buffer> <LocalLeader>u ^3x<end>xxx
 augroup END
@@ -131,7 +133,7 @@ augroup END
 
 augroup filetype_html
     au!
-    au BufWritePre,BufRead *.html :normal gg=G
+    au BufWritePre,BufRead *.html normal gg=G
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><s-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
 augroup END
@@ -144,7 +146,7 @@ augroup END
 
 augroup filetype_rst
     au!
-    au BufWritePre,BufRead *.rst :setlocal noet
+    au BufWritePre,BufRead *.rst setlocal noet
 augroup END
 
 augroup filetype_vim
@@ -159,7 +161,7 @@ augroup END
 " Directory Browsing "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw, ctags, tagbar
-let g:netrw_winsize = 25
+let gnetrw_winsize = 25
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -32,25 +32,20 @@ Search and Replace
 | \.,.+10 | current position plus 10 lines down |
 +---------+-------------------------------------+
 
-Directory Browsing
-==================
+Directory Browsing (netrw)
+==========================
 :NERDTree: Not needed
+:netrw: Default directory browser
 
-+-------+------------------+
-| Prgm  | Descriptio       |
-+=======+==================+
-| netrw | Default plugin   |
-|       | Ex, Sex, Vex     |
-|       | i - cycle view   |
-|       | :tabnew pwd      |
-+-------+-------+----------+
-| ctags | <C-]> | JMP def  |
-|       | <C-t> | JMP org  |
-+-------+------------------+
-|       | :tags /^pattern* |
-+--------------------------+
-| :ts, :tn: :tp, :tf, :tl  |
-+-------+------------------+
++--------------+---------------------------+
+| Key          | Description               |
++==============+===========================+
+| Ex, Sex, Vex | Explorer, Split, Vertical |
++--------------+---------------------------+
+| i            | cycle through views       |
++--------------+---------------------------+
+| :tabnew path | opens file in new tab     |
++--------------+---------------------------+
 
 Ctags
 -----
@@ -94,20 +89,25 @@ Tell Vim that s should use the *tags* file, which is done by setting the tags se
 | tnext/tn | move to the next tag in list                             |
 +----------+----------------------------------------------------------+
 | tprev/tp | mvoe the the prev tag in list                            |
-+----------+----------------------------------------------------------+
++----------+------+---------------------------------------------------+
+| tags /^pattern* | search for ctag pattern                           |
++-----------------+---------------------------------------------------+
 
 
-Installed Plugins
-=================
+Bash Installations
+==================
 
 :vim-gtk3: For using '+' register for clipboard
-:ctags: for indexing methods, classes, vars, and other ids --storing index in a
-:ctags: tags file.
+:ctags: Quick navigation of programmer's dictionary/keywords
 
 Settings
 ========
 
-so $VIMRUNTIME/syntax/hitest.vim  --shows complete list of color groups
++----------------------------------+---------------------------------------+
+| Vim Command-Line                 |                                       |
++==================================+=======================================+
+| so $VIMRUNTIME/syntax/hitest.vim |  shows complete list of color groups  |
++----------------------------------+---------------------------------------+
 
 Additional Information
 ======================

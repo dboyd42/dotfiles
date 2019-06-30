@@ -24,55 +24,9 @@ source $VIM/abbrev/abbreviations.vim
 source $VIMRUNTIME/menu.vim
 au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Menu and Statusline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Console-Menu
-set cpo-=<
-set wcm=<C-Z>
-map <F4> :emenu <C-Z>
-
-" Enable autocompletion
-set wildmenu            " visual autocomplete for command menu
-set wildmode=longest,list,full
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-" Returns the current branch and an empty string if there is no git repository
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-" Set statusline into a true information bar:
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
-set statusline+=\%F%m%r%h%w
-set statusline+=[FORMAT=%{&ff}]
-set statusline+=\[TYPE=%Y]
-set statusline+=\[ASCII=\%03.3b]
-set statusline+=\[HEX=\%02.2B]
-set statusline+=\[POS=%04l,%04v]
-set statusline+=\[%p%%]
-set statusline+=\[LEN=%L]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
-"   Notes: use '<mode>:unmap' to unmap user key-bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MapLeader default='\' |  LocalLeader effect only certain filetypes
 let mapleader = "-"
@@ -136,8 +90,6 @@ nnoremap <S-u> viw~e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
-"  color-groups: :so $VIMRUNTIME/syntax/hitest.vim
-"  events: http://tech.saigonist.com/b/code/list-all-vim-script-events.html
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FileType "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -240,12 +192,79 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Directory Browsing "
-" netrw, ctags, tagbar"
+" Basics: "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ex, Sex, Vex
+" Use case insensitive search, except when using capital letters
+set backspace=indent,eol,start " Allow backspacing over ai, \n, I
+set ignorecase          " ignores the case of normal letters
+set smartcase           " identifies case specific patterns
+set nomodeline          " disabled due to security vulnerabilities
+set nostartofline       " Off - cursor is kept in the same column
+set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
+set lazyredraw          " redraws screen only when we need to
+set mouse=a             " Enable use of the mouse for all modes
+set expandtab           " tabs are spaces
+set shiftround          " set indent to round to nearest shiftwidth
+set shiftwidth=4
+set softtabstop=4       " number of spaces in tab when editing
+set tabstop=4           " number of visual spaces per TAB, default=8
+set tw=79               " width of document
+
+" Directory Browsing (netrw, ctags, tagbar)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 cnoremap vex Vex
 let g:netrw_winsize = 25
+
+" Files "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoread            " watch for file changes
+set confirm             " Use a dialog when an operation has to be confirmed
+set hidden              " Re-use the same win & switch from unsaved buffers
+set isfname+=32         " Supports filenames with spaces when using gf
+set nocompatible        " compatible makes Vim 99% compatible with vi
+filetype indent plugin on    " load filetype-specific indent files
+filetype on            " enables filetype detection
+
+" Console-Menu "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set cpo-=<
+set wcm=<C-Z>
+map <F4> :emenu <C-Z>
+
+" Enable autocompletion
+set wildmenu            " visual autocomplete for command menu
+set wildmode=longest,list,full
+
+" Statusline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+" Returns the current branch and an empty string if there is no git repository
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+" Set statusline into a true information bar:
+set statusline=
+set statusline+=%#PmenuSel#         " highlight group
+set statusline+=%{StatuslineGit()}  " git branch status
+set statusline+=%#LineNr#           " highlight group
+set statusline+=\ %f                " git directory
+set statusline+=%m\                 " shows '\' in git dirs
+set statusline+=%=                  " Separates statusline
+set statusline+=%#Directory#     " highlight group
+set statusline+=[FORMAT=[%{&ff}]]   " shows format fileType
+set statusline+=\[TYPE=%Y]          " FileType
+set statusline+=\[ASCII=\%03.3b]    " char ascii value
+set statusline+=\[HEX=\%02.2B]      " char hex value
+set statusline+=\[POS=%04l,%04v]    " row, col
+set statusline+=\[%p%%]             " Current percentage position in doc
+set statusline+=\[LEN=%L]
+"set statusline+=%#LineNr#           " highlight group
+"set statusline+=\%F%m%r%h%w         " show local directory
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -265,31 +284,3 @@ set splitbelow splitright " Splits open at bottom and right
 set visualbell          " Use visual bell instead of beeping
 syntax on               " Enable syntax highlighting
 syntax enable           " enable syntax processing      --Colors
-
-" Some basics: "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use case insensitive search, except when using capital letters
-set backspace=indent,eol,start " Allow backspacing over ai, \n, I
-set ignorecase          " ignores the case of normal letters
-set smartcase           " identifies case specific patterns
-set nomodeline          " disabled due to security vulnerabilities
-set nostartofline       " Off - cursor is kept in the same column
-set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
-set lazyredraw          " redraws screen only when we need to
-set mouse=a             " Enable use of the mouse for all modes
-set expandtab           " tabs are spaces
-set shiftround          " set indent to round to nearest shiftwidth
-set shiftwidth=4
-set softtabstop=4       " number of spaces in tab when editing
-set tabstop=4           " number of visual spaces per TAB, default=8
-set tw=79               " width of document
-
-" Files "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autoread            " watch for file changes
-set confirm             " Use a dialog when an operation has to be confirmed
-set hidden              " Re-use the same win & switch from unsaved buffers
-set isfname+=32         " Supports filenames with spaces when using gf
-set nocompatible        " compatible makes Vim 99% compatible with vi
-filetype indent plugin on    " load filetype-specific indent files
-filetype on            " enables filetype detection

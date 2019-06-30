@@ -25,7 +25,7 @@ source $VIMRUNTIME/menu.vim
 au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Menu(s)
+" Menu and Statusline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Console-Menu
 set cpo-=<
@@ -36,8 +36,39 @@ map <F4> :emenu <C-Z>
 set wildmenu            " visual autocomplete for command menu
 set wildmode=longest,list,full
 
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+" Returns the current branch and an empty string if there is no git repository
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
 " Set statusline into a true information bar:
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
+set statusline+=\%F%m%r%h%w
+set statusline+=[FORMAT=%{&ff}]
+set statusline+=\[TYPE=%Y]
+set statusline+=\[ASCII=\%03.3b]
+set statusline+=\[HEX=\%02.2B]
+set statusline+=\[POS=%04l,%04v]
+set statusline+=\[%p%%]
+set statusline+=\[LEN=%L]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping

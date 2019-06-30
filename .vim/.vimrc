@@ -7,6 +7,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! LoadTemplate(extension)
+    silent! :execute '0r $VIM/templates/'.a:extension.'tpl'
+    silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
+endfunction!
+au BufNewFile * silent! call LoadTemplate('%:e')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -42,22 +47,21 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%0
 let mapleader = "-"
 let maplocalleader = "["
 
-" Enwrap selected word/text in quotes // recursive to line 76
+" Enwrap selected word/text in quotes // recursive to line:80
 nmap <Leader>" viWc"<Esc>pf"noh<CR>
 vmap <Leader>" c"<Esc>pf"noh<CR>
 
 " Function Keys
-"  Delete
 noremap  <F10> <Del>
 nnoremap <F6> :set spelllang=en_us<CR>
 
 " Disable old keys (no operation)
-"noremap <Left>  <nop>
-"noremap <Right> <nop>
-"noremap <Up>    <nop>
-"noremap <Down>  <nop>
+noremap <Left>  <nop>
+noremap <Right> <nop>
+noremap <Up>    <nop>
+noremap <Down>  <nop>
 
-" Edit my Vimrc | Source my Vimrc/Abbreviations
+" Edit MYVIMRC | Source MYVIMRC/Abbreviations
 nnoremap <Leader>ev :split $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
 nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
@@ -83,7 +87,7 @@ nnoremap <Leader>tabs :3match TabLine /[\t]/<CR>
 
 " Navigating
 nnoremap <C-l> :bn<CR>
-nnoremap <C-k> :b#<CR>     " Interferes w/ tpl jump
+nnoremap <C-k> :b#<CR>
 nnoremap <C-h> :bp<CR>
 
 " New line insert
@@ -104,22 +108,24 @@ nnoremap <S-u> viw~e
 "  color-groups: :so $VIMRUNTIME/syntax/hitest.vim
 "  events: http://tech.saigonist.com/b/code/list-all-vim-script-events.html
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FileType "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup filetype_all
     au!
+    " Show Tablines
+    au BufRead,InsertLeave * match TabLine /[\t]/
     " Deletes all trailing whitepsace on save
     au BufWritePre * %s/\s\+$//e
 augroup END
 
 augroup filetype_cpp
     au!
-    au BufRead,BufNewFile *.cpp setlocal tw=80
     au FileType cpp noremap <buffer> <LocalLeader>c I// <Esc>
     au FileType cpp noremap <buffer> <LocalLeader>u 03x<Esc>
 augroup END
 
 augroup filetype_css
     au!
-    au BufRead,BufNewFile *.css setlocal tw=80
     au BufWritePre,BufRead *.css normal gg=G
     au FileType css noremap <buffer> <LocalLeader>c ^i/* <Esc><s-a> */<Esc>
     au FileType css noremap <buffer> <LocalLeader>u ^3x<end>xxx
@@ -127,15 +133,14 @@ augroup END
 
 augroup filetype_javascript
     au!
-    au BufRead,BufNewFile *.javascript setlocal tw=80
     au FileType javascript noremap <buffer> <LocalLeader>c I//<Esc>
     au FileType javascript noremap <buffer> <LocalLeader>u 02x<Esc>
 augroup END
 
 augroup filetype_html
     au!
-    au BufRead,BufNewFile * setlocal shiftwidth=2 softtabstop=2
-    au BufWritePre,BufRead *.html normal gg=G       " Align text
+    au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
+    au BufWritePre,BufRead *.html normal gg=G
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><s-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
     au FileType html inoremap <strong> <strong></strong><Esc>%i
@@ -162,35 +167,60 @@ augroup END
 
 augroup filetype_python
     au!
-    au BufRead,BufNewFile *.python setlocal tw=80
+    au BufWritePre * %s/\s\+$//e
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u 0x<Esc>
 augroup END
 
 augroup filetype_rst
     au!
-    au BufRead,BufNewFile *.rst setlocal tw=80
-    au BufWritePre,BufRead *.rst setlocal noet
+    au BufRead,BufNewFile *.rst setlocal noet
 augroup END
 
 augroup filetype_vim
     au!
+    au BufWritePre * %s/\s\+$//e
     au FileType vim noremap <buffer> <LocalLeader>c I"<Esc>
     au FileType vim noremap <buffer> <LocalLeader>u ^x<Esc>
 augroup END
+
+" Highlight ExtraWhitespace "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+highlight ExtraWhitespace ctermbg=red guibg=red
+augroup WhitespaceMatch
+  " Remove ALL autocommands for the WhitespaceMatch group.
+  autocmd!
+  autocmd BufWinEnter * let w:whitespace_match_number =
+        \ matchadd('ExtraWhitespace', '\s\+$')
+  autocmd InsertEnter * call s:ToggleWhitespaceMatch('i')
+  autocmd InsertLeave * call s:ToggleWhitespaceMatch('n')
+augroup END
+function! s:ToggleWhitespaceMatch(mode)
+  let pattern = (a:mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
+  if exists('w:whitespace_match_number')
+    call matchdelete(w:whitespace_match_number)
+    call matchadd('ExtraWhitespace', pattern, 10, w:whitespace_match_number)
+  else
+    " Something went wrong, try to be graceful.
+    let w:whitespace_match_number =  matchadd('ExtraWhitespace', pattern)
+  endif
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Directory Browsing "
+" netrw, ctags, tagbar"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" netrw, ctags, tagbar
-let gnetrw_winsize = 25
+" Ex, Sex, Vex
+cnoremap vex Vex
+let g:netrw_winsize = 25
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set autoread            " watch for file changes
 set cmdheight=2         " Set the command window height to 2 lines
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
 set cursorline          " highlight current line
 set hlsearch            " highlight search matches
 set laststatus=2        " Display the status line
@@ -217,15 +247,18 @@ set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
 set lazyredraw          " redraws screen only when we need to
 set mouse=a             " Enable use of the mouse for all modes
 set expandtab           " tabs are spaces
+set shiftround          " set indent to round to nearest shiftwidth
 set shiftwidth=4
 set softtabstop=4       " number of spaces in tab when editing
 set tabstop=4           " number of visual spaces per TAB, default=8
+set tw=79               " width of document
 
 " Files "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoread            " watch for file changes
 set confirm             " Use a dialog when an operation has to be confirmed
 set hidden              " Re-use the same win & switch from unsaved buffers
 set isfname+=32         " Supports filenames with spaces when using gf
 set nocompatible        " compatible makes Vim 99% compatible with vi
 filetype indent plugin on    " load filetype-specific indent files
-filetype on             " enables filetype detection
+filetype on            " enables filetype detection

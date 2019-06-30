@@ -1,5 +1,6 @@
 # Compiling
 alias com='g++ -std=c++1z -o main *.cpp'
+alias compy='chmod u+x *.py'
 
 # Directorys
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'

@@ -1,13 +1,18 @@
 <!-- Copyright 2019 David Boyd 2019 David Boyd, all rights reserved -->
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title><+TITLE+></title>
+    <title>+</title>
     <meta charset="UTF-8">
-    <meta name="generator" content="<+GENERATOR+>"/>
-    <meta name="author" content="<+AUTHOR+>"/>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+
   <body>
-    <p><+CONTENT+></p>
+
+    <h1>+</h1>
+    <p>+</p>
+
   </body>
 </html>

@@ -6,6 +6,15 @@ Vim Reference
 Keystrokes
 ==========
 
+Basics
+--------
+
++-------+---------------------------+
+| Key   | Description               |
++=======+===========================+
+| :sort | sorts selected text alpha |
++-------+---------------------------+
+
 Search and Replace
 ------------------
 
@@ -55,9 +64,12 @@ Installed Plugins
 :ctags: for indexing methods, classes, vars, and other ids --storing index in a
 :ctags: tags file.
 
+Settings
+========
+
+so $VIMRUNTIME/syntax/hitest.vim  --shows complete list of color groups
 Additional Information
 ======================
 
-:Snippets: Luke Smith on YouTube/GitHub
 :Ctags: https://andrew.stwrt.ca/posts/vim-ctags/
 :Tagbar: http://majutsushi.github.io/tagbar/ nnoremap <F8> :TagbarToggle<CR>

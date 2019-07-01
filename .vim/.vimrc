@@ -7,15 +7,23 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! LoadTemplate(extension)
-    silent! :execute '0r $VIM/templates/'.a:extension.'tpl'
-    silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
-endfunction!
-au BufNewFile * silent! call LoadTemplate('%:e')
+"function! LoadTemplate(extension)
+    "silent! :execute '0r $VIM/templates/'.a:extension.'tpl'
+    "silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
+"endfunction!
+"au BufNewFile * silent! call LoadTemplate('%:e')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set nocompatible
+"filetype off
+"" set runtime path to vundle
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'editorconfig/editorconfig-vim'
+"call vundle#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sources
@@ -195,6 +203,9 @@ endfunction
 " Basics: "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use case insensitive search, except when using capital letters
+set autoindent          " copies current indent on newline
+                        "  uses same indent when textwidth is reached
+set smartindent         " smart ai when starting newline
 set backspace=indent,eol,start " Allow backspacing over ai, \n, I
 set ignorecase          " ignores the case of normal letters
 set smartcase           " identifies case specific patterns

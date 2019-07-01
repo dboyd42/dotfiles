@@ -7,23 +7,51 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open website as html doc in Vim
+"au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
 "function! LoadTemplate(extension)
     "silent! :execute '0r $VIM/templates/'.a:extension.'tpl'
     "silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
 "endfunction!
 "au BufNewFile * silent! call LoadTemplate('%:e')
-
+"function! Browser ()
+  "let line = getline (".")
+  "let line = matchstr (line, "\%(http://\|www\.\)[^ ,;\t]*")
+  "exec "!firefox ".line
+"endfunction
+"map <Leader>w :call Browser ()<CR>
+"function! Browser ()
+  "let line0 = getline (".")
+  "let line = matchstr (line0, "http[^ ]*")
+  ":if line==""
+  "let line = matchstr (line0, "ftp[^ ]*")
+  ":endif
+  ":if line==""
+  "let line = matchstr (line0, "file[^ ]*")
+  ":endif
+  "" echo line
+  "exec ":silent !mozilla ".line
+"endfunction
+"map \w :call Browser ()<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" Plugins --Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set nocompatible
-"filetype off
-"" set runtime path to vundle
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'editorconfig/editorconfig-vim'
-"call vundle#end()
+set nocompatible        " be iMporved, required
+filetype off            " required
+set rtp+=~/.vim/bundle/Vundle.vim    " set runtime path to vundle
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
+Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
+Plugin 'dhruvasagar/vim-table-mode' " rst table mode
+Plugin 'flazz/vim-colorschemes'     " additional colorschemes
+Plugin 'tpope/vim-fugitive'         " Git wrapper
+Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
+Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
+Plugin 'SirVer/ultisnips'           " Snippets
+Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
+Plugin 'vim-airline/vim-airline'    " statusline
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sources
@@ -31,7 +59,6 @@
 source $VIM/abbrev/abbreviations.vim
 source $VIMRUNTIME/menu.vim
 au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
@@ -232,9 +259,9 @@ set autoread            " watch for file changes
 set confirm             " Use a dialog when an operation has to be confirmed
 set hidden              " Re-use the same win & switch from unsaved buffers
 set isfname+=32         " Supports filenames with spaces when using gf
-set nocompatible        " compatible makes Vim 99% compatible with vi
-filetype indent plugin on    " load filetype-specific indent files
-filetype on            " enables filetype detection
+"set nocompatible        " compatible makes Vim 99% compatible with vi
+"filetype indent plugin on    " load filetype-specific indent files
+"filetype on            " enables filetype detection
 
 " Console-Menu "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

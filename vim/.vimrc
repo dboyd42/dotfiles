@@ -110,6 +110,15 @@ inoremap <C-U> <Esc><C-V>B~Ea
 nnoremap <C-U> viW~E
 nnoremap <S-U> viw~e
 
+" Surround Visual-Text  " Makes up for what Vim-Surround is lacking
+vnoremap <Leader>** c****<Esc>2hp<Esc>
+vnoremap <Leader>*<CR> c**<Esc>hp<Esc>
+vnoremap <Leader>" c""<Esc>hp<Esc>
+vnoremap <Leader>' c''<Esc>hp<Esc>
+vnoremap <Leader>( c()<Esc>hp<Esc>
+vnoremap <Leader>[ c[]<Esc>hp<Esc>
+vnoremap <Leader>{ c{}<Esc>hp<Esc>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

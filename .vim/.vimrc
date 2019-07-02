@@ -7,8 +7,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open website as html doc in Vim
-"au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
 "function! LoadTemplate(extension)
     "silent! :execute '0r $VIM/templates/'.a:extension.'tpl'
     "silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
@@ -36,10 +34,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins --Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible        " be iMporved, required
-filetype off            " required
-set rtp+=~/.vim/bundle/Vundle.vim    " set runtime path to vundle
-call vundle#begin()
+set nocompatible                    " be iMporved, required
+filetype off                        " required
+set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path to vundle
+call vundle#begin()                 " required
 Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
 Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
 Plugin 'dhruvasagar/vim-table-mode' " rst table mode
@@ -50,8 +48,8 @@ Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
 Plugin 'SirVer/ultisnips'           " Snippets
 Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
 Plugin 'vim-airline/vim-airline'    " statusline
-call vundle#end()            " required
-filetype plugin indent on    " required
+call vundle#end()                   " required
+filetype plugin indent on           " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sources
@@ -66,10 +64,6 @@ au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
 " MapLeader default='\' |  LocalLeader effect only certain filetypes
 let mapleader = "-"
 let maplocalleader = "["
-
-" Enwrap selected word/text in quotes // recursive to line:80
-nmap <Leader>" viWc"<Esc>pf"noh<CR>
-vmap <Leader>" c"<Esc>pf"noh<CR>
 
 " Function Keys
 noremap  <F10> <Del>
@@ -90,20 +84,11 @@ nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 inoremap <C-j> <Right>
 inoremap <C-l> <End>
 
-" Jump between .tpl placeholders
-"nnoremap <C-j> /<+.\{-1,}+<CR>c/+/>/e<CR>
-
 " Make braces auto closing
-inoremap {<CR> {<CR>}<Esc>O
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-
-" Match Groups
-"   Reset matches: :match none
-nnoremap <Leader>colwarn :3match LineNr /\%>74v.\+/<CR>
-nnoremap <Leader>colmax :3match ColorColumn /\%>80v.\+/<CR>
-nnoremap <Leader>tabs :3match TabLine /[\t]/<CR>
+"inoremap {<CR> {<CR>}<Esc>O
+"inoremap [ []<Left>
+"inoremap ( ()<Left>
+"inoremap " ""<Left>
 
 " Navigating
 nnoremap <C-l> :bn<CR>
@@ -157,6 +142,8 @@ augroup END
 
 augroup filetype_html
     au!
+    " Open website as html doc in Vim
+    au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
     au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
     au BufWritePre,BufRead *.html normal gg=G
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><s-a>--><esc>

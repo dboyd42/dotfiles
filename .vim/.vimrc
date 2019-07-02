@@ -39,15 +39,15 @@ filetype off                        " required
 set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path to vundle
 call vundle#begin()                 " required
 Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
+Plugin 'SirVer/ultisnips'           " Snippets
 Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
 Plugin 'dhruvasagar/vim-table-mode' " rst table mode
 Plugin 'flazz/vim-colorschemes'     " additional colorschemes
 Plugin 'tpope/vim-fugitive'         " Git wrapper
 Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
 Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
-Plugin 'SirVer/ultisnips'           " Snippets
-Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
 Plugin 'vim-airline/vim-airline'    " statusline
+Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
 call vundle#end()                   " required
 filetype plugin indent on           " required
 
@@ -66,8 +66,10 @@ let mapleader = "-"
 let maplocalleader = "["
 
 " Function Keys
-noremap  <F10> <Del>
-nnoremap <F6> :set spelllang=en_us<CR>
+nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
+
+" Delete character -- '@' = <Space>
+inoremap <C-@> <Del>
 
 " Disable old keys (no operation)
 noremap <Left>  <nop>
@@ -75,38 +77,38 @@ noremap <Right> <nop>
 noremap <Up>    <nop>
 noremap <Down>  <nop>
 
-" Edit MYVIMRC | Source MYVIMRC/Abbreviations
+" Edit MYVIMRC | Source MYVIMRC & Abbreviations
 nnoremap <Leader>ev :split $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
 nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 
 " Jump over braces/string
-inoremap <C-j> <Right>
-inoremap <C-l> <End>
+inoremap <C-J> <Right>
+inoremap <C-L> <End>
 
 " Make braces auto closing
-"inoremap {<CR> {<CR>}<Esc>O
-"inoremap [ []<Left>
-"inoremap ( ()<Left>
-"inoremap " ""<Left>
+inoremap {<CR> {<CR>}<Esc>O
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
 
 " Navigating
-nnoremap <C-l> :bn<CR>
-nnoremap <C-k> :b#<CR>
-nnoremap <C-h> :bp<CR>
+nnoremap <C-L> :bn<CR>
+nnoremap <C-K> :b#<CR>
+nnoremap <C-H> :bp<CR>
 
 " New line insert
-nnoremap <C-n> o<Esc>k
-nnoremap <C-o> O<Esc>j
+nnoremap <C-N> o<Esc>k
+nnoremap <C-O> O<Esc>j
 
 " Tagbar
 "http://majutsushi.github.io/tagbar/
 "nnoremap <F8> :TagbarToggle<CR>
 
 " Toggle word case-sensitivity
-inoremap <C-u> <Esc><C-v>B~Ea
-nnoremap <C-u> viW~E
-nnoremap <S-u> viw~e
+inoremap <C-U> <Esc><C-V>B~Ea
+nnoremap <C-U> viW~E
+nnoremap <S-U> viw~e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
@@ -130,7 +132,7 @@ augroup END
 augroup filetype_css
     au!
     au BufWritePre,BufRead *.css normal gg=G
-    au FileType css noremap <buffer> <LocalLeader>c ^i/* <Esc><s-a> */<Esc>
+    au FileType css noremap <buffer> <LocalLeader>c ^i/* <Esc><S-a> */<Esc>
     au FileType css noremap <buffer> <LocalLeader>u ^3x<end>xxx
 augroup END
 
@@ -146,7 +148,7 @@ augroup filetype_html
     au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
     au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
     au BufWritePre,BufRead *.html normal gg=G
-    au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><s-a>--><esc>
+    au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><S-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
     au FileType html inoremap <strong> <strong></strong><Esc>%i
     au FileType html inoremap <em> <em></em><Esc>%i
@@ -237,7 +239,8 @@ set tw=79               " width of document
 
 " Directory Browsing (netrw, ctags, tagbar)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-cnoremap vex Vex
+cnoremap vsb vertical sb
+cnoremap vex Vex<CR>
 let g:netrw_winsize = 25
 
 " Files "
@@ -259,37 +262,6 @@ map <F4> :emenu <C-Z>
 " Enable autocompletion
 set wildmenu            " visual autocomplete for command menu
 set wildmode=longest,list,full
-
-" Statusline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-" Returns the current branch and an empty string if there is no git repository
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-" Set statusline into a true information bar:
-set statusline=
-set statusline+=%#PmenuSel#         " highlight group
-set statusline+=%{StatuslineGit()}  " git branch status
-set statusline+=%#LineNr#           " highlight group
-set statusline+=\ %f                " git directory
-set statusline+=%m\                 " shows '\' in git dirs
-set statusline+=%=                  " Separates statusline
-set statusline+=%#Directory#     " highlight group
-set statusline+=[FORMAT=[%{&ff}]]   " shows format fileType
-set statusline+=\[TYPE=%Y]          " FileType
-set statusline+=\[ASCII=\%03.3b]    " char ascii value
-set statusline+=\[HEX=\%02.2B]      " char hex value
-set statusline+=\[POS=%04l,%04v]    " row, col
-set statusline+=\[%p%%]             " Current percentage position in doc
-set statusline+=\[LEN=%L]
-"set statusline+=%#LineNr#           " highlight group
-"set statusline+=\%F%m%r%h%w         " show local directory
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

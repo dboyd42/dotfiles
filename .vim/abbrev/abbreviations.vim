@@ -11,6 +11,7 @@
 :iabbr waht what
 :iabbr tehn then
 :iabbr whihc which
+:iabbr flaot float
 
 " Simple templates for programming:
 

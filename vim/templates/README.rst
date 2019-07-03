@@ -3,7 +3,7 @@ Vim-Templates
 :Author: David Boyd
 :Date: SU 2019
 
-If using $VIM path, invoke link command as super user::
+**If using $VIM path, invoke link command as super user**::
 
 	sudo ln -s ~/path/to/remote/file.tpl
 	~/../../usr/share/vim/templates/file.tpl

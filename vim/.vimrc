@@ -47,6 +47,7 @@ Plugin 'tpope/vim-fugitive'         " Git wrapper
 Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
 Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
 Plugin 'vim-airline/vim-airline'    " statusline
+Plugin 'vim-airline/vim-airline-themes'    " statusline-themes
 Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
 call vundle#end()                   " required
 filetype plugin indent on           " required

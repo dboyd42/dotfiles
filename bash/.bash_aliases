@@ -10,6 +10,9 @@ alias compy='chmod u+x *.py'
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
 alias VIM='cd ~/../../usr/share/vim/'
 
+# Files
+alias vR='vim README.rst'
+
 # Git
 alias ga='git add'
 alias gaR='git add README.rst; git commit -m "updated"; git push'

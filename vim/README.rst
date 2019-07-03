@@ -26,20 +26,18 @@ File Locations
 | :so $VIMRUNTIME/syntax/hitest.vim          |  shows complete list of color groups  |
 +--------------------------------------------+---------------------------------------+
 
-Vim Shorcuts
-============
-
-+----------+---------------------------------------------------------------+
-| Command  | Description                                                   |
-+==========+===============================================================+
-| :bufdo w | write each buffer to disk (whether buffer was changed or not) |
-+----------+---------------------------------------------------------------+
-
 Plugins
 =======
 
-Fugitive
---------
-A Git wrapper.
-
-
++----------+---------------+
+| Program  | Plugin        |
++==========+===============+
+| Vim_     | - Airline_    |
++----------+ - Ale_        |
+|          | - CtrlP_      |
+|          | - Fugitive_   |
+|          | - Surround_   |
+|          | - Table-mode_ |
+|          | - Ultisnips_  |
+|          | - Vinegar_    |
++----------+---------------+

@@ -5,8 +5,7 @@ Vim-Templates
 
 **If using $VIM path, invoke link command as super user**::
 
-	sudo ln -s ~/path/to/remote/file.tpl
-	~/../../usr/share/vim/templates/file.tpl
+	sudo ln -s ~/path/to/remote/file.tpl ~/../../usr/share/vim/templates/file.tpl
 
 If reversed paths generate a black template:
 

@@ -112,7 +112,7 @@ nnoremap <C-U> viW~E
 nnoremap <S-U> viw~e
 
 " Surround Visual-Text  " Makes up for what Vim-Surround is lacking
-vnoremap <LocalLeader>2* c****<Esc>2hp<Esc>
+vnoremap <LocalLeader>** c****<Esc>2hp<Esc>
 vnoremap <LocalLeader>*<CR> c**<Esc>hp<Esc>
 vnoremap <LocalLeader>" c""<Esc>hp<Esc>
 vnoremap <LocalLeader>' c''<Esc>hp<Esc>
@@ -192,6 +192,8 @@ augroup END
 augroup filetype_rst
     au!
     au BufRead,BufNewFile *.rst setlocal noet
+    au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
+    au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
 augroup END
 
 augroup filetype_vim

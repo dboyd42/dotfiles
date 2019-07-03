@@ -1,3 +1,7 @@
+# Bash
+alias l='ls -lh --color'
+alias ll='ls -lha --color'
+
 # Compiling
 alias com='g++ -std=c++1z -o main *.cpp'
 alias compy='chmod u+x *.py'
@@ -10,7 +14,7 @@ alias VIM='cd ~/../../usr/share/vim/'
 alias gaR='git add README.rst; git commit -m "updated"; git push'
 alias gas='git add .; git status'
 alias gc='git commit -m'
-alias gcip='git commit -m 'initial commit'; git push'
+alias gcip='git commit -m "initial commit"; git push'
 alias gco='git checkout -b'
 alias gcp='git commit -m "updated"; git push'
 alias githard='git reset --hard origin/master'

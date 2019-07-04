@@ -7,12 +7,14 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" Tagbar
+"http://majutsushi.github.io/tagbar/
+"nnoremap <F8> :TagbarToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins --Vundle configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible                    " be iMporved, required
+set nocompatible                    " Compatible makes Vim 99% compatible with vi
 filetype off                        " required
 set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path to vundle
 call vundle#begin()                 " required
@@ -21,6 +23,7 @@ Plugin 'SirVer/ultisnips'           " Snippets
 Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
 Plugin 'dhruvasagar/vim-table-mode' " rst table mode
 Plugin 'scrooloose/nerdtree'        " File system explorer
+Plugin 'sjl/gundo.vim'              " Visualize your Vim undo tree
 Plugin 'flazz/vim-colorschemes'     " additional colorschemes
 Plugin 'tpope/vim-fugitive'         " Git wrapper
 Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
@@ -46,27 +49,11 @@ autocmd BufNewFile * silent! call LoadTemplate('%:e')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MapLeader default='\' |  LocalLeader effect only certain filetypes
-"let mapleader =
+"let mapleader = '\' 
 let maplocalleader = "["
 
-" Function Keys
-nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
-
-" Delete character -- '@' = <Space>
-inoremap <C-d> <Del>
-
-" Disable old keys (no operation)
-noremap <Left>  <nop>
-noremap <Right> <nop>
-noremap <Up>    <nop>
-noremap <Down>  <nop>
-
-" Edit MYVIMRC | Source MYVIMRC & Abbreviations
-nnoremap <Leader>ev :split $MYVIMRC<CR>
-nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
-nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
-
+" Autocomplete "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make braces auto closing
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
@@ -76,13 +63,6 @@ inoremap " ""<Left>
 " New line insert
 nnoremap <C-n> o<Esc>k
 nnoremap <C-o> O<Esc>j
-
-" Opens the URL under the cursor (Linux)
-nnoremap <leader>w :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-
-" Tagbar
-"http://majutsushi.github.io/tagbar/
-"nnoremap <F8> :TagbarToggle<CR>
 
 " Toggle word case-sensitivity
 inoremap <C-u> <Esc><C-V>B~Ea
@@ -98,7 +78,49 @@ vnoremap <LocalLeader>( c()<Esc>hp<Esc>
 vnoremap <LocalLeader>[ c[]<Esc>hp<Esc>
 vnoremap <LocalLeader>{ c{}<Esc>hp<Esc>
 
-" Navigating 
+" Directory Browsing (NERDTree, netrw, ctags, tagbar) "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cnoremap nerd NERDTree
+cnoremap vsb vertical sb
+cnoremap vex Vex<CR>
+
+" Files "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Edit MYVIMRC | Source MYVIMRC & Abbreviations
+nnoremap <Leader>ev :split $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
+nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
+
+" Opens the URL under the cursor (Linux)
+nnoremap <leader>w :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+cnoremap W w !sudo tee % > /dev/null
+
+" Folding "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Space open/closes folds
+nnoremap <Space> za
+
+" Misc "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Delete character on cursor
+inoremap <C-d> <Del>
+
+" Disable old keys (no operation)
+noremap <Left>  <nop>
+noremap <Right> <nop>
+noremap <Up>    <nop>
+noremap <Down>  <nop>
+
+" Toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+" Toggle spell
+nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
+
+" Navigating "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Buffers
 nnoremap <C-L> :bn<CR>
@@ -113,11 +135,24 @@ inoremap <C-e> <End>
 inoremap <C-j> <C-W>j
 inoremap <C-k> <C-W>k
 
+" Jump vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
 " Navigating Windows
 nnoremap <M-j> <C-W>j
 nnoremap <M-k> <C-W>k
 nnoremap <M-h> <C-W>h
 nnoremap <M-l> <C-W>l
+
+" Search "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn off search highligh
+nnoremap <leader><Space> :nohlsearch<CR>
+
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
@@ -237,20 +272,26 @@ set smartcase           " identifies case specific patterns
 set nomodeline          " disabled due to security vulnerabilities
 set nostartofline       " Off - cursor is kept in the same column
 set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
-set lazyredraw          " redraws screen only when we need to
 set mouse=a             " Enable use of the mouse for all modes
 set expandtab           " tabs are spaces
 set shiftround          " set indent to round to nearest shiftwidth
 set shiftwidth=4
 set softtabstop=4       " number of spaces in tab when editing
-set tabstop=4           " number of visual spaces per TAB, default=8
+set tabstop=4           " number of visual spaces per TAB
 set tw=79               " width of document
+set encoding=utf8       " standard encoding and standard language
+
+" Console-Menu "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set cpo-=<
+set wcm=<C-Z>
+map <F4> :emenu <C-Z>
+
+" Visual autocomplete for command menu
+set wildmode=longest,list,full
 
 " Directory Browsing (NERDTree, netrw, ctags, tagbar) "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-cnoremap nerd NERDTree
-cnoremap vsb vertical sb
-cnoremap vex Vex<CR>
 let g:netrw_winsize = 25
 
 " Files "
@@ -259,32 +300,34 @@ set autoread            " watch for file changes
 set confirm             " Use a dialog when an operation has to be confirmed
 set hidden              " Re-use the same win & switch from unsaved buffers
 set isfname+=32         " Supports filenames with spaces when using gf
-"set nocompatible        " compatible makes Vim 99% compatible with vi
-"filetype indent plugin on    " load filetype-specific indent files
-"filetype on            " enables filetype detection
+"filetype indent plugin on    " load filetype-specific indent files !=Vundle
+"filetype on            " enables filetype detection !=Vundle
 
-" Console-Menu "
+" Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set cpo-=<
-set wcm=<C-Z>
-map <F4> :emenu <C-Z>
+set foldenable          " Enable folding
+set foldlevelstart=10   " Open most folds by default
+set foldnestmax=10      " 10 nested fold max
+set foldmethod=indent   " fold based on indent level
 
-" Enable autocompletion
-set wildmenu            " visual autocomplete for command menu
-set wildmode=longest,list,full
+" Searching "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set incsearch           " search as characters are entered
+set hlsearch            " highlight search matches
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cmdheight=2         " Set the command window height to 2 lines
-set colorcolumn=80
+set colorcolumn=80      " highlight column number
 highlight ColorColumn ctermbg=233
 set cursorline          " highlight current line
-set hlsearch            " highlight search matches
 set laststatus=2        " Display the status line
+set lazyredraw          " redraws screen only when we need to --faster macros
 set matchtime=1         " decisec to showmatch ([{}]) | default=5
 set number              " display current line number on Left
 set numberwidth=4       " n cols to use for the line number
-set showcmd             " show partial commands in bottom bar
+"set rnu                 " relative numbers
+"set showcmd             " show partial commands in bottom bar !=Airline
 set showmatch           " highlight matching [{()}]
 set showmode            " show INSERT, VISUAL, etc
 set splitbelow splitright " Splits open at bottom and right

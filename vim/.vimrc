@@ -91,9 +91,6 @@ nnoremap <Leader>ev :split $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
 nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 
-" Opens the URL under the cursor (Linux)
-nnoremap <leader>w :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
-
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 cnoremap W w !sudo tee % > /dev/null
@@ -294,6 +291,10 @@ set wildmode=longest,list,full
 
 " Directory Browsing (NERDTree, netrw, ctags, tagbar) "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Show hidden files
+let NERDTreeShowHidden=1
+
+" Default window size
 let g:netrw_winsize = 25
 
 " Files "

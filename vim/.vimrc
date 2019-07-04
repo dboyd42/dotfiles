@@ -10,11 +10,12 @@
 " Tagbar
 "http://majutsushi.github.io/tagbar/
 "nnoremap <F8> :TagbarToggle<CR>
+"Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins --Vundle configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible                    " Compatible makes Vim 99% compatible with vi
+set nocompatible                    " Compatible makes Vim 99% compatible w/ vi
 filetype off                        " required
 set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path to vundle
 call vundle#begin()                 " required
@@ -27,7 +28,6 @@ Plugin 'sjl/gundo.vim'              " Visualize your Vim undo tree
 Plugin 'flazz/vim-colorschemes'     " additional colorschemes
 Plugin 'tpope/vim-fugitive'         " Git wrapper
 Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
-Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
 Plugin 'vim-airline/vim-airline'    " statusline
 Plugin 'vim-airline/vim-airline-themes'    " statusline-themes
 Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
@@ -78,9 +78,9 @@ vnoremap <LocalLeader>( c()<Esc>hp<Esc>
 vnoremap <LocalLeader>[ c[]<Esc>hp<Esc>
 vnoremap <LocalLeader>{ c{}<Esc>hp<Esc>
 
-" Directory Browsing (NERDTree, netrw, ctags, tagbar) "
+" Directory Browsing (NERDTreeDTreerw, ctags, tagbar) "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-cnoremap nerd NERDTree
+nnoremap -- :NERDTree<CR>
 cnoremap vsb vertical sb
 cnoremap vex Vex<CR>
 

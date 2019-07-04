@@ -34,6 +34,16 @@ Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
 call vundle#end()                   " required
 filetype plugin indent on           " required
 
+" Settings "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make Gundo work with Python 3
+if has ('python3')
+    let g:gundo_prefer_python3 = 1
+endif
+
+" Show hidden files
+let NERDTreeShowHidden=1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sources
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -291,9 +301,6 @@ set wildmode=longest,list,full
 
 " Directory Browsing (NERDTree, netrw, ctags, tagbar) "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Show hidden files
-let NERDTreeShowHidden=1
-
 " Default window size
 let g:netrw_winsize = 25
 

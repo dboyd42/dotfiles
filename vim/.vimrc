@@ -40,8 +40,8 @@ filetype plugin indent on           " required
 source $VIM/abbrev/abbreviations.vim
 source $VIMRUNTIME/menu.vim
 function! LoadTemplate(extension)
- silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
- silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
+    silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
+    silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
 endfunction
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 "au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
@@ -49,7 +49,7 @@ autocmd BufNewFile * silent! call LoadTemplate('%:e')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let mapleader = '\' 
+"let mapleader = '\'
 let maplocalleader = "["
 
 " Autocomplete "
@@ -94,7 +94,7 @@ nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 " Opens the URL under the cursor (Linux)
 nnoremap <leader>w :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 
-" :W sudo saves the file 
+" :W sudo saves the file
 " (useful for handling the permission-denied error)
 cnoremap W w !sudo tee % > /dev/null
 
@@ -239,22 +239,22 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight ExtraWhitespace ctermbg=red guibg=red
 augroup WhitespaceMatch
-  " Remove ALL autocommands for the WhitespaceMatch group.
-  autocmd!
-  autocmd BufWinEnter * let w:whitespace_match_number =
-        \ matchadd('ExtraWhitespace', '\s\+$')
-  autocmd InsertEnter * call s:ToggleWhitespaceMatch('i')
-  autocmd InsertLeave * call s:ToggleWhitespaceMatch('n')
+    " Remove ALL autocommands for the WhitespaceMatch group.
+    autocmd!
+    autocmd BufWinEnter * let w:whitespace_match_number =
+                \ matchadd('ExtraWhitespace', '\s\+$')
+    autocmd InsertEnter * call s:ToggleWhitespaceMatch('i')
+    autocmd InsertLeave * call s:ToggleWhitespaceMatch('n')
 augroup END
 function! s:ToggleWhitespaceMatch(mode)
-  let pattern = (a:mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
-  if exists('w:whitespace_match_number')
-    call matchdelete(w:whitespace_match_number)
-    call matchadd('ExtraWhitespace', pattern, 10, w:whitespace_match_number)
-  else
-    " Something went wrong, try to be graceful.
-    let w:whitespace_match_number =  matchadd('ExtraWhitespace', pattern)
-  endif
+    let pattern = (a:mode == 'i') ? '\s\+\%#\@<!$' : '\s\+$'
+    if exists('w:whitespace_match_number')
+        call matchdelete(w:whitespace_match_number)
+        call matchadd('ExtraWhitespace', pattern, 10, w:whitespace_match_number)
+    else
+        " Something went wrong, try to be graceful.
+        let w:whitespace_match_number =  matchadd('ExtraWhitespace', pattern)
+    endif
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -264,8 +264,8 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use case insensitive search, except when using capital letters
 set autoindent          " copies current indent on newline
-                        "  uses same indent when textwidth is reached
-set smartindent         " indentations are based off FileType 
+"  uses same indent when textwidth is reached
+set smartindent         " indentations are based off FileType
 set backspace=indent,eol,start " Allow backspacing over ai, \n, I
 set ignorecase          " ignores the case of normal letters
 set smartcase           " identifies case specific patterns

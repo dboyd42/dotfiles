@@ -165,8 +165,6 @@ augroup filetype_all
     au BufRead,InsertLeave * match TabLine /[\t]/
     " Deletes all trailing whitepsace on save
     au BufWritePre * %s/\s\+$//e
-    " Indent Files
-    au BufWritePre,BufRead * normal gg=G
     " Make gf work for a URL.  I.e.) file:///C:/myfile.txt
     au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
 augroup END
@@ -192,6 +190,8 @@ augroup END
 augroup filetype_html
     au!
     au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
+    " Indent Files
+    au BufWritePre,BufRead *.html normal gg=G
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><S-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
     au FileType html inoremap <strong> <strong></strong><Esc>%i
@@ -218,6 +218,8 @@ augroup END
 
 augroup filetype_python
     au!
+    " Indent Files
+    au BufWritePre,BufRead *.py normal gg=G
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u 0x<Esc>
 augroup END
@@ -300,8 +302,6 @@ set autoread            " watch for file changes
 set confirm             " Use a dialog when an operation has to be confirmed
 set hidden              " Re-use the same win & switch from unsaved buffers
 set isfname+=32         " Supports filenames with spaces when using gf
-"filetype indent plugin on    " load filetype-specific indent files !=Vundle
-"filetype on            " enables filetype detection !=Vundle
 
 " Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

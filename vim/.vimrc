@@ -7,32 +7,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"function! LoadTemplate(extension)
-    "silent! :execute '0r $VIM/templates/'.a:extension.'tpl'
-    "silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
-"endfunction!
-"au BufNewFile * silent! call LoadTemplate('%:e')
-"function! Browser ()
-  "let line = getline (".")
-  "let line = matchstr (line, "\%(http://\|www\.\)[^ ,;\t]*")
-  "exec "!firefox ".line
-"endfunction
-"map <Leader>w :call Browser ()<CR>
-"function! Browser ()
-  "let line0 = getline (".")
-  "let line = matchstr (line0, "http[^ ]*")
-  ":if line==""
-  "let line = matchstr (line0, "ftp[^ ]*")
-  ":endif
-  ":if line==""
-  "let line = matchstr (line0, "file[^ ]*")
-  ":endif
-  "" echo line
-  "exec ":silent !mozilla ".line
-"endfunction
-"map \w :call Browser ()<CR>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins --Vundle
+" Plugins --Vundle configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible                    " be iMporved, required
 filetype off                        " required
@@ -42,6 +20,7 @@ Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
 Plugin 'SirVer/ultisnips'           " Snippets
 Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
 Plugin 'dhruvasagar/vim-table-mode' " rst table mode
+Plugin 'scrooloose/nerdtree'        " File system explorer
 Plugin 'flazz/vim-colorschemes'     " additional colorschemes
 Plugin 'tpope/vim-fugitive'         " Git wrapper
 Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
@@ -57,7 +36,12 @@ filetype plugin indent on           " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $VIM/abbrev/abbreviations.vim
 source $VIMRUNTIME/menu.vim
-au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
+function! LoadTemplate(extension)
+ silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
+ silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
+endfunction
+autocmd BufNewFile * silent! call LoadTemplate('%:e')
+"au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mapping
@@ -67,10 +51,10 @@ au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
 let maplocalleader = "["
 
 " Function Keys
-nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
+nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 
 " Delete character -- '@' = <Space>
-inoremap <C-@> <Del>
+inoremap <C-d> <Del>
 
 " Disable old keys (no operation)
 noremap <Left>  <nop>
@@ -83,33 +67,27 @@ nnoremap <Leader>ev :split $MYVIMRC<CR>
 nnoremap <Leader>sv :source $MYVIMRC<CR>:noh<cr>
 nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 
-" Jump over braces/string
-inoremap <C-J> <Right>
-inoremap <C-L> <End>
-
 " Make braces auto closing
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap " ""<Left>
 
-" Navigating
-nnoremap <C-L> :bn<CR>
-nnoremap <C-K> :b#<CR>
-nnoremap <C-H> :bp<CR>
-
 " New line insert
-nnoremap <C-N> o<Esc>k
-nnoremap <C-O> O<Esc>j
+nnoremap <C-n> o<Esc>k
+nnoremap <C-o> O<Esc>j
+
+" Opens the URL under the cursor (Linux)
+nnoremap <leader>w :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 
 " Tagbar
 "http://majutsushi.github.io/tagbar/
 "nnoremap <F8> :TagbarToggle<CR>
 
 " Toggle word case-sensitivity
-inoremap <C-U> <Esc><C-V>B~Ea
-nnoremap <C-U> viW~E
-nnoremap <S-U> viw~e
+inoremap <C-u> <Esc><C-V>B~Ea
+nnoremap <C-u> viW~E
+nnoremap <S-u> viw~e
 
 " Surround Visual-Text  " Makes up for what Vim-Surround is lacking
 vnoremap <LocalLeader>** c****<Esc>2hp<Esc>
@@ -119,6 +97,27 @@ vnoremap <LocalLeader>' c''<Esc>hp<Esc>
 vnoremap <LocalLeader>( c()<Esc>hp<Esc>
 vnoremap <LocalLeader>[ c[]<Esc>hp<Esc>
 vnoremap <LocalLeader>{ c{}<Esc>hp<Esc>
+
+" Navigating 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Buffers
+nnoremap <C-L> :bn<CR>
+nnoremap <C-K> :b#<CR>
+nnoremap <C-H> :bp<CR>
+
+" Jump over braces/string
+inoremap <C-l> <Right>
+inoremap <C-e> <End>
+
+" Jump up/down a line
+inoremap <C-j> <C-W>j
+inoremap <C-k> <C-W>k
+
+" Navigating Windows
+nnoremap <M-j> <C-W>j
+nnoremap <M-k> <C-W>k
+nnoremap <M-h> <C-W>h
+nnoremap <M-l> <C-W>l
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
@@ -131,6 +130,10 @@ augroup filetype_all
     au BufRead,InsertLeave * match TabLine /[\t]/
     " Deletes all trailing whitepsace on save
     au BufWritePre * %s/\s\+$//e
+    " Indent Files
+    au BufWritePre,BufRead * normal gg=G
+    " Make gf work for a URL.  I.e.) file:///C:/myfile.txt
+    au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
 augroup END
 
 augroup filetype_cpp
@@ -141,7 +144,6 @@ augroup END
 
 augroup filetype_css
     au!
-    au BufWritePre,BufRead *.css normal gg=G
     au FileType css noremap <buffer> <LocalLeader>c ^i/* <Esc><S-a> */<Esc>
     au FileType css noremap <buffer> <LocalLeader>u ^3x<end>xxx
 augroup END
@@ -154,10 +156,7 @@ augroup END
 
 augroup filetype_html
     au!
-    " Open website as html doc in Vim
-    au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
     au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
-    au BufWritePre,BufRead *.html normal gg=G
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><S-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
     au FileType html inoremap <strong> <strong></strong><Esc>%i
@@ -184,7 +183,6 @@ augroup END
 
 augroup filetype_python
     au!
-    au BufWritePre * %s/\s\+$//e
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u 0x<Esc>
 augroup END
@@ -198,7 +196,6 @@ augroup END
 
 augroup filetype_vim
     au!
-    au BufWritePre * %s/\s\+$//e
     au FileType vim noremap <buffer> <LocalLeader>c I"<Esc>
     au FileType vim noremap <buffer> <LocalLeader>u ^x<Esc>
 augroup END
@@ -233,7 +230,7 @@ endfunction
 " Use case insensitive search, except when using capital letters
 set autoindent          " copies current indent on newline
                         "  uses same indent when textwidth is reached
-set smartindent         " smart ai when starting newline
+set smartindent         " indentations are based off FileType 
 set backspace=indent,eol,start " Allow backspacing over ai, \n, I
 set ignorecase          " ignores the case of normal letters
 set smartcase           " identifies case specific patterns
@@ -249,8 +246,9 @@ set softtabstop=4       " number of spaces in tab when editing
 set tabstop=4           " number of visual spaces per TAB, default=8
 set tw=79               " width of document
 
-" Directory Browsing (netrw, ctags, tagbar)
+" Directory Browsing (NERDTree, netrw, ctags, tagbar) "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cnoremap nerd NERDTree
 cnoremap vsb vertical sb
 cnoremap vex Vex<CR>
 let g:netrw_winsize = 25

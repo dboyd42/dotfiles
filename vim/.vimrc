@@ -12,6 +12,8 @@
 "nnoremap <F8> :TagbarToggle<CR>
 "Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
 
+" Don't close window
+noremap <C-z> <nop>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins --Vundle configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -233,7 +235,7 @@ augroup END
 
 augroup filetype_rst
     au!
-    au BufRead,BufNewFile *.rst setlocal noet
+    au BufRead,BufNewFile *.rst setlocal noet tw=0 wm=0
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
 augroup END
@@ -276,6 +278,7 @@ set autoindent          " copies current indent on newline
 "  uses same indent when textwidth is reached
 set smartindent         " indentations are based off FileType
 set backspace=indent,eol,start " Allow backspacing over ai, \n, I
+set encoding=utf8       " standard encoding and standard language
 set ignorecase          " ignores the case of normal letters
 set smartcase           " identifies case specific patterns
 set nomodeline          " disabled due to security vulnerabilities
@@ -287,8 +290,8 @@ set shiftround          " set indent to round to nearest shiftwidth
 set shiftwidth=4
 set softtabstop=4       " number of spaces in tab when editing
 set tabstop=4           " number of visual spaces per TAB
-set tw=79               " width of document
-set encoding=utf8       " standard encoding and standard language
+set tw=79               " physical width of document
+set wrap                " visual/virtual line wrapping
 
 " Console-Menu "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

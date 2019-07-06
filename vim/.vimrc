@@ -75,6 +75,8 @@ inoremap " ""<Left>
 " New line insert
 nnoremap <C-n> o<Esc>k
 nnoremap <C-o> O<Esc>j
+" New Space insert
+nnoremap <C-@> i<Space><Esc>l
 
 " Toggle word case-sensitivity
 inoremap <C-u> <Esc><C-V>B~Ea

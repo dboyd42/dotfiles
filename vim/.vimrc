@@ -74,7 +74,7 @@ inoremap ( ()<Left>
 inoremap " ""<Left>
 
 " New line insert
-nnoremap <C-n> o<Esc>k
+nnoremap <C-j> o<Esc>k
 nnoremap <C-o> O<Esc>j
 " New Space insert
 nnoremap <C-@> i<Space><Esc>l

@@ -12,8 +12,6 @@
 "nnoremap <F8> :TagbarToggle<CR>
 "Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
 
-" Don't close window
-noremap <C-z> <nop>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins --Vundle configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,6 +123,8 @@ noremap <Left>  <nop>
 noremap <Right> <nop>
 noremap <Up>    <nop>
 noremap <Down>  <nop>
+" Don't close window
+noremap <C-z> <nop>
 
 " Toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
@@ -135,9 +135,9 @@ nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 " Navigating "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Buffers
-nnoremap <C-L> :bn<CR>
-nnoremap <C-K> :b#<CR>
-nnoremap <C-H> :bp<CR>
+nnoremap <C-l> :bn<CR>
+nnoremap <C-k> :b#<CR>
+nnoremap <C-h> :bp<CR>
 
 " Jump over braces/string
 inoremap <C-l> <Right>

@@ -28,6 +28,7 @@ Plugin 'dhruvasagar/vim-table-mode' " rst table mode
 Plugin 'scrooloose/nerdtree'        " File system explorer
 Plugin 'sjl/gundo.vim'              " Visualize your Vim undo tree
 Plugin 'flazz/vim-colorschemes'     " additional colorschemes
+Plugin 'terryma/vim-multiple-cursors' " edit multiple loc synchronously
 Plugin 'tpope/vim-fugitive'         " Git wrapper
 Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
 Plugin 'vim-airline/vim-airline'    " statusline
@@ -230,7 +231,7 @@ augroup END
 augroup filetype_python
     au!
     " Indent Files
-    au BufWritePre,BufRead *.py normal gg=G
+    "au BufWritePre,BufRead *.py normal gg=G
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u 0x<Esc>
 augroup END

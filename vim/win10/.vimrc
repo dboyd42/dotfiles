@@ -15,24 +15,25 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins --Vundle configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set nocompatible                    " Compatible makes Vim 99% compatible w/ vi
-"filetype off                        " required
-"set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path to vundle
-"call vundle#begin()                 " required
-"Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
-"Plugin 'SirVer/ultisnips'           " Snippets
-"Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
-"Plugin 'dhruvasagar/vim-table-mode' " rst table mode
-"Plugin 'scrooloose/nerdtree'        " File system explorer
-"Plugin 'sjl/gundo.vim'              " Visualize your Vim undo tree
-"Plugin 'flazz/vim-colorschemes'     " additional colorschemes
-"Plugin 'tpope/vim-fugitive'         " Git wrapper
-"Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
-"Plugin 'vim-airline/vim-airline'    " statusline
-"Plugin 'vim-airline/vim-airline-themes'    " statusline-themes
-"Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
-"call vundle#end()                   " required
-"filetype plugin indent on           " required
+set nocompatible                    " Compatible makes Vim 99% compatible w/ vi
+filetype off                        " required
+set rtp+=$HOME/.vim/bundle/Vundle.vim/   " set runtime path to vundle
+call vundle#begin('$HOME/.vim/bundle/')  " required
+Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
+Plugin 'SirVer/ultisnips'           " Snippets
+Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
+Plugin 'dhruvasagar/vim-table-mode' " rst table mode
+Plugin 'scrooloose/nerdtree'        " File system explorer
+Plugin 'sjl/gundo.vim'              " Visualize your Vim undo tree
+Plugin 'flazz/vim-colorschemes'     " additional colorschemes
+Plugin 'terryma/vim-multiple-curosrs' " edit multiple loc simultaneously
+Plugin 'tpope/vim-fugitive'         " Git wrapper
+Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
+Plugin 'vim-airline/vim-airline'    " statusline
+Plugin 'vim-airline/vim-airline-themes'    " statusline-themes
+Plugin 'w0rp/ale'                   " Asynchronous Lint Engine
+call vundle#end()                   " required
+filetype plugin indent on           " required
 
 " Settings "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,8 +51,8 @@ let NERDTreeShowHidden=1
 "source $VIM/abbrev/abbreviations.vim
 source $VIMRUNTIME/menu.vim
 function! LoadTemplate(extension)
-    silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
-    silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
+    silent! :execute '0r ~/dotfiles/vim/templates/'. a:extension. '.tpl'
+    silent! execute 'source ~/dotfiles/vim/templates/'.a:extension.'.patterns.tpl'
 endfunction
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 "au BufNewFile * silent! 0r $VIM/templates/%:e.tpl
@@ -71,7 +72,7 @@ inoremap ( ()<Left>
 inoremap " ""<Left>
 
 " New line insert
-nnoremap <C-n> o<Esc>k
+nnoremap <C-j> o<Esc>k
 nnoremap <C-o> O<Esc>j
 
 " Toggle word case-sensitivity
@@ -120,6 +121,8 @@ noremap <Left>  <nop>
 noremap <Right> <nop>
 noremap <Up>    <nop>
 noremap <Down>  <nop>
+" Disable Vim closing
+nnoremap <C-z>  <nop>
 
 " Toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
@@ -325,6 +328,7 @@ set hlsearch            " highlight search matches
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme industry    " change Powershell default
 set cmdheight=2         " Set the command window height to 2 lines
 set colorcolumn=80      " highlight column number
 highlight ColorColumn ctermbg=233

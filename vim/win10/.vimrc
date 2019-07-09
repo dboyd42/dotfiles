@@ -7,10 +7,20 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Experimental
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tagbar
-"http://majutsushi.github.io/tagbar/
-"nnoremap <F8> :TagbarToggle<CR>
-"Plugin 'tpope/vim-vinegar'          " Redraws netrw as 'project drawers'
+" Setting the Font in Gui --Dual Monitor Mode
+if has("gui_running")
+  if has("gui_gtk2") || has("gui_gtk3")
+    set guifont=Courier\ New\ 12
+  elseif has("gui_photon")
+    set guifont=Courier\ New:s12
+  elseif has("gui_kde")
+    set guifont=Courier\ New/12/-1/5/50/0/0/0/1/0
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+  else
+    set guifont=Courier_New:h12:cDEFAULT
+  endif
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins --Vundle configuration

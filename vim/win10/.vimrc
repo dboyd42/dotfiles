@@ -22,7 +22,7 @@ Plugin 'dhruvasagar/vim-table-mode' " rst table mode
 Plugin 'scrooloose/nerdtree'        " File system explorer
 Plugin 'sjl/gundo.vim'              " Visualize your Vim undo tree
 Plugin 'flazz/vim-colorschemes'     " additional colorschemes
-Plugin 'terryma/vim-multiple-curosrs' " edit multiple loc simultaneously
+Plugin 'terryma/vim-multiple-cursors' " edit multiple loc simultaneously
 Plugin 'tpope/vim-fugitive'         " Git wrapper
 Plugin 'tpope/vim-surround'         " mappings for surrounding pairs
 Plugin 'vim-airline/vim-airline'    " statusline

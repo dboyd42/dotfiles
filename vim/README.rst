@@ -41,3 +41,22 @@ Plugins
 |          | - Ultisnips_  |
 |          | - Vinegar_    |
 +----------+---------------+
+
+Install
+-------
+
+macOS:
+
+.. code-block:: Bash
+
+	$ brew install make
+	$ softwareupdate -i -a
+	$ brew install vim
+	$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+Linux:
+
+.. code-block:: Bash
+
+	$ sudo apt-get update | upgrade
+	$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

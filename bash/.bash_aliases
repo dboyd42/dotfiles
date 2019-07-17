@@ -6,7 +6,7 @@ alias ll='ls -lha --color'
 alias com='g++ -std=c++1z -o main *.cpp'
 alias compy='chmod u+x *.py'
 
-# Directorys
+# Directories
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
 alias VIM='cd ~/../../usr/share/vim/'
 

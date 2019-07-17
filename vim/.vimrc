@@ -14,6 +14,17 @@ source $VIM/src/playground.vim
 source $VIM/src/plugins.vim
 source $VIM/src/settings.vim
 source $VIMRUNTIME/menu.vim
+
+" OS Restrictions
+""""""""""""""""""""""""""""""""""""""""
+if has("win64")
+    source $VIM/src/win10.vim
+"elseif has("unix")
+    " do linux/unix things here
+endif
+
+" Templates
+""""""""""""""""""""""""""""""""""""""""
 function! LoadTemplate(extension)
     silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
     silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'

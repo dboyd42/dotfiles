@@ -9,6 +9,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $VIM/abbrev/abbreviations.vim
 source $VIM/src/au.vim
+source $VIM/src/gui.vim
 source $VIM/src/mappings.vim
 source $VIM/src/playground.vim
 source $VIM/src/plugins.vim
@@ -17,11 +18,11 @@ source $VIMRUNTIME/menu.vim
 
 " OS Restrictions
 """"""""""""""""""""""""""""""""""""""""
-if has("win64")
-    source $VIM/src/win10.vim
+"if has("win64")
+    "source $VIM/src/win10.vim
 "elseif has("unix")
     " do linux/unix things here
-endif
+"endif
 
 " Templates
 """"""""""""""""""""""""""""""""""""""""

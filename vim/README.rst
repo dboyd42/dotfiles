@@ -60,3 +60,12 @@ Linux:
 
 	$ sudo apt-get update | upgrade
 	$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	
+Windows:
+
+:Download: https://gitforwindows.org/
+:Enable: minTTY Terminal, Symbolic Links
+:Else: Powershell requires Chocolatey | See Win10's README
+
+	
+	

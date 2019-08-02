@@ -27,3 +27,7 @@ nnoremap <C-Down> :silent! let &guifont = substitute(
  \ '\=eval(submatch(0)-1)',
  \ '')<CR>
 endif
+
+" Settings "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme industry

@@ -6,17 +6,17 @@ Vim
 File Locations
 ===============
 
-+------------+--------------------------------+------------------------------+
-| Location   | Linux                          | Windows                      |
-+============+================================+==============================+
-| $VIM       | ~/../../usr/share/vim/         | C:\\Program Files (86x)\\Vim |
-+------------+--------------------------------+------------------------------+
-| $VIMHOME   | ~/                             | N/A                          |
-+------------+--------------------------------+------------------------------+
-| $MYVIMRC   | ~/.vimrc                       | C:\\Users\\<host>\\.vimrc    |
-+------------+--------------------------------+------------------------------+
-| $VIMRUNTIME| ~/../../usr/share/vim/vim80/   | N/A                          |
-+------------+--------------------------------+------------------------------+
++-------------+------------------------------+------------------------------+
+| Location    | Linux                        | Windows (Default)            |
++=============+==============================+==============================+
+| $VIM        | ~/../../usr/share/vim/       | C:\\Program Files (86x)\\Vim |
++-------------+------------------------------+------------------------------+
+| $VIMHOME    | ~/                           | N/A                          |
++-------------+------------------------------+------------------------------+
+| $MYVIMRC    | ~/.vimrc                     | C:\\Users\\<host>\\.vimrc    |
++-------------+------------------------------+------------------------------+
+| $VIMRUNTIME | ~/../../usr/share/vim/vim80/ | N/A                          |
++-------------+------------------------------+------------------------------+
 
 +-----------+------------------------------------------------------------------------+
 | Helpful Vim Commands -> Document References                                        |
@@ -61,7 +61,7 @@ Linux:
 
 	$ sudo apt-get update | upgrade
 	$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	
+
 Windows:
 ========
 :Download: vim.org -> GVim
@@ -73,9 +73,15 @@ Windows:
 Preferred:
 ----------
 #. Download 'git for windows'
+    - auto installs into PS & CMD
+    - lazy install
 #. Download gVim from vim.org
 	- checkbox: VisVim Extension for MS Visual Studio
-#. Open 'Git Bash' as admnistrator
-#. $ cd ../../Program\ Files\ (86\)/Vim/
+    - install in C:\tools\
+#. Open 'Git Bash'/PS as admnistrator
+#. $ cd C:\tools\   || ../../tools/
 #. git clone https://git@github.com/dboyd42/dotfiles.git
-#. cp .vimrc ~/
+    - cp .vimrc ~/ into _vimrc      // != ln b/c . vs _ ???
+    - mkdir tools/Vim/abbrev | tools/Vim/src | tools/Vim/templates
+    - ln -sf *all existing files* into specified loc
+

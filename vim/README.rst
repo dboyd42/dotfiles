@@ -63,9 +63,16 @@ Linux:
 	
 Windows:
 
+:Preferred: vim.org -> GVim
 :Download: https://gitforwindows.org/
 :Enable: minTTY Terminal, Symbolic Links
 :Else: Powershell requires Chocolatey | See Win10's README
 
-	
-	
+Preferred:
+
+#. Download 'git for windows'
+#. Download gVim from vim.org
+#. Open 'Git Bash' as admnistrator
+#. $ cd ../../Program\ Files\ (86\)/Vim/
+#. git clone https://git@github.com/dboyd42/dotfiles.git
+#. cp .vimrc ~/

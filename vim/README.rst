@@ -43,9 +43,10 @@ Plugins
 +----------+---------------+
 
 Install
--------
+#######
 
 macOS:
+======
 
 .. code-block:: Bash
 
@@ -55,23 +56,25 @@ macOS:
 	$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Linux:
-
+======
 .. code-block:: Bash
 
 	$ sudo apt-get update | upgrade
 	$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	
 Windows:
-
-:Preferred: vim.org -> GVim
+========
+:Download: vim.org -> GVim
+:Download: python3 (Windows Store)
 :Download: https://gitforwindows.org/
-:Enable: minTTY Terminal, Symbolic Links
+:gitforwindows: minTTY Terminal, Symbolic Links
 :Else: Powershell requires Chocolatey | See Win10's README
 
 Preferred:
-
+----------
 #. Download 'git for windows'
 #. Download gVim from vim.org
+	- checkbox: VisVim Extension for MS Visual Studio
 #. Open 'Git Bash' as admnistrator
 #. $ cd ../../Program\ Files\ (86\)/Vim/
 #. git clone https://git@github.com/dboyd42/dotfiles.git

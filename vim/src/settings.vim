@@ -23,12 +23,6 @@ set tabstop=4           " number of visual spaces per TAB
 set tw=79               " physical width of document
 set wrap                " visual/virtual line wrapping
 
-" Console-Menu "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set cpo-=<
-set wcm=<C-Z>
-map <F4> :emenu <C-Z>
-
 " Visual autocomplete for command menu
 set wildmode=longest,list,full
 
@@ -58,7 +52,6 @@ set hlsearch            " highlight search matches
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme industry    " Set vim, gVim, & PS default colorscheme
 set cmdheight=2         " Set the command window height to 2 lines
 set colorcolumn=80      " highlight column number
 highlight ColorColumn ctermbg=233

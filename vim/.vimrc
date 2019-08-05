@@ -18,11 +18,13 @@ source $VIMRUNTIME/menu.vim
 
 " OS Restrictions
 """"""""""""""""""""""""""""""""""""""""
-"if has("win64")
-    "source $VIM/src/win10.vim
-"elseif has("unix")
-    " do linux/unix things here
-"endif
+if has("mac")
+    colorscheme tender
+elseif has("win32")
+    colorscheme industry
+elseif has("unix")
+    colorscheme ron
+endif
 
 " Templates
 """"""""""""""""""""""""""""""""""""""""

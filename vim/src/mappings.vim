@@ -63,8 +63,6 @@ noremap <Left>  <nop>
 noremap <Right> <nop>
 noremap <Up>    <nop>
 noremap <Down>  <nop>
-" Don't close window
-noremap <C-z> <nop>
 
 " Toggle gundo
 nnoremap <leader>u :GundoToggle<CR>

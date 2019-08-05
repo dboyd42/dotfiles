@@ -6,15 +6,24 @@ Dot Files
 This repository is a cache for my personal dotfiles.
 
 Link Files
-----------
+==========
 
 **Symbolic Link**
+-----------------
+
+**Directories**
+
+::
+
+	ln -s /base/* /target/ ** ls -l /target/
+
+**Single Files:**
 
 ::
 
 	ln -s Existing-file New-name
 
-**+Remove Existing Destination Files**
+**Overwrite Existing Destination Files**
 
 ::
 

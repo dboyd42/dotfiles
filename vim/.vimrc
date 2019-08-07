@@ -23,7 +23,7 @@ if has("mac")
 elseif has("win32")
     colorscheme industry
 elseif has("unix")
-    colorscheme ron
+    colorscheme industry
 endif
 
 " Templates

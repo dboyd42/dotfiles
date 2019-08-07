@@ -75,6 +75,12 @@ augroup filetype_rst
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
 augroup END
 
+augroup filetype_sh
+    au!
+    au FileType sh noremap <buffer> <LocalLeader>c I#<Esc>
+    au FileType sh noremap <buffer> <LocalLeader>u ^x<Esc>
+augroup END
+
 augroup filetype_vim
     au!
     au FileType vim noremap <buffer> <LocalLeader>c I"<Esc>

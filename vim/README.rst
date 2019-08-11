@@ -74,7 +74,7 @@ Linux:
 Windows:
 ========
 :Download: vim.org -> GVim
-:Download: python3 (Windows Store)
+:Download: python3 (python.org -> better usage with git-bash)
 :Download: https://gitforwindows.org/
 :gitforwindows: minTTY Terminal, Symbolic Links
 :Else: Powershell requires Chocolatey | See Win10's README
@@ -86,7 +86,11 @@ Preferred:
     - lazy install
 #. Download gVim from vim.org
 	- checkbox: VisVim Extension for MS Visual Studio
-    - install in C:\tools\
+	- install in C:\tools\vim\
+#. Download Python3.org
+	- amd64 version
+	- add PATH variable
+	- custom install: C:\\tools\\python3\\
 #. Open 'Git Bash'/PS as admnistrator
 #. $ cd C:\tools\   || ../../tools/
 #. git clone https://git@github.com/dboyd42/dotfiles.git

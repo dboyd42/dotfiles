@@ -20,6 +20,8 @@ source $VIMRUNTIME/menu.vim
 """"""""""""""""""""""""""""""""""""""""
 if has("mac")
     colorscheme tender
+elseif has("gui_running")
+    colorscheme moria
 elseif has("win32")
     colorscheme industry
 elseif has("unix")

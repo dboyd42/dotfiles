@@ -6,7 +6,6 @@ filetype off                        " required
 set rtp+=~/.vim/bundle/Vundle.vim   " set runtime path to vundle
 call vundle#begin()                 " required
 Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
-Plugin 'SirVer/ultisnips'           " Snippets
 Plugin 'ctrlpvim/ctrlp.vim'         " Full path fuzzy file finder
 Plugin 'dhruvasagar/vim-table-mode' " rst table mode
 Plugin 'scrooloose/nerdtree'        " File system explorer

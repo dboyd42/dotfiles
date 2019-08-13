@@ -6,6 +6,9 @@
 # Status:
 # Date: 2019/08/
 
+# Declare variables
+
+
 # Get data
 
 

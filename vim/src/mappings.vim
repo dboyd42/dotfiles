@@ -10,7 +10,7 @@ inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap " ""<Left>
-inoremap ' ''<Left>
+"inoremap ' ''<Left>
 
 " New line insert
 nnoremap <C-j> o<Esc>k

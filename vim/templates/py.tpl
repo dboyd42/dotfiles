@@ -1,19 +1,17 @@
 #!/usr/bin/env python3
 # Copyright 2019 David Boyd, all rights reserved
-
 # Program:
 # Description:
-# Status: Incomplete
+# Status: InComplete
 # Date: 2019/08/
 
 # Declare variables
 
 
-# Get data
+# Get
 
 
-# Calculate data
+# Calculate
 
 
-# Display data
-
+# Display

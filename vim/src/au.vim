@@ -65,7 +65,7 @@ augroup filetype_python
     " Indent Files
     "au BufWritePre,BufRead *.py normal gg=G
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
-    au FileType python noremap <buffer> <LocalLeader>u 0x<Esc>
+    au FileType python noremap <buffer> <LocalLeader>u ^x<Esc>
 augroup END
 
 augroup filetype_rst

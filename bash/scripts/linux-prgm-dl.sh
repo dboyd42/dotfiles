@@ -20,7 +20,11 @@ sudo apt-get install avr-libc
 sudo apt-get install avrdude
   # Interpreters
 sudo apt-get install python3
+sudo apt-get install ptyhon3-tk  # Turtle graphics
 ## Libray Programs
+  # Package Mangers
+  sudo apt install apt-transport-https curl
+
 
 ### Application Software ###
 ## General-Purpose Software
@@ -48,6 +52,12 @@ sudo apt-get install -y dirb
 sudo apt-get install -y opera
 sudo apt-get install -y chrome
 sudo apt-get install -y w3m
+ # Brave
+ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+ source /etc/os-release
+ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list
+ sudo apt update
+ sudo apt install brave-browser
 ##Bespoke Applications
 
 ### Update and Upgrade newly installed programs ###

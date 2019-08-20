@@ -12,6 +12,7 @@
 :iabbr tehn then
 :iabbr whihc which
 :iabbr flaot float
+:iabbr lenght length
 
 " Simple templates for programming:
 

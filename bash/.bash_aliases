@@ -29,4 +29,5 @@ alias gr='git reset'
 alias gst='git status'
 
 # Programs
+alias py='python3'
 alias v='vim'

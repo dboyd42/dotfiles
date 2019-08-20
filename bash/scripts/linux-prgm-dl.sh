@@ -37,6 +37,7 @@ sudo apt-get install -y vim-gtk
  # Developer Tools
 sudo apt-get install -y git
 sudo apt-get install -y ubuntu-make
+sudo apt-get install -y xclip       # used for system clipboard
  # Lint
 pip3 install cpplint
  # Listing (Directory)

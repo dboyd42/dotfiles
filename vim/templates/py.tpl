@@ -1,17 +1,43 @@
 #!/usr/bin/env python3
 # Copyright 2019 David Boyd, all rights reserved
-# Program:
+# Program: <program name>
 # Description:
-# Status: InComplete
-# Date: 2019/08/
+#     <what the program does>
+# Date: <today’s date>
+# Revised:
+#     <revision date>
 
-# Declare variables
+# list libraries used
+
+# Declare global constants
+
+# list libraries used
+
+# Declare global constants
+
+def main():
+
+    # Declare variables
 
 
-# Get
+    <function name>(<parameter>, <parameter>, <parameter>)
+
+# End Program
+
+# Function <function name>
+# Description: <what the function does>
+# Calls: <names of all functions called, one per line>
+# Parameters: <names and types of all parameters, one per line>
+# Returns: <return value>
+
+def <function name> (<type> <parameter>, <type> <parameter>, <type> <parameter>):
+
+    # Declare local variables
 
 
-# Calculate
+    # Return values
 
+# End Function
 
-# Display
+# Call the main function
+main()

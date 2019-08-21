@@ -7,6 +7,17 @@
 # Revised:
 #     <revision date>
 
+##################
+### WHITEBOARD ###
+##################
+# Declare Variables
+
+
+# Declare Fns Names
+
+
+##################
+
 # list libraries used
 
 # Declare global constants

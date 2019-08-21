@@ -22,10 +22,6 @@
 
 # Declare global constants
 
-# list libraries used
-
-# Declare global constants
-
 def main():
 
     # Declare variables

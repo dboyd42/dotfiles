@@ -25,8 +25,9 @@ function SourceMeWindows()
     source $VIM/../dotfiles/vim/src/gui.vim
     source $VIM/../dotfiles/vim/src/mappings.vim
     source $VIM/../dotfiles/vim/src/playground.vim
-    " if has("usb/portable gui_running"): comment this
-    "source $VIM/../dotfiles/vim/src/plugins.vim
+    " if host is permission-restricted ("gui_running") \
+    "   comment out line below as it requres git running
+    source $VIM/../dotfiles/vim/src/plugins.vim
     source $VIM/../dotfiles/vim/src/settings.vim
 endfunction
 

@@ -43,7 +43,7 @@ autocmd BufNewFile * silent! call LoadTemplate('%:e')
 if has("mac")
     call SourceMeUnix()
     colorscheme tender
-elseif has("gui_running" || "win32")
+elseif has("win32")
     call SourceMeWindows()
     colorscheme industry
 elseif has("unix")

@@ -26,7 +26,7 @@ function SourceMeWindows()
     source $VIM/../dotfiles/vim/src/mappings.vim
     source $VIM/../dotfiles/vim/src/playground.vim
     " if host is permission-restricted ("gui_running") \
-    "   comment out line below as it requres git running
+    "   comment out line below as it requres git
     source $VIM/../dotfiles/vim/src/plugins.vim
     source $VIM/../dotfiles/vim/src/settings.vim
 endfunction

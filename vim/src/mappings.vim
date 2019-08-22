@@ -5,6 +5,10 @@ let maplocalleader = "["
 
 " Autocomplete "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Delete Duplicate Rows
+"     "Note: can also use :n,m sort u   // where u = uniq
+cnoremap ddr %s/^\(.*\)\(\n\1\)\+$/\1/
+
 " Make braces auto closing
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
@@ -104,4 +108,3 @@ nnoremap <leader><Space> :nohlsearch<CR>
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-

@@ -8,6 +8,7 @@ sudo apt-get update && sudo apt-get upgrade
 
 ### System Software ###
 ## Utility Programs
+sudo apt-get install -y hibernate  # invoke's the Linux kernel's Hibernation
 ## Language Translators
   # Dis/assemblers
 sudo apt-get install -y nasm

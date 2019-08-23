@@ -13,6 +13,7 @@
 :iabbr whihc which
 :iabbr flaot float
 :iabbr lenght length
+:iabbr fo of
 
 " Simple templates for programming:
 

@@ -14,13 +14,17 @@ sudo apt-get install -y nasm
   # Compilers
 sudo apt-get install -y build-essential
    # AVR Development Tools
-sudo apt-get install binutils-avr
-sudo apt-get install gcc-avr
-sudo apt-get install avr-libc
-sudo apt-get install avrdude
+sudo apt-get install - y binutils-avr
+sudo apt-get install - y gcc-avr
+sudo apt-get install - y avr-libc
+sudo apt-get install - y avrdude
   # Interpreters
-sudo apt-get install python3
-sudo apt-get install ptyhon3-tk  # Turtle graphics
+sudo apt-get install -y python3
+sudo apt-get install -y ptyhon3-tk  # Turtle graphics
+sudo apt-get install -y python3-pip  # Package mgr
+pip3 install requests  # for performing HTTP requests
+pip3 install BeautifulSoup4  # for handling HTML processing
+
 ## Libray Programs
   # Package Mangers
   sudo apt install apt-transport-https curl

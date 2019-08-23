@@ -25,7 +25,7 @@ sudo apt-get install -y python3
 sudo apt-get install -y ptyhon3-tk  # Turtle graphics
 sudo apt-get install -y python3-pip  # Package mgr
 pip3 install requests  # for performing HTTP requests
-pip3 install BeautifulSoup4  # for handling HTML processing
+pip3 install beautifulsoup4  # for handling HTML processing
 pip3 install pyperclip  # used to access system clipboard
 
 ## Libray Programs

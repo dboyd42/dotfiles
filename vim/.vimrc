@@ -9,7 +9,7 @@
 """"""""""""""""""""""""""""""""""""""""
 " Sources
 """""""""""""""""""
-function SourceMeUnix()
+function! SourceMeUnix()
     source $VIM/abbrev/abbreviations.vim
     source $VIM/src/au.vim
     source $VIM/src/gui.vim
@@ -19,7 +19,7 @@ function SourceMeUnix()
     source $VIM/src/settings.vim
 endfunction
 
-function SourceMeWindows()
+function! SourceMeWindows()
     source $VIM/../dotfiles/vim/abbrev/abbreviations.vim
     source $VIM/../dotfiles/vim/src/au.vim
     source $VIM/../dotfiles/vim/src/gui.vim

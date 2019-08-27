@@ -25,6 +25,11 @@ augroup filetype_css
     au FileType css noremap <buffer> <LocalLeader>u ^3x<end>xxx
 augroup END
 
+augroup filetype_csv
+    au!
+    "au FileType csv inoremap <M-,> \,
+augroup END
+
 augroup filetype_javascript
     au!
     au FileType javascript noremap <buffer> <LocalLeader>c I//<Esc>

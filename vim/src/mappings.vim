@@ -22,11 +22,6 @@ nnoremap <C-o> O<Esc>j
 " New Space insert
 nnoremap <C-@> i<Space><Esc>l
 
-" Toggle word case-sensitivity
-inoremap <C-u> <Esc><C-V>B~Ea
-nnoremap <C-u> viW~E
-nnoremap <S-u> viw~e
-
 " Surround Visual-Text  " Makes up for what Vim-Surround is lacking
 vnoremap <LocalLeader>** c****<Esc>2hp<Esc>
 vnoremap <LocalLeader>*<CR> c**<Esc>hp<Esc>

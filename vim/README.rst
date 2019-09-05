@@ -81,6 +81,7 @@ Windows:
 
 Preferred:
 ----------
+#. Clone Vundle.git to C:\Users\%USER_PROFILE%\
 #. Download 'git for windows'
     - auto installs into PS & CMD
     - lazy install
@@ -88,7 +89,7 @@ Preferred:
 	- checkbox: VisVim Extension for MS Visual Studio
 	- install in C:\tools\vim\
 #. Download Python3.org
-	- amd64 version
+	- amd64 version  // AMD does not stand for AMD CPUs
 	- add PATH variable
 	- custom install: C:\\tools\\python3\\
 #. Open 'Git Bash'/PS as admnistrator
@@ -105,3 +106,14 @@ Preferred:
 .. code-block:: MINGW64
 
     ln -s ~/../../tools/dotfiles/vim/* ~/../../../usr/share/vim/
+
+NOTE
+----
+
+You will have mutliple version of Vim in Windows
+    - GVim running in C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Vim 8.1\\
+    - GVim running in C:\\tools\\Vim\\vim81
+    - Vim running in C:\\Users\\%USERPROFILE\\
+
+Vimrc file locations:
+    - C:\\Users\%USERPROFILE%\\

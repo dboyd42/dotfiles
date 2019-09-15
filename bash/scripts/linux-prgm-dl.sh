@@ -70,3 +70,10 @@ sudo apt-get install -y w3m
 
 ### Update and Upgrade newly installed programs ###
 sudo apt-get update && sudo apt-get upgrade
+
+###################################################################
+###### THIS SCRIPT WILL BE RE-WRITTEN #############################
+###################################################################
+sudo apt-get install snapd
+# Dictionary offline/online (GUI)
+sudo snap install kdictionary

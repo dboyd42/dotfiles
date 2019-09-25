@@ -77,3 +77,4 @@ sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install snapd
 # Dictionary offline/online (GUI)
 sudo snap install kdictionary
+sudo snap install okular        # pdf editor/annotator

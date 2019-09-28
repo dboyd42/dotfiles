@@ -37,6 +37,7 @@ set autoread            " watch for file changes
 set confirm             " Use a dialog when an operation has to be confirmed
 set hidden              " Re-use the same win & switch from unsaved buffers
 set isfname+=32         " Supports filenames with spaces when using gf
+set printoptions=number:y " Enables printing with line numbers *Use w 'ha'
 
 " Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

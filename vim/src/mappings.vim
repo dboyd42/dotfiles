@@ -7,7 +7,7 @@ let maplocalleader = "["
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Delete Duplicate Rows
 "     "Note: can also use :n,m sort u   // where u = uniq
-cnoremap ddr %s/^\(.*\)\(\n\1\)\+$/\1/
+cnoremap delduprows %s/^\(.*\)\(\n\1\)\+$/\1/
 
 " Make braces auto closing
 inoremap {<CR> {<CR>}<Esc>O
@@ -46,7 +46,7 @@ nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-cnoremap W w !sudo tee % > /dev/null
+cnoremap SUDOWRITE w !sudo tee % > /dev/null
 
 " Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

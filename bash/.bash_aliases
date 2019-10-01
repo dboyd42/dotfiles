@@ -1,17 +1,16 @@
 # Bash
 alias l='ls -lh --color'
-alias ll='ls -lha --color'
+alias ll='ls -lhai --color'
 
-# Compiling
+# Compiling / Interpreters
 alias com='g++ -std=c++1z -o main *.cpp'
-alias compy='chmod u+x *.py'
+alias jc='javac'
+alias j='java'
+alias py='python3'
 
 # Directories
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
 alias VIM='cd ~/../../usr/share/vim/'
-
-# Files
-alias vR='vim README.rst'
 
 # Git
 alias ga='git add'
@@ -28,6 +27,6 @@ alias gp='git push'
 alias gr='git reset'
 alias gst='git status'
 
-# Programs
-alias py='python3'
+# Vim
 alias v='vim'
+alias vR='vim README.rst'

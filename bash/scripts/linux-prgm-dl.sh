@@ -59,7 +59,7 @@ sudo apt-get install -y dirb
 # Web Broswers
 sudo apt-get install -y opera
 sudo apt-get install -y chrome
-sudo apt-get install -y w3m
+sudo apt-get install -y w3m w3m-img
  # Brave
  curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
  source /etc/os-release

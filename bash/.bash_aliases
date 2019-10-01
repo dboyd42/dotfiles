@@ -27,6 +27,9 @@ alias gp='git push'
 alias gr='git reset'
 alias gst='git status'
 
+# W3M
+alias wd='w3m duckduckgo.com'
+
 # Vim
 alias v='vim'
 alias vR='vim README.rst'

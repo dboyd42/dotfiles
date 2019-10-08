@@ -1,6 +1,7 @@
-# Bash
+# Bash Display
 alias l='ls -lh --color'
 alias ll='ls -lhai --color'
+alias ps1="PS1='\u:\W\$ '"
 
 # Compiling / Interpreters
 alias com='g++ -std=c++1z -o main *.cpp'

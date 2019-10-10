@@ -37,3 +37,4 @@ def <function name> (<type> <parameter>, <type> <parameter>, <type> <parameter>)
 
 # Call the main function
 main()
+

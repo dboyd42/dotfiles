@@ -5,6 +5,9 @@ let maplocalleader = "["
 
 " Autocomplete "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocomplete Words
+imap<C-@> <C-p>
+
 " Delete Duplicate Rows
 "     "Note: can also use :n,m sort u   // where u = uniq
 cnoremap delduprows %s/^\(.*\)\(\n\1\)\+$/\1/

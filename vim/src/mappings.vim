@@ -12,6 +12,9 @@ imap<C-@> <C-p>
 "     "Note: can also use :n,m sort u   // where u = uniq
 cnoremap delduprows %s/^\(.*\)\(\n\1\)\+$/\1/
 
+" Edit README.rst in current dir
+cnoremap SR split README.rst<CR>
+
 " Make braces auto closing
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>

@@ -11,6 +11,9 @@ augroup filetype_all
     au BufWritePre * %s/\s\+$//e
     " Make gf work for a URL.  I.e.) file:///C:/myfile.txt
     au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
+    " Insert current date
+    au BufWritePre * %s/\(<<today’s date>\).\{-\}\d\d:\d\d:\d\d/\1'.strftime("%b %d, %Y %X")."/e"|norm `z
+    
 augroup END
 
 augroup filetype_cpp

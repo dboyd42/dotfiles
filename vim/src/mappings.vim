@@ -8,6 +8,12 @@ let maplocalleader = "["
 " Autocomplete Words
 imap<C-@> <C-p>
 
+" Date - Update Revision Date tag
+" Note: '/t' flag is needed for Win10
+cnoremap urdate %s/<revision date>/<CR><S-c>#     <Esc>:r !date<CR>k<S-j>
+cnoremap rev /Revised:/<CR>o#     <Esc>:r !date<CR>k<S-j>
+
+
 " Delete Duplicate Rows
 "     "Note: can also use :n,m sort u   // where u = uniq
 cnoremap delduprows %s/^\(.*\)\(\n\1\)\+$/\1/

@@ -36,8 +36,6 @@ endfunction
 function! LoadTemplate(extension)
     silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
     silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
-    " Insert current date
-    au BufWritePre * %s/\(<<today’s date>\).\{-\}\d\d:\d\d:\d\d/\1'.strftime("%b %d, %Y %X")."/e"|norm `z
 endfunction
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 

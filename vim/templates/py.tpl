@@ -3,7 +3,7 @@
 # Program: <program name>
 # Description:
 #     <what the program does>
-# Date: <today’s date>
+* Date: today
 # Revised:
 #     <revision date>
 

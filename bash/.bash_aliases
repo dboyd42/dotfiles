@@ -11,6 +11,7 @@ alias py='python3'
 
 # Directories
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
+alias bg='cd ~/Documents/code/repos/github/others/jacobreola/BitGasm/'
 alias VIM='cd ~/../../usr/share/vim/'
 
 # Git

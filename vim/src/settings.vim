@@ -11,6 +11,7 @@ set backspace=indent,eol,start " Allow backspacing over ai, \n, I
 set encoding=utf8       " standard encoding and standard language
 set ignorecase          " ignores the case of normal letters
 set smartcase           " identifies case specific patterns
+set lbr lines           " wraps complete words
 set nomodeline          " disabled due to security vulnerabilities
 set nostartofline       " Off - cursor is kept in the same column
 set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings

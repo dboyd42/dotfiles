@@ -25,8 +25,8 @@ function! SourceMeWindows()
     source $VIM/../dotfiles/vim/src/gui.vim
     source $VIM/../dotfiles/vim/src/mappings.vim
     source $VIM/../dotfiles/vim/src/playground.vim
-    " if host is permission-restricted ("gui_running") \
-    "   comment out line below as it requres git
+    " Download the package below and link it accordingly to your environment
+    " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     source $VIM/../dotfiles/vim/src/plugins.vim
     source $VIM/../dotfiles/vim/src/settings.vim
 endfunction

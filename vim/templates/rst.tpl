@@ -1,7 +1,7 @@
 Empty
 #####
 :Author: David Boyd
-:Date: today
+:Date: <today's date>
 
 
 

@@ -20,22 +20,22 @@ function! SourceMeUnix()
 endfunction
 
 function! SourceMeWindows()
-    source $VIM/../dotfiles/vim/abbrev/abbreviations.vim
-    source $VIM/../dotfiles/vim/src/au.vim
-    source $VIM/../dotfiles/vim/src/gui.vim
-    source $VIM/../dotfiles/vim/src/mappings.vim
-    source $VIM/../dotfiles/vim/src/playground.vim
+    source $VIM/dotfiles/vim/abbrev/abbreviations.vim
+    source $VIM/dotfiles/vim/src/au.vim
+    source $VIM/dotfiles/vim/src/gui.vim
+    source $VIM/dotfiles/vim/src/mappings.vim
+    source $VIM/dotfiles/vim/src/playground.vim
     " Download the package below and link it accordingly to your environment
     " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    source $VIM/../dotfiles/vim/src/plugins.vim
-    source $VIM/../dotfiles/vim/src/settings.vim
+    source $VIM/dotfiles/vim/src/plugins.vim
+    source $VIM/dotfiles/vim/src/settings.vim
 endfunction
 
 " Templates
 """""""""""""""""""
 function! LoadTemplate(extension)
-    silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
-    silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
+    silent! :execute '0r $VIM/dotfiles/vim/templates/'. a:extension. '.tpl'
+    silent! execute 'source $VIM/dotfiles/vim/templates/'.a:extension.'.patterns.tpl'
 endfunction
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 

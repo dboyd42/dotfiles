@@ -98,13 +98,19 @@ Preferred:
 #. $ cd C:\tools\   || ../../tools/
 #. git clone https://git@github.com/dboyd42/dotfiles.git
 
+LINKING IN WINDOWS
+===================
+
 **OPEN CMD/GIT-BASH as ADMIN**
 
 .. code-block :: PowerShell
 
-     cp .vimrc ~/ into _vimrc      // != ln b/c . vs _ ???
-     mkdir tools/Vim/abbrev | tools/Vim/src | tools/Vim/templates
-     ln -sf *all existing files* into specified loc
+	Start-Process powershell -Verb runAs                             # sudo su
+	# .\link = C:\tools\dotfiles\vim\.vimrc
+	# .\Notice = C:\Users\$evn:USERPROFILE\[_.]vimrc#'_' for gui | '.' for cmd
+	$link = New-Item -ItemType SymbolicLink -Path .\link -Target .\Notice.txt
+	$link | Select-Object LinkType, Target
+
 
 .. code-block :: MINGW64
 

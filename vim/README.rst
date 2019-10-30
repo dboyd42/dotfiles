@@ -100,7 +100,7 @@ Preferred:
 
 **OPEN CMD/GIT-BASH as ADMIN**
 
-.. code-block ::
+.. code-block :: PowerShell
 
      cp .vimrc ~/ into _vimrc      // != ln b/c . vs _ ???
      mkdir tools/Vim/abbrev | tools/Vim/src | tools/Vim/templates

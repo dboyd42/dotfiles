@@ -7,27 +7,28 @@ This repository is a cache for my personal dotfiles.
 
 Link Files
 ==========
+:Type: symbolic
 
-**Symbolic Link**
------------------
+Bash
+----
 
-**Directories**
+.. code-block :: Bash
 
-::
-
+	# Directories
 	ln -s /base/* /target/ ** ls -l /target/
 
-**Single Files:**
-
-::
-
+	# Single Files
 	ln -s Existing-file New-name
 
-**Overwrite Existing Destination Files**
-
-::
-
+	# Overwrite Existing Destination Files
 	sudo ln -sf Existing-file New-name
+
+Win10
+-----
+
+.. code-block :: Powershell
+
+	New-Item -ItemType SymbolicLink -Path .link -Target .Notice.txt $link | Select-Object LinkType, Target
 
 Additional Information
 ----------------------

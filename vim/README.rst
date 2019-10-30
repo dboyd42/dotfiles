@@ -57,7 +57,7 @@ Install
 macOS:
 ======
 
-.. code-block:: Bash
+.. code-block :: Bash
 
 	$ brew install make
 	$ softwareupdate -i -a
@@ -66,7 +66,8 @@ macOS:
 
 Linux:
 ======
-.. code-block:: Bash
+
+.. code-block :: Bash
 
 	$ sudo apt-get update | upgrade
 	$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -81,6 +82,7 @@ Windows:
 
 Preferred:
 ----------
+
 #. Clone Vundle.git to C:\Users\%USER_PROFILE%\
 #. Download 'git for windows'
     - auto installs into PS & CMD
@@ -97,13 +99,14 @@ Preferred:
 #. git clone https://git@github.com/dboyd42/dotfiles.git
 
 **OPEN CMD/GIT-BASH as ADMIN**
-.. code-block:: PowerShell
+
+.. code-block :: PowerShell
 
      cp .vimrc ~/ into _vimrc      // != ln b/c . vs _ ???
      mkdir tools/Vim/abbrev | tools/Vim/src | tools/Vim/templates
      ln -sf *all existing files* into specified loc
 
-.. code-block:: MINGW64
+.. code-block :: MINGW64
 
     ln -s ~/../../tools/dotfiles/vim/* ~/../../../usr/share/vim/
 

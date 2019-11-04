@@ -33,6 +33,10 @@ nnoremap <C-o> O<Esc>j
 " New Space insert
 nnoremap <C-@> i<Space><Esc>l
 
+" Searching from System Clipboard
+    " Replaces 'S' -> substitute line
+:noremap <S-s> :/<C-r>*<CR>
+
 " Surround Visual-Text  " Makes up for what Vim-Surround is lacking
 vnoremap <LocalLeader>** c****<Esc>2hp<Esc>
 vnoremap <LocalLeader>*<CR> c**<Esc>hp<Esc>

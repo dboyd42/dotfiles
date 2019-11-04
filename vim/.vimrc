@@ -34,8 +34,8 @@ endfunction
 " Templates
 """""""""""""""""""
 function! LoadTemplate(extension)
-    silent! :execute '0r $VIM/dotfiles/vim/templates/'. a:extension. '.tpl'
-    silent! execute 'source $VIM/dotfiles/vim/templates/'.a:extension.'.patterns.tpl'
+    silent! :execute '0r $VIM/templates/'. a:extension. '.tpl'
+    silent! execute 'source $VIM/templates/'.a:extension.'.patterns.tpl'
 endfunction
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 
@@ -49,5 +49,6 @@ elseif has("win32")
     colorscheme industry
 elseif has("unix")
     call SourceMeUnix()
-    colorscheme industry
+    hi Normal guibg=NONE ctermbg=NONE
+    "colorscheme industry
 endif

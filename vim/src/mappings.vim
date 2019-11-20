@@ -6,7 +6,7 @@ let maplocalleader = "["
 " Autocomplete "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete Words
-imap<C-@> <C-p>
+imap<C-Space> <C-p>
 
 " Date - Update Revision Date tag
 "     "Note: '/t' flag is needed for Win10
@@ -31,7 +31,7 @@ inoremap " ""<Left>
 nnoremap <C-j> o<Esc>k
 nnoremap <C-o> O<Esc>j
 " New Space insert
-nnoremap <C-@> i<Space><Esc>l
+nnoremap <C-Space> i<Space><Esc>l
 
 " Searching from System Clipboard
     " Replaces 'S' -> substitute line

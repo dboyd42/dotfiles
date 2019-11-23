@@ -52,6 +52,11 @@ nnoremap -- :NERDTree<CR>
 cnoremap vsb vertical sb
 cnoremap vex Vex<CR>
 
+" Display "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Statusline (Airline backup)
+cnoremap stline set statusline=%F\ %=\ Ln:\%l/%L\ Col:\%c
+
 " Files "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edit MYVIMRC | Source MYVIMRC & Abbreviations

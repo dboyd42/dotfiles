@@ -1,6 +1,7 @@
 " $VIM/abbrev/abbreviations.vim
 
 " Easy commands in the command line:
+:cabbr csf colorscheme forneus
 :cabbr csi colorscheme industry
 :cabbr csm colorscheme morning
 :cabbr csr colorscheme ron

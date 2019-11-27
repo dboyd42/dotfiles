@@ -123,7 +123,7 @@ nnoremap <M-l> <C-W>l
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn off search highligh
 "nnoremap <leader><Space> :nohlsearch<CR> " Uncomment for Windows compatability
-nnoremap <leader><@> :nohlsearch<CR>
+nnoremap <leader><Space> :nohlsearch<CR>
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>

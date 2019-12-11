@@ -52,3 +52,4 @@ elseif has("unix")
     hi Normal guibg=NONE ctermbg=NONE
     "colorscheme industry
 endif
+

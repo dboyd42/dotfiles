@@ -30,3 +30,4 @@ endif
 " Show hidden files
 let NERDTreeShowHidden=1
 let g:ctrlp_show_hidden=1
+

@@ -72,3 +72,4 @@ set splitbelow splitright " Splits open at bottom and right
 set visualbell          " Use visual bell instead of beeping
 syntax on               " Enable syntax highlighting
 syntax enable           " enable syntax processing      --Colors
+

@@ -114,3 +114,4 @@ function! s:ToggleWhitespaceMatch(mode)
         let w:whitespace_match_number =  matchadd('ExtraWhitespace', pattern)
     endif
 endfunction
+

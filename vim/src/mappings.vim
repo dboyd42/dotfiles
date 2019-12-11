@@ -6,6 +6,7 @@ let maplocalleader = "["
 " Autocomplete "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete Words
+"imap <C-Space> <C-p>    " Uncomment for Windows compatability
 imap<C-@> <C-p>
 
 " Date - Update Revision Date tag
@@ -30,7 +31,9 @@ inoremap " ""<Left>
 " New line insert
 nnoremap <C-j> o<Esc>k
 nnoremap <C-o> O<Esc>j
+
 " New Space insert
+"nnoremap <C-Space> i<Space><Esc>l " Uncomment for Windows compatability
 nnoremap <C-@> i<Space><Esc>l
 
 " Searching from System Clipboard
@@ -52,6 +55,11 @@ nnoremap -- :NERDTree<CR>
 cnoremap vsb vertical sb
 cnoremap vex Vex<CR>
 
+" Display "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Statusline (Airline backup)
+cnoremap stline set statusline=%F\ %=\ Ln:\%l/%L\ Col:\%c
+
 " Files "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edit MYVIMRC | Source MYVIMRC & Abbreviations
@@ -66,7 +74,8 @@ cnoremap SUDOWRITE w !sudo tee % > /dev/null
 " Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Space open/closes folds
-nnoremap <Space> za
+"nnoremap <Space> za " Uncomment for Windows compatability
+nnoremap <@> za
 
 " Misc "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -113,6 +122,7 @@ nnoremap <M-l> <C-W>l
 " Search "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn off search highligh
+"nnoremap <leader><Space> :nohlsearch<CR> " Uncomment for Windows compatability
 nnoremap <leader><Space> :nohlsearch<CR>
 
 " Visual mode pressing * or # searches for the current selection

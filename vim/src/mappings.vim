@@ -14,8 +14,8 @@ endif
 
 " Date - Update Revision Date tag
 "     "Note: '/t' flag is needed for Win10
-cnoremap updatedate /Revised:/<CR>o     <Esc>:r !date<CR>k<S-j>
-cnoremap updaterevdate %s/<revision date>/<CR><S-c>     <Esc>:r !date<CR>k<S-j>
+cnoremap updatedate :1,10s/<today's date>/\=system('date +%Y-%m-%d')<CR>dd
+"cnoremap updaterevdate %s/<revision date>/<CR><S-c>     <Esc>:r !date<CR>k<S-j>
 
 " Delete Duplicate Rows
 "     "Note: can also use :n,m sort u   // where u = uniq

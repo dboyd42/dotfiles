@@ -5,6 +5,5 @@
 #     <what the program does>
 # Date: <today's date>
 # Revised:
-#     <revision date>
 
 

@@ -45,7 +45,7 @@ endif
 
 " Searching from System Clipboard
     " Replaces 'S' -> substitute line
-noremap <S-f> :/<C-r>*<CR>
+noremap <Leader>f :/<C-r>*<CR>
 
 " Surround Visual-Text  " Makes up for what Vim-Surround is lacking
 vnoremap <LocalLeader>** c****<Esc>2hp<Esc>

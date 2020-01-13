@@ -8,7 +8,7 @@
 *.exe
 
 #Python
-__pychache__
+__pycache__
 _venv
 *.py[cod]
 _build

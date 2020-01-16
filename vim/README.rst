@@ -59,10 +59,12 @@ macOS:
 
 .. code-block :: Bash
 
-	brew install make
-	softwareupdate -i -a
 	brew install vim
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+	# Link $MYVIMRC and $VIM path files
+	ln -sf /Users/$User/Documents/code/repos/github/dboyd42/dotfiles/vim/.vimrc ~/.vimrc*
+	ln -sf /Users/$User/Documents/code/repos/github/dboyd42/dotfiles/vim/* /usr/local/share/vim/
 
 Linux:
 ======

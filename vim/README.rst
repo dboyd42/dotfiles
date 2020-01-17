@@ -95,6 +95,7 @@ Preferred
 	- install in C:\tools\vim\
 
 #. Download Python3.org
+
 	- amd64 version  // AMD does not stand for AMD CPUs
 	- add PATH variable
 	- custom install: C:\\tools\\python3\\

@@ -18,8 +18,8 @@ File Locations
 | $VIMRUNTIME | ~/../../usr/share/vim/vim80/ | N/A                          | $VIM/vim81/            | $VIM/vim81/           |
 +-------------+------------------------------+------------------------------+------------------------+-----------------------+
 
-+---------------------------------------------+
-| Helpful Vim Commands -> Document References |
++---------------------------------------------+-------------------------------------+
+| Helpful Vim Commands -> Document References |                                     |
 +=============================================+=====================================+
 | :echo glob($VIMRUNTIME . '/syntax/\*.vim')  | Lists Vim FileTypes                 |
 +---------------------------------------------+-------------------------------------+
@@ -38,41 +38,58 @@ Notable Differences Between Platforms
 Plugins
 =======
 
-+----------+---------------+
-| Program  | Plugin        |
-+==========+===============+
-| Vim_     | - Airline_    |
-+----------+ - Ale_        |
-|          | - CtrlP_      |
-|          | - Fugitive_   |
-|          | - Surround_   |
-|          | - Table-mode_ |
-|          | - Ultisnips_  |
-|          | - Vinegar_    |
-+----------+---------------+
++----------------+---------------------------+
+| Plugin         | Description               |
++================+===========================+
+| VundleVim      | Plugin Manager            |
++----------------+---------------------------+
+| Airline        | Statusline                |
++----------------+---------------------------+
+| Airline-themes | Airline Themes            |
++----------------+---------------------------+
+| Ale            | Aysynchronous Lint Engine |
++----------------+---------------------------+
+| CtrlP          | Fuzzy Finder              |
++----------------+---------------------------+
+| Fugitive       | Git Wrapper               |
++----------------+---------------------------+
+| gUndo          | GUI Undo                  |
++----------------+---------------------------+
+| NerdTree       | Tree Explorer             |
++----------------+---------------------------+
+| Surround       | Surrounding Things        |
++----------------+---------------------------+
+| Table-mode     | Table Creator & Formatter |
++----------------+---------------------------+
 
 Install
 #######
 
-macOS:
-======
+Linux and macOS
+===============
 
 .. code-block :: Bash
 
+	# Linux install
+	apt update; apt upgrade
+	# macOS install
 	brew install vim
+
+	# Linking
+	# +Make sure your $PWD=../dotfiles/vim
+	ln -sf $PWD/.vimrc ~/.vimrc
+
+	# Linux
+	ln -sf $PWD/* usr/share/vim/*
+	# macOS
+	ln -sf $PWD/* /usr/local/share/vim/
+
+	# Clone package manger
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-	# Link $MYVIMRC and $VIM path files
-	ln -sf /Users/$User/Documents/code/repos/github/dboyd42/dotfiles/vim/.vimrc ~/.vimrc*
-	ln -sf /Users/$User/Documents/code/repos/github/dboyd42/dotfiles/vim/* /usr/local/share/vim/
-
-Linux:
-======
-
-.. code-block :: Bash
-
-	sudo apt-get update | upgrade
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	# Install plugins
+	vim
+	:PluginInstall
 
 Windows:
 ========

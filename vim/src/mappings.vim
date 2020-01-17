@@ -13,9 +13,9 @@ else
 endif
 
 " Date - Update Revision Date tag
-cmap updaterevdate <Esc>gg /Revised<CR><C-j>j<LocalLeader>ca<TAB>
+cmap updaterevdate /# Revised<CR><C-j>j<LocalLeader>ca<TAB>
             \ <C-r>=system('date +%F')<CR><Esc>dd
-            \ <Leader><Space>
+            \ <Leader><Space>k<S-a> -  <Esc>
 
 " Delete Duplicate Rows
 "     "Note: can also use :n,m sort u   // where u = uniq

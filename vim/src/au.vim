@@ -5,6 +5,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup filetype_all
     au!
+    " Insert date at in tpl
+    au BufNewFile * 1,10s/<today's date>/\=system('echo -n `date +"%F"`')/
     " Show Tablines
     au BufRead,InsertLeave * match TabLine /[\t]/
     " Deletes all trailing whitepsace on save

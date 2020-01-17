@@ -7,21 +7,8 @@ This repository is a cache for my personal dotfiles.
 
 Link Files
 ==========
-:Type: symbolic
 
-Bash
-----
-
-.. code-block :: Bash
-
-	# Directories
-	ln -s /base/* /target/ ** ls -l /target/
-
-	# Single Files
-	ln -s Existing-file New-name
-
-	# Overwrite Existing Destination Files
-	sudo ln -sf Existing-file New-name
+For macOS and Linux, just run the **link-dotfiles.sh**.
 
 Win10
 -----

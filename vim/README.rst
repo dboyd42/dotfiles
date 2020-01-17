@@ -87,6 +87,7 @@ Preferred:
 #. Download 'git for windows'
 	- auto installs into PS & CMD
 	- lazy install
+
 #. Download gVim from vim.org
 	- checkbox: VisVim Extension for MS Visual Studio
 	- install in C:\tools\vim\

@@ -7,15 +7,14 @@
 # Revised:
 #     <revision date>
 
-# Determine origin of script execution
-scriptPath="dotfiles"
-
-# Make sure your $PWD=../dotfiles
-if [$PWD -ne "*dotfiles"]
-then
-    echo "This script needs to be executed in the $scriptPath"
-    exit
-fi
+## Determine origin of script execution
+#scriptPath="/dotfiles"
+## Make sure your $PWD=../dotfiles
+#if [ "$PWD" != "*/${scriptPath}" ]
+#then
+#    echo "This script needs to be executed in the $scriptPath"
+#    exit
+#fi
 
 # Determine OS
 unameOut="$(uname -s)"
@@ -37,6 +36,8 @@ esac
 ln -sf $PWD/vim/.vimrc ~/.vimrc
 ln -sf $PWD/vim/* $usrVimPath
 # Install plugins
+# +May cause problems --haven't tested on new machine!
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 # Verify links

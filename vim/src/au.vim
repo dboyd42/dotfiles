@@ -5,8 +5,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup filetype_all
     au!
-    " Insert date at in tpl
-    au BufNewFile * 1,10s/<today's date>/\=system('echo -n `date +"%F"`')/
     " Show Tablines
     au BufRead,InsertLeave * match TabLine /[\t]/
     " Deletes all trailing whitepsace on save
@@ -17,7 +15,10 @@ augroup END
 
 augroup filetype_cpp
     au!
-    au FileType cpp noremap <buffer> <LocalLeader>c I// <Esc>
+    " Insert date in tpl
+    au BufNewFile *.cpp %s/<today's date>/\=system('echo -n `date +"%F"`')/
+    " Un/comment
+    au FileType *.cpp noremap <buffer> <LocalLeader>c I// <Esc>
     au FileType cpp noremap <buffer> <LocalLeader>u 03x<Esc>
 augroup END
 
@@ -29,6 +30,9 @@ augroup END
 
 augroup filetype_java
     au!
+    " Insert date in tpl
+    au BufNewFile *.java %s/<today's date>/\=system('echo -n `date +"%F"`')/
+    " Un/comment
     au FileType java noremap <buffer> <LocalLeader>c I//<Esc>
     au FileType java noremap <buffer> <LocalLeader>u 02x<Esc>
 augroup END
@@ -41,9 +45,12 @@ augroup END
 
 augroup filetype_html
     au!
+    " Insert date in tpl
+    au BufNewFile *.html %s/<today's date>/\=system('echo -n `date +"%F"`')/
     au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
     " Indent Files
     au BufWritePre,BufRead *.html normal gg=G
+    " Un/comment
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><S-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
     au FileType html inoremap <strong> <strong></strong><Esc>%i
@@ -70,27 +77,38 @@ augroup END
 
 augroup filetype_python
     au!
+    " Insert date in tpl
+    au BufNewFile *.py %s/<today's date>/\=system('echo -n `date +"%F"`')/
+    au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
     " Indent Files
     "au BufWritePre,BufRead *.py normal gg=G
+    " Un/comment
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u ^x<Esc>
 augroup END
 
 augroup filetype_rst
     au!
+    " Insert date in tpl
+    au BufNewFile *.rst %s/<today's date>/\=system('echo -n `date +"%F"`')/
     au BufRead,BufNewFile *.rst setlocal noet tw=0 wm=0
+    " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
 augroup END
 
 augroup filetype_sh
     au!
+    " Insert date in tpl
+    au BufNewFile *.rst %s/<today's date>/\=system('echo -n `date +"%F"`')/
+    " Un/comment
     au FileType sh noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType sh noremap <buffer> <LocalLeader>u ^x<Esc>
 augroup END
 
 augroup filetype_vim
     au!
+    " Un/comment
     au FileType vim noremap <buffer> <LocalLeader>c I"<Esc>
     au FileType vim noremap <buffer> <LocalLeader>u ^x<Esc>
 augroup END

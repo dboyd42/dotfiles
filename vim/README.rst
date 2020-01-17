@@ -120,15 +120,17 @@ LINKING IN WINDOWS
 
 .. code-block :: MINGW64
 
-    ln -s ~/../../tools/dotfiles/vim/* ~/../../../usr/share/vim/
+	ln -s ~/../../tools/dotfiles/vim/* ~/../../../usr/share/vim/
 
 NOTE
 ----
 
 You will have mutliple version of Vim in Windows
-    - GVim running in C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Vim 8.1\\
-    - GVim running in C:\\tools\\Vim\\vim81
-    - Vim running in C:\\Users\\%USERPROFILE\\
+
+	- GVim running in C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Vim 8.1\\
+	- GVim running in C:\\tools\\Vim\\vim81
+	- Vim running in C:\\Users\\%USERPROFILE\\
 
 Vimrc file locations:
-    - C:\\Users\%USERPROFILE%\\
+
+	- C:\\Users\%USERPROFILE%\\

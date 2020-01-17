@@ -63,8 +63,8 @@ Linux and macOS
 	cd ../
 	./link-dotfiles.sh
 
-Windows:
-========
+Windows
+=======
 
 +---------------+-----------------------------------------------------+
 | Install       | Source / Location                                   |
@@ -80,14 +80,13 @@ Windows:
 | Else          | Powershell requires Chocolatey / See Win10's README |
 +---------------+-----------------------------------------------------+
 
-Preferred:
-----------
+Preferred
+---------
 
 #. Clone Vundle.git to C:\Users\%USER_PROFILE%\
 #. Download 'git for windows'
 	- auto installs into PS & CMD
 	- lazy install
-
 #. Download gVim from vim.org
 	- checkbox: VisVim Extension for MS Visual Studio
 	- install in C:\tools\vim\

@@ -84,7 +84,7 @@ Preferred
 ---------
 
 #. Clone Vundle.git to C:\Users\%USER_PROFILE%\
-#. Download 'git for windows'
+#. Download \'git for windows\'
 	- auto installs into PS & CMD
 	- lazy install
 #. Download gVim from vim.org

@@ -14,7 +14,7 @@ endif
 
 " Date - Update Revision Date tag
 "     "Note: '/t' flag is needed for Win10
-cnoremap updatedate :1,10s/<today's date>/\=system('date +%F')<CR>dd
+cnoremap updatedate :1,10s/\+TODAY\+/\=system('date +%F')<CR>dd
 cmap updaterevdate <Esc>gg /Revised<CR><C-j>j<LocalLeader>ca<TAB>
             \ <C-r>=system('date +%F')<CR><Esc>dd
 

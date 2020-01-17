@@ -84,24 +84,18 @@ Preferred:
 ----------
 
 #. Clone Vundle.git to C:\Users\%USER_PROFILE%\
-
 #. Download 'git for windows'
-    - auto installs into PS & CMD
-    - lazy install
-
+	- auto installs into PS & CMD
+	- lazy install
 #. Download gVim from vim.org
 	- checkbox: VisVim Extension for MS Visual Studio
 	- install in C:\tools\vim\
-
 #. Download Python3.org
 	- amd64 version  // AMD does not stand for AMD CPUs
 	- add PATH variable
 	- custom install: C:\\tools\\python3\\
-
 #. Open 'Git Bash'/PS as admnistrator
-
 #. $ cd C:\tools\   || ../../tools/
-
 #. git clone https://git@github.com/dboyd42/dotfiles.git
 
 LINKING IN WINDOWS

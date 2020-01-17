@@ -45,8 +45,6 @@ Plugins
 +----------------+---------------------------+
 | Airline        | Statusline                |
 +----------------+---------------------------+
-| Airline-themes | Airline Themes            |
-+----------------+---------------------------+
 | Ale            | Aysynchronous Lint Engine |
 +----------------+---------------------------+
 | CtrlP          | Fuzzy Finder              |

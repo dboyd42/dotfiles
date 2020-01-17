@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # Copyright +YEAR+ David Boyd, all rights reserved
-# Program: <program name>
+# Program: +PRGM NAME+
 # Description:
-#     <what the program does>
+#     +DESCR+
 # Date: +TODAY+
 # Revised:
 

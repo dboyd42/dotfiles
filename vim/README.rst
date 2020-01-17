@@ -26,14 +26,6 @@ File Locations
 | :so $VIMRUNTIME/syntax/hitest.vim           | shows complete list of color groups |
 +---------------------------------------------+-------------------------------------+
 
-Notable Differences Between Platforms
-=====================================
-
-+-------------------+-------+-----------------------+---------+--------------+
-| Command           | Linux | Windows (D/l vim.org) | MINGW64 | macOS (brew) |
-+===================+=======+=======================+=========+==============+
-| Sys Clipboard Reg | "+    | "*                    |         |              |
-+-------------------+-------+-----------------------+---------+--------------+
 
 Plugins
 =======
@@ -68,26 +60,8 @@ Linux and macOS
 
 .. code-block :: Bash
 
-	# Linux install
-	apt update; apt upgrade
-	# macOS install
-	brew install vim
-
-	# Linking
-	# +Make sure your $PWD=../dotfiles/vim
-	ln -sf $PWD/.vimrc ~/.vimrc
-
-	# Linux
-	ln -sf $PWD/* usr/share/vim/*
-	# macOS
-	ln -sf $PWD/* /usr/local/share/vim/
-
-	# Clone package manger
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-	# Install plugins
-	vim
-	:PluginInstall
+	cd ../
+	./link-dotfiles.sh
 
 Windows:
 ========

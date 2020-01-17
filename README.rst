@@ -1,5 +1,5 @@
-Dot Files
-###########
+Dotfiles
+########
 :Author: David Boyd
 :Date: Spring 2019
 

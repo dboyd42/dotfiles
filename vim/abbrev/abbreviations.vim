@@ -19,4 +19,4 @@
 " Simple templates for programming:
 
 " User data
-:iabbrev ccopy Copyright 2019 David Boyd, all rights reserved
+:iabbrev ccopy Copyright 2020 David Boyd, all rights reserved

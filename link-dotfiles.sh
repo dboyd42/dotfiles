@@ -18,7 +18,7 @@ fi
 # Determine OS
 unameOut="$(uname -s)"
 case "${unameOut}" in
-    Linux*)     usrVimPath="/usr/share/vim/*"
+    Linux*)     usrVimPath="/usr/share/vim/"
                 bashAliases="$PWD/bash/.bash_aliases"
                 ln -sf $bashAliases ~/.bash_aliases;;
     Darwin*)    usrVimPath="/usr/local/share/vim/*"

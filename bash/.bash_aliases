@@ -43,7 +43,7 @@ alias gst='git status'
 
 ### Networking
 alias ipadd4='ip address show | grep "inet " | cut -d " " -f 6 | cut -d "/" -f 1'
-# filter and process ip command output
+alias ipaddcidr='ip address show | grep "inet " | cut -d " " -f 6'
 alias ipadd6="ip addr show | grep -E 'inet6? ' | tr -s ' ' | cut -d' ' -f 3 "
 
 ### W3M

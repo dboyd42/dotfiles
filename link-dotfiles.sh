@@ -20,13 +20,16 @@ unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     usrVimPath="/usr/share/vim/"
                 bashAliases="$PWD/bash/.bash_aliases"
-                ln -sf $bashAliases ~/.bash_aliases;;
+                ln -sf $bashAliases ~/.bash_aliases
+                ;;
     Darwin*)    usrVimPath="/usr/local/share/vim/*"
                 bashProfile="bash/macOS/.bash_profile"
-                ln -sf $bashProfile ~/.bash_profile;;
-
+                ln -sf $bashProfile ~/.bash_profile
+                cp ./bash/.bash_aliases ~/.bash_aliases
+                ;;
     *)          echo "OS cannot be determined."
                 exit
+                ;;
 esac
 
 # Link Vim dotfiles

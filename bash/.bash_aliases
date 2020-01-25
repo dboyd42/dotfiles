@@ -46,6 +46,9 @@ alias ipadd4='ip address show | grep "inet " | cut -d " " -f 6 | cut -d "/" -f 1
 alias ipaddcidr='ip address show | grep "inet " | cut -d " " -f 6'
 alias ipadd6="ip addr show | grep -E 'inet6? ' | tr -s ' ' | cut -d' ' -f 3 "
 
+### Terminator layouts
+alias oscp='terminator -l oscp'
+
 ### W3M
 alias wd='w3m duckduckgo.com'
 

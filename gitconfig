@@ -1,0 +1,15 @@
+[user]
+    name = dboyd42
+    email = bhatmagician@gmail.com
+[github]
+    user = dboyd42
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+[merge]
+    tool = vimdiff
+[core]
+    editor = vim
+    whitespace = fix
+

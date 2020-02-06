@@ -6,6 +6,7 @@
 #     Installs Vundle Vim pkg mgr.
 # Date: 2020-01-17
 # Revised:
+#    2020-02-06 - added gitconfig to Linux
 #    2020-01-17 - [+]script-path, [+] git Vundle
 
 # Determine origin of script execution
@@ -20,7 +21,9 @@ unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     usrVimPath="/usr/share/vim/"
                 bashAliases="$PWD/bash/.bash_aliases"
+                gitconfig="$PWD/gitconfig"
                 ln -sf $bashAliases ~/.bash_aliases
+                ln -s $gitconfig /etc/gitconfig
                 ;;
     Darwin*)    usrVimPath="/usr/local/share/vim/*"
                 bashProfile="bash/macOS/.bash_profile"

@@ -9,27 +9,16 @@
 """"""""""""""""""""""""""""""""""""""""
 " Sources
 """""""""""""""""""
-function! SourceMeUnix()
-    source $VIM/abbrev/abbreviations.vim
-    source $VIM/src/au.vim
-    source $VIM/src/gui.vim
-    source $VIM/src/mappings.vim
-    source $VIM/src/playground.vim
-    source $VIM/src/plugins.vim
-    source $VIM/src/settings.vim
-endfunction
+source $VIM/abbrev/abbreviations.vim
+source $VIM/src/au.vim
+source $VIM/src/gui.vim
+source $VIM/src/mappings.vim
+source $VIM/src/playground.vim
+source $VIM/src/plugins.vim
+source $VIM/src/settings.vim
 
-function! SourceMeWindows()
-    source $VIM/dotfiles/vim/abbrev/abbreviations.vim
-    source $VIM/dotfiles/vim/src/au.vim
-    source $VIM/dotfiles/vim/src/gui.vim
-    source $VIM/dotfiles/vim/src/mappings.vim
-    source $VIM/dotfiles/vim/src/playground.vim
-    " Download the package below and link it accordingly to your environment
-    " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    source $VIM/dotfiles/vim/src/plugins.vim
-    source $VIM/dotfiles/vim/src/settings.vim
-endfunction
+" Download the package below and link it accordingly to your environment
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 " Templates
 """""""""""""""""""
@@ -42,13 +31,10 @@ autocmd BufNewFile * silent! call LoadTemplate('%:e')
 " OS Restrictions
 """"""""""""""""""""""""""""""""""""""""
 if has("mac")
-    call SourceMeUnix()
     colorscheme tender
 elseif has("win32")
-    call SourceMeWindows()
     colorscheme industry
 elseif has("unix")
-    call SourceMeUnix()
     hi Normal guibg=NONE ctermbg=NONE
     "colorscheme industry
 endif

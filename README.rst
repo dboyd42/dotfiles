@@ -13,6 +13,8 @@ For macOS and Linux, just run the **link-dotfiles.sh**.
 Win10
 -----
 
+gitforwindows: gitconfig >> /etc/gitconfig
+
 .. code-block :: Powershell
 
 	New-Item -ItemType SymbolicLink -Path .link -Target .Notice.txt $link | Select-Object LinkType, Target

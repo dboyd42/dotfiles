@@ -95,14 +95,14 @@ augroup END
 
 augroup filetype_rst
     au!
-    " Insert date in tpl
-    au BufNewFile *.rst %s/+TODAY+/\=system('echo -n `date +"%F"`')/
     au BufRead,BufNewFile *.rst setlocal noet tw=0 wm=0
-    " Insert program name
-    au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
     " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
+    " Insert date in tpl
+    au BufNewFile *.rst %s/+TODAY+/\=system('echo -n `date +"%F"`')/
+    " Insert program name
+    au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
 augroup END
 
 augroup filetype_sh

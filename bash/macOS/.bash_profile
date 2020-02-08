@@ -4,5 +4,3 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 source ~/.bash_aliases
 
 export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-

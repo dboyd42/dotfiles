@@ -16,14 +16,20 @@ then
     exit
 fi
 
+# Assign paths
+bashAliases="$PWD/bash/.bash_aliases"
+tmuxconfig="$PWD/bash/.tmux.conf"
+gitconfig="$PWD/gitconfig"
+
 # Determine OS
 unameOut="$(uname -s)"
 case "${unameOut}" in
-    Linux*)     usrVimPath="/usr/share/vim/"
-                bashAliases="$PWD/bash/.bash_aliases"
-                gitconfig="$PWD/gitconfig"
+    Linux*)     # Assign vars
+                usrVimPath="/usr/share/vim/"
+                # Link files
                 ln -sf $bashAliases ~/.bash_aliases
                 ln -s $gitconfig /etc/gitconfig
+                ls -s $tmuxconfig ~/.tmux.conf
                 ;;
     Darwin*)    usrVimPath="/usr/local/share/vim/*"
                 bashProfile="bash/macOS/.bash_profile"
@@ -39,11 +45,15 @@ esac
 echo "linking dotifles..."
 ln -sf $PWD/vim/.vimrc ~/.vimrc
 ln -sf $PWD/vim/* $usrVimPath
+
 # Install plugins
 echo "cloning VundleVim..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 echo
+
+# Source files
+source ~/.bash_aliases
 
 # Verify and Display links
 echo "Checking links"

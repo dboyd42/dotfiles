@@ -3,6 +3,21 @@ Vim
 :Author: David Boyd
 :Date: SU 2019
 
+Installation
+============
+
+Kali
+----
+
+.. code-block :: Bash
+
+	# Remove Kali's version of vim
+	apt remove vim
+
+	# Install Vim with X11-clipboard support
+	apt install -y vim-gtk3
+
+
 File Locations
 ===============
 

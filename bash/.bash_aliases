@@ -12,6 +12,7 @@ alias py='python3'
 
 ### Directories
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
+alias giths='cd /home/bhat/Documents/code/repos/github/dboyd42/'
 alias bg='cd ~/Documents/code/repos/github/others/jacobreola/BitGasm/'
 alias VIM='cd ~/../../usr/share/vim/'
 
@@ -42,9 +43,12 @@ alias gr='git reset'
 alias gst='git status'
 
 ### Networking
-alias ipadd4='ip address show | grep "inet " | cut -d " " -f 6 | cut -d "/" -f 1'
+alias ipadd4='ip address show | grep "inet " | cut -d " " -f6 | cut -d "/" -f1'
 alias ipaddcidr='ip address show | grep "inet " | cut -d " " -f 6'
-alias ipadd6="ip addr show | grep -E 'inet6? ' | tr -s ' ' | cut -d' ' -f 3 "
+alias ipadd6="ip addr show | grep -E 'inet6? ' | tr -s ' ' | cut -d' ' -f3"
+## Programs
+# ncat --older version to match win7
+alias ncat75='./home/bhat/Documents/code/repos/github/dboyd42/oscp/docs/follow-along-exercises/book/errors/ncat-crap/ncat-7.5/usr/bin/ncat'
 
 ### OpenVPN
 alias oscpvpn='sudo openvpn ~/Documents/code/repos/github/dboyd42/oscp/getting-started/OS-67366-PWK.ovpn'

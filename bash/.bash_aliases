@@ -15,7 +15,6 @@ alias py='python3'
 ### Directories
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
 alias giths='cd /home/bhat/Documents/code/repos/github/dboyd42/'
-alias bg='cd ~/Documents/code/repos/github/others/jacobreola/BitGasm/'
 alias VIM='cd ~/../../usr/share/vim/'
 
 ### Editing
@@ -50,7 +49,8 @@ alias ipaddcidr='ip address show | grep "inet " | cut -d " " -f 6'
 alias ipadd6="ip addr show | grep -E 'inet6? ' | tr -s ' ' | cut -d' ' -f3"
 
 ### OpenVPN
-alias oscpvpn='sudo openvpn ~/Documents/code/repos/github/dboyd42/oscp/getting-started/OS-67366-PWK.ovpn'
+alias oscpvpn='sudo openvpn
+~/Documents/code/repos/github/dboyd42/oscp/start-here/official/OS-67366-PWK.ovpn'
 
 ### W3M
 alias wd='w3m duckduckgo.com'

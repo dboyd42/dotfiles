@@ -75,6 +75,9 @@ Windows
 
 	:: Install git --Requires Chocolatey GUI (https://chocolatey.org/packages/git)
 	:: Install vim (https://chocolatey.org/packages/vim)
+	:: Configure Git to ensure line endings in files you checkout are correct for Windows.
+	:: For compatiblity, line endings are converted to Unix style when you commit files.
+	git config --global core.autocrlf true
 
 	:: Create soft links
 	cmd-links.bat

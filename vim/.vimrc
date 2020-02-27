@@ -50,6 +50,7 @@ if has("mac")
 elseif has("win32")
     colorscheme industry
     call WaitToLoadTplWindows()
+    set nocursorline
 elseif has("unix")
     hi Normal guibg=NONE ctermbg=NONE
     "colorscheme industry

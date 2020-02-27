@@ -3,35 +3,18 @@ Vim
 :Author: David Boyd
 :Date: SU 2019
 
-Installation
-============
-
-Kali
-----
-
-.. code-block :: Bash
-
-	# Remove Kali's version of vim
-	apt remove vim
-
-	# Install Vim with X11-clipboard support
-	apt install -y vim-gtk3
-
-
 File Locations
 ===============
 
-+-------------+------------------------------+------------------------------+------------------------+-----------------------+
-| Location    | Linux                        | Windows (D/l vim.org)        | MINGW64                | macOS (brew)          |
-+=============+==============================+==============================+========================+=======================+
-| $VIM        | ~/../../usr/share/vim/       | C:\\Program Files (86x)\\Vim | /usr/share/vim         | /usr/share/local/vim/ |
-+-------------+------------------------------+------------------------------+------------------------+-----------------------+
-| $VIMHOME    | ~/                           | N/A                          | N/A                    | N/A                   |
-+-------------+------------------------------+------------------------------+------------------------+-----------------------+
-| $MYVIMRC    | ~/.vimrc                     | C:\\Users\\<host>\\_vimrc    | /c/Users/<Host>/.vimrc | ~/                    |
-+-------------+------------------------------+------------------------------+------------------------+-----------------------+
-| $VIMRUNTIME | ~/../../usr/share/vim/vim80/ | N/A                          | $VIM/vim81/            | $VIM/vim81/           |
-+-------------+------------------------------+------------------------------+------------------------+-----------------------+
++-------------+------------------------------+------------------------------+
+| Vim Var     | Linux/macOS                  | Windows (Chocolatey)         |
++=============+==============================+==============================+
+| $MYVIMRC    | ~/.vimrc                     | %USERPROFILE%_vimrc          |
++-------------+------------------------------+------------------------------+
+| $VIM        | /usr/share/vim/              | C:\\Program Files (86x)\\Vim |
++-------------+------------------------------+------------------------------+
+| $VIMHOME    | ~/                           | N/A                          |
++-------------+------------------------------+------------------------------+
 
 +---------------------------------------------+-------------------------------------+
 | Helpful Vim Commands -> Document References |                                     |
@@ -81,71 +64,21 @@ Linux and macOS
 Windows
 =======
 
-+---------------+-----------------------------------------------------+
-| Install       | Source / Location                                   |
-+===============+=====================================================+
-| Download      | vim.org -> GVim                                     |
-+---------------+-----------------------------------------------------+
-| Download      | python3 (python.org -> better usage with git-bash)  |
-+---------------+-----------------------------------------------------+
-| Download      | https://gitforwindows.org/                          |
-+---------------+-----------------------------------------------------+
-| gitforwindows | minTTY Terminal / Symbolic Links                    |
-+---------------+-----------------------------------------------------+
-| Else          | Powershell requires Chocolatey / See Win10's README |
-+---------------+-----------------------------------------------------+
+.. code-block :: Command Prompt
 
-Preferred
----------
+	:: Install Chocolatey (https://chocolatey.org/docs/installation)
+	@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command " [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
-#. Clone Vundle.git to C:\Users\%USER_PROFILE%\
-#. Download 'git for windows'
+	:: Install Chocolatey GUI (for Git CLI) (https://chocolatey.org/packages/ChocolateyGUI)
+	choco install chocolateygui -y
+	shutdown /r
 
-	- auto installs into PS & CMD
-	- lazy install
+	:: Install git --Requires Chocolatey GUI (https://chocolatey.org/packages/git)
+	:: Install vim (https://chocolatey.org/packages/vim)
 
-#. Download gVim from vim.org
+	:: Create soft links
+	cmd-links.bat
 
-	- checkbox: VisVim Extension for MS Visual Studio
-	- install in C:\tools\vim\
+	:: Clone Vundle.git to C:\Users\%USER_PROFILE%\
+	git clone
 
-#. Download Python3.org
-
-	- amd64 version  // AMD does not stand for AMD CPUs
-	- add PATH variable
-	- custom install: C:\\tools\\python3\\
-
-#. Open 'Git Bash'/PS as admnistrator
-#. $ cd C:\tools\   || ../../tools/
-#. git clone https://git@github.com/dboyd42/dotfiles.git
-
-LINKING IN WINDOWS
-===================
-
-**OPEN CMD/GIT-BASH as ADMIN**
-
-.. code-block :: PowerShell
-
-	Start-Process powershell -Verb runAs                             # sudo su
-	# .\link = C:\tools\dotfiles\vim\.vimrc
-	# .\Notice = C:\Users\$evn:USERPROFILE\[_.]vimrc#'_' for gui | '.' for cmd
-	$link = New-Item -ItemType SymbolicLink -Path .\link -Target .\Notice.txt
-	$link | Select-Object LinkType, Target
-
-
-.. code-block :: MINGW64
-
-	ln -s ~/../../tools/dotfiles/vim/* ~/../../../usr/share/vim/
-
-NOTE
-----
-
-You will have mutliple version of Vim in Windows
-
-	- GVim running in C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Vim 8.1\\
-	- GVim running in C:\\tools\\Vim\\vim81
-	- Vim running in C:\\Users\\\%USERPROFILE\\
-
-Vimrc file locations:
-
-	- C:\\Users\%USERPROFILE%\\

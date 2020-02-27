@@ -9,7 +9,7 @@
 """"""""""""""""""""""""""""""""""""""""
 " Sources
 """""""""""""""""""
-function! WaitToLoadTpl()
+function! WaitToLoadTplLinux()
     source $VIM/abbrev/abbreviations.vim
     source $VIM/src/au.vim
     source $VIM/src/gui.vim
@@ -17,6 +17,15 @@ function! WaitToLoadTpl()
     source $VIM/src/playground.vim
     source $VIM/src/plugins.vim
     source $VIM/src/settings.vim
+endfunction
+function! WaitToLoadTplWindows()
+    source $VIM\abbrev\abbreviations.vim
+    source $VIM\src\au.vim
+    source $VIM\src\gui.vim
+    source $VIM\src\mappings.vim
+    source $VIM\src\playground.vim
+    source $VIM\src\plugins.vim
+    source $VIM\src\settings.vim
 endfunction
 
 " Download the package below and link it accordingly to your environment
@@ -32,16 +41,18 @@ endfunction
 " Create Templates upon writing
 autocmd BufNewFile * silent! call LoadTemplate('%:e')
 " Perform functions on templates (Prevents Error of replacing +DATE+, etc)
-call WaitToLoadTpl()
 
 " OS Restrictions
 """"""""""""""""""""""""""""""""""""""""
 if has("mac")
     colorscheme tender
+    call WaitToLoadTplLinux()
 elseif has("win32")
     colorscheme industry
+    call WaitToLoadTplWindows()
 elseif has("unix")
     hi Normal guibg=NONE ctermbg=NONE
     "colorscheme industry
+    call WaitToLoadTplLinux()
 endif
 

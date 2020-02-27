@@ -12,10 +12,10 @@
 DOSKEY ga=git add
 DOSKEY gaR=git add README.rst; git commit -m "updated"; git push
 DOSKEY gas=git add . && git status
-DOSKEY gc=git commit -m
+:: DOSKEY gc=git commit -m  :: asks for a "value"
 DOSKEY gcip=git commit -m "initial commit"; git push
 DOSKEY gco=git checkout -b
-DOSKEY gcup=git commit -m "updated"; git push
+DOSKEY gcup=git commit -m "updated" && git push
 DOSKEY githard=git reset --hard origin/master
 DOSKEY gm=git mv
 DOSKEY gl=git pull

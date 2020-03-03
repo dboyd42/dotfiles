@@ -1,11 +1,12 @@
 ### Bash
 #Display
+alias cm="cmatrix"
 alias l='ls -lh --color'
 alias ll='ls -lhai --color'
 alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
 alias ps2="export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '"
 alias ps3="export PS1='\[\033[01;31m\]\u:\[\033[01;34m\]\W\[\033[00m\]\$ '"
-alias cm="cmatrix"
+alias sba='source ~/.bash_aliases'
 
 ### Compiling / Interpreters
 alias com='g++ -std=c++1z -o main *.cpp'
@@ -34,6 +35,7 @@ alias ga='git add'
 alias gaR='git add README.rst; git commit -m "updated"; git push'
 alias gas='git add .; git status'
 alias gc='git commit -m'
+alias gcl='git clone'
 alias gcip='git commit -m "initial commit"; git push'
 alias gco='git checkout -b'
 alias gcup='git commit -m "updated"; git push'

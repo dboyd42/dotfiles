@@ -5,6 +5,7 @@ alias ll='ls -lhai --color'
 alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
 alias ps2="export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '"
 alias ps3="export PS1='\[\033[01;31m\]\u:\[\033[01;34m\]\W\[\033[00m\]\$ '"
+alias cm="cmatrix"
 
 ### Compiling / Interpreters
 alias com='g++ -std=c++1z -o main *.cpp'

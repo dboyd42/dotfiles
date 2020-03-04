@@ -53,7 +53,7 @@ elseif has("win32")
     " Rm cursorline due to blinding cursorline UI
     set nocursorline
     " Use <C-v> to paste from sys clip in insert mode
-    inoremap <C-v> <Esc><C-">+pi
+    inoremap <C-v> <Esc><C-">+pa
     " Use <C-v> to copy to sys clip in visual mode
     vnoremap <C-c> <C-">+y
 elseif has("unix")

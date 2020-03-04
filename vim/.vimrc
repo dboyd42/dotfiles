@@ -50,7 +50,12 @@ if has("mac")
 elseif has("win32")
     colorscheme industry
     call WaitToLoadTplWindows()
+    " Rm cursorline due to blinding cursorline UI
     set nocursorline
+    " Use <C-v> to paste from sys clip in insert mode
+    inoremap <C-v> <Esc><C-">+pi
+    " Use <C-v> to copy to sys clip in visual mode
+    vnoremap <C-c> <C-">+y
 elseif has("unix")
     hi Normal guibg=NONE ctermbg=NONE
     "colorscheme industry

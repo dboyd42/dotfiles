@@ -10,16 +10,22 @@ Insert Mode
 
 .. code-block :: Vim
 
-  " Jump down (next line)
-  <C-o>j
+  """
+  " Navigating
+  """
+  <C-o>j     " next line
+  <C-o>o     " previous line
+  <C-o>0     " beginning of line
+  <C-o>$     " EOL
+  <C-o>fy    " Find first 'y' after cursor
+  <C-o>Ty    " Till first 'y' before cursor
   
-  " Jump up (previous line)
-  <C-o>o
-
 Command Mode
 ============
 
 .. code-block :: Vim
 
-  " Basic statusline bar (case no plugins)
-  set ruler
+  """
+  " Settings
+  """
+  set ruler     " Basic statusline bar (case no plugins)

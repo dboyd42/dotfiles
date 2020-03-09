@@ -1,5 +1,5 @@
-Vim Tips
-########
+Vim Cheatsheet
+##############
 :Author: David Boyd
 :Date: 2020-08-03
 

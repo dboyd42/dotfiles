@@ -5,6 +5,22 @@ Vim Cheatsheet
 
 These commands are from Vim defaults unless otherwise stated.
 
+Command Mode
+============
+
+.. code-block :: Vim
+
+  """
+  " File Properties
+  """
+  g<C-g>        " Display col, line, word cout, bytes
+
+
+  """
+  " Settings
+  """
+  set ruler     " Basic statusline bar (case no plugins)
+
 Insert Mode
 ===========
 
@@ -19,13 +35,14 @@ Insert Mode
   <C-o>$     " EOL
   <C-o>fy    " Find first 'y' after cursor
   <C-o>Ty    " Till first 'y' before cursor
-  
-Command Mode
-============
+
+Visual Mode
+===========
 
 .. code-block :: Vim
 
   """
-  " Settings
+  " File Properties
   """
-  set ruler     " Basic statusline bar (case no plugins)
+  g<C-g>        " Display col, line, word cout, bytes
+

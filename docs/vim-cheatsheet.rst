@@ -5,6 +5,25 @@ Vim Cheatsheet
 
 These commands are from Vim defaults unless otherwise stated.
 
+From Terminal
+=============
+
+Encrypting
+----------
+
+.. code-block :: Vim
+
+	# Open file for encryption
+	vim -x filename
+	<enter passwd>
+	<re-enter passwd>
+
+	# Enable stronger encryption
+	:setlocal cm=blowfish2
+
+	# Check enryption
+	:setlocal cm?
+
 Command Mode
 ============
 

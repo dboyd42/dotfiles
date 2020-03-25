@@ -24,7 +24,7 @@ function! WaitToLoadTplWindows()
     source $VIM\src\gui.vim
     source $VIM\src\mappings.vim
     source $VIM\src\playground.vim
-    source $VIM\src\plugins.vim
+    "source $VIM\src\plugins.vim
     source $VIM\src\settings.vim
 endfunction
 

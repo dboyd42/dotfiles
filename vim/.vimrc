@@ -15,7 +15,7 @@ function! WaitToLoadTplLinux()
     source $VIM/src/gui.vim
     source $VIM/src/mappings.vim
     source $VIM/src/playground.vim
-    source $VIM/src/plugins.vim
+    "source $VIM/src/plugins.vim 	" use native Vim pckg-mgr
     source $VIM/src/settings.vim
 endfunction
 function! WaitToLoadTplWindows()
@@ -24,7 +24,7 @@ function! WaitToLoadTplWindows()
     source $VIM\src\gui.vim
     source $VIM\src\mappings.vim
     source $VIM\src\playground.vim
-    "source $VIM\src\plugins.vim
+    "source $VIM\src\plugins.vim	" $VIM/vim82/pack/<mkdir>/gc $repos
     source $VIM\src\settings.vim
 endfunction
 

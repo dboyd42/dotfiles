@@ -10,6 +10,7 @@ Link Files
 ==========
 
 For macOS and Linux, just run the **link-dotfiles.sh**.
+	- *In progress: Moving from Vundle to Native Vim plugin mgr*
 
 Win10
 -----
@@ -30,7 +31,8 @@ If using git-bash, open as administrator
 	cd /usr/share/vim/vim82/pack/bundle/start/
 	# run the plugin-list.txt file as a .bat file
 
-	# link bash aliases
+	# link system dotfiles
 	ln -sf $PWD/bash/.bash_aliases ~/.bash_aliases
 	ln -sf $PWD/bash/.tmux.conf ~/.tmux.conf
+	ln -sf $PWD/gitconfig ~/.gitconfig
 

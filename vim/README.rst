@@ -66,22 +66,14 @@ Windows
 
 .. code-block :: Command Prompt
 
-	:: Install Chocolatey (https://chocolatey.org/docs/installation)
-	@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command " [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+        :: Chocolatey
+        choco install vim
 
-	:: Install Chocolatey GUI (for Git CLI) (https://chocolatey.org/packages/ChocolateyGUI)
-	choco install chocolateygui -y
-	shutdown /r
-
-	:: Install git --Requires Chocolatey GUI (https://chocolatey.org/packages/git)
-	:: Install vim (https://chocolatey.org/packages/vim)
-	:: Configure Git to ensure line endings in files you checkout are correct for Windows.
-	:: For compatiblity, line endings are converted to Unix style when you commit files.
-	git config --global core.autocrlf true
-
-	:: Create soft links
-	cmd-links.bat
-
-	:: Clone Vundle.git to C:\Users\%USER_PROFILE%\
-	git clone
-
+        :: Install vim-plugins
+        ::      1) Determin Vim's runtime path
+        vim +echo $VIMRUNTIME
+        ::      2) Create package folder '\pack\bundle\start\'
+        mkdir C:\tools\vim\vim82\pack\bundle\start
+        :: Clone repositories in start folder
+        git clone *.git
+        

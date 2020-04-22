@@ -65,3 +65,11 @@ Visual Mode
   """
   g<C-g>        " Display col, line, word cout, bytes
 
+Vim Scripting
+=============
+
+Date/Time
+---------
+
+https://vim.fandom.com/wiki/Insert_current_date_or_time
+

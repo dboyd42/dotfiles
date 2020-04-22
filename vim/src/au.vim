@@ -11,15 +11,16 @@ augroup filetype_all
     au BufWritePre * %s/\s\+$//e
     " Make gf work for a URL.  I.e.) file:///C:/myfile.txt
     au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
+    " Copyright Year
+    au BufNewFile * %s/+YEAR+/\=strftime('%Y')/
+    " Today's Date
+    au BufNewFile * %s/+TODAY+/\=strftime('%Y-%m-%d')/
+    " Insert program name after title
+    au BufNewFile * %s/+PRGM NAME+/\=expand('%:t')/
 augroup END
 
 augroup filetype_cpp
     au!
-    " Insert dates after date
-    au BufNewFile *.cpp %s/+YEAR+/\=system('echo -n `date +"%Y"`')/
-    au BufNewFile *.cpp %s/+TODAY+/\=system('echo -n `date +"%F"`')/
-    " Insert program name after title
-    au BufNewFile *.cpp %s/+PRGM NAME+/\=expand('%:t')/
     " Un/comment
     au FileType *.cpp noremap <buffer> <LocalLeader>c I// <Esc>
     au FileType cpp noremap <buffer> <LocalLeader>u 03x<Esc>
@@ -33,11 +34,6 @@ augroup END
 
 augroup filetype_java
     au!
-    " Insert date in tpl
-    au BufNewFile *.java %s/+TODAY+/\=system('echo -n `date +"%F"`')/
-    au BufNewFile *.java %s/+YEAR+/\=system('echo -n `date +"%Y"`')/
-    " Insert program name after title
-    au BufNewFile *.java %s/+PRGM NAME+/\=expand('%:t')/
     " Un/comment
     au FileType java noremap <buffer> <LocalLeader>c I//<Esc>
     au FileType java noremap <buffer> <LocalLeader>u 02x<Esc>
@@ -45,6 +41,7 @@ augroup END
 
 augroup filetype_javascript
     au!
+    " Un/comment
     au FileType javascript noremap <buffer> <LocalLeader>c I//<Esc>
     au FileType javascript noremap <buffer> <LocalLeader>u 02x<Esc>
 augroup END
@@ -81,13 +78,6 @@ augroup END
 
 augroup filetype_python
     au!
-    " Insert date in tpl
-    au BufNewFile *.py %s/+YEAR+/\=system('echo -n `date +"%Y"`')/
-    au BufNewFile *.py %s/+TODAY+/\=system('echo -n `date +"%F"`')/
-    " Insert program name after title
-    au BufNewFile *.py %s/+PRGM NAME+/\=expand('%:t')/
-    " Indent Files
-    "au BufWritePre,BufRead *.py normal gg=G
     " Un/comment
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u ^x<Esc>
@@ -99,19 +89,12 @@ augroup filetype_rst
     " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
-    " Insert date in tpl
-    au BufNewFile *.rst %s/+TODAY+/\=system('echo -n `date +"%F"`')/
     " Insert program name
     au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
 augroup END
 
 augroup filetype_sh
     au!
-    " Insert date in tpl
-    au BufNewFile *.sh %s/+TODAY+/\=system('echo -n `date +"%F"`')/
-    au BufNewFile *.sh %s/+YEAR+/\=system('echo -n `date +"%Y"`')/
-    " Insert program name after title
-    au BufNewFile *.sh %s/+PRGM NAME+/\=expand('%:t')/
     " Un/comment
     au FileType sh noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType sh noremap <buffer> <LocalLeader>u ^x<Esc>

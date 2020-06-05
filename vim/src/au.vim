@@ -93,7 +93,7 @@ augroup filetype_rst
     nnoremap y# yyp:.s/./\#/g<CR>:nohls<CR>
     noremap y= yyp:.s/./=/g<CR>:nohls<CR>
     nnoremap y- yyp:.s/./-/g<CR>:nohls<CR>
-    nnoremap y~ yyp:.s/./~/g<CR>:nohls<CR>
+    nnoremap y~ yyp:.s/./\~/g<CR>:nohls<CR>
     " Insert program name
     au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
 augroup END

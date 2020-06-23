@@ -18,6 +18,8 @@ alias py='python3'
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
 alias giths='cd /home/bhat/Documents/code/repos/github/dboyd42/'
 alias VIM='cd ~/../../usr/share/vim/'
+# WSL
+alias wgu='cd /mnt/c/users/boydd/OneDrive/Documents/wgu/'
 
 ### Editing
 # Clipboard

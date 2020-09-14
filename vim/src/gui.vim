@@ -3,15 +3,15 @@
 " Setting the Font in GUI --Dual Monitor Mode
 if has("gui_running")
   if has("gui_gtk2") || has("gui_gtk3")
-    set guifont=Courier\ New\ 12
+    set guifont=Courier\ New\ 10
   elseif has("gui_photon")
-    set guifont=Courier\ New:s12
+    set guifont=Courier\ New:s10
   elseif has("gui_kde")
-    set guifont=Courier\ New/12/-1/5/50/0/0/0/1/0
+    set guifont=Courier\ New/10/-1/5/50/0/0/0/1/0
   elseif has("x11")
     set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
   else
-    set guifont=Courier_New:h12:cDEFAULT
+    set guifont=Courier_New:h10:cDEFAULT
 endif
 
 " Zoom (:set guifont?) "

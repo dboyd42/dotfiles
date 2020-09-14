@@ -1,11 +1,5 @@
 " $VIM/abbrev/abbreviations.vim
 
-" Easy commands in the command line:
-:cabbr csf colorscheme forneus
-:cabbr csi colorscheme industry
-:cabbr csm colorscheme morning
-:cabbr csr colorscheme ron
-
 " Correct typical keypress errors:
 :iabbr teh the
 :iabbr adn and
@@ -16,7 +10,6 @@
 :iabbr lenght length
 :iabbr fo of
 
-" Simple templates for programming:
-
 " User data
 :iabbrev ccopy Copyright 2020 David Boyd, all rights reserved
+

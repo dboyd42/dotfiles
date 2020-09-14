@@ -2,6 +2,7 @@ README
 #######
 :Author: David Boyd
 :Date: 2020-06-05
+:Summary: These files are for Windows Terminal in conjuction with WSL
 
 Windows Terminal
 ================

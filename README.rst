@@ -6,6 +6,21 @@ Dotfiles
 This repository holds my dotfiles for Linux, macOS, and Windows with
 an emphasis on Vim configurations.
 
+Included Plug-ins
+=================
+
+|------------+-------------------------------|
+| Plug-in    | Description                   |
+|============+===============================|
+| Airline    | Fancy-schmancy Statusline     |
+|------------+-------------------------------|
+| Fugitive   | Git Wrapper                   |
+|------------+-------------------------------|
+| Surround   | Surrounding Things            |
+|------------+-------------------------------|
+| Table-Mode | RST Table Creator & Formatter |
+|------------+-------------------------------|
+
 
 Windows
 =======

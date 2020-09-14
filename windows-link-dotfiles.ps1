@@ -25,9 +25,12 @@
 ###
 
 # Create path to plug-ins
-#New-Item -Path 'C:\tools\vim\vim82\pack\plug-ins\start' -ItemType Directory
+#New-Item -Path 'C:\tools\vim\vim82\pack\plug-ins\' -ItemType Directory
 
-
+# Link git submodules to /start folder
+$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\vim\plug-ins\start'
+$myPath = 'C:\tools\vim\vim82\pack\plug-ins\start'
+New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget
 
 
 

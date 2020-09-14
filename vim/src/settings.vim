@@ -1,27 +1,30 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Basics: "
+" Basics "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use case insensitive search, except when using capital letters
-set autoindent          " copies current indent on newline
+
+" Indenting your Car
+set autoindent          " copies current indent on newline (ai)
 "  uses same indent when textwidth is reached
 set smartindent         " indentations are based off FileType
 set backspace=indent,eol,start " Allow backspacing over ai, \n, I
 set encoding=utf8       " standard encoding and standard language
-set ignorecase          " ignores the case of normal letters
-set smartcase           " identifies case specific patterns
-" Causes message error at startup
-"set linebreak lines           " wraps complete words
+
+" Navigating the 7 Seas
 set nomodeline          " disabled due to security vulnerabilities
 set nostartofline       " Off - cursor is kept in the same column
 set notimeout ttimeout ttimeoutlen=200 " Time out on keycodes, != mappings
 set mouse=a             " Enable use of the mouse for all modes
+
+" Tabs, Tabbing, and Tabbies; Tablature for the People
 set expandtab           " tabs are spaces
-set shiftround          " set indent to round to nearest shiftwidth
-set shiftwidth=4
-set softtabstop=4       " number of spaces in tab when editing
+set shiftround          " set indent to round to nearest shiftwidth 
+set shiftwidth=4	" applies to '>>' and '<<' commands
+set softtabstop=4       " number of spaces in tab when editing 
 set tabstop=4           " number of visual spaces per TAB
+
+" Wrapping it Tight
 set tw=79               " physical width of document
 set wrap                " visual/virtual line wrapping
 
@@ -52,6 +55,9 @@ set foldmethod=indent   " fold based on indent level
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch           " search as characters are entered
 set hlsearch            " highlight search matches
+" Use case insensitive search, except when using capital letters
+set ignorecase          " ignores the case of normal letters
+set smartcase           " identifies case specific patterns
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +70,7 @@ set lazyredraw          " redraws screen only when we need to --faster macros
 set matchtime=1         " decisec to showmatch ([{}]) | default=5
 set number              " display current line number on Left
 set numberwidth=4       " n cols to use for the line number
-"set rnu                 " relative numbers
+"set rnu                 " relative numbers (Great4 editing; Terrible4 writing)
 "set showcmd             " show partial commands in bottom bar !=Airline
 set showmatch           " highlight matching [{()}]
 set showmode            " show INSERT, VISUAL, etc

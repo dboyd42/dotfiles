@@ -9,11 +9,13 @@ File Locations
 +-------------+------------------------------+------------------------------+
 | Vim Var     | Linux/macOS                  | Windows (Chocolatey)         |
 +=============+==============================+==============================+
-| $MYVIMRC    | ~/.vimrc                     | %USERPROFILE%_vimrc          |
-+-------------+------------------------------+------------------------------+
 | $VIM        | /usr/share/vim/              | C:\\Program Files (86x)\\Vim |
+|             |                              | C:\\tools\\vim               |
 +-------------+------------------------------+------------------------------+
-| $VIMHOME    | ~/                           | N/A                          |
+| $MYVIMRC    | ~/.vimrc                     | %USERPROFILE%_vimrc    OR    |
+|             |                              | C:\\tools\\vim\\_vimrc       |
++-------------+------------------------------+------------------------------+
+| $VIMRUNTIME |                              | C:\\tools\\vim\vim82         |
 +-------------+------------------------------+------------------------------+
 
 +---------------------------------------------+-------------------------------------+
@@ -23,7 +25,6 @@ File Locations
 +---------------------------------------------+-------------------------------------+
 | :so $VIMRUNTIME/syntax/hitest.vim           | shows complete list of color groups |
 +---------------------------------------------+-------------------------------------+
-
 
 Plugins
 =======
@@ -56,24 +57,10 @@ Install
 Linux and macOS
 ===============
 
-.. code-block :: Bash
-
-	cd ../
-	./link-dotfiles.sh
+.. code-block:: Bash
 
 Windows
 =======
 
-.. code-block :: Command Prompt
+.. code-block:: PowerShell
 
-        :: Chocolatey
-        choco install vim
-
-        :: Install vim-plugins
-        ::      1) Determin Vim's runtime path
-        vim +echo $VIMRUNTIME
-        ::      2) Create package folder '\pack\bundle\start\'
-        mkdir C:\tools\vim\vim82\pack\bundle\start
-        :: Clone repositories in start folder
-        git clone *.git
-        

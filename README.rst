@@ -14,27 +14,12 @@ Windows
 
 .. code-block:: PowerShell
 
-   # Allow 3rd Party Scripts to be ran (You're the 3rd Party)
+   # Allow locally created scripts to run
    Set-ExecutionPolicy RemoteSigned
 
-   # Run the script
-   # in-progress
+   # Run the Windows linking script
+   .\windows-link-dotfiles.ps1
 
    # Restore ExecutionPolicy defaults (if you want to)
    Set-ExecutionPolicy Restricted
-
-Execution Policies
-------------------
-
-Restricted
-	stops any script from running
-
-RemoteSigned (Recommended)
-	allows scripts created on the device, but scripts created on another computer won't run unless they include a trusted digital signature.
-
-AllSigned
-	all the scripts will run, but only if a trusted publisher has sign them.
-
-Unrestricted
-	runs any script without any restrictions.
 

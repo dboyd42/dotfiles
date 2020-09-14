@@ -64,3 +64,18 @@ Windows
 
 .. code-block:: PowerShell
 
+Execution Policies
+==================
+
+Restricted
+	stops any script from running
+
+RemoteSigned (Recommended)
+	allows scripts created on the device, but scripts created on another computer won't run unless they include a trusted digital signature.
+
+AllSigned
+	all the scripts will run, but only if a trusted publisher has sign them.
+
+Unrestricted
+	runs any script without any restrictions.
+

@@ -5,6 +5,17 @@ let maplocalleader = "["
 
 " Autocomplete "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Command Mode
+""""""""""""""""""""""""""""""""""""""""
+
+" Delete Duplicate Rows
+"     "Note: can also use :n,m sort u   // where u = uniq
+cnoremap delduprows %s/^\(.*\)\(\n\1\)\+$/\1/
+
+" Insert Mode
+""""""""""""""""""""""""""""""""""""""""
+
 " Autocomplete Words
 if has("unix")
     imap<C-@> <C-p>
@@ -12,24 +23,15 @@ else
     imap <C-Space> <C-p>
 endif
 
-" Date - Update Revision Date tag
-cmap updaterevdate /# Revised<CR><C-j>j<LocalLeader>ca<TAB>
-            \ <C-r>=system('date +%F')<CR><Esc>dd
-            \ <Leader><Space>k<S-a> -  <Esc>
-
-" Delete Duplicate Rows
-"     "Note: can also use :n,m sort u   // where u = uniq
-cnoremap delduprows %s/^\(.*\)\(\n\1\)\+$/\1/
-
-" Edit README.rst in current dir
-cnoremap SR split README.rst<CR>
-
 " Make braces auto closing
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap " ""<Left>
 "inoremap ' ''<Left>
+
+" Normal Mode
+""""""""""""""""""""""""""""""""""""""""
 
 " New line insert
 nnoremap <C-j> o<Esc>k
@@ -46,26 +48,6 @@ endif
     " Replaces 'S' -> substitute line
 noremap <Leader>f :/<C-r>*<CR>
 
-" Surround Visual-Text  " Makes up for what Vim-Surround is lacking
-vnoremap <LocalLeader>** c****<Esc>2hp<Esc>
-vnoremap <LocalLeader>*<CR> c**<Esc>hp<Esc>
-vnoremap <LocalLeader>" c""<Esc>hp<Esc>
-vnoremap <LocalLeader>' c''<Esc>hp<Esc>
-vnoremap <LocalLeader>( c()<Esc>hp<Esc>
-vnoremap <LocalLeader>[ c[]<Esc>hp<Esc>
-vnoremap <LocalLeader>{ c{}<Esc>hp<Esc>
-
-" Directory Browsing (NERDTreeDTreerw, ctags, tagbar) "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap -- :NERDTree<CR>
-cnoremap vsb vertical sb
-cnoremap vex Vex<CR>
-
-" Display "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Statusline (Airline backup)
-cnoremap stline set statusline=%F\ %=\ Ln:\%l/%L\ Col:\%c
-
 " Files "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edit MYVIMRC | Source MYVIMRC & Abbreviations
@@ -76,6 +58,7 @@ nnoremap <Leader>sa :source $VIM/abbreviations.vim<CR>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 cnoremap SUDOWRITE w !sudo tee % > /dev/null
+
 
 " Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -91,7 +74,7 @@ endif
 " Delete character on cursor
 inoremap <C-d> <Del>
 
-" Disable old keys (no operation)
+" Disable arrow keys (no operation)
 noremap <Left>  <nop>
 noremap <Right> <nop>
 noremap <Up>    <nop>
@@ -110,31 +93,8 @@ nnoremap <C-l> :bn<CR>
 nnoremap <C-k> :b#<CR>
 nnoremap <C-h> :bp<CR>
 
-" Jump over braces/string
-inoremap <C-l> <Right>
-inoremap <C-e> <End>
-
-" Jump up/down a line
-inoremap <C-j> <C-W>j
-inoremap <C-k> <C-W>k
-
-" Jump vertically by visual line
-nnoremap j gj
-nnoremap k gk
-
-" Navigating Windows
-nnoremap <M-j> <C-W>j
-nnoremap <M-k> <C-W>k
-nnoremap <M-h> <C-W>h
-nnoremap <M-l> <C-W>l
-
 " Search "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn off search highligh
-"nnoremap <leader><Space> :nohlsearch<CR> " Uncomment for Windows compatability
-nnoremap <leader><Space> :nohlsearch<CR>
-
-" Visual mode pressing * or # searches for the current selection
-vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+nnoremap <leader><Space> :nohl<CR>
 

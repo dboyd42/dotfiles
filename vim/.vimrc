@@ -14,6 +14,7 @@ function! WaitToLoadTplLinux()
     source $VIM/src/au.vim
     source $VIM/src/gui.vim
     source $VIM/src/mappings.vim
+    source $VIM/src/plug-ins.vim
     source $VIM/src/settings.vim
 endfunction
 function! WaitToLoadTplWindows()
@@ -21,6 +22,7 @@ function! WaitToLoadTplWindows()
     source $VIM\src\au.vim
     source $VIM\src\gui.vim
     source $VIM\src\mappings.vim
+    source $VIM\src\plug-ins.vim
     source $VIM\src\settings.vim
 endfunction
 

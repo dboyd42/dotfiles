@@ -9,17 +9,17 @@ an emphasis on Vim configurations.
 Included Plug-ins
 =================
 
-+------------+-------------------------------+
-| Plug-in    | Description                   |
-+------------+-------------------------------+
-| Airline    | Fancy-schmancy Statusline     |
-+------------+-------------------------------+
-| Fugitive   | Git Wrapper                   |
-+------------+-------------------------------+
-| Surround   | Surrounding Things            |
-+------------+-------------------------------+
-| Table-Mode | RST Table Creator & Formatter |
-+------------+-------------------------------+
++------------+---------------------------+------------------------+
+| Plug-in    | Description               | Practicality           |
++============+===========================+========================+
+| Airline    | Fancy-schmancy Statusline |                        |
++------------+---------------------------+------------------------+
+| Fugitive   | Git Wrapper               | Allows gVim to use Git |
++------------+---------------------------+------------------------+
+| Surround   | Surrounding Things        |                        |
++------------+---------------------------+------------------------+
+| Table-Mode | Table Creator & Formatter | RST/MD files           |
++------------+---------------------------+------------------------+
 
 
 Windows

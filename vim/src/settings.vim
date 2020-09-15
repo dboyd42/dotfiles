@@ -1,8 +1,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Basics "
+" Functionality "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Formatting
+set nf=alpha,bin,octal,hex  " format special numbers
 
 " Indenting your Car
 set autoindent          " copies current indent on newline (ai)
@@ -19,9 +22,9 @@ set mouse=a             " Enable use of the mouse for all modes
 
 " Tabs, Tabbing, and Tabbies; Tablature for the People
 set expandtab           " tabs are spaces
-set shiftround          " set indent to round to nearest shiftwidth 
+set shiftround          " set indent to round to nearest shiftwidth
 set shiftwidth=4	" applies to '>>' and '<<' commands
-set softtabstop=4       " number of spaces in tab when editing 
+set softtabstop=4       " number of spaces in tab when editing
 set tabstop=4           " number of visual spaces per TAB
 
 " Wrapping it Tight

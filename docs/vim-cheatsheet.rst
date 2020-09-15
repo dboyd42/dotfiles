@@ -34,13 +34,13 @@ Date/Time
 
 .. code-block:: Vim
 
-    :put =strftime(\"%c\")                // REQUIRES '\' IF using "quotes"
-    :put =strftime('%F')                  2020-09-13
-    :echo strftime("%c")		          Sun Apr 27 11:49:23 1997
-    :echo strftime("%Y %b %d %X")	      1997 Apr 27 11:53:25
-    :echo strftime("%y%m%d %T")	          970427 11:53:55
-    :echo strftime("%H:%M")	              11:55
-    :echo strftime("%c", getftime("file.c"))        //Show mod time of file.c.
+	  :put =strftime(\"%c\")				// REQUIRES '\' IF using "quotes"
+	  :put =strftime('%F')				  2020-09-13
+	  :echo strftime("%c")				  Sun Apr 27 11:49:23 1997
+	  :echo strftime("%Y %b %d %X")		  1997 Apr 27 11:53:25
+	  :echo strftime("%y%m%d %T")			  970427 11:53:55
+	  :echo strftime("%H:%M")				  11:55
+	  :echo strftime("%c", getftime("file.c"))		//Show mod time of file.c.
 
 set formatoptions
 -----------------
@@ -52,30 +52,30 @@ set formatoptions
 
 .. code-block:: Vim
 
-   " get current formatoptions
-   set fo?
-   " add letter (option/key) to formatoptions
-   set fo+=t        "t	Auto-wrap text using textwidth
-   " rm letter (option/key) from formatoptions
-   set fo-=l        "l	Long lines are not broken in insert mode: When a line 
-                    "was longer than 'textwidth' when the insert command 
-                    "started, Vim does not automatically format it.
+	 " get current formatoptions
+	 set fo?
+	 " add letter (option/key) to formatoptions
+	 set fo+=t		"t	Auto-wrap text using textwidth
+	 " rm letter (option/key) from formatoptions
+	 set fo-=l		"l	Long lines are not broken in insert mode: When a line
+					  "was longer than 'textwidth' when the insert command
+					  "started, Vim does not automatically format it.
 
-   " set textwidth
-   :set tw=79  
-   " stop automatic wrapping
-   :set tw=0
+	 " set textwidth
+	 :set tw=79
+	 " stop automatic wrapping
+	 :set tw=0
 
-   " wrap margins   (HARD wrap -> inserts a newline at break)
-       " Summary Number of characters from the right window border where
-       " wrapping starts.  When typing text beyond this limit, an <EOL> will
-       " be inserted:set wm=n
+	 " wrap margins   (HARD wrap -> inserts a newline at break)
+		 " Summary Number of characters from the right window border where
+		 " wrapping starts.  When typing text beyond this limit, an <EOL> will
+		 " be inserted:set wm=n
 
-   " wrap linebreak  (SOFT wrap -> prints same-line text on multi lines wo break)
-   :set wrap linebreak
-   " wrap long lines at a chracter in 'break' rather than at the last character
-       " that fits on the screen
-   set lbr  (linebreak)
+	 " wrap linebreak  (SOFT wrap -> prints same-line text on multi lines wo break)
+	 :set wrap linebreak
+	 " wrap long lines at a chracter in 'break' rather than at the last character
+		 " that fits on the screen
+	 set lbr  (linebreak)
 
 
 General Command-Mode Settings
@@ -83,19 +83,19 @@ General Command-Mode Settings
 
 .. code-block:: Vim
 
-  """
-  " File Properties
-  """
-  g<C-g>        " Display col, line, word cout, bytes
+	"""
+	" File Properties
+	"""
+	g<C-g>		" Display col, line, word cout, bytes
 
-  """
-  " Settings
-  """
-  " get setting defaults
-  set <setting>?
+	"""
+	" Settings
+	"""
+	" get setting defaults
+	set <setting>?
 
-  " Basic statusline bar (case no plugins)
-  set ruler     
+	" Basic statusline bar (case no plugins)
+	set ruler
 
 set 'nrformats' 'nf'
 --------------------
@@ -107,7 +107,7 @@ set 'nrformats' 'nf'
 
 ..code-block:: Vim
 
-    "Print alphabet
+	  "Print alphabet
 
 	ia<Esc>qqylp<C-a>q24@q
 
@@ -115,7 +115,7 @@ set 'nrformats' 'nf'
 	qqylp<C-a>q	" @q will duplicate the last char THEN increment
 	24@q		" Append c..z
 
-    "In/Decrement bin,hex
+	  "In/Decrement bin,hex
 
 	0b0110			# binary
 	0xAF9			# hex
@@ -125,25 +125,47 @@ Insert Mode
 
 .. code-block:: Vim
 
-  """
-  " Navigating
-  """
-  <C-o>j     " next line
-  <C-o>o     " previous line
-  <C-o>0     " beginning of line
-  <C-o>$     " EOL
-  <C-o>fy    " Find first 'y' after cursor
-  <C-o>Ty    " Till first 'y' before cursor
+	"""
+	" Digraphs
+	"""
+	" Special symbols/characters and diacritical marks
+	" URL	https://vim.fandom.com/wiki/Entering_special_characters
+
+	<C-k>e!	" è
+	<C-k>e'	" é
+	<C-k>e>	" ê
+	<C-k>e^	" ê
+	<C-k>e<	" ě
+	<C-k>e:	" ë
+
+
+	"""
+	" Navigating
+	"""
+	<C-o>j	 " next line; NOTE: !=work with 'matching braces' fns
+	<C-o>o	 " previous line
+	<C-o>0	 " beginning of line
+	<C-o>$	 " EOL
+	<C-o>fy	" Find first 'y' after cursor
+	<C-o>Ty	" Till first 'y' before cursor
+	<C-O> D	" delete everything to the right of cursor
+
+	<C-W>	" delete word to the left of cursor
+	<C-U>	" delete everything to the left of cursor
+	<C-H>	" backspace/delete
+	<C-J>	" insert newline (easier than reaching for the return key)
+	<C-T>	" indent current line
+	<C-D>	" un-indent current line
 
 Visual Mode
 ===========
 
 .. code-block:: Vim
 
-  """
-  " File Properties
-  """
-  g<C-g>        " Display col, line, word cout, bytes
+	"""
+	" File Properties
+	"""
+	g<C-g>		" Display col, line, word cout, bytes
 
 GUI Vim
 =======
@@ -156,7 +178,7 @@ set guifont
 
 .. code-block:: Vim
 
-    set guifont=Courier_New:h10
+	  set guifont=Courier_New:h10
 
 Tips 'N Tricks
 ==============

@@ -85,7 +85,7 @@ augroup END
 
 augroup filetype_rst
     au!
-    au BufRead,BufNewFile *.rst setlocal noet tw=79 wm=0
+    au BufRead,BufNewFile,BufWrite *.rst setlocal noet tw=79 wm=0
     " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>

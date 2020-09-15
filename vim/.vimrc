@@ -54,3 +54,6 @@ endif
 " Temporary Configurations
 """"""""""""""""""""""""""
 
+" Title Case a Line
+cnoremap TC .s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>:nohl<CR>
+

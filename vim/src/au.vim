@@ -90,14 +90,10 @@ augroup filetype_rst
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
     " Insert header, section, sub-section, etc under line
-    nnoremap y# yyp:.s/./\#/g<CR>:nohls<CR>
-    nnoremap y= yyp:.s/./=/g<CR>:nohls<CR>
-    nnoremap y- yyp:.s/./-/g<CR>:nohls<CR>
-    nnoremap y~ yyp:.s/./\~/g<CR>:nohls<CR>
-    inoremap y# <Esc>yyp:.s/./\#/g<CR>:nohls<CR>o
-    inoremap y= <Esc>yyp:.s/./=/g<CR>:nohls<CR>o
-    inoremap y- <Esc>yyp:.s/./-/g<CR>:nohls<CR>o
-    inoremap y~ <Esc>yyp:.s/./\~/g<CR>:nohls<CR>o
+    nnoremap y# yyp:.s/./\#/g<CR>:nohl<CR>o<Esc>
+    nnoremap y= yyp:.s/./=/g<CR>:nohl<CR>o<Esc>
+    nnoremap y- yyp:.s/./-/g<CR>:nohl<CR>o<Esc>
+    nnoremap y~ yyp:.s/./\~/g<CR>:nohl<CR>o<Esc>
     " Insert program name
     au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
 augroup END

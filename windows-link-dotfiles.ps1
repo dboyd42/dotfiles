@@ -36,7 +36,8 @@ $myPath = 'C:\tools\vim\_vimrc'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 
 # File: .gitconfig
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\vim\.gitconfig' $myPath = '$HOME\.gitconfig'
+$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\gitconfig'
+$myPath = $Env:Userprofile + '\.gitconfig'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 
 ###

@@ -49,6 +49,7 @@ elseif has("unix")
     hi Normal guibg=NONE ctermbg=NONE
     colorscheme industry
     call WaitToLoadTplLinux()
+    set nocursorline
 endif
 
 " Temporary Configurations

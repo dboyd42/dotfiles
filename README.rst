@@ -24,7 +24,7 @@ Included Plug-ins
 Linux
 =====
 
-** Run as root**
+**Run as root**
 
 .. code-block:: Bash
 

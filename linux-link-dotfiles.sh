@@ -45,7 +45,7 @@ ln -sf $PWD/gitconfig $HOME/.gitconfig
 ln -sf $PWD/bash/.tmux.conf $HOME/.tmux.conf
 
 # File: .bash_aliases
-ln -sf $PWD/bash/bash_aliases $HOME/.bash_aliases
+ln -sf $PWD/bash/.bash_aliases $HOME/.bash_aliases
 
 ###
 ### Plug-ins Installation

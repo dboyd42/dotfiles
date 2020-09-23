@@ -57,7 +57,10 @@ git submodule update --init
 mkdir -p $VIMRUNTIME/pack/plug-ins/start/
 
 # Link git plug-in submodules to /start folder
-ln -sf $PWD/pack/plugin-ins/start/* $VIMRUNTIME/pack/plug-ins/start/
+ln -sf $PWD/pack/plugin-ins/start/airline $VIMRUNTIME/pack/plug-ins/start/
+ln -sf $PWD/pack/plugin-ins/start/table-mode $VIMRUNTIME/pack/plug-ins/start/
+ln -sf $PWD/pack/plugin-ins/start/vim-fugitive $VIMRUNTIME/pack/plug-ins/start/
+ln -sf $PWD/pack/plugin-ins/start/vim-surround $VIMRUNTIME/pack/plug-ins/start/
 
 ###
 ### Enable Aliases & Reset Terminal

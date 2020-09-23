@@ -21,6 +21,14 @@ Included Plug-ins
 | Table-Mode | Table Creator & Formatter | RST/MD files           |
 +------------+---------------------------+------------------------+
 
+Linux
+=====
+
+** Run as root**
+
+.. code-block:: Bash
+
+	sudo ./linux-link-dotfiles.sh
 
 Windows
 =======
@@ -29,12 +37,12 @@ Windows
 
 .. code-block:: PowerShell
 
-   # Allow locally created scripts to run
-   Set-ExecutionPolicy RemoteSigned
+	# Allow locally created scripts to run
+	Set-ExecutionPolicy RemoteSigned
 
-   # Run the Windows linking script
-   .\windows-link-dotfiles.ps1
+	# Run the Windows linking script
+	.\windows-link-dotfiles.ps1
 
-   # Restore ExecutionPolicy defaults (if you want to)
-   Set-ExecutionPolicy Restricted
+	# Restore ExecutionPolicy defaults (if you want to)
+	Set-ExecutionPolicy Restricted
 

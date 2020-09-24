@@ -23,8 +23,15 @@ fi
 # $MYVIMRC    = /home/<user>
 # $VIM        = /usr/share/vim/
 VIM="/usr/share/vim"
-# $VIMRUNTIME = /usr/share/vim/vim81/
-VIMRUNTIME="/usr/share/vim/vim81"
+
+if [$(uname -r | cut -d '-' -f2) = "kali1" ]; then
+	# Kali  : $VIMRUNTIME = /usr/share/vim/vim82/
+	VIMRUNTIME="/usr/share/vim/vim82"
+else
+	# Ubuntu: $VIMRUNTIME = /usr/share/vim/vim81/
+	VIMRUNTIME = /usr/share/vim/vim81/
+fi
+
 
 # Link dotfiles/vim/* to
 # Link dotfiles/vim/.vimrc to $HOME/.vimrc
@@ -66,5 +73,5 @@ ln -sf $PWD/pack/plug-ins/start/* $VIMRUNTIME/pack/plug-ins/start/
 source ~/.bashrc
 
 # Reset terminal
-#reset
+reset
 

@@ -6,6 +6,9 @@
 #   plug-ins), bash_aliases,.tmux.conf, and gitconfig.
 # Date: 2020-01-17
 # Revised:
+#    2020-09-24 - updating $VIMRUNTIME = vim82;
+#       [BUG]37 - Ubuntu::WSL uses vim81
+#       [BUG]63 - Kali::WSL permission denied; Enter manually
 #    2020-09-22 - revamped to match windows-link-dotfiles
 #    2020-02-06 - added gitconfig to Linux
 #    2020-01-17 - [+]script-path, [+] git Vundle
@@ -24,14 +27,16 @@ fi
 # $VIM        = /usr/share/vim/
 VIM="/usr/share/vim"
 
-if [$(uname -r | cut -d '-' -f2) = "kali1" ]; then
-	# Kali  : $VIMRUNTIME = /usr/share/vim/vim82/
+# [BUG] Ubuntu::WSL uses vim81
+kernel_release=$(uname -r | cut -d '-' -f2) # WSL == microsoft
+if [ $kernel_release = "kali1" ] || [ $kernel_release = "microsoft" ]; then
+	# Kali      : $VIMRUNTIME = /usr/share/vim/vim82/
 	VIMRUNTIME="/usr/share/vim/vim82"
 else
-	# Ubuntu: $VIMRUNTIME = /usr/share/vim/vim81/
-	VIMRUNTIME = /usr/share/vim/vim81/
+	# Ubuntu@WSL: $VIMRUNTIME = /usr/share/vim/vim81/
+	VIMRUNTIME="/usr/share/vim/vim81/"
 fi
-
+# [BUG] end
 
 # Link dotfiles/vim/* to
 # Link dotfiles/vim/.vimrc to $HOME/.vimrc
@@ -40,7 +45,9 @@ fi
 # Link dotfiles/bash/.bash_aliases to $HOME/.bash_aliases
 
 # Dir: abbrev, src, templates           # :echo $VIM
-ln -sf $PWD/vim/* $VIM/
+ln -sf $PWD/vim/abbrev/ $VIM/
+ln -sf $PWD/vim/src/ $VIM/
+ln -sf $PWD/vim/templates/ $VIM/
 
 # File: vimrc                           # :echo $MYVIMRC
 ln -sf $PWD/vim/.vimrc $HOME/.vimrc
@@ -52,7 +59,9 @@ ln -sf $PWD/gitconfig $HOME/.gitconfig
 ln -sf $PWD/bash/.tmux.conf $HOME/.tmux.conf
 
 # File: .bash_aliases
+# [BUG] Kali::WSL permission denied; Enter manually
 ln -sf $PWD/bash/.bash_aliases $HOME/.bash_aliases
+# [BUG] end
 
 ###
 ### Plug-ins Installation
@@ -64,7 +73,7 @@ git submodule update --init
 mkdir -p $VIMRUNTIME/pack/plug-ins/start/
 
 # Link git plug-in submodules to /start folder
-ln -sf $PWD/pack/plug-ins/start/* $VIMRUNTIME/pack/plug-ins/start/
+ln -sf $PWD/pack/plug-ins/start/ $VIMRUNTIME/pack/plug-ins/start/
 
 ###
 ### Enable Aliases & Reset Terminal
@@ -73,5 +82,5 @@ ln -sf $PWD/pack/plug-ins/start/* $VIMRUNTIME/pack/plug-ins/start/
 source ~/.bashrc
 
 # Reset terminal
-reset
+#reset
 

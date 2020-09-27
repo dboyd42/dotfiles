@@ -120,6 +120,30 @@ set 'nrformats' 'nf'
 	0b0110			# binary
 	0xAF9			# hex
 
+Tabs & Windows
+==============
+:Association: vimdiff
+:Summary: Tabs -> Windows -> Panes (Files)
+:Purpose: Resolves additional Tmux implementations
+
+.. code-block:: Bash
+
+	# Open N tab pages.
+	vim -p /path/to/file1 /path/to/file2 /path/to/file3
+
+.. code-block:: Vim
+
+	# Open N tabs inside vim
+	:tabe [/path/to/file]
+
+	# Navigation/Controls
+	:tabs	# list curr tabs/windows
+	gt		# g(oto next)t(ab)
+	gT		# g(oto prev)T(ab)
+	ngt		# n(umber)g(oto)t(ab)
+	:tablc[lose]
+
+
 Insert Mode
 ===========
 
@@ -190,4 +214,54 @@ gggqG
 	- gg: goTo beginning of buffer
 	- gq: reformat the text included in the motion
 	- G : goTo end of buffer
+
+vimdiff
+=======
+:Association: Tabs & Windows
+
+.. code-block:: Bash
+
+	# Basic-basic
+	vimdiff file1 file2
+	vim -d file1 file2			# defaults to vertical split
+	vimdiff -o file1 file2		# open in horizontal split mode
+
+
+.. code-block:: Vim
+
+	# Navigating
+	[c		# (goto prev)c(hange)
+	]c		# (goto next)c(hange)
+	zo		# 'open' a section of folded text
+	zc		# 'close' a section of foldable text
+
+	# Editing
+	do		# diffo[tain] from other.file to this.file
+	dp		# diffp[ut] from this.file to other.file
+	:diffupdate				# updates *diff* based on changes
+
+Colors
+------
+:Note: Colors can be differenct based on your color scheme
+
++--------+-------------------------------------+
+| Color  | Description                         |
++========+=====================================+
+| Blue   | new block                           |
++--------+-------------------------------------+
+| Purple | differing line                      |
++--------+-------------------------------------+
+| Red    | differing characters w/in same line |
++--------+-------------------------------------+
+
+Implementing vimdiff<>tabs
+--------------------------
+:Note: buffer next/prev still works within each pane.
+
+.. code-block:: Vim
+
+	# Create new tabedit file1
+	:tabe file3
+	# Vertical split diffsplit file4
+	:vert diffs file4
 

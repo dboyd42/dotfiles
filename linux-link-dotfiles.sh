@@ -26,18 +26,22 @@ fi
 # $MYVimRC	= /home/<user>
 # $Vim		= /usr/share/vim/
 Vim="/usr/share/vim"
-# Ubuntu@WSL uses version Vim81; not Vim82
-wsl_ubuntu=$(ls /etc/ | grep ubuntu | cut -d '-' -f1)
 
-if [ $wsl_ubuntu = "ubuntu" ]; then
+
+### Ubuntu@WSL uses version Vim81; Kali@WSL uses version Vim82
+read -p 'Which WSL are you using? [k/u/q]: ' wsl_type
+
+if [ $wsl_type = "u" ]; then
 	# Ubuntu@WSL: $VimRunTime = /usr/share/vim/vim81/
 	VimRunTime="/usr/share/vim/vim81/"
-else
-	# Kali      : $VimRunTime = /usr/share/vim/vim82/
+elif [ $wsl_type = "k" ]; then
 	# Kali@WSL  : $VimRunTime = /usr/share/vim/vim82/
 	VimRunTime="/usr/share/vim/vim82"
+else
+	exit
 fi
 
+### Link Overview ###
 # Link dotfiles/vim/* to
 # Link dotfiles/vim/.vimrc to $HOME/.vimrc
 # Link dotfiles/gitconfig to $HOME/.gitconfig
@@ -58,10 +62,8 @@ ln -sf $PWD/gitconfig $HOME/.gitconfig
 # File: .tmux.conf
 ln -sf $PWD/bash/.tmux.conf $HOME/.tmux.conf
 
-# [BUG] Kali@WSL permission denied; Enter manually ############################
 # File: .bash_aliases
 ln -sf $PWD/bash/.bash_aliases $HOME/.bash_aliases
-# [BUG] end ###################################################################
 
 ###
 ### Plug-ins Installation
@@ -73,15 +75,17 @@ git submodule update --init
 mkdir -p $VimRunTime/pack/plug-ins
 
 # Link git plug-in submodules to /start folder
-ln -sf $PWD/pack/plug-ins/start $VimRunTime/pack/plug-ins/start
+ln -sf $PWD/pack/plug-ins/start $VimRunTime/pack/plug-ins/
 
 ###
 ### Enable Aliases & Reset Terminal
 ###
 # Enable .bash_aliases through .bashrc
 #[BUG] Does NOT source bashrc file
+echo "source ~/.bash_aliases" >> ~/.bashrc
 source ~/.bashrc
+echo "If .bash_aliases are not working, manually source your bashrc file."
 
 # Reset terminal
-reset
+#reset
 

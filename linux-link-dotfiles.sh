@@ -79,6 +79,7 @@ ln -sf $PWD/pack/plug-ins/start $VimRunTime/pack/plug-ins/start
 ### Enable Aliases & Reset Terminal
 ###
 # Enable .bash_aliases through .bashrc
+#[BUG] Does NOT source bashrc file
 source ~/.bashrc
 
 # Reset terminal

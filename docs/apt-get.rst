@@ -10,6 +10,9 @@ Fresh Install
 
 	sudo apt update -y && sudo apt upgrade -y
 
+Programs
+========
+
 The following are additional programs to be installed if needed:
 
 +---------------+-----------------------------+--------------------+
@@ -28,6 +31,8 @@ The following are additional programs to be installed if needed:
 | mingw-w64     | Development env & tools to  |                    |
 |               | compile Win code from Linux |                    |
 +---------------+-----------------------------+--------------------+
+| python3-pip   | pkg mgr for py/3            | pip install pkg    |
++---------------+-----------------------------+--------------------+
 | poppler-utils | PDF utilities (pdftotext)   | less file.pdf      |
 +---------------+-----------------------------+--------------------+
 | tor           | onion router                |                    |
@@ -37,3 +42,7 @@ The following are additional programs to be installed if needed:
 | vim           | terminal/GUI editor         |                    |
 +---------------+-----------------------------+--------------------+
 
+.. code-block:: Python
+
+	# For Python3 libraries
+	pip3 search/install <pkg>

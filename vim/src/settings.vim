@@ -71,6 +71,7 @@ set cursorline          " highlight current line
 set laststatus=2        " Display the status line
 set lazyredraw          " redraws screen only when we need to --faster macros
 set matchtime=1         " decisec to showmatch ([{}]) | default=5
+set nowrap              " do not wrap lines that go off screen
 set number              " display current line number on Left
 set numberwidth=4       " n cols to use for the line number
 "set rnu                 " relative numbers (Great4 editing; Terrible4 writing)

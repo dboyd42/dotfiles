@@ -19,6 +19,7 @@ augroup filetype_all
     " Deletes all trailing whitepsace on save
     au BufWritePre * %s/\s\+$//e
     " Make gf work for a URL.  I.e.) file:///C:/myfile.txt
+    "       use 'viW' for word selection
     au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
 augroup END
 

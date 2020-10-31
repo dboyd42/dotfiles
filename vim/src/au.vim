@@ -54,7 +54,6 @@ augroup filetype_html
     au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
     " Indent Files
     "au BufWritePre,BufRead *.html normal gg=G "<-del 0..^ whitespace!
-    au BufRead *.html normal gg=G
     " Un/comment
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><S-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx

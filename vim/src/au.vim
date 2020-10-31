@@ -1,6 +1,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Saved Commands "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    "" Copyright Year
+    "au BufNewFile * %s/+YEAR+/\=strftime('%Y')/
+    "" Today's Date
+    "au BufNewFile * %s/+TODAY+/\=strftime('%Y-%m-%d')/
+    "" Insert program name after title
+    "au BufNewFile * %s/+PRGM NAME+/\=expand('%:t')/
+
 " FileType "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 augroup filetype_all
@@ -11,12 +20,6 @@ augroup filetype_all
     au BufWritePre * %s/\s\+$//e
     " Make gf work for a URL.  I.e.) file:///C:/myfile.txt
     au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
-    " Copyright Year
-    au BufNewFile * %s/+YEAR+/\=strftime('%Y')/
-    " Today's Date
-    au BufNewFile * %s/+TODAY+/\=strftime('%Y-%m-%d')/
-    " Insert program name after title
-    au BufNewFile * %s/+PRGM NAME+/\=expand('%:t')/
 augroup END
 
 augroup filetype_cpp
@@ -50,7 +53,8 @@ augroup filetype_html
     au!
     au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
     " Indent Files
-    au BufWritePre,BufRead *.html normal gg=G
+    "au BufWritePre,BufRead *.html normal gg=G "<-del 0..^ whitespace!
+    au BufRead *.html normal gg=G
     " Un/comment
     au FileType html noremap <buffer> <LocalLeader>c I<!--<Esc><S-a>--><esc>
     au FileType html noremap <buffer> <LocalLeader>u ^4x<end>xxx
@@ -78,6 +82,12 @@ augroup END
 
 augroup filetype_python
     au!
+    " Copyright Year
+    au BufNewFile *.py %s/+YEAR+/\=strftime('%Y')/
+    " Today's Date
+    au BufNewFile *.py %s/+TODAY+/\=strftime('%Y-%m-%d')/
+    " Insert program name after title
+    au BufNewFile *.py %s/+PRGM NAME+/\=expand('%:t')/
     " Un/comment
     au FileType python noremap <buffer> <LocalLeader>c I#<Esc>
     au FileType python noremap <buffer> <LocalLeader>u ^x<Esc>
@@ -86,6 +96,8 @@ augroup END
 augroup filetype_rst
     au!
     au BufRead,BufNewFile,BufWrite *.rst setlocal noet tw=79 wm=0
+    " Today's Date
+    au BufNewFile *.rst %s/+TODAY+/\=strftime('%Y-%m-%d')/
     " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>

@@ -6,10 +6,10 @@ Vim Cheatsheet
 These commands are from Vim defaults unless otherwise stated.
 
 From Terminal
-=============
+*************
 
 Encrypting
-----------
+==========
 
 .. code-block:: Vim
 
@@ -25,10 +25,10 @@ Encrypting
 	:setlocal cm?
 
 Command Mode
-============
+************
 
 Date/Time
----------
+=========
 :help: help strftime
 :URL: https://vim.fandom.com/wiki/Insert_current_date_or_time
 
@@ -43,7 +43,7 @@ Date/Time
 	  :echo strftime("%c", getftime("file.c"))		//Show mod time of file.c.
 
 set formatoptions
------------------
+=================
 :Canonical: fo\? fo+= fo-=
 :Summary: How automatic formatting is to be done.
 :Man0: help formatoptions
@@ -77,9 +77,32 @@ set formatoptions
 		 " that fits on the screen
 	 set lbr  (linebreak)
 
+subsitution
+===========
+:Summary: Subsitituting chars of unknown length
+:URL: https://www.guckes.net/vi/substitute.html
+
++-------+----------+------------------------------------------------+
+| magic | no magic | Description                                    |
++=======+==========+================================================+
+| *     | \*       | matches >=0 of the preceeding atom             |
++-------+----------+------------------------------------------------+
+| \+    | \+       | matches >=1 of the preceeding atom (not Vi)    |
++-------+----------+------------------------------------------------+
+| \-    | \=       | matches 0 OR 1 of the preceeding atom (not Vi) |
++-------+----------+------------------------------------------------+
+
+Examples
+--------
+
+.. code-block:: Vim
+
+	.*		.\*		" matches anything, also empty string
+	^.\+$	^.\+$	" matches any non-empty string
+	foo\=	foo\=	" matches "fo" and "foo"
 
 General Command-Mode Settings
------------------------------
+*****************************
 
 .. code-block:: Vim
 
@@ -98,7 +121,7 @@ General Command-Mode Settings
 	set ruler
 
 set 'nrformats' 'nf'
---------------------
+====================
 :Summary: Increment/decrement alpha using bin/hex
 :Canonical: 'Numbering Formats'
 :Man: help nf
@@ -121,7 +144,7 @@ set 'nrformats' 'nf'
 	0xAF9			# hex
 
 Tabs & Windows
-==============
+**************
 :Association: vimdiff
 :Summary: Tabs -> Windows -> Panes (Files)
 :Purpose: Resolves additional Tmux implementations
@@ -145,7 +168,7 @@ Tabs & Windows
 
 
 Insert Mode
-===========
+***********
 
 .. code-block:: Vim
 
@@ -182,7 +205,7 @@ Insert Mode
 	<C-D>	" un-indent current line
 
 Visual Mode
-===========
+***********
 
 .. code-block:: Vim
 
@@ -192,7 +215,7 @@ Visual Mode
 	g<C-g>		" Display col, line, word cout, bytes
 
 GUI Vim
-=======
+*******
 
 set guifont
 ===========
@@ -205,7 +228,7 @@ set guifont
 	  set guifont=Courier_New:h10
 
 Tips 'N Tricks
-==============
+**************
 
 gggqG
 -----
@@ -216,7 +239,7 @@ gggqG
 	- G : goTo end of buffer
 
 vimdiff
-=======
+*******
 :Association: Tabs & Windows
 
 .. code-block:: Bash
@@ -241,7 +264,7 @@ vimdiff
 	:diffupdate				# updates *diff* based on changes
 
 Colors
-------
+======
 :Note: Colors can be differenct based on your color scheme
 
 +--------+-------------------------------------+
@@ -255,7 +278,7 @@ Colors
 +--------+-------------------------------------+
 
 Implementing vimdiff<>tabs
---------------------------
+**************************
 :Note: buffer next/prev still works within each pane.
 
 .. code-block:: Vim

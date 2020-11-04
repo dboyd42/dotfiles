@@ -95,19 +95,34 @@ augroup END
 
 augroup filetype_rst
     au!
-    au BufRead,BufNewFile,BufWrite *.rst setlocal noet tw=79 wm=0
-    " Today's Date
-    au BufNewFile *.rst %s/+TODAY+/\=strftime('%Y-%m-%d')/
     " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
-    " Insert header, section, sub-section, etc under line
-    nnoremap y# yyp:.s/./\#/g<CR>:nohl<CR>o<Esc>
-    nnoremap y= yyp:.s/./=/g<CR>:nohl<CR>o<Esc>
-    nnoremap y- yyp:.s/./-/g<CR>:nohl<CR>o<Esc>
-    nnoremap y~ yyp:.s/./\~/g<CR>:nohl<CR>o<Esc>
+    au BufRead,BufNewFile,BufWrite *.rst setlocal noet tw=79 wm=0
     " Insert program name
     au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
+    " Today's Date
+    au BufNewFile *.rst %s/+TODAY+/\=strftime('%Y-%m-%d')/
+    """ Insert header, section, sub-section, etc under line
+    " h1: for parts
+    nnoremap y# yyp:.s/./\#/g<CR>:nohl<CR>
+    " h2: for chapters
+    nnoremap y* yyp:.s/./\*/g<CR>:nohl<CR>
+    " h3: for sections
+    nnoremap y= yyp:.s/./=/g<CR>:nohl<CR>
+    " h4: for subsections
+    nnoremap y- yyp:.s/./-/g<CR>:nohl<CR>
+    " h5: for subsubsections
+    nnoremap y^ yyp:.s/./\^/g<CR>:nohl<CR>
+    " h6: for paragraphs
+    nnoremap y" yyp:.s/./"/g<CR>:nohl<CR>
+    " fns auto section part title
+    function RST_Title()
+        " GOTO 1st line and section title
+        normal ggy#
+    endfunction
+    au BufNewFile *.rst call RST_Title()
+
 augroup END
 
 augroup filetype_sh

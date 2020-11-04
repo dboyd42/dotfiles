@@ -116,11 +116,7 @@ augroup filetype_rst
     nnoremap y^ yyp:.s/./\^/g<CR>:nohl<CR>
     " h6: for paragraphs
     nnoremap y" yyp:.s/./"/g<CR>:nohl<CR>
-    " fns auto section part title
-    function RST_Title()
-        " GOTO 1st line and section title
-        normal ggy#
-    endfunction
+    " fns: auto the section part of +TITLE+
     au BufNewFile *.rst call RST_Title()
 
 augroup END

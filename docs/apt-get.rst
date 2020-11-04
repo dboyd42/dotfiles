@@ -57,6 +57,12 @@ Python
 	# For Python3 libraries
 	pip3 search/install <pkg>
 
++-----------+----------------------------+----------------------+
+| pkg name  | description                | commands             |
++===========+============================+======================+
+| rst2html5 | .rst error correcting code | rst2html5 README.rst |
++-----------+----------------------------+----------------------+
+
 Go
 --
 

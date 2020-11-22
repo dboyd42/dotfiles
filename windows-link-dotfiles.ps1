@@ -5,11 +5,17 @@
 #     including plug-ins.
 # Note: Admin privileges required for 'SymbolicLink'
 # Date: 2020-09-13
-# Revised:
-
+# Revised: 2020-11-22 - Added Microsoft.Powershell.profile.ps1
 
 ###
-### Link dotfiles
+### Link PS Profile
+###     - to access: vim $profile
+$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\windows-terminal\Microsoft.PowerShell_profile.ps1'
+$myPath = $ENV:UserProfile + '\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
+New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
+
+###
+### Link Vim files
 ###
 # Link dotfiles\vim\* to C:\tools\vim\
 # Link dotfiles\vim\.vimrc to C:\tools\_vimrc
@@ -41,7 +47,7 @@ $myPath = $Env:Userprofile + '\.gitconfig'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 
 ###
-### Plug-ins Installation
+### Vim Plug-ins Installation
 ###
 # Clone plug-in submodules after cloning dotfiles
 git submodule update --init

@@ -10,7 +10,7 @@
 ###
 ### Link PS Profile
 ###     - to access: vim $profile
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\windows-terminal\Microsoft.PowerShell_profile.ps1'
+$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\windows-terminal\Microsoft.PowerShell_profile.ps1'
 $myPath = $ENV:UserProfile + '\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 

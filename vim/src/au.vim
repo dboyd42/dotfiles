@@ -118,7 +118,8 @@ augroup filetype_rst
     nnoremap y" yyp:.s/./"/g<CR>:nohl<CR>
     " fns: auto the section part of +TITLE+
     au BufNewFile *.rst call RST_Title()
-
+    " Enable RST TableMode
+    au BufRead,BufNewFile,BufWrite *.rst :TableModeEnable
 augroup END
 
 augroup filetype_sh

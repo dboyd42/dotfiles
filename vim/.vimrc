@@ -60,3 +60,6 @@ endif
 " Title Case a Line
 cnoremap TC .s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>:nohl<CR>
 
+" Linebreak at textwidth=79 | URL: https://stackoverflow.com/questions/2024443/saving-vim-macros
+let @8 = '80|Bi€ýa'
+

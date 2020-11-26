@@ -35,6 +35,8 @@ The following are additional programs to be installed if needed:
 | mingw-w64     | Development env & tools to  |                               |
 |               | compile Win code from Linux |                               |
 +---------------+-----------------------------+-------------------------------+
+| pandoc        | a universal doc converter   | pandoct README.md README.rst  |
++---------------+-----------------------------+-------------------------------+
 | python3-pip   | pkg mgr for py/3            | pip install pkg               |
 +---------------+-----------------------------+-------------------------------+
 | poppler-utils | PDF utilities (pdftotext)   | less file.pdf                 |

@@ -1,15 +1,23 @@
 [user]
-    name = dboyd42
-    email = bhatmagician@gmail.com
+	name = dboyd42
+	email = bhatmagician@gmail.com
 [github]
-    user = dboyd42
+	user = dboyd42
 [color]
-    status = auto
-    diff = auto
-    branch = auto
+	status = auto
+	diff = auto
+	branch = auto
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [core]
-    editor = vim
-    whitespace = fix
+	editor = vim
+	whitespace = fix
+[alias]
+	a = add
+	ci = commit
+	co = checkout
+	l = pull
+	p = push
+	s = status
+	gar = add README.rst
 

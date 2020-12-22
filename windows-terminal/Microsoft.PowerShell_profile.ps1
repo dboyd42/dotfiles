@@ -1,35 +1,62 @@
-###
-### Powershell Configurations
-###
+### =============== ///
+### Theme/Powerline ///
+###                 ///
+# Hide User in Windows Terminal
+#$global:DefaultUser = [System.Environment]::UserName
 
-# Prompt
-function prompt {
-	# Minimal Prompt
-	$Daddy = Split-Path -Path $pwd -Qualifier
-	$Toddler = Split-Path -Path $pwd -Leaf
-	Write-Host -Object "$Daddy\$Toddler"  -NoNewLine -ForegroundColor Magenta
-	return "> "
-}
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-Theme Paradox
 
-###
-### Aliases
-###
+###                     ///
+### END Theme/Powerline ///
+### =================== ///
 
-### CHANGE DIRECTORY ###
+### ======= ///
+### Aliases ///
+###         ///
 
-# Github repos (C:\ local)
-function gith {
-    set-location "$ENV:UserProfile\Documents\code\repos\github\dboyd42"
-}
-
-# WGU coursework (C:\ OneDrive)
+### [[ DIRECTORIES ]] ###
+#-----------------------#
+# WGU coursework
 function wgu {
-	set-location "$ENV:UserProfile\OneDrive\Documents\education\wgu\"
+    Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\wgu\"
 }
 
-# WSL home (Microsoft.Powershell.COre\FileSystem::)
-function wslhome {
-    $uzr = wsl.exe whoami
-    set-location "\\WSL$\kali-linux\home\$uzr\"
+# Local Windows Github
+function lgith {
+    Set-Location "$ENV:USERPROFILE\Documents\code\repos\github\dboyd42\"
 }
 
+# Local WSL Github
+function gith {
+    $WSLGITH = "\\wsl$\kali-linux\home\" `
+               + (wsl.exe whoami) `
+               + "\Documents\code\repos\github\dboyd42"
+    Set-Location $WSLGITH
+}
+### [[ END DIRECTORIES ]] ###
+
+
+### [[ COMMANDS ]] ###
+#--------------------#
+
+#--Get-ChildItemColor >>>
+# >>>
+# Installation
+# https://github.com/joonro/Get-ChildItemColor
+# Install-Module -AllowClobber Get-ChildItemColor
+
+# Ensure that Get-ChildItemColor is loaded
+Import-Module Get-ChildItemColor
+# Set l and ls alias to use the new Get-ChildItemColor cmdlets
+Set-Alias ll Get-ChildItemColor -Option AllScope
+Set-Alias ls Get-ChildItemColorFormatWide -Option AllScope
+# <<<
+#--END Get-ChildItemColor <<<
+
+### [[ END COMMANDS ]] ###
+
+###             ///
+### END Aliases ///
+### =========== ///

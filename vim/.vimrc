@@ -62,4 +62,21 @@ cnoremap TC .s/\<\(\w\)\(\w*\)\>/\u\1\L\2/g<CR>:nohl<CR>
 
 " Linebreak at textwidth=79 | URL: https://stackoverflow.com/questions/2024443/saving-vim-macros
 let @8 = '80|Bi€ýa'
+" Note: No persistence
+
+" Netrw "
+"""""""""
+" Invoke netrw --vertical split -> used for wide-screen monitors
+nnoremap -h :Vex<CR>
+" Invoke netrw --horizontal split -> used for portrait-flipped monitors
+nnoremap -- :Sex<CR>
+
+" Remove banner --keeping
+" let g:netrw_banner = 0
+
+" How files are opened (1=horizontal, 2=vertical, 3=newTab, 4=prevWindow)
+let g:netrw_browse_split = 4
+
+" Set width of directory explorer
+let g:netrw_winsize = 25
 

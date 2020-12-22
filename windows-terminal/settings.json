@@ -55,7 +55,9 @@
           "startingDirectory": "//wsl$/kali-linux/home/kbhatw",
           "backgroundImage": "C:/Users/boydd/OneDrive/Pictures/bg/angel0.jpg",
           //"backgroundImageStretchMode":  "uniformToFill | none | fill | uniform"
-          "backgroundImageStretchMode": "uniformToFill"
+          "backgroundImageStretchMode": "uniformToFill",
+          // Powerline setup: https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup
+          "fontFace": "Cascadia Code PL"
         },
         {
           // #3 | Azure Cloud Shell

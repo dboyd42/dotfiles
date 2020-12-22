@@ -7,19 +7,38 @@ This repository holds my dotfiles for Linux, macOS, and Windows with
 an emphasis on Vim configurations.
 
 Included Plug-ins
-=================
+*****************
 
-+------------+---------------------------+------------------------+
-| Plug-in    | Description               | Practicality           |
-+============+===========================+========================+
-| Airline    | Fancy-schmancy Statusline |                        |
-+------------+---------------------------+------------------------+
-| Fugitive   | Git Wrapper               | Allows gVim to use Git |
-+------------+---------------------------+------------------------+
-| Surround   | Surrounding Things        |                        |
-+------------+---------------------------+------------------------+
-| Table-Mode | Table Creator & Formatter | RST/MD files           |
-+------------+---------------------------+------------------------+
++-------------+---------------------------+-------------------------+
+| Plug-in     | Description               | Practicality            |
++=============+===========================+=========================+
+| Airline     | Fancy-schmancy Statusline |                         |
++-------------+---------------------------+-------------------------+
+| Fugitive    | Git Wrapper               | Allows gVim to use Git  |
++-------------+---------------------------+-------------------------+
+| Python-Mode | a Ptyhon IDE for Vimmerz  | <leader>r ; :PymodeLint |
++-------------+---------------------------+-------------------------+
+| Surround    | Surrounding Things        |                         |
++-------------+---------------------------+-------------------------+
+| Table-Mode  | Table Creator & Formatter | RST/MD files            |
++-------------+---------------------------+-------------------------+
+
+Installation
+************
+:Note: Installation/Compilation of Vim requires Python3!
+
+Vim
+===
+
+.. code-block:: Bash
+
+	# Check if Vim's compiled with Python3
+	vim --version | grep python
+
+	# IF false; THEN uninstall
+
+	# Use feature-rich Vim with multiple language support
+	sudo apt install vim-nox
 
 Linux
 =====
@@ -45,4 +64,9 @@ Windows
 
 	# Restore ExecutionPolicy defaults (if you want to)
 	Set-ExecutionPolicy Restricted
+
+TODO
+****
+
+1. Move plugin files' dir under vim.
 

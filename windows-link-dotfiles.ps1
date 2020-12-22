@@ -5,7 +5,7 @@
 #     including plug-ins.
 # Note: Admin privileges required for 'SymbolicLink'
 # Date: 2020-09-13
-# Revised: 2020-12-22 - [+] ln for Vim.org installation paths --py3 build
+# Revised: 2020-12-22 - [~] Failed Pymode plug-in installation
 # Revised: 2020-11-22 - Added Microsoft.Powershell.profile.ps1
 
 ###
@@ -30,20 +30,15 @@ New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 ###
 ### Link Vim files
 ###
-# [[PART 1]] 
+# [[PART 1]]
 # If installation is from choco
+# If INSTALLATION is from vim.org [[CHANGE LOC->C:\tools\Vim]]
 # Link dotfiles\vim\* to C:\tools\vim\
 # Link dotfiles\vim\.vimrc to C:\tools\_vimrc
 #
 # [[PART 2]]
-# If INSTALLATION is from vim.org
-# Link dotfiles\vim\* to C:\Program Files (x86)\Vim\
-# Link dotfiles\vim\.vimrc to C:\Program Files (x86)\_vimrc
-#
-# [[PART 3]]
-# Vim Plug-ins Installation 
+# Vim Plug-ins Installation
 # Link pack\plug-ins\start\* to C:\tools\_vimrc
-# Link pack\plug-ins\start\* to C:\Program Files (x86)\_vimrc
 
 # [[PART 1]] ###
 # Dir: abbrev
@@ -64,44 +59,23 @@ $myPath = 'C:\tools\vim\_vimrc'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 
 # [[PART 2]] ###
-# Link Dir: vim\abbrev
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\vim\abbrev'
-$myPath = 'C:\Program Files (x86)\Vim\abbrev'
-New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
-# Link Dir: vim\src
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\vim\src'
-$myPath = 'C:\Program Files (x86)\Vim\src'
-New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
-# Link Dir: vim\templates
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\vim\templates'
-$myPath = 'C:\Program Files (x86)\Vim\templates'
-New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
-# File: vimrc
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\vim\.vimrc'
-$myPath = 'C:\Program Files (x86)\Vim\_vimrc'
-New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
+# Vim Plug-ins Installation
 
-# [[PART 3]] ###
-# Vim Plug-ins Installation 
+# Clone plug-in submodules after cloning dotfiles #---UNCOMMENT BELOW if not already done!
+# git submodule update
 
-# Clone plug-in submodules after cloning dotfiles
-git submodule update --init
-
-# [[PART 3.1]] ###
 # Create path for plug-ins: vim82\pack\plug-ins\start   //start is used for ln
-New-Item -Path 'C:\tools\vim\vim82\pack\plug-ins\' -ItemType Directory -Force
+New-Item -Path 'C:\tools\Vim\vim82\pack\plug-ins\' -ItemType Directory -Force
 
 # Link git plug-in submodules to /start folder
 $myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\pack\plug-ins\start'
-$myPath = 'C:\tools\vim\vim82\pack\plug-ins\start'
+$myPath = 'C:\tools\Vim\vim82\pack\plug-ins\start'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 
-# [[PART 3.2]] ###
-# Create path for plug-ins: vim82\pack\plug-ins\start   //start is used for ln
-New-Item -Path 'C:\Program Files (x86)\Vim\vim82\pack\plug-ins\' -ItemType Directory -Force
-
-# Link git plug-in submodules to /start folder
+# Rm Pymode
 $myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\pack\plug-ins\start'
-$myPath = 'C:\Program Files (x86)\Vim\vim82\pack\plug-ins\start'
-New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
+$myPath = 'C:\tools\Vim\vim82\pack\plug-ins\start\python-mode'
+Remove-Item -Recurse -Force $myPath
+# Reinit Pymode (PS treats symlinks differently than Linux)
+git submodule update $myTarget
 

@@ -60,3 +60,16 @@ alias wd='w3m duckduckgo.com'
 alias v='vim'
 alias vR='vim README.rst'
 
+###
+### Bash Customization
+###
+
+### Powerline configuration
+# apt install powerline
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+	powerline-daemon -q
+	POWERLINE_BASH_CONTINUATION=1
+	POWERLINE_BASH_SELECT=1
+	source /usr/share/powerline/bindings/bash/powerline.sh
+fi
+

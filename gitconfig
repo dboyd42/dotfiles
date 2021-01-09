@@ -21,3 +21,5 @@
 	s = status
 	gar = add README.rst
 
+[pull]
+	rebase = false

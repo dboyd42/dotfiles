@@ -41,6 +41,8 @@ The following are additional programs to be installed if needed:
 +---------------+-----------------------------+-------------------------------+
 | poppler-utils | PDF utilities (pdftotext)   | less file.pdf                 |
 +---------------+-----------------------------+-------------------------------+
+| remmina       | GTK+ Remote Desktop Client  |                               |
++---------------+-----------------------------+-------------------------------+
 | tor           | onion router                |                               |
 +---------------+-----------------------------+-------------------------------+
 | tree          | list dir contents           |                               |

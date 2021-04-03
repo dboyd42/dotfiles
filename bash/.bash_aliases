@@ -2,6 +2,11 @@
 ### Bash Aliases
 ###
 
+### STENO ###------------------------------------------------------------------
+alias jobs='cd /Volumes/GoogleDrive/My\ Drive/jobs'
+alias ll='ls \-al'
+### END   ###------------------------------------------------------------------
+
 ### Variables
 OS_RELEASE="`uname -r`"
 

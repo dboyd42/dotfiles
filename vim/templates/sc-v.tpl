@@ -1,6 +1,6 @@
 JOB# JOBNUMBER
 #############
-:Date:
+:Date: DATE
 :Case Number:
 :Start Time: DEPOSTARTTIME TIMEZONE
 :Est. Duration:
@@ -12,11 +12,12 @@ Moderator: audio only -- no breaks, no read-ins
 Videographer: A/V
 Ambassador: A/V + Exhbits
 
+    - %s/DATE/              strftime('%F')
     - %s/JOBNUMBER/         xxxxxx
     - %s/OPSPAGE/           Steno Ops Page URL
     - %s/DEPOSTARTTIME/     hh:mm AM/PM
-    - %s/ORDERINGFIRM/      ordering-firm
     - %s/TIMEZONE/          PT/MT/CT/ET
+    - %s/ORDERINGFIRM/      ordering-firm
     - %s/WITNESS/           deponent
     - %s/TAKINGATTORNEY/    TA // Ops > Ordered On Behalf Of
     - %s/COURTREPORTER/     CR // Ops > CRName >> Preferred Name
@@ -25,14 +26,6 @@ Ambassador: A/V + Exhbits
     - %s/OPENVIDEOMEET/     4hr refresh mark, when you opened video conference
     - copy & paste: CPREADIN    // Gmail > Looker
     - copy & paste: CPREADOUT   // Gmail > Looker
-
-    phoenitic pronounciations
-    -------------------------
-    - %s/WPHONETICS   <blank> if easy
-    - %s/TAPHONETICS
-    - %s/CRPHONETICS
-    - %s/DAPHONETICS
-    - %s/OPHONETICS
 
 NOD REVIEW
 **********
@@ -318,7 +311,12 @@ Read-In
 
 [7] ENDING DEPOSITION
 =====================
-:Video Order Types: https://docs.google.com/spreadsheets/d/1cYNUtK0_rTMnYnBWAInA139v2GUyb4l83KzVtK-5mCU/edit#gid=1133383617&range=F6
+
+Video Order Types
+-----------------
+:Notes: Give link for official vid-types to give to counsel
+
+https://docs.google.com/spreadsheets/d/1cYNUtK0_rTMnYnBWAInA139v2GUyb4l83KzVtK-5mCU/edit#gid=1133383617&range=F6
 
     [ON THE RECORD]
     ---------------
@@ -359,8 +357,8 @@ Read-Out
 
         - https://app.nuclino.com/STENOVERSE/Space-Yachty/Error-log-b053d57d-73c7-4bca-888a-09d28efc4e71
 
-    4. Change: Ops >  "Video Files" -> "Fully Received"
-    ---------------------------------------------------
+    4. Change: Ops >  "Videographer Status" -> "Materials Received"
+    ---------------------------------------------------------------
 
     5. Render A/V at the bottom of the Ops page
     -------------------------------------------

@@ -5,6 +5,7 @@
 :iabbr adn and
 :iabbr waht what
 :iabbr tehn then
+:iabbr taht that
 :iabbr whihc which
 :iabbr flaot float
 :iabbr lenght length

@@ -98,7 +98,7 @@ augroup filetype_rst
     " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
-    au BufRead,BufNewFile,BufWrite *.rst setlocal noet tw=79 wm=0
+    au BufRead,BufNewFile,BufWrite *.rst setlocal noexpandtab tw=79 wm=0
     " Insert program name
     au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
     " Today's Date

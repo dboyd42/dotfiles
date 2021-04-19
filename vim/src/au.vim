@@ -122,6 +122,17 @@ augroup filetype_rst
     au BufRead,BufNewFile,BufWrite *.rst :TableModeEnable
 augroup END
 
+augroup filetype_sc-z
+    au!
+    " Un/comment
+    au FileType sc-z noremap <buffer> <LocalLeader>c I.. <Esc>
+    au FileType sc-z noremap <buffer> <LocalLeader>u 03x<Esc>
+    au BufRead,BufNewFile,BufWrite *.sc-z setlocal noexpandtab tw=79 wm=0
+    " Insert program name
+    au BufNewFile *.sc-z %s/+JOBNUMBER+/\=expand('%:r:t')/
+    " Today's Date
+    au BufNewFile *.sc-z %s/+TODAY+/\=strftime('%Y-%m-%d')/
+
 augroup filetype_sh
     au!
     " Un/comment

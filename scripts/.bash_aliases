@@ -4,7 +4,7 @@
 
 ### STENO ###------------------------------------------------------------------
 alias jobs='cd /Volumes/GoogleDrive/My\ Drive/jobs'
-alias ll='ls \-al'
+alias ll='ls -al'
 ### END   ###------------------------------------------------------------------
 
 ### Variables
@@ -22,8 +22,8 @@ fi
 ###
 
 ### Display
-alias l='ls -lh --color'
-alias ll='ls -lhai --color'
+#alias l='ls -lh --color'
+#alias ll='ls -lhai --color'
 
 ### Compiling / Interpreters
 alias com='g++ -std=c++1z -o main *.cpp'

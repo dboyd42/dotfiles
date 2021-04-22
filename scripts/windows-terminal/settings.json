@@ -14,7 +14,8 @@
     // To learn more about global settings, visit https://aka.ms/terminal-global-settings
 
     // If enabled, selections are automatically copied to your clipboard.
-    "copyOnSelect": false,
+    // "copyOnSelect": false,
+    "copyOnSelect": true,
 
     // If enabled, formatted data is also copied to your clipboard
     "copyFormatting": false,
@@ -84,7 +85,8 @@
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
         { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-        { "command": "paste", "keys": "ctrl+v" },
+        // { "command": "paste", "keys": "ctrl+v" }, // rm b/c Vim.visual
+        { "command": "paste", "keys": "ctrl+shift+v" },
 
         // Press Ctrl+Shift+F to open the search box
         { "command": "find", "keys": "ctrl+shift+f" },

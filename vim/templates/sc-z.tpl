@@ -269,7 +269,15 @@ https://app.nuclino.com/STENOVERSE/Space-Yachty/Zoom-Post-Depo-Exhibit-Handling-
 ----------------------------------------------------------------
 :Job Role: All
 
-https://steno-squad.monday.com/boards/405833245/
+    a. https://steno-squad.monday.com/boards/405833245/
+    b. [Comments] Exhbts > Box > '+'
+        - Exhibits are relabled in Box
+
+        i. if missing exhibits:
+            - Notes: "Exhibit 02: '<desc>' is a placeholder and counsel needs
+                      to send us that document."
+        ii. Box > Exhibts && Exhibits > Labeled Exhibits
+            - touch "Exhbit 02: '<desc>' [placedholder.txt]"
 
 6. Monday > Video Edits Board > [col] Zoom Recording > Zoom-links
 -----------------------------------------------------------------

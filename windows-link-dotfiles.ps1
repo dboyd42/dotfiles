@@ -5,6 +5,7 @@
 #     including plug-ins.
 # Note: Admin privileges required for 'SymbolicLink'
 # Date: 2020-09-13
+# Revised: 2021-04-22 - Fixed vim-plugins/git-submodules
 # Revised: 2020-12-22 - [~] Failed Pymode plug-in installation
 # Revised: 2020-11-22 - Added Microsoft.Powershell.profile.ps1
 
@@ -62,7 +63,7 @@ New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 # Vim Plug-ins Installation
 
 # Clone plug-in submodules after cloning dotfiles #---UNCOMMENT BELOW if not already done!
-# git submodule update
+git submodule update --init
 
 # Create path for plug-ins: vim82\pack\plug-ins\start   //start is used for ln
 New-Item -Path 'C:\tools\Vim\vim82\pack\plug-ins\' -ItemType Directory -Force

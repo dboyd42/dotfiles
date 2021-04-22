@@ -39,13 +39,14 @@
               "hidden": false,
               "name": "PowerShell",
               "source": "Windows.Terminal.PowershellCore",
-              "backgroundImage": "C:/Users/boydd/OneDrive/Pictures/bg/rom1.jpg",
+              "backgroundImage": "C:/Users/boydd/OneDrive/Pictures/bg/rom1.jpg"
             },
             {
                 "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
                 "hidden": false,
                 "name": "kali-linux",
                 "source": "Windows.Terminal.Wsl",
+                "fontFace":  "MesloLGS NF",
                 "startingDirectory":  "//wsl$/kali-linux/home/kbhatw",
                 "backgroundImage": "C:/Users/boydd/OneDrive/Pictures/bg/angel0.jpg"
             },

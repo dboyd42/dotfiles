@@ -13,12 +13,12 @@
 ###
 
 # PowerShell $PROFILE
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\windows-terminal\Microsoft.PowerShell_profile.ps1'
+$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\scripts\windows-terminal\Microsoft.PowerShell_profile.ps1'
 $myPath = $ENV:UserProfile + '\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 
 # Windows Terminal
-$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\windows-terminal\settings.json'
+$myTarget = $Env:Userprofile + '\Documents\code\repos\github\dboyd42\dotfiles\scripts\windows-terminal\settings.json'
 $myPath = $ENV:USERPROFILE + '\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json'
 New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 

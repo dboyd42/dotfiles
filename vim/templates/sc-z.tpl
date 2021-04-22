@@ -21,8 +21,8 @@ Overview
     - %s/+OFIRM+/       ordering-firm
     - %s/+DEPONENT+/    deponent
     - %s/+TA+/          TA // Ops > Ordered On Behalf Of
-    - %s/+CR+/         CR // Ops > CRName >> Preferred Name
-    - %s/+DA0+/        DA // Ops > NOD > Service List
+    - %s/+CR+/          CR // Ops > CRName >> Preferred Name
+    - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
     - copy & paste:     CPREADIN    // Gmail > Looker
     - copy & paste:     CPREADOUT   // Gmail > Looker
@@ -30,17 +30,30 @@ Overview
     +-----+--------------+------------+-------------+
     | Pri | Title        | Name       | Phonetics   |
     +=====+==============+============+=============+
-    | 1   | Deponent     | +DEPONENT+ | WPHONETICS  |
+    | 1   | Witness      | +DEPONENT+ | WPHONETICS  |
     +-----+--------------+------------+-------------+
-    | 2   | TA           | +TA+       | TAPHONETICS |
+    | 2   | TA           | +TA0+      | TAPHONETICS |
+    |     |              | +TA1+      | TAPHONETICS |
+    |     |              | +TA2+      | TAPHONETICS |
     +-----+--------------+------------+-------------+
     | 3   | CR           | +CR+       | CRPHONETICS |
     +-----+--------------+------------+-------------+
     | 4   | DA           | +DA0+      | DAPHONETICS |
+    |     | DA           | +DA1+      |             |
+    |     | DA           | +DA2+      |             |
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
 
+Ordering Firm
+-------------
+
+    - +OFIRM+
+
+Defending Firm
+--------------
+
+    - +DFIRM+
 
 ZOOM PLAYBOOK
 **************
@@ -67,7 +80,7 @@ ZOOM PLAYBOOK
     4. Video Worksheet 3.0
     ----------------------
 
-        - have readilty available
+        - have readily available
 
     5. Slack
     --------
@@ -80,12 +93,12 @@ ZOOM PLAYBOOK
 
     Email Template
     ^^^^^^^^^^^^^^
-    :Time: 1 hour < +START+ +TZ+
+    :Time: 30 min < +START+ +TZ+
     :Copy-Paste: ^v"*
 
 Good morning,
 
-    My name is David Boyd and I am the Videographer for today's deposition at
+    My name is David Boyd and I am the +JOBROLE+ for today's deposition at
     +START+ +TZ+.  I am recirculating this invitation for everyone's convenience.
     Please don't hesitate to reach out to me with any questions or if you
     experience any technical difficulties upon joining.  My number is (512)-270-3020.

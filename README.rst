@@ -14,7 +14,7 @@ Included Plug-ins
 +=================+=============================+=========================+
 | Airline         | Fancy-schmancy Statusline   |                         |
 +-----------------+-----------------------------+-------------------------+
-| Codi            | RunTime Interpreter/Wrapper | Code!!, Code!           |
+| Codi            | RunTime Interpreter/Wrapper | Codi!!, Codi!           |
 +-----------------+-----------------------------+-------------------------+
 | Fugitive        | Git Wrapper                 | Allows gVim to use Git  |
 +-----------------+-----------------------------+-------------------------+

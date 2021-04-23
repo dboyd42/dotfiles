@@ -52,7 +52,7 @@ set printoptions=number:y " Enables printing with line numbers *Use w 'ha'
 set foldenable          " Enable folding
 set foldlevelstart=10   " Open most folds by default
 set foldnestmax=10      " 10 nested fold max
-set foldmethod=indent   " fold based on indent level
+set foldmethod=indent   " fold based on indent level (manual, indent, syntax)
 
 " Searching "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

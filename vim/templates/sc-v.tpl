@@ -6,11 +6,11 @@
 :Est. Duration:
 :Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
 
-Personal Notes:
+    Personal Notes:
 
-Moderator: audio only -- no breaks, no read-ins
-Videographer: A/V
-Ambassador: A/V + Exhbits
+    Moderator: audio only -- no breaks, no read-ins
+    Videographer: A/V
+    Ambassador: A/V + Exhbits
 
 Overview
 ********
@@ -48,19 +48,20 @@ Overview
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
 
-Ordering Firm
--------------
+    Ordering Firm
+    -------------
 
-    - +ORFIRM+
+        - +ORFIRM+
 
-Defending Firm
---------------
+    Defending Firm
+    --------------
 
-    - +DF0+
-    - +DF1+
+        - +DF0+
+        - +DF1+
 
-NOTES
-=====
+    NOTES
+    =====
+
 
 STENO CONNECT PLAYBOOK
 **********************
@@ -87,12 +88,12 @@ STENO CONNECT PLAYBOOK
         - use your phone
         - DEV NOTES: Code in a timer
 
-if (+JROLE+ ==  Videographer) {
-    4. Video Worksheet 3.0
-    ----------------------
+    if (+JROLE+ ==  Videographer) {
+        4. Video Worksheet 3.0
+        ----------------------
 
-        - https://docs.google.com/spreadsheets/d/1cYNUtK0_rTMnYnBWAInA139v2GUyb4l83KzVtK-5mCU/edit#gid=1133383617&range=F6
-}
+            - https://docs.google.com/spreadsheets/d/1cYNUtK0_rTMnYnBWAInA139v2GUyb4l83KzVtK-5mCU/edit#gid=1133383617&range=F6
+    }
 
 [2] BEGINNING OF SC DEPO (30 min BEFORE)
 ========================================
@@ -107,7 +108,7 @@ if (+JROLE+ ==  Videographer) {
     :Prep: Draft
 
         - I am on and ready to go for job +JOBNUMBER+
-        - Steno Ops Page: OPSPAGE
+        - Steno Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
 
     3. Recirculate invites (E-mail)
     -------------------------------
@@ -115,13 +116,11 @@ if (+JROLE+ ==  Videographer) {
         - Use reply all in **Google Calendar**
         - Template:
 
-Email Template
-^^^^^^^^^^^^^^
-:Time: 30 min < +START+ +TZ+
-:Copy-Paste: ^v"*
+    Email Template
+    ^^^^^^^^^^^^^^
+    :Time: 30 min < +START+ +TZ+
 
-
-Good morning,
+    Good morning,
 
     My name is David Boyd and I am the +JROLE+ for today's deposition at
     +START+ +TZ+.  I am recirculating this invitation for everyone's convenience.
@@ -129,7 +128,8 @@ Good morning,
     experience any technical difficulties upon joining.  My number is (512)-270-3020.
     Thank you for choosing Steno and I will see you soon.
 
-Best,
+    Best,
+
 
     4. Set your 'Participant Priority' to 5
     ---------------------------------------
@@ -139,39 +139,37 @@ Best,
 
         - [+] URL: &levels=yes
 
-
 [3] AS PARTICIPANTS JOIN
 ========================
 :Reorganize SC Slots: [GLOBAL] Shift-Rename (self)
 :Reorganize SC Slots: [INDIVIDUAL] Shift-Rename (individual)
 
-1. Warmly greet participants and ask for pronunciations of names.
-2. Introduce yourself as +JROLE+ for today.
-3. Ask about familiarity with SConn
-4. Point out Standard vs Single View options
-5. Audio fails -> "Dial in"
+    1. Warmly greet participants and ask for pronunciations of names.
+    2. Introduce yourself as +JROLE+ for today.
+    3. Ask about familiarity with SConn
+    4. Point out Standard vs Single View options
+    5. Audio fails -> "Dial in"
 
-+----------+----------+------------+--------------------------------+
-| Set      | Set Role | Name       | Speech                         |
-| Priority |          | PHONETICS  |                                |
-+----------+----------+------------+--------------------------------+
-| 1        | Deponent | +DEPONENT+ | + full legal name              |
-|          |          |            | + camera: ctr face,            |
-|          |          |            | + adj light, mv < distractions |
-+----------+----------+------------+--------------------------------+
-| 2        | TA       | +TA0+      | + "Are you comfortable with    |
-|          |          | +TA1+      | to share exhibits w/in         |
-|          |          | +TA2+      | Stenno Connect?"                |
-|          |          |            | > if (yes):                    |
-|          |          |            | ...........goTO b;             |
-|          |          |            | + "Do you plan on having the   |
-|          |          |            | witness annotate?"             |
-|          |          |            | > if (yes):                    |
-|          |          |            | ...........goTO c;             |
-+----------+----------+------------+--------------------------------+
+    +----------+----------+------------+--------------------------------+
+    | Set      | Set Role | Name       | Speech                         |
+    | Priority |          | PHONETICS  |                                |
+    +----------+----------+------------+--------------------------------+
+    | 1        | Deponent | +DEPONENT+ | + full legal name              |
+    |          |          |            | + camera: ctr face,            |
+    |          |          |            | + adj light, mv < distractions |
+    +----------+----------+------------+--------------------------------+
+    | 2        | TA       | +TA0+      | + "Are you comfortable with    |
+    |          |          | +TA1+      | to share exhibits w/in         |
+    |          |          | +TA2+      | Stenno Connect?"               |
+    |          |          |            | > if (yes):                    |
+    |          |          |            | ...........goTO b;             |
+    |          |          |            | + "Do you plan on having the   |
+    |          |          |            | witness annotate?"             |
+    |          |          |            | > if (yes):                    |
+    |          |          |            | ...........goTO c;             |
+    +----------+----------+------------+--------------------------------+
 
     b. Explain to EVERYONE how they can:
-
         - (by hovering over the exhbit, it'll provide you with these options)
         - view, present, download, and annotate the exhibit
 
@@ -179,84 +177,85 @@ Best,
         - upload Exhbit#TEST
             - (drag 'n drop area -> name: Exhibit#TEST -> annotate)
 
-+--------------+--------------+------------+--------------------------+
-| Set Priority | Set Role     | Name       | Speech                   |
-+==============+==============+============+==========================+
-| 3            | CR           | +CR+       | + "Can you hear everyone |
-|              |              |            | clearly?"                |
-|              |              |            | > freq. audio checks     |
-+--------------+--------------+------------+--------------------------+
-| 4            | DA           | +DA0+      | N/A                      |
-|              |              | +DA1+      | N/A                      |
-|              |              | +DA2+      | N/A                      |
-+--------------+--------------+------------+--------------------------+
-| 5            | Videographer | David Boyd | N/A                      |
-+--------------+--------------+------------+--------------------------+
-| Other        | goTO:5       | N/A        | N/A                      |
-|              |              |            |                          |
-+--------------+--------------+------------+--------------------------+
+
+    +--------------+--------------+------------+--------------------------+
+    | Set Priority | Set Role     | Name       | Speech                   |
+    +==============+==============+============+==========================+
+    | 3            | CR           | +CR+       | + "Can you hear everyone |
+    |              |              |            | clearly?"                |
+    |              |              |            | > freq. audio checks     |
+    +--------------+--------------+------------+--------------------------+
+    | 4            | DA           | +DA0+      | N/A                      |
+    |              |              | +DA1+      | N/A                      |
+    |              |              | +DA2+      | N/A                      |
+    +--------------+--------------+------------+--------------------------+
+    | 5            | Videographer | David Boyd | N/A                      |
+    +--------------+--------------+------------+--------------------------+
+    | Other        | goTO:5       | N/A        | N/A                      |
+    |              |              |            |                          |
+    +--------------+--------------+------------+--------------------------+
 
 [4] READ GENERAL RECOMMENDATIONS
 ================================
 :Begin: When everyonen is READY!
 
-Good morning/afternoon, everyone.
-I'm going to go over a brief introduction off the record so we're all on the
-same page, and then I'll...
+    Good morning/afternoon, everyone.
+    I'm going to go over a brief introduction off the record so we're all on the
+    same page, and then I'll...
 
-if (+JROLE+ == moderator) {
-    ...hand it over to the court reporter.
-} else {
-    ...jump into the videographer read-in.
-}
+    if (+JROLE+ == moderator) {
+        ...hand it over to the court reporter.
+    } else {
+        ...jump into the videographer read-in.
+    }
 
-As I said before, my name is David Boyd and I work at the court reporting
-agency, Steno, that was hired by ORDERINGFIRM
-to help faciliate this deposition today.
+    As I said before, my name is David Boyd and I work at the court reporting
+    agency, Steno, that was hired by ORDERINGFIRM
+    to help faciliate this deposition today.
 
-Please take a moment to silence all phone and computer notifications at this
-time.  Please note that this deposition is being recorded in its entirety and
-everything you do can be seen and heard by everyone else on the call.  If you
-ever require privacy at any time, I remind you to please mute your microphone
-or turn off your video.
+    Please take a moment to silence all phone and computer notifications at this
+    time.  Please note that this deposition is being recorded in its entirety and
+    everything you do can be seen and heard by everyone else on the call.  If you
+    ever require privacy at any time, I remind you to please mute your microphone
+    or turn off your video.
 
-If you are not one of the primary participants, we ask that you please mute
-yourself and turn off your video so that we can keep the audio feed as clear as
-possible.
+    If you are not one of the primary participants, we ask that you please mute
+    yourself and turn off your video so that we can keep the audio feed as clear as
+    possible.
 
-As a reminder, you can set who you'd like to see in which video slot by
-clicking on the participants tab and then clicking on the ellipses next to a
-participant's name to assign a slot.  We strongly recommend putting the court
-reporter in one of your video slots so you can see if they are trying to signal
-for you to stop or ask for clarification.
+    As a reminder, you can set who you'd like to see in which video slot by
+    clicking on the participants tab and then clicking on the ellipses next to a
+    participant's name to assign a slot.  We strongly recommend putting the court
+    reporter in one of your video slots so you can see if they are trying to signal
+    for you to stop or ask for clarification.
 
-Due to a 4 hour video call limit, we will all have to refresh our screens at
-the four hour mark.  I will give everyone a reminder 15 minutes before that
-time.  The approximate refresh time will be +RTIME+ +TZ+.
+    Due to a 4 hour video call limit, we will all have to refresh our screens at
+    the four hour mark.  I will give everyone a reminder 15 minutes before that
+    time.  The approximate refresh time will be +RTIME+ +TZ+.
 
-Lastly, to help the court reporter get a clear and accurate record, we ask that
-everyone please speak loud enough so that your microphone can pick up your
-voice.  Please keep your face in full view of the camera, be cautios of talking
-over one another, and be aware if you do move any papers or anything near your
-microphone while someone is speaking.  It can cause a disruption in the audio.
+    Lastly, to help the court reporter get a clear and accurate record, we ask that
+    everyone please speak loud enough so that your microphone can pick up your
+    voice.  Please keep your face in full view of the camera, be cautios of talking
+    over one another, and be aware if you do move any papers or anything near your
+    microphone while someone is speaking.  It can cause a disruption in the audio.
 
-Please keep in mind that because this deposition is being taken remotely, the
-reporter may have to ask for further clarification.  I will be here the entire
-time for any technical difficulties, but if you happen to lose connection and
-cannot return to this meeting, I will provide my phone number to you all now.
-I ask that you write this down or have it handy, just in case.  My phone number
-is (512)-270-3020.  Once again, my phone number is (512)-270-3020.  Please give
-me a call and I will gladly work with you to get you reconnected.
+    Please keep in mind that because this deposition is being taken remotely, the
+    reporter may have to ask for further clarification.  I will be here the entire
+    time for any technical difficulties, but if you happen to lose connection and
+    cannot return to this meeting, I will provide my phone number to you all now.
+    I ask that you write this down or have it handy, just in case.  My phone number
+    is (512)-270-3020.  Once again, my phone number is (512)-270-3020.  Please give
+    me a call and I will gladly work with you to get you reconnected.
 
-if (+JROLE+ == Moderator) {
-    ...Madame/Mr. Court Reporter I will pass it off to you.
-} else {
-    ...I am going to state the current time for our video
-    editors which is: hh:mm:ss +TZ+
-    Alright, before we go on the record, does anyone have any questions?
-    ...
-    Okay, stand by to go on the record.
-}
+    if (+JROLE+ == Moderator) {
+        ...Madame/Mr. Court Reporter I will pass it off to you.
+    } else {
+        ...I am going to state the current time for our video
+        editors which is: hh:mm:ss +TZ+
+        Alright, before we go on the record, does anyone have any questions?
+        ...
+        Okay, stand by to go on the record.
+    }
 
 
 [5] OFFICIAL READ-IN
@@ -267,10 +266,10 @@ if (+JROLE+ == Moderator) {
     1. [BUTTON] Press **ON THE RECORD**
     2. Read the read-in:
 
-Read-In
--------
+    Read-In
+    -------
 
-<CPREADIN>
+    <CPREADIN>
 
 [6] DURING DEPOSITION
 =====================
@@ -336,7 +335,7 @@ Read-In
 [7] ENDING DEPOSITION
 =====================
 
-if (+JROLE+ != Moderator) {
+    if (+JROLE+ != Moderator) {
 
     Video Order Types
     -----------------
@@ -350,17 +349,16 @@ if (+JROLE+ != Moderator) {
     - "Would anyone like to get their transcript or video orders in on the
     record?"
 
-    Read-Out
-    ^^^^^^^^
+        Read-Out
+        ^^^^^^^^
 
-<CPREADOUT>
+        <CPREADOUT>
 
-    [OFF THE RECORD]
-    ----------------
+        [OFF THE RECORD]
+        ----------------
 
-    - If video orders are requested, get the email information OFF THE RECORD.
-
-}
+        - If video orders are requested, get the email information OFF THE RECORD.
+    }
 
 [8] POST SC DEPO
 ================

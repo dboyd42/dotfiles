@@ -1,14 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands (automcd || au)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Saved Commands "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    "" Copyright Year
-    "au BufNewFile * %s/+YEAR+/\=strftime('%Y')/
-    "" Today's Date
-    "au BufNewFile * %s/+TODAY+/\=strftime('%Y-%m-%d')/
-    "" Insert program name after title
-    "au BufNewFile * %s/+PRGM NAME+/\=expand('%:t')/
 
 " FileType "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -125,24 +117,15 @@ augroup filetype_rst
     au BufRead,BufNewFile,BufWrite *.rst :TableModeEnable
 augroup END
 
-augroup filetype_sc-v
-    au!
-    au BufRead,BufNewFile,BufWrite *.sc-v setlocal noexpandtab tw=79 wm=0
-    au BufRead,BufNewFile,BufWrite *.sc-v :TableModeEnable
+augroup filetype_sc-*
+    "au FileType *.sc-* setlocal foldmethod=manual
+    au BufRead,BufNewFile,BufWrite *.sc-* setlocal et tw=79 wm=0
+    au BufRead,BufNewFile,BufWrite *.sc-* :TableModeEnable
+    au BufRead,BufNewFile,BufWrite *.sc-* :syntax off
     " Insert program name
-    au BufNewFile *.sc-v %s/+JOBNUMBER+/\=expand('%:r:t')/
+    au BufNewFile *.sc-* %s/+JOBNUMBER+/\=expand('%:r:t')/
     " Today's Date
-    au BufNewFile *.sc-v %s/+TODAY+/\=strftime('%Y-%m-%d')/
-augroup END
-
-augroup filetype_sc-z
-    au!
-    au BufRead,BufNewFile,BufWrite *.sc-z setlocal noexpandtab tw=79 wm=0
-    au BufRead,BufNewFile,BufWrite *.sc-z :TableModeEnable
-    " Insert program name
-    au BufNewFile *.sc-z %s/+JOBNUMBER+/\=expand('%:r:t')/
-    " Today's Date
-    au BufNewFile *.sc-z %s/+TODAY+/\=strftime('%Y-%m-%d')/
+    au BufNewFile *.sc-* %s/+TODAY+/\=strftime('%Y-%m-%d')/
 augroup END
 
 augroup filetype_sh

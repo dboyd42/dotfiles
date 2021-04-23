@@ -64,12 +64,13 @@ cnoremap SUDOWRITE w !sudo tee % > /dev/null
 
 " Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Space open/closes folds
-if has("unix")
-    nnoremap <@> za
-else
-    nnoremap <Space> za
-endif
+" Space open/closes folds [Toggle]
+"if has("unix")
+"    nnoremap <@> za
+"else
+"    nnoremap <Space> za
+"endif
+nnoremap <Space> za
 
 " Misc "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

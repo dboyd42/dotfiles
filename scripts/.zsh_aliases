@@ -1,16 +1,8 @@
 ###
-### Bash Aliases
+### ZSH Aliases
 ###
 
-### STENO ###------------------------------------------------------------------
-alias jobs='cd /Volumes/GoogleDrive/My\ Drive/jobs'
-alias ll='ls -al'
-### END   ###------------------------------------------------------------------
-
-### Variables
-OS_RELEASE="`uname -r`"
-
-# WSL
+# WSL2
 if [[ $OS_RELEASE =~ microsoft ]]; then
     WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
 else
@@ -18,12 +10,15 @@ else
 fi
 
 ###
-### ~/.bash_aliases
+### ~/.zsh_aliases
 ###
 
+### JOB ###------------------------------------------------------------------
+alias jobs='cd /Volumes/GoogleDrive/My\ Drive/jobs'
+### END   ###------------------------------------------------------------------
+
 ### Display
-#alias l='ls -lh --color'
-#alias ll='ls -lhai --color'
+alias ll='ls -al'
 
 ### Compiling / Interpreters
 alias com='g++ -std=c++1z -o main *.cpp'
@@ -31,26 +26,14 @@ alias py='python3'
 
 ### Directories
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
-alias giths='cd /home/bhat/Documents/code/repos/github/dboyd42/'
-alias VIM='cd ~/../../usr/share/vim/'
+
 # WSL dirs
 alias wgu='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/wgu/'
+alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/sans/'
 
 ### Editing
-# Clipboard
-alias xcopyc='xclip -sel clipboard'
-alias xpastec='xclip -o -sel clip'
-# Primary
-alias xcopyp='xclip -sel primary'
-alias xpastep='xclip -o -sel pri'
-# Secondary
-alias xcopys='xclip -sel secondary'
-alias xpastes='xclip -o -sel sec'
 
 ### Networking
-alias ipadd4='ip address show | grep "inet " | cut -d " " -f6 | cut -d "/" -f1'
-alias ipaddcidr='ip address show | grep "inet " | cut -d " " -f 6'
-alias ipadd6="ip addr show | grep -E 'inet6? ' | tr -s ' ' | cut -d' ' -f3"
 
 ### Vim
 alias v='vim'

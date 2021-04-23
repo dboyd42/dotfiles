@@ -124,7 +124,8 @@ augroup END
 
 augroup filetype_sc-v
     au!
-    au BufRead,BufNewFile,BufWrite *.sc-z setlocal noexpandtab tw=79 wm=0
+    au BufRead,BufNewFile,BufWrite *.sc-v setlocal noexpandtab tw=79 wm=0
+    au BufRead,BufNewFile,BufWrite *.sc-v :TableModeEnable
     " Insert program name
     au BufNewFile *.sc-v %s/+JOBNUMBER+/\=expand('%:r:t')/
     " Today's Date
@@ -134,6 +135,7 @@ augroup END
 augroup filetype_sc-z
     au!
     au BufRead,BufNewFile,BufWrite *.sc-z setlocal noexpandtab tw=79 wm=0
+    au BufRead,BufNewFile,BufWrite *.sc-z :TableModeEnable
     " Insert program name
     au BufNewFile *.sc-z %s/+JOBNUMBER+/\=expand('%:r:t')/
     " Today's Date

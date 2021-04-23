@@ -6,9 +6,9 @@
 :Est. Duration:
 :Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
 
-Moderator: audio only -- no breaks, no read-ins
-Videographer: A/V
-Ambassador: A/V + Exhbits
+    Moderator: audio only -- no breaks, no read-ins
+    Videographer: A/V
+    Ambassador: A/V + Exhbits
 
 Overview
 ********
@@ -45,15 +45,17 @@ Overview
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
 
-Ordering Firm
--------------
+    Ordering Firm
+    -------------
 
-    - +ORFIRM+
+        - +ORFIRM+
 
-Defending Firm
---------------
+    Defending Firm
+    --------------
 
-    - +DFIRM+
+        - +DFIRM+
+        - +DA0+
+        - +DA1+
 
 ZOOM PLAYBOOK
 **************
@@ -110,99 +112,93 @@ Best,
 ========================
 :DEPONENT: Spotlight!!!
 
-1. Introduce self as +JROLE+
-2. [Ask] Name pronunciation
-3. [Ask] Familiarity with Zoom: mute, stop/start video, chat fns
-
-+----------+--------------+------------+--------------------------------+
-| Priority | Role         | Name       | Speech                         |
-+==========+==============+============+================================+
-| 1        | Deponent     | +DEPONENT+ | + SPOTLIGHT                    |
-|          |              |            | + full legal name              |
-|          |              |            | + camera: ctr face,            |
-|          |              |            | + adj light, mv < distractions |
-+----------+--------------+------------+--------------------------------+
-| 2        | TA           | +TA+       | + "Are you comfortable with    |
-|          |              |            | to share exhibits w/in         |
-|          |              |            | this Zoom?"                    |
-|          |              |            | > if (NO):                     |
-|          |              |            | ...........goTO b;             |
-|          |              |            | + "Do you plan on having the   |
-|          |              |            | witness annotate?"             |
-|          |              |            | > if (YES):                    |
-|          |              |            | ...........goTO c;             |
-+----------+--------------+------------+--------------------------------+
-| 3        | CR           | +CR+       | + "Can you hear everyone       |
-|          |              |            | clearly?"                      |
-|          |              |            | > freq. audio checks           |
-|          |              |            | + if (NO): dial-in             |
-+----------+--------------+------------+--------------------------------+
-| 4        | DA           | +DA0+      | N/A                            |
-|          |              | +DA1+      |                                |
-|          |              | +DA2+      |                                |
-+----------+--------------+------------+--------------------------------+
-| 5        | Videographer | David Boyd | N/A                            |
-+----------+--------------+------------+--------------------------------+
-
+    1. Introduce self as +JROLE+
+    2. [Ask] Name pronunciation
+    3. [Ask] Familiarity with Zoom: mute, stop/start video, chat fns
+    +----------+--------------+------------+--------------------------------+
+    | Priority | Role         | Name       | Speech                         |
+    +==========+==============+============+================================+
+    | 1        | Deponent     | +DEPONENT+ | + SPOTLIGHT                    |
+    |          |              |            | + full legal name              |
+    |          |              |            | + camera: ctr face,            |
+    |          |              |            | + adj light, mv < distractions |
+    +----------+--------------+------------+--------------------------------+
+    | 2        | TA           | +TA+       | + "Are you comfortable with    |
+    |          |              |            | to share exhibits w/in         |
+    |          |              |            | this Zoom?"                    |
+    |          |              |            | > if (NO):                     |
+    |          |              |            | ...........goTO b;             |
+    |          |              |            | + "Do you plan on having the   |
+    |          |              |            | witness annotate?"             |
+    |          |              |            | > if (YES):                    |
+    |          |              |            | ...........goTO c;             |
+    +----------+--------------+------------+--------------------------------+
+    | 3        | CR           | +CR+       | + "Can you hear everyone       |
+    |          |              |            | clearly?"                      |
+    |          |              |            | > freq. audio checks           |
+    |          |              |            | + if (NO): dial-in             |
+    +----------+--------------+------------+--------------------------------+
+    | 4        | DA           | +DA0+      | N/A                            |
+    |          |              | +DA1+      |                                |
+    |          |              | +DA2+      |                                |
+    +----------+--------------+------------+--------------------------------+
+    | 5        | Videographer | David Boyd | N/A                            |
+    +----------+--------------+------------+--------------------------------+
     b. Zoom > Share Exhibits
     ------------------------
-
-Exhibit #TEST:
-https://steno.app.box.com/s/a4ok7wgz16dqqd6i8uglnth9d3vtidgp
-
+    Exhibit #TEST:
+    https://steno.app.box.com/s/a4ok7wgz16dqqd6i8uglnth9d3vtidgp
     c. Zoom > Annotation
     --------------------
-
         - Walk the witness through annotating the Teset Exhibit
 
 [3] READ GENERAL RECOMMENDATIONS
 ================================
 :Begin: When everyonen is READY!
 
-Welcome everyone,
+    Welcome everyone,
 
-before we begin, I'm going to give a quick introduction OFF THE RECORD to
-make sure that we are all on the same page then I will...
+    before we begin, I'm going to give a quick introduction OFF THE RECORD to
+    make sure that we are all on the same page then I will...
 
-if moderator:
-    ...hand it over to our court reporter.
+    if moderator:
+        ...hand it over to our court reporter.
 
-if videographer:
-    ... jump into the normal videographer read-in.
+    if videographer:
+        ... jump into the normal videographer read-in.
 
 
-I work at the court reporting agency, Steno, that was hired by +ORFIRM+ to
-help facilitate this deposition.  Please note, this meeting will be recorded
-in its entirety. Anything that  you do, can be seen and heard by everyone on
-the call. If at any point you require privacy, I remind you to mute your
-microphone or turn off your video. Please take a moment to silence all your
-phone and computer notifications at this time.
+    I work at the court reporting agency, Steno, that was hired by +ORFIRM+ to
+    help facilitate this deposition.  Please note, this meeting will be recorded
+    in its entirety. Anything that  you do, can be seen and heard by everyone on
+    the call. If at any point you require privacy, I remind you to mute your
+    microphone or turn off your video. Please take a moment to silence all your
+    phone and computer notifications at this time.
 
-To help the court reporter get a clear and accurate record, we ask that
-everyone speak loud enough so that the microphone can pick up your voice.
-Please keep your face in view of the camera, to make it easier for the court
-reporter to understand exactly who is talking at any given time.Before I
-start my official read in, I’m going to leave my cell phone in the chat
-thread. I recommend you write this down on a piece of paper in case you
-happen to exit the meeting or require any assistance.
+    To help the court reporter get a clear and accurate record, we ask that
+    everyone speak loud enough so that the microphone can pick up your voice.
+    Please keep your face in view of the camera, to make it easier for the court
+    reporter to understand exactly who is talking at any given time.Before I
+    start my official read in, I’m going to leave my cell phone in the chat
+    thread. I recommend you write this down on a piece of paper in case you
+    happen to exit the meeting or require any assistance.
 
-[CHAT]
-David Boyd (512)270-3020
-[/CHAT]
+    [CHAT]
+    David Boyd (512)270-3020
+    [/CHAT]
 
-Are there any final questions before we go on the record?
+    Are there any final questions before we go on the record?
 
-Okay, standby to go on the record…
+    Okay, standby to go on the record…
 
 [4] OFFICIAL READ-IN
 ====================
 :Read-in Location: E-mail from 'Looker'
 :Record: Videographer Worksheet
 
-Read-In
--------
-
-<CPREADIN>
+    Read-In
+    -------
+    <CPREADIN>
 
 [5] DURING DEPOSITION
 =====================
@@ -234,90 +230,79 @@ https://docs.google.com/spreadsheets/d/1cYNUtK0_rTMnYnBWAInA139v2GUyb4l83KzVtK-5
 
     [ON THE RECORD]
     ---------------
+    "Would anyone like to get their transcript or video orders in on the record?"
 
-"Would anyone like to get their transcript or video orders in on the record?"
-
-Read-Out
-^^^^^^^^
-
-<CPREADOUT>
+    Read-Out
+    ^^^^^^^^
+    <CPREADOUT>
 
     [OFF THE RECORD]
     ----------------
-
     - If video orders are requested, get the email information OFF THE RECORD.
 
 [7] POST SC DEPO
 ================
 
-1. Tell CR:
------------
-:Job Role: Videographer
+    1. Tell CR: ----------- :
+    Job Role: Videographer "Steno will send them the
+    chat thread, audio file, and exhibits in a day from now."
 
-"Steno will send them the chat thread, audio file, and exhibits in a day from now."
+    2. Slack > #video-checking --------------------------
+    :Job Role: All Depo has concluded.  No issues.
+    else: state issues
 
-2. Slack > #video-checking
---------------------------
-:Job Role: All
+    3. Fill out Error Log
+    ---------------------
+    :Job Role: All
 
-Depo has concluded.
-No issues.
+    https://app.nuclino.com/STENOVERSE/Space-Yachty/Error-log-b053d57d-73c7-4bca-888a-09d28efc4e71
 
-else:
-    state issues
+    4. Complete Post-Depo Exhibit Tasks
+    ----------------------------------
+    :Job Role: All
 
-3. Fill out Error Log
----------------------
-:Job Role: All
+    https://app.nuclino.com/STENOVERSE/Space-Yachty/Zoom-Post-Depo-Exhibit-Handling-4340ddce-7d82-4f7c-b827-604319021d29
 
-https://app.nuclino.com/STENOVERSE/Space-Yachty/Error-log-b053d57d-73c7-4bca-888a-09d28efc4e71
+    5. Monday > Production Job Board > Remote Documents > Zoom-links
+    ----------------------------------------------------------------
+    :Job Role: All
 
-4. Complete Post-Depo Exhibit Tasks
-----------------------------------
-:Job Role: All
+        a. https://steno-squad.monday.com/boards/405833245/
+        b. [Comments] Exhbts > Box > '+'
+            - Exhibits are relabled in Box
 
-https://app.nuclino.com/STENOVERSE/Space-Yachty/Zoom-Post-Depo-Exhibit-Handling-4340ddce-7d82-4f7c-b827-604319021d29
+            i. if missing exhibits:
+                - Notes: "Exhibit 02: '<desc>' is a placeholder and counsel needs
+                          to send us that document."
+            ii. Box > Exhibts && Exhibits > Labeled Exhibits
+                - touch "Exhbit 02: '<desc>' [placedholder.txt]"
 
-5. Monday > Production Job Board > Remote Documents > Zoom-links
-----------------------------------------------------------------
-:Job Role: All
+    6. Monday > Video Edits Board > [col] Zoom Recording > Zoom-links
+    -----------------------------------------------------------------
+    :Job Role: Videographer
 
-    a. https://steno-squad.monday.com/boards/405833245/
-    b. [Comments] Exhbts > Box > '+'
-        - Exhibits are relabled in Box
+    https://steno-squad.monday.com/boards/930206922
 
-        i. if missing exhibits:
-            - Notes: "Exhibit 02: '<desc>' is a placeholder and counsel needs
-                      to send us that document."
-        ii. Box > Exhibts && Exhibits > Labeled Exhibits
-            - touch "Exhbit 02: '<desc>' [placedholder.txt]"
+    7. OPS > Video Worksheet > [upload] +JOBNUMBER+ Video Worksheet.pdf
+    -------------------------------------------------------------------
+    :Job Role: Videographer
 
-6. Monday > Video Edits Board > [col] Zoom Recording > Zoom-links
------------------------------------------------------------------
-:Job Role: Videographer
+    8. OPS > Deponent > <name>
+    --------------------------
+    :Job Role: Videographer
 
-https://steno-squad.monday.com/boards/930206922
+    a. Ensure name is correct
+    b. insert name BEFORE PMK/PMQ
+        - [edit] PEN icon
 
-7. OPS > Video Worksheet > [upload] +JOBNUMBER+ Video Worksheet.pdf
--------------------------------------------------------------------
-:Job Role: Videographer
+    9. OPS > Videographer Status
+    ----------------------------
+    :Job Role: All
 
-8. OPS > Deponent > <name>
---------------------------
-:Job Role: Videographer
+    if Moderator:
+        Change 'Moderator Status' <> 'Complete'
 
-a. Ensure name is correct
-b. insert name BEFORE PMK/PMQ
-    - [edit] PEN icon
+    if Videographer:
 
-9. OPS > Videographer Status
-----------------------------
-:Job Role: All
-
-if Moderator:
-    Change 'Moderator Status' <> 'Complete'
-
-if Videographer:
-
-    Change 'Videographer Status' <> 'Materials Received'
+        Change 'Videographer Status' <> 'Materials Received'
 

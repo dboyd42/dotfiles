@@ -4,7 +4,7 @@
 :Case Number:
 :Start Time: +START+ +TZ+
 :Est. Duration:
-:Ops Page: +OPSPAGE+
+:Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
 
 Moderator: audio only -- no breaks, no read-ins
 Videographer: A/V
@@ -13,14 +13,14 @@ Ambassador: A/V + Exhbits
 Overview
 ********
 
-    - %s/+JOBROLE+/     Moderator/Videographer/Ambassador
+    - %s/+JROLE+/       Moderator/Videographer/Ambassador
     - %s/+JOBNUMBER+/   xxxxxx
-    - %s/+OPSPAGE+/     Steno Ops Page URL
+    - %s/https://ops.steno.com/ops/job/+JOBNUMBER+/     Steno Ops Page URL
     - %s/+START+/       hh:mm AM/PM
     - %s/+TZ+/          PT/MT/CT/ET
-    - %s/+OFIRM+/       ordering-firm
+    - %s/+ORFIRM+/      ordering-firm
     - %s/+DEPONENT+/    deponent
-    - %s/+TA+/          TA // Ops > Ordered On Behalf Of
+    - %s/+TA0+/         TA // Ops > Ordered On Behalf Of
     - %s/+CR+/          CR // Ops > CRName >> Preferred Name
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
@@ -48,7 +48,7 @@ Overview
 Ordering Firm
 -------------
 
-    - +OFIRM+
+    - +ORFIRM+
 
 Defending Firm
 --------------
@@ -86,7 +86,7 @@ ZOOM PLAYBOOK
     --------
 
         - I am on and ready to go for job +JOBNUMBER+
-        - +OPSPAGE+
+        - https://ops.steno.com/ops/job/+JOBNUMBER+
 
     6. Recirculate invites (E-mail)
     -------------------------------
@@ -98,7 +98,7 @@ ZOOM PLAYBOOK
 
 Good morning,
 
-    My name is David Boyd and I am the +JOBROLE+ for today's deposition at
+    My name is David Boyd and I am the +JROLE+ for today's deposition at
     +START+ +TZ+.  I am recirculating this invitation for everyone's convenience.
     Please don't hesitate to reach out to me with any questions or if you
     experience any technical difficulties upon joining.  My number is (512)-270-3020.
@@ -110,7 +110,7 @@ Best,
 ========================
 :DEPONENT: Spotlight!!!
 
-1. Introduce self as +JOBROLE+
+1. Introduce self as +JROLE+
 2. [Ask] Name pronunciation
 3. [Ask] Familiarity with Zoom: mute, stop/start video, chat fns
 
@@ -171,7 +171,7 @@ if videographer:
     ... jump into the normal videographer read-in.
 
 
-I work at the court reporting agency, Steno, that was hired by +OFIRM+ to
+I work at the court reporting agency, Steno, that was hired by +ORFIRM+ to
 help facilitate this deposition.  Please note, this meeting will be recorded
 in its entirety. Anything that  you do, can be seen and heard by everyone on
 the call. If at any point you require privacy, I remind you to mute your

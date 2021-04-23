@@ -4,7 +4,7 @@
 :Case Number:
 :Start Time: +START+ +TZ+
 :Est. Duration:
-:Ops Page: +OPSPAGE+
+:Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
 
 Personal Notes:
 
@@ -15,14 +15,14 @@ Ambassador: A/V + Exhbits
 Overview
 ********
 
-    - %s/+JOBROLE+/     Moderator/Videographer/Ambassador
+    - %s/+JROLE+/       Moderator/Videographer/Ambassador
     - %s/+JOBNUMBER+/   xxxxxx
-    - %s/+OPSPAGE+/     Steno Ops Page URL
+    - %s/https://ops.steno.com/ops/job/+JOBNUMBER+/     Steno Ops Page URL
     - %s/+START+/       hh:mm AM/PM
     - %s/+TZ+/          PT/MT/CT/ET
-    - %s/+OFIRM+/       ordering-firm
+    - %s/+ORFIRM+/      ordering-firm
     - %s/+DEPONENT+/    deponent
-    - %s/+TA+/          TA // Ops > Ordered On Behalf Of
+    - %s/+TA1+/         TA // Ops > Ordered On Behalf Of
     - %s/+CR+/          CR // Ops > CRName >> Preferred Name
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
@@ -50,12 +50,13 @@ Overview
 Ordering Firm
 -------------
 
-    - +OFIRM+
+    - +ORFIRM+
 
 Defending Firm
 --------------
 
-    - +DFIRM+
+    - +DF0+
+    - +DF1+
 
 NOTES
 =====
@@ -85,7 +86,7 @@ STENO CONNECT PLAYBOOK
         - use your phone
         - DEV NOTES: Code in a timer
 
-if (+JOBROLE+ ==  Videographer) {
+if (+JROLE+ ==  Videographer) {
     4. Video Worksheet 3.0
     ----------------------
 
@@ -121,7 +122,7 @@ Email Template
 
 Good morning,
 
-    My name is David Boyd and I am the +JOBROLE+ for today's deposition at
+    My name is David Boyd and I am the +JROLE+ for today's deposition at
     +START+ +TZ+.  I am recirculating this invitation for everyone's convenience.
     Please don't hesitate to reach out to me with any questions or if you
     experience any technical difficulties upon joining.  My number is (512)-270-3020.
@@ -144,7 +145,7 @@ Best,
 :Reorganize SC Slots: [INDIVIDUAL] Shift-Rename (individual)
 
 1. Warmly greet participants and ask for pronunciations of names.
-2. Introduce yourself as +JOBROLE+ for today.
+2. Introduce yourself as +JROLE+ for today.
 3. Ask about familiarity with SConn
 4. Point out Standard vs Single View options
 5. Audio fails -> "Dial in"
@@ -202,7 +203,7 @@ Good morning/afternoon, everyone.
 I'm going to go over a brief introduction off the record so we're all on the
 same page, and then I'll...
 
-if (+JOBROLE+ == moderator) {
+if (+JROLE+ == moderator) {
     ...hand it over to the court reporter.
 } else {
     ...jump into the videographer read-in.
@@ -246,7 +247,7 @@ I ask that you write this down or have it handy, just in case.  My phone number
 is (512)-270-3020.  Once again, my phone number is (512)-270-3020.  Please give
 me a call and I will gladly work with you to get you reconnected.
 
-if (+JOBROLE+ == Moderator) {
+if (+JROLE+ == Moderator) {
     ...Madame/Mr. Court Reporter I will pass it off to you.
 } else {
     ...I am going to state the current time for our video
@@ -324,7 +325,7 @@ Read-In
             pop up.  Please click the 'Join Again' button, reconnect to your
             preferred audio and start up your camera again."
 
-        if (+JOBROLE+ != Moderator) {
+        if (+JROLE+ != Moderator) {
             b. "I am going to state the current time for our video editors
                 which is hh:mm:ss"
         }
@@ -334,7 +335,7 @@ Read-In
 [7] ENDING DEPOSITION
 =====================
 
-if (+JOBROLE+ != Moderator) {
+if (+JROLE+ != Moderator) {
 
     Video Order Types
     -----------------
@@ -363,7 +364,7 @@ if (+JOBROLE+ != Moderator) {
 [8] POST SC DEPO
 ================
 
-    1. Video Worksheet (if +JOBROLE+ != Moderator)  {
+    1. Video Worksheet (if +JROLE+ != Moderator)  {
     ------------------
 
         - saveas: +JOBNUMBER+ - Video Worksheet
@@ -383,7 +384,7 @@ if (+JOBROLE+ != Moderator) {
 
     4. Change: Ops >
     ---------------------------------------------------------------
-    if (+JOBROLE+ == Moderator) {
+    if (+JROLE+ == Moderator) {
         "Moderator Status" -> "Complete"
     } else {
         "Videographer Status" -> "Materials Received"

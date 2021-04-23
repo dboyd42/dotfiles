@@ -16,3 +16,6 @@
 [submodule "pack/plug-ins/start/codi"]
 	path = pack/plug-ins/start/codi
 	url = https://github.com/metakirby5/codi.vim
+[submodule "pack/plug-ins/other/YouCompleteMe"]
+	path = pack/plug-ins/other/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git

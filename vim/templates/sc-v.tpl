@@ -19,6 +19,7 @@ Overview
     - %s/+JOBNUMBER+/   xxxxxx
     - %s/https://ops.steno.com/ops/job/+JOBNUMBER+/     Steno Ops Page URL
     - %s/+START+/       hh:mm AM/PM
+    - %s/+RTIME+/       hh:mm AM/PM
     - %s/+TZ+/          PT/MT/CT/ET
     - %s/+ORFIRM+/      ordering-firm
     - %s/+DEPONENT+/    deponent
@@ -231,7 +232,7 @@ for you to stop or ask for clarification.
 
 Due to a 4 hour video call limit, we will all have to refresh our screens at
 the four hour mark.  I will give everyone a reminder 15 minutes before that
-time.  The approximate refresh time will be (+START+ + 4 hrs = ) PM +TZ+.
+time.  The approximate refresh time will be +RTIME+ +TZ+.
 
 Lastly, to help the court reporter get a clear and accurate record, we ask that
 everyone please speak loud enough so that your microphone can pick up your

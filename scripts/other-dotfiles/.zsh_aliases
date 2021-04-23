@@ -26,7 +26,7 @@ alias py='python3'
 
 ### Directories
 alias gith='cd ~/Documents/code/repos/github/dboyd42/'
-alias sandbox='cd ~/Documents/code/sandbox/'
+alias sbox='cd ~/Documents/code/sandbox/'
 
 # WSL dirs
 alias wgu='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/wgu/'

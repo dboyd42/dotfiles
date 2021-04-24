@@ -53,6 +53,9 @@ Linux
 
 Windows
 =======
+:Vim: --Install with Python
+:Vim: https://github.com/vim/vim-win32-installer
+
 
 **Run as administrator** PowerShell
 

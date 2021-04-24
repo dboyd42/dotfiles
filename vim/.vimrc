@@ -80,3 +80,6 @@ let g:netrw_browse_split = 4
 " Set width of directory explorer
 let g:netrw_winsize = 25
 
+" Avoid the "Hit ENTER to continue" prompts --Windows 10
+silent !echo Hello
+

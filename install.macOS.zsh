@@ -8,19 +8,19 @@
 #-----------------#
 # Local Variables #
 #-----------------#
-VRT="/usr/local/share/vim/vim82" # :echo $VIMRUNTIME
 VDIR="/usr/local/share/vim"      # :echo $VIM
+VRT="/usr/local/share/vim/vim82" # :echo $VIMRUNTIME
 
 ###---------------###
 ### Link dotfiles ###
 ###---------------###
-# ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
-# ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
-# ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
+ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
+ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
+ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
 
 # # Concatenate ZSH aliases to ZSHRC file
-# echo "source ~/.zsh_aliases" >> ~/.zshrc
-# source ~/.zsh_aliases
+echo "source ~/.zsh_aliases" >> ~/.zshrc
+source ~/.zsh_aliases
 echo "You may need to refresh your terminal in order for the aliases to take."
 
 ###-----------------------###

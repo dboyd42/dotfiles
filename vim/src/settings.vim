@@ -66,7 +66,8 @@ set smartcase           " identifies case specific patterns
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cmdheight=2         " Set the command window height to 2 lines
 set colorcolumn=80      " highlight column number
-highlight ColorColumn ctermbg=1 " 1 == red; 233!=tmux
+" 1 == red; 233!=tmux
+highlight ColorColumn ctermbg=1
 set cursorline          " highlight current line
 set laststatus=2        " Display the status line
 set lazyredraw          " redraws screen only when we need to --faster macros

@@ -12,7 +12,7 @@ set autoindent          " copies current indent on newline (ai)
 "  uses same indent when textwidth is reached
 set smartindent         " indentations are based off FileType
 set backspace=indent,eol,start " Allow backspacing over ai, \n, I
-set encoding=utf8       " standard encoding and standard language
+set encoding=utf-8      " standard encoding and standard language
 
 " Navigating the 7 Seas
 set nomodeline          " disabled due to security vulnerabilities

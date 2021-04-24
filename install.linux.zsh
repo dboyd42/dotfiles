@@ -25,10 +25,16 @@ sudo ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
 sudo ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
 sudo ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
 
-# # Concatenate ZSH aliases to ZSHRC file
-echo "source ~/.zsh_aliases" >> ~/.zshrc
+# Concatenate ZSH aliases to ZSHRC file
+echo -e "\n\
+###-------------------------------------------###\n\
+### Imported from dotfiles/.install.linux.zsh ###\n\
+###-------------------------------------------###\n\
+bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar\n\
+source ~/.zsh_aliases           # Source ZSH aliases\n\
+setopt NO_BEEP                  # Annoying beep goes away\n"\
+    >> ~/.zshrc
 source ~/.zsh_aliases
-echo "You may need to refresh your terminal in order for the aliases to take."
 
 ###-----------------------###
 ### Plug-ins Installation ###

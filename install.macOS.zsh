@@ -18,10 +18,16 @@ ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
 ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
 ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
 
-# # Concatenate ZSH aliases to ZSHRC file
-echo "source ~/.zsh_aliases" >> ~/.zshrc
+# Concatenate ZSH aliases to ZSHRC file
+echo -e "\n\
+###-------------------------------------------###\n\
+### Imported from dotfiles/.install.linux.zsh ###\n\
+###-------------------------------------------###\n\
+bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar\n\
+source ~/.zsh_aliases           # Source ZSH aliases\n\
+setopt NO_BEEP                  # Annoying beep goes away\n"\
+    >> ~/.zshrc
 source ~/.zsh_aliases
-echo "You may need to refresh your terminal in order for the aliases to take."
 
 ###-----------------------###
 ### Plug-ins Installation ###
@@ -39,11 +45,12 @@ ln -sf $PWD/pack/plug-ins/start/* $VRT/pack/plug-ins/start/
 # ------------------------#
 # YouCompleteMe --Install #
 # ------------------------#
-# @pre: brew install cmake python mono go nodejs
-# @pre: brew install java
-# @pre: sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-# @pre: brew install vim    # Note: pre-installed macOS vim != python3
+brew install cmake python mono go nodejs
+brew install java
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+brew install vim    # Note: pre-installed macOS vim != python3
 # Compile & Install
 sudo python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --all
 ###===========================###
 
+echo "You may need to refresh your terminal in order for the changes to take."

@@ -48,10 +48,10 @@ elseif has("win32")
     " Rm cursorline due to blinding cursorline UI
     set nocursorline
 elseif has("unix")
-    hi Normal guibg=NONE ctermbg=NONE
     colorscheme industry
     call WaitToLoadTplLinux()
     set nocursorline
+    hi Normal guibg=NONE ctermbg=NONE
 endif
 
 " Temporary Configurations

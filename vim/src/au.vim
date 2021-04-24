@@ -14,8 +14,8 @@ augroup filetype_all
     "       use 'viW' for word selection
     au BufReadCmd file:///* exe "bd!|edit ".substitute(expand("<afile>"),"file:/*","","")
     " Folds > save and load views
-    au BufWinLeave *.* mkview
-    au BufWinEnter *.* loadview
+    " au BufWinLeave *.* mkview
+    " au BufWinEnter *.* loadview
 augroup END
 
 augroup filetype_cpp

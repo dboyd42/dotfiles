@@ -18,18 +18,13 @@ Set-Theme Paradox
 
 ### [[ DIRECTORIES ]] ###
 #-----------------------#
-# WGU coursework
-function wgu {
-    Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\wgu\"
-}
+function wgu { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\wgu\" }
+function sans { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\sans\" }
+function sbox { Set-Location "$ENV:USERPROFILE\Documents\code\sandbox\" }
+function gith { Set-Location "$ENV:USERPROFILE\Documents\code\repos\github\dboyd42\" }
 
-# Local Windows Github
-function lgith {
-    Set-Location "$ENV:USERPROFILE\Documents\code\repos\github\dboyd42\"
-}
-
-# Local WSL Github
-function gith {
+# WSL Github
+function wgith {
     $WSLGITH = "\\wsl$\kali-linux\home\" `
                + (wsl.exe whoami) `
                + "\Documents\code\repos\github\dboyd42"

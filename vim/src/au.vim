@@ -38,11 +38,12 @@ augroup filetype_java
     au FileType java noremap <buffer> <LocalLeader>u 02x<Esc>
 augroup END
 
-augroup filetype_javascript
+augroup filetype_js
     au!
     " Un/comment
-    au FileType javascript noremap <buffer> <LocalLeader>c I//<Esc>
-    au FileType javascript noremap <buffer> <LocalLeader>u 02x<Esc>
+    au FileType *.js noremap <buffer> <LocalLeader>c I//<Esc>
+    au FileType *.js noremap <buffer> <LocalLeader>u 02x<Esc>
+    au FileType *.js setlocal softtabstop=2 tabstop=2 shiftwidth=2
 augroup END
 
 augroup filetype_html

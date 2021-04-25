@@ -102,9 +102,9 @@ New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 # @pre: echo "set encoding=utf-8" >> ~/.vimrc  //Note: @src/settings.vim
 
 # Compile & Install
-python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --all
+python3 $VRT\pack\plug-ins\start\YouCompleteMe\install.py --all
 # Compile JS & TS features using the TSServer
-python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --ts-completer
+python3 $VRT\pack\plug-ins\start\YouCompleteMe\install.py --ts-completer
 
 # Ending message for user
 RefreshEnv.cmd

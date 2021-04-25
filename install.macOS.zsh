@@ -51,6 +51,9 @@ sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtua
 brew install vim    # Note: pre-installed macOS vim != python3
 # Compile & Install
 sudo python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --all
-###===========================###
+# Compile JS & TS features using the TSServer
+sudo python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --ts-completer
 
+# Ending message for user
 echo "You may need to refresh your terminal in order for the changes to take."
+

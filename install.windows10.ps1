@@ -103,8 +103,10 @@ New-Item -ItemType SymbolicLink -Path $myPath -Target $myTarget -Force
 
 # Compile & Install
 python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --all
-###===========================###
+# Compile JS & TS features using the TSServer
+python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --ts-completer
 
+# Ending message for user
 RefreshEnv.cmd
-echo "If YCM does not run after seeing no errors, then re-open Terminal"
+echo "You may need to refresh your terminal in order for the changes to take."
 

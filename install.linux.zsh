@@ -59,4 +59,9 @@ apt install mono-complete golang nodejs default-jdk npm -y
 
 # Compile & Install
 sudo python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --all
+# Compile JS & TS features using the TSServer
+sudo python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --ts-completer
+
+# Ending message for user
+echo "You may need to refresh your terminal in order for the changes to take."
 

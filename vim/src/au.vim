@@ -38,17 +38,19 @@ augroup filetype_java
     au FileType java noremap <buffer> <LocalLeader>u 02x<Esc>
 augroup END
 
-augroup filetype_js
+augroup filetype_javascript
     au!
+    " Set tab width
+    au FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
     " Un/comment
-    au FileType *.js noremap <buffer> <LocalLeader>c I//<Esc>
-    au FileType *.js noremap <buffer> <LocalLeader>u 02x<Esc>
-    au FileType *.js setlocal softtabstop=2 tabstop=2 shiftwidth=2
+    au FileType javascript noremap <buffer> <LocalLeader>c I//<Esc>
+    au FileType javascript noremap <buffer> <LocalLeader>u 02x<Esc>
 augroup END
 
 augroup filetype_html
     au!
-    au BufRead,BufNewFile *.html setlocal shiftwidth=2 softtabstop=2
+    " Set tab width
+    au FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
     " Indent Files
     "au BufWritePre,BufRead *.html normal gg=G "<-del 0..^ whitespace!
     " Un/comment

@@ -14,9 +14,9 @@ VRT="/usr/local/share/vim/vim82" # :echo $VIMRUNTIME
 ###---------------###
 ### Link dotfiles ###
 ###---------------###
-ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
-ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
-ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
+sudo ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
+sudo ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
+sudo ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
 
 # Concatenate ZSH aliases to ZSHRC file
 echo -e "\n\
@@ -33,13 +33,13 @@ source ~/.zsh_aliases
 ### Plug-ins Installation ###
 ###-----------------------###
 # Create local dir for plug-ins
-mkdir -p $VRT/pack/plug-ins/start
+sudo mkdir -p $VRT/pack/plug-ins/start
 
 # Clone plug-in submodules after cloning dotfiles
 sudo git submodule update --init --recursive
 
 # Link git plug-in submodules to /start folder
-ln -sf $PWD/pack/plug-ins/start/* $VRT/pack/plug-ins/start/
+sudo ln -sf $PWD/pack/plug-ins/start/* $VRT/pack/plug-ins/start/
 
 ### Other ===================###
 # ------------------------#

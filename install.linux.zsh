@@ -54,8 +54,8 @@ sudo ln -sf $PWD/pack/plug-ins/start/* $VRT/pack/plug-ins/start/
 # ------------------------#
 
 # Install YCM dependencies
-apt install build-essential cmake vim-nox python3-dev -y
-apt install mono-complete golang nodejs default-jdk npm -y
+sudo apt install build-essential cmake vim-nox python3-dev -y
+sudo apt install mono-complete golang nodejs default-jdk npm -y
 
 # Compile & Install
 sudo python3 $VRT/pack/plug-ins/start/YouCompleteMe/install.py --all

@@ -27,8 +27,15 @@ Overview
     - %s/+CR+/          CR // Ops > CRName >> Preferred Name
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
+
+    ---------------------------------------------------------------------------
     - copy & paste:     CPREADIN    // Gmail > Looker
     - copy & paste:     CPREADOUT   // Gmail > Looker
+    - Read-In Generator
+    - %s/+CASENAME+/g      case name (found in NOD)
+    - %s/+CNUM+/g       case number
+    - %s/+COURT+/g      court
+    - %s/+PFORM+/g      platform
 
     +-----+--------------+------------+-------------+
     | Pri | Title        | Name       | Phonetics   |
@@ -273,6 +280,21 @@ Best,
 
     <CPREADIN>
 
+  Good morning/afternoon,
+  we are now on the record at _    AM/PM +TZ+ on +TODAY+
+  to begin the depoisiton of +DEPONENT+
+  in the matter of +CASENAME+.
+  This case is venued in +COURT+.
+  The case number is +CNUM+.
+  This deposition is taking place via +PFORM+.
+  The legal videographer is David Boyd, here on behalf of Steno,
+  and the court reporter is +CR+, also here on behalf of Steno.
+
+  Would counsel please identify yourselves and state whom you represent.
+  [pause]
+  Thank you, counsel.  Would the reporter please swear in the witness.
+
+
 [6] DURING DEPOSITION
 =====================
 :Disageements: Stay on/off the record.
@@ -355,6 +377,10 @@ Best,
         ^^^^^^^^
 
         <CPREADOUT>
+
+This concludes volume _   of the deposition of +DEPONENT+
+  for +COURT+.
+  We are now off the record, the time is _____ AM/PM +TZ+
 
         [OFF THE RECORD]
         ----------------

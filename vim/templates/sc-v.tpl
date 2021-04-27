@@ -23,8 +23,10 @@ Overview
     - %s/+TZ+/          PT/MT/CT/ET
     - %s/+ORFIRM+/      ordering-firm
     - %s/+DEPONENT+/    deponent
+    - %s/+VOLN+/        volume number
     - %s/+TA1+/         TA // Ops > Ordered On Behalf Of
     - %s/+CR+/          CR // Ops > CRName >> Preferred Name
+    - %s/+INTPR+/       interpreter
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
 
@@ -32,7 +34,7 @@ Overview
     - copy & paste:     CPREADIN    // Gmail > Looker
     - copy & paste:     CPREADOUT   // Gmail > Looker
     - Read-In Generator
-    - %s/+CASENAME+/g      case name (found in NOD)
+    - %s/+CASENAME+/g   case name
     - %s/+CNUM+/g       case number
     - %s/+COURT+/g      court
     - %s/+PFORM+/g      platform
@@ -53,6 +55,8 @@ Overview
     |     | DA           | +DA2+      |             |
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
+    +-----+--------------+------------+-------------+
+    | 6   | Interpreter  | +INTPR+    | N/A         |
     +-----+--------------+------------+-------------+
 
     Ordering Firm
@@ -200,8 +204,7 @@ Best,
     +--------------+--------------+------------+--------------------------+
     | 5            | Videographer | David Boyd | N/A                      |
     +--------------+--------------+------------+--------------------------+
-    | Other        | goTO:5       | N/A        | N/A                      |
-    |              |              |            |                          |
+    | 6            | Interpreter  | +INTPR+    | N/A                      |
     +--------------+--------------+------------+--------------------------+
 
 [4] READ GENERAL RECOMMENDATIONS
@@ -219,7 +222,7 @@ Best,
     }
 
     As I said before, my name is David Boyd and I work at the court reporting
-    agency, Steno, that was hired by ORDERINGFIRM
+    agency, Steno, that was hired by +ORFIRM+
     to help faciliate this deposition today.
 
     Please take a moment to silence all phone and computer notifications at this
@@ -317,27 +320,30 @@ Best,
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
+    | 6   | Interpreter  | +INTPR+    | N/A         |
+    +-----+--------------+------------+-------------+
 
     [BREAKS] On/Off Record Times
     ----------------------------
     a. "We are now on/off the record.  The time is hh:mm:ss +TZ+"
     b. [BUTTON] **ON/OFF THE RECORD**
 
-    +---------+----------+
-    | On Time | Off Time |
-    +=========+==========+
-    |         |          |
-    +---------+----------+
-    |         |          |
-    +---------+----------+
-    |         |          |
-    +---------+----------+
-    |         |          |
-    +---------+----------+
-    |         |          |
-    +---------+----------+
-    |         |          |
-    +---------+----------+
+=======
+1. On :
+1. Off:
+-------
+2. On :
+2. Off:
+-------
+3. On :
+3. Off:
+-------
+4. On :
+4. Off:
+-------
+5. On :
+5. Off:
+=======
 
     [4hr Time Limit] Refresh
     ------------------------
@@ -379,7 +385,7 @@ Best,
         <CPREADOUT>
 
 This concludes volume _   of the deposition of +DEPONENT+
-  for +COURT+.
+  for +CASENAME+.
   We are now off the record, the time is _____ AM/PM +TZ+
 
         [OFF THE RECORD]

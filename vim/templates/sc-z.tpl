@@ -20,16 +20,19 @@ Overview
     - %s/+TZ+/          PT/MT/CT/ET
     - %s/+ORFIRM+/      ordering-firm
     - %s/+DEPONENT+/    deponent
+    - %s/+VOLN+/        volume number
     - %s/+TA0+/         TA // Ops > Ordered On Behalf Of
     - %s/+CR+/          CR // Ops > CRName >> Preferred Name
+    - %s/+INTPR+/       interpreter
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
+    - %s/+box+/         Box link
 
     ---------------------------------------------------------------------------
     - copy & paste:     CPREADIN    // Gmail > Looker
     - copy & paste:     CPREADOUT   // Gmail > Looker
     - Read-In Generator
-    - %s/+CASENAME+/g   case name (found in NOD)
+    - %s/+CASENAME+/g   case name
     - %s/+CNUM+/g       case number
     - %s/+COURT+/g      court
     - %s/+PFORM+/g      platform
@@ -50,6 +53,8 @@ Overview
     |     | DA           | +DA2+      |             |
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
+    +-----+--------------+------------+-------------+
+    | 6   | Interpreter  | +INTPR+    | N/A         |
     +-----+--------------+------------+-------------+
 
     Ordering Firm
@@ -85,6 +90,7 @@ ZOOM PLAYBOOK
     ------
 
         - have readily available
+        - +box+
 
     4. Video Worksheet 3.0
     ----------------------
@@ -130,9 +136,9 @@ Best,
     |          |              |            | + camera: ctr face,            |
     |          |              |            | + adj light, mv < distractions |
     +----------+--------------+------------+--------------------------------+
-    | 2        | TA           | +TA+       | + "Are you comfortable with    |
-    |          |              |            | to share exhibits w/in         |
-    |          |              |            | this Zoom?"                    |
+    | 2        | TA           | +TA0+      | + "Are you comfortable with    |
+    |          |              | +TA1+      | to share exhibits w/in         |
+    |          |              | +TA2+      | this Zoom?"                    |
     |          |              |            | > if (NO):                     |
     |          |              |            | ...........goTO b;             |
     |          |              |            | + "Do you plan on having the   |
@@ -151,6 +157,10 @@ Best,
     +----------+--------------+------------+--------------------------------+
     | 5        | Videographer | David Boyd | N/A                            |
     +----------+--------------+------------+--------------------------------+
+    | 6        | Interpreter  | +INTPR+    | N/A                            |
+    +----------+--------------+------------+--------------------------------+
+
+
     b. Zoom > Share Exhibits
     ------------------------
     Exhibit #TEST:
@@ -232,18 +242,41 @@ Best,
     +=====+==============+============+=============+
     | 1   | Deponent     | +DEPONENT+ | WPHONETICS  |
     +-----+--------------+------------+-------------+
-    | 2   | TA           | +TA+       | TAPHONETICS |
+    | 2   | TA           | +TA0+      | TAPHONETICS |
+    |     |              | +TA1+      |             |
+    |     |              | +TA2+      |             |
     +-----+--------------+------------+-------------+
     | 3   | CR           | +CR+       | CRPHONETICS |
     +-----+--------------+------------+-------------+
     | 4   | DA           | +DA0+      | DAPHONETICS |
+    |     |              | +DA1+      |             |
+    |     |              | +DA2+      |             |
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
+    +-----+--------------+------------+-------------+
+    | 6   | Interpreter  | +INTPR+    | N/A         |
     +-----+--------------+------------+-------------+
 
     [BREAKS] On/Off Record Times
     ----------------------------
     a. "We are now on/off the record.  The time is hh:mm:ss +TZ+"
+
+=======
+1. On :
+1. Off:
+-------
+2. On :
+2. Off:
+-------
+3. On :
+3. Off:
+-------
+4. On :
+4. Off:
+-------
+5. On :
+5. Off:
+=======
 
 [6] ENDING DEPOSITION
 =====================
@@ -259,7 +292,7 @@ https://docs.google.com/spreadsheets/d/1cYNUtK0_rTMnYnBWAInA139v2GUyb4l83KzVtK-5
     <CPREADOUT>
 
 This concludes volume _   of the deposition of +DEPONENT+
-  for +COURT+.
+  for +CASENAME+.
   We are now off the record, the time is _____ AM/PM +TZ+
 
     [OFF THE RECORD]

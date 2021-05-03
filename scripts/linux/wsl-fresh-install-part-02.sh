@@ -22,5 +22,6 @@ echo '----------------------------------------'
 echo ' RESTART your terminal.... (not reset!) '
 echo '----------------------------------------'
 echo 'IF font is jacked up, refer->MesloLGS NF'
+echo 'https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf'
 echo '----------------------------------------'
 

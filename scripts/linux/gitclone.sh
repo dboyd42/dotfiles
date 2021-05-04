@@ -25,6 +25,6 @@ Lines=$(cat $File)
 # Run git clone on each line
 for Line in $Lines
 do
-	git clone git@github.com:$USERNAME/$Line
+	git clone git@github.com:$Username/$Line
 done
 

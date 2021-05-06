@@ -98,8 +98,8 @@ ZOOM PLAYBOOK
 
     5. Slack
     --------
-
-        - I am on and ready to go for job +JOBNUMBER+ #+JROLE+
+        - #+JROLE+
+        - I am on and ready to go for job +JOBNUMBER+
         - https://ops.steno.com/ops/job/+JOBNUMBER+
 
     6. Recirculate invites (E-mail)
@@ -218,12 +218,12 @@ Best,
     <CPREADIN>
 
   Good morning/afternoon,
-  we are now on the record at _    AM/PM +TZ+ on +TODAY+
+  we are now on the record at _    AM/PM +TZ+ on +DATEbdY+
   to begin the depoisiton of +DEPONENT+
   in the matter of +CASENAME+.
   This case is venued in +COURT+.
   The case number is +CNUM+.
-  This deposition is taking place via Steno's Steno Connect Platform.
+  This deposition is taking place via Zoom Video Conference.
   The legal videographer is David Boyd, here on behalf of Steno,
   and the court reporter is +CR+, also here on behalf of Steno.
 

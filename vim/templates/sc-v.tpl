@@ -117,8 +117,9 @@ STENO CONNECT PLAYBOOK
     ------------------------
     :Prep: Draft
 
-        - I am on and ready to go for job +JOBNUMBER+ #+JROLE+
-        - Steno Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
+        - #+JROLE+
+        - I am on and ready to go for job +JOBNUMBER+
+        - https://ops.steno.com/ops/job/+JOBNUMBER+
 
     3. Recirculate invites (E-mail)
     -------------------------------
@@ -283,12 +284,12 @@ Best,
     <CPREADIN>
 
   Good morning/afternoon,
-  we are now on the record at _    AM/PM +TZ+ on +TODAY+
+  we are now on the record at _    AM/PM +TZ+ on +DATEbdY+
   to begin the depoisiton of +DEPONENT+
   in the matter of +CASENAME+.
   This case is venued in +COURT+.
   The case number is +CNUM+.
-  This deposition is taking place via Zoom Video Conference.
+  This deposition is taking place via Steno's Steno Connect Platform.
   The legal videographer is David Boyd, here on behalf of Steno,
   and the court reporter is +CR+, also here on behalf of Steno.
 

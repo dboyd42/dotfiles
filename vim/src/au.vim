@@ -129,6 +129,8 @@ augroup filetype_sc-*
     au BufNewFile *.sc-* %s/+JOBNUMBER+/\=expand('%:r:t')/
     " Today's Date
     au BufNewFile *.sc-* %s/+TODAY+/\=strftime('%Y-%m-%d')/
+    " month day, YEAR"
+    au BufNewFile *.sc-* %s/+DATEbdY+/\=strftime('%b %d, %Y')/
 augroup END
 
 augroup filetype_sh

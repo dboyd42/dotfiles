@@ -1,7 +1,7 @@
 +JOBNUMBER+
 ######
 :Date: +TODAY+
-:Case Number:
+:Case Number: +CNUM+
 :Start Time: +START+ +TZ+
 :Est. Duration:
 :Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
@@ -26,7 +26,7 @@ Overview
     - %s/+INTPR+/       interpreter
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
-    - %s/+box+/         Box link
+    - %s/https://steno.app.box.com/folder/+BOXN+/         Box link
 
     ---------------------------------------------------------------------------
     - copy & paste:     CPREADIN    // Gmail > Looker
@@ -35,7 +35,6 @@ Overview
     - %s/+CASENAME+/g   case name
     - %s/+CNUM+/g       case number
     - %s/+COURT+/g      court
-    - %s/+PFORM+/g      platform
 
     +-----+--------------+------------+-------------+
     | Pri | Title        | Name       | Phonetics   |
@@ -65,7 +64,7 @@ Overview
     Defending Firm
     --------------
 
-        - +DFIRM+
+        - +DF0+
         - +DA0+
         - +DA1+
 
@@ -90,7 +89,7 @@ ZOOM PLAYBOOK
     ------
 
         - have readily available
-        - +box+
+        - https://steno.app.box.com/folder/+BOXN+
 
     4. Video Worksheet 3.0
     ----------------------
@@ -100,7 +99,7 @@ ZOOM PLAYBOOK
     5. Slack
     --------
 
-        - I am on and ready to go for job +JOBNUMBER+
+        - I am on and ready to go for job +JOBNUMBER+ #+JROLE+
         - https://ops.steno.com/ops/job/+JOBNUMBER+
 
     6. Recirculate invites (E-mail)
@@ -111,15 +110,16 @@ ZOOM PLAYBOOK
     :Time: 30 min < +START+ +TZ+
     :Copy-Paste: ^v"*
 
-Good morning,
+This deposition is scheduled for +DATEbdY+ at +START+ +TZ+.
 
-    My name is David Boyd and I am the +JROLE+ for today's deposition at
-    +START+ +TZ+.  I am recirculating this invitation for everyone's convenience.
-    Please don't hesitate to reach out to me with any questions or if you
-    experience any technical difficulties upon joining.  My number is (512)-270-3020.
-    Thank you for choosing Steno and I will see you soon.
+Hello, my name is David Boyd and I am the +JROLE+ for today's deposition.
+I am recirculating this invitation for everyone's convenience.
+Please don't hesitate to reach out to me with any questions or if you
+experience any technical difficulties upon joining.  My number is (512)-270-3020.
+Thank you for choosing Steno and I will see you soon.
 
 Best,
+
 
 [2] AS PARTICIPANTS JOIN
 ========================
@@ -223,7 +223,7 @@ Best,
   in the matter of +CASENAME+.
   This case is venued in +COURT+.
   The case number is +CNUM+.
-  This deposition is taking place via +PFORM+.
+  This deposition is taking place via Steno's Steno Connect Platform.
   The legal videographer is David Boyd, here on behalf of Steno,
   and the court reporter is +CR+, also here on behalf of Steno.
 
@@ -291,7 +291,7 @@ https://docs.google.com/spreadsheets/d/1cYNUtK0_rTMnYnBWAInA139v2GUyb4l83KzVtK-5
     ^^^^^^^^
     <CPREADOUT>
 
-This concludes volume _   of the deposition of +DEPONENT+
+This concludes volume +VOLN+ of the deposition of +DEPONENT+
   for +CASENAME+.
   We are now off the record, the time is _____ AM/PM +TZ+
 

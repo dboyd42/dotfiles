@@ -1,7 +1,7 @@
 +JOBNUMBER+
 ######
 :Date: +TODAY+
-:Case Number:
+:Case Number: +CNUM+
 :Start Time: +START+ +TZ+
 :Est. Duration:
 :Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
@@ -37,7 +37,6 @@ Overview
     - %s/+CASENAME+/g   case name
     - %s/+CNUM+/g       case number
     - %s/+COURT+/g      court
-    - %s/+PFORM+/g      platform
 
     +-----+--------------+------------+-------------+
     | Pri | Title        | Name       | Phonetics   |
@@ -118,7 +117,7 @@ STENO CONNECT PLAYBOOK
     ------------------------
     :Prep: Draft
 
-        - I am on and ready to go for job +JOBNUMBER+
+        - I am on and ready to go for job +JOBNUMBER+ #+JROLE+
         - Steno Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
 
     3. Recirculate invites (E-mail)
@@ -132,10 +131,10 @@ STENO CONNECT PLAYBOOK
     :Time: 30 min < +START+ +TZ+
 
 
-Good morning,
+This deposition is scheduled for +DATEbdY+ at +START+ +TZ+.
 
-My name is David Boyd and I am the +JROLE+ for today's deposition at
-+START+ +TZ+.  I am recirculating this invitation for everyone's convenience.
+Hello, my name is David Boyd and I am the +JROLE+ for today's deposition.
+I am recirculating this invitation for everyone's convenience.
 Please don't hesitate to reach out to me with any questions or if you
 experience any technical difficulties upon joining.  My number is (512)-270-3020.
 Thank you for choosing Steno and I will see you soon.
@@ -247,7 +246,7 @@ Best,
 
     Lastly, to help the court reporter get a clear and accurate record, we ask that
     everyone please speak loud enough so that your microphone can pick up your
-    voice.  Please keep your face in full view of the camera, be cautios of talking
+    voice.  Please keep your face in full view of the camera, be cautious of talking
     over one another, and be aware if you do move any papers or anything near your
     microphone while someone is speaking.  It can cause a disruption in the audio.
 
@@ -289,7 +288,7 @@ Best,
   in the matter of +CASENAME+.
   This case is venued in +COURT+.
   The case number is +CNUM+.
-  This deposition is taking place via +PFORM+.
+  This deposition is taking place via Zoom Video Conference.
   The legal videographer is David Boyd, here on behalf of Steno,
   and the court reporter is +CR+, also here on behalf of Steno.
 
@@ -384,7 +383,7 @@ Best,
 
         <CPREADOUT>
 
-This concludes volume _   of the deposition of +DEPONENT+
+This concludes volume +VOLN+ of the deposition of +DEPONENT+
   for +CASENAME+.
   We are now off the record, the time is _____ AM/PM +TZ+
 

@@ -1,4 +1,6 @@
 #!/bin/zsh
+# Copyright 2021 David Boyd, all rights reserved
+# Run through git directories and pull for updates.
 for dir in ./*; do
     if [ -d $dir ];
     then

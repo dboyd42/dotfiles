@@ -31,6 +31,13 @@ Installation
 ************
 :Note: Installation/Compilation of Vim requires Python3!
 
+ZShell
+======
+
+- To autocomplete current directory files: Tab
+- To autocomplete suggestions: Ctrl+Spacebar
+
+
 Vim
 ===
 
@@ -42,7 +49,7 @@ Vim
 	# IF false; THEN uninstall
 
 	# Use feature-rich Vim with multiple language support
-	sudo apt install vim-nox
+	sudo apt install vim-gtk3
 
 macOS
 =====

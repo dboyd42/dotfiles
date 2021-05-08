@@ -115,7 +115,7 @@ This deposition is scheduled for +DATEbdY+ at +START+ +TZ+.
 Hello, my name is David Boyd and I am the +JROLE+ for today's deposition.
 I am recirculating this invitation for everyone's convenience.
 Please don't hesitate to reach out to me with any questions or if you
-experience any technical difficulties upon joining.  My number is (512)-270-3020.
+experience any technical difficulties upon joining.  My number is (512)270-3020.
 Thank you for choosing Steno and I will see you soon.
 
 Best,

@@ -8,18 +8,20 @@
 
     Personal Notes:
 
-    Moderator: audio only -- no breaks, no read-ins
+    Steno Tech Assistant: audio only -- no breaks, no read-ins
     Videographer: A/V
     Ambassador: A/V + Exhbits
 
 Overview
 ********
 
-    - %s/+JROLE+/       Moderator/Videographer/Ambassador
+    - %s/+JROLE+/       Steno Tech Assistant/Videographer/Ambassador
     - %s/+JOBNUMBER+/   xxxxxx
     - %s/https://ops.steno.com/ops/job/+JOBNUMBER+/     Steno Ops Page URL
     - %s/+START+/       hh:mm AM/PM
     - %s/+RTIME+/       hh:mm AM/PM
+    - %s/+STARTCT+/     hh:mm AM/PM Central Time
+    - %s/+RTIMECT+/     hh:mm AM/PM Central Time
     - %s/+TZ+/          PT/MT/CT/ET
     - %s/+ORFIRM+/      ordering-firm
     - %s/+DEPONENT+/    deponent
@@ -259,7 +261,7 @@ Best,
     is (512)-270-3020.  Once again, my phone number is (512)-270-3020.  Please give
     me a call and I will gladly work with you to get you reconnected.
 
-    if (+JROLE+ == Moderator) {
+    if (+JROLE+ == Steno Tech Assistant) {
         ...Madame/Mr. Court Reporter I will pass it off to you.
     } else {
         ...I am going to state the current time for our video
@@ -355,7 +357,7 @@ Best,
             pop up.  Please click the 'Join Again' button, reconnect to your
             preferred audio and start up your camera again."
 
-        if (+JROLE+ != Moderator) {
+        if (+JROLE+ != Steno Tech Assistant) {
             b. "I am going to state the current time for our video editors
                 which is hh:mm:ss"
         }
@@ -365,7 +367,7 @@ Best,
 [7] ENDING DEPOSITION
 =====================
 
-    if (+JROLE+ != Moderator) {
+    if (+JROLE+ != Steno Tech Assistant) {
 
     Video Order Types
     -----------------
@@ -397,7 +399,7 @@ This concludes volume +VOLN+ of the deposition of +DEPONENT+
 [8] POST SC DEPO
 ================
 
-    1. Video Worksheet (if +JROLE+ != Moderator)  {
+    1. Video Worksheet (if +JROLE+ != Steno Tech Assistant)  {
     ------------------
 
         - saveas: +JOBNUMBER+ - Video Worksheet
@@ -417,8 +419,8 @@ This concludes volume +VOLN+ of the deposition of +DEPONENT+
 
     4. Change: Ops >
     ---------------------------------------------------------------
-    if (+JROLE+ == Moderator) {
-        "Moderator Status" -> "Complete"
+    if (+JROLE+ == Steno Tech Assistant) {
+        "Steno Tech Assistant Status" -> "Complete"
     } else {
         "Videographer Status" -> "Materials Received"
     }

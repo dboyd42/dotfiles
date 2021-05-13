@@ -6,14 +6,14 @@
 :Est. Duration:
 :Ops Page: https://ops.steno.com/ops/job/+JOBNUMBER+
 
-    Moderator: audio only -- no breaks, no read-ins
+    Steno Tech Assistant: audio only -- no breaks, no read-ins
     Videographer: A/V
     Ambassador: A/V + Exhbits
 
 Overview
 ********
 
-    - %s/+JROLE+/       Moderator/Videographer/Ambassador
+    - %s/+JROLE+/       Steno Tech Assistant/Videographer/Ambassador
     - %s/+JOBNUMBER+/   xxxxxx
     - %s/https://ops.steno.com/ops/job/+JOBNUMBER+/     Steno Ops Page URL
     - %s/+START+/       hh:mm AM/PM
@@ -358,8 +358,8 @@ This concludes volume +VOLN+ of the deposition of +DEPONENT+
     ----------------------------
     :Job Role: All
 
-    if Moderator:
-        Change 'Moderator Status' <> 'Complete'
+    if Steno Tech Assistant:
+        Change 'Steno Tech Assistant Status' <> 'Complete'
 
     if Videographer:
 

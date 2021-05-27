@@ -20,15 +20,13 @@ Overview
     - %s/https://ops.steno.com/ops/job/+JOBNUMBER+/     Steno Ops Page URL
     - %s/+START+/       hh:mm AM/PM
     - %s/+RTIME+/       hh:mm AM/PM
-    - %s/+STARTCT+/     hh:mm AM/PM Central Time
-    - %s/+RTIMECT+/     hh:mm AM/PM Central Time
     - %s/+TZ+/          PT/MT/CT/ET
     - %s/+ORFIRM+/      ordering-firm
     - %s/+DEPONENT+/    deponent
     - %s/+VOLN+/        volume number
     - %s/+TA0+/         TA // Ops > Ordered On Behalf Of
     - %s/+CR+/          CR // Ops > CRName >> Preferred Name
-    - %s/+INTPR+/       interpreter
+    - %s/+INTRPR+/       interpreter
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
 
@@ -57,7 +55,7 @@ Overview
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
-    | 6   | Interpreter  | +INTPR+    | N/A         |
+    | 6   | Interpreter  | +INTRPR+    | N/A         |
     +-----+--------------+------------+-------------+
 
     Ordering Firm
@@ -206,7 +204,7 @@ Best,
     +--------------+--------------+------------+--------------------------+
     | 5            | Videographer | David Boyd | N/A                      |
     +--------------+--------------+------------+--------------------------+
-    | 6            | Interpreter  | +INTPR+    | N/A                      |
+    | 6            | Interpreter  | +INTRPR+    | N/A                      |
     +--------------+--------------+------------+--------------------------+
 
 [4] READ GENERAL RECOMMENDATIONS
@@ -251,7 +249,7 @@ Best,
     everyone please speak loud enough so that your microphone can pick up your
     voice.  Please keep your face in full view of the camera, be cautious of talking
     over one another, and be aware if you do move any papers or anything near your
-    microphone while someone is speaking.  It can cause a disruption in the audio.
+    microphone while someone is speaking as it can cause a disruption in the audio.
 
     Please keep in mind that because this deposition is being taken remotely, the
     reporter may have to ask for further clarification.  I will be here the entire
@@ -322,7 +320,7 @@ Best,
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
-    | 6   | Interpreter  | +INTPR+    | N/A         |
+    | 6   | Interpreter  | +INTRPR+    | N/A         |
     +-----+--------------+------------+-------------+
 
     [BREAKS] On/Off Record Times

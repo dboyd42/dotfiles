@@ -23,7 +23,7 @@ Overview
     - %s/+VOLN+/        volume number
     - %s/+TA0+/         TA // Ops > Ordered On Behalf Of
     - %s/+CR+/          CR // Ops > CRName >> Preferred Name
-    - %s/+INTPR+/       interpreter
+    - %s/+INTRPR+/       interpreter
     - %s/+DA0+/         DA // Ops > NOD > Service List
     - %s/+DF0+/         defending_firm
     - %s/https://steno.app.box.com/folder/+BOXN+/         Box link
@@ -53,7 +53,7 @@ Overview
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
-    | 6   | Interpreter  | +INTPR+    | N/A         |
+    | 6   | Interpreter  | +INTRPR+    | N/A         |
     +-----+--------------+------------+-------------+
 
     Ordering Firm
@@ -157,7 +157,7 @@ Best,
     +----------+--------------+------------+--------------------------------+
     | 5        | Videographer | David Boyd | N/A                            |
     +----------+--------------+------------+--------------------------------+
-    | 6        | Interpreter  | +INTPR+    | N/A                            |
+    | 6        | Interpreter  | +INTRPR+    | N/A                            |
     +----------+--------------+------------+--------------------------------+
 
 
@@ -201,7 +201,7 @@ Best,
     happen to exit the meeting or require any assistance.
 
     [CHAT]
-    David Boyd (512)270-3020
+David Boyd (512)270-3020
     [/CHAT]
 
     Are there any final questions before we go on the record?
@@ -254,7 +254,7 @@ Best,
     +-----+--------------+------------+-------------+
     | 5   | Videographer | David Boyd | N/A         |
     +-----+--------------+------------+-------------+
-    | 6   | Interpreter  | +INTPR+    | N/A         |
+    | 6   | Interpreter  | +INTRPR+    | N/A         |
     +-----+--------------+------------+-------------+
 
     [BREAKS] On/Off Record Times

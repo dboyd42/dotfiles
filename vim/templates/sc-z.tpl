@@ -186,8 +186,12 @@ Best,
 
 
     I work at the court reporting agency, Steno, that was hired by +ORFIRM+ to
-    help facilitate this deposition.  Please note, this meeting will be recorded
-    in its entirety. Anything that  you do, can be seen and heard by everyone on
+    help facilitate this deposition.
+
+    if videographer:
+        Please note, this meeting will be recorded in its entirety.
+
+    Anything that  you do, can be seen and heard by everyone on
     the call. If at any point you require privacy, I remind you to mute your
     microphone or turn off your video. Please take a moment to silence all your
     phone and computer notifications at this time.

@@ -2,11 +2,16 @@
 ### ZSH Aliases
 ###
 
+OS_RELEASE=`uname -a`
+
 # WSL2
 if [[ $OS_RELEASE =~ microsoft ]]; then
     WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
 else
-    WIN_USERNAME="--WIN_USERNAME--"
+    # Grab using PS
+    #WIN_USERNAME=`powershell.exe '$env:UserName'`
+    #WIN_USERNAME="--WIN_USERNAME--"    # old
+    WIN_USERNAME="--SHOULDN'T BE HERE"--"    # old
 fi
 
 ###

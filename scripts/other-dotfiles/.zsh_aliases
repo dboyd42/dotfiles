@@ -31,6 +31,7 @@ alias gith='cd ~/Documents/code/repos/github/dboyd42/'
 alias sbox='cd ~/Documents/code/sandbox/'
 
 # WSL dirs
+alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/sans/'
 alias wgu='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/wgu/'
 alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/sans/'
 

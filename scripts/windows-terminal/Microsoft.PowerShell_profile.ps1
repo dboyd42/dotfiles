@@ -15,12 +15,16 @@ Set-Theme Paradox
 ### ======= ///
 ### Aliases ///
 ###         ///
+# To edit aliases:
+#  1. access: vim $PROFILE
+#  2. Refresh shell: exit and re-open.
+#     - Note: RefreshEnv.exe does NOT work!
 
 ### [[ DIRECTORIES ]] ###
 #-----------------------#
 function sans { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\sans\" }
 function wgu { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\wgu\" }
-function sbox { Set-Location "$ENV:USERPROFILE\Documents\code\sandbox\" }
+function sbox { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\sandbox\" }
 function gith { Set-Location "$ENV:USERPROFILE\Documents\code\repos\github\dboyd42\" }
 
 # WSL Github

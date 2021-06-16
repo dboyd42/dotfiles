@@ -33,3 +33,14 @@ Location
 | $PsHome\Profile.ps1                                                 | All Users, All Hosts       |
 +---------------------------------------------------------------------+----------------------------+
 
+Notes
+=====
+
+Aliases must be done in `vim $profile` which is located in
+`~\OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`.
+
+To-Do List
+**********
+
+Link OneDrive $profile to PS script.
+

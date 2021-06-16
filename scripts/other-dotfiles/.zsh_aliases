@@ -2,6 +2,8 @@
 ### ZSH Aliases
 ###
 
+OS_RELEASE=`uname -r`
+
 # WSL2
 if [[ $OS_RELEASE =~ microsoft ]]; then
     WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
@@ -33,6 +35,7 @@ alias gith='cd ~/Documents/code/repos/github/dboyd42/'
 alias sbox='cd ~/Documents/code/sandbox/'
 
 # WSL dirs
+alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/sans/'
 alias wgu='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/education/wgu/'
 

@@ -22,8 +22,8 @@ Set-Theme Paradox
 
 ### [[ DIRECTORIES ]] ###
 #-----------------------#
-function sans { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\sans\" }
-function wgu { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\education\wgu\" }
+function sans { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\edu\sans\" }
+function wgu { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\edu\wgu\" }
 function sbox { Set-Location "$ENV:USERPROFILE\OneDrive\Documents\sandbox\" }
 function gith { Set-Location "$ENV:USERPROFILE\Documents\code\repos\github\dboyd42\" }
 

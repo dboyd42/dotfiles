@@ -18,6 +18,9 @@ sudo ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
 sudo ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
 sudo ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
 
+# Install prgms
+sudo apt install autojump -y
+
 # Concatenate ZSH aliases to ZSHRC file
 echo -e "\n\
 ###-------------------------------------------###\n\
@@ -25,7 +28,8 @@ echo -e "\n\
 ###-------------------------------------------###\n\
 bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar\n\
 source ~/.zsh_aliases           # Source ZSH aliases\n\
-setopt NO_BEEP                  # Annoying beep goes away\n"\
+setopt NO_BEEP                  # Annoying beep goes away\n\
+. /usr/share/autojump/autojump.sh  # `j` to commonly accessed dirs\n"\
     >> ~/.zshrc
 source ~/.zsh_aliases
 

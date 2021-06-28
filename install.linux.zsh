@@ -25,8 +25,16 @@ sudo ln -sf $PWD/vim/.vimrc ~/.vimrc              # .vimrc
 sudo ln -sf $PWD/vim/* $VDIR/                     # abbrev, src, templates
 sudo ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_aliases
 
-# Install prgms
+###---------------###
+### Install Prgms ###
+###---------------###
+# Autojump
 sudo apt install autojump -y
+# ccat
+sudo apt instal golang-go -y
+go get -u github.com/owenthereal/ccat
+sudo cp ccat /usr/bin/
+
 
 # Concatenate ZSH aliases to ZSHRC file
 echo -e "\n\

@@ -24,7 +24,7 @@ alias findhelp='echo "find ./ -name +JOBN+ -type d -maxdepth 1"'
 ### END   ###------------------------------------------------------------------
 
 ### Display
-alias ll='ls -al'
+alias ll='ls -alh'
 
 ### Compiling / Interpreters
 alias com='g++ -std=c++1z -o main *.cpp'

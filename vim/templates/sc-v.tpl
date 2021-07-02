@@ -8,14 +8,14 @@
 
     Personal Notes:
 
-    Steno Tech Assistant: audio only -- no breaks, no read-ins
+    Steno Tech Assistant (STA): audio only -- no breaks, no read-ins
     Videographer: A/V
-    Ambassador: A/V + Exhbits
+    Remote Exhibit Assistant (REI): A/V + Exhbits
 
 Overview
 ********
 
-    - %s/+JROLE+/       Steno Tech Assistant/Videographer/Ambassador
+    - %s/+JROLE+/       STA/Videographer/REI
     - %s/+JOBNUMBER+/   xxxxxx
     - %s/https://ops.steno.com/ops/job/+JOBNUMBER+/     Steno Ops Page URL
     - %s/+START+/       hh:mm AM/PM

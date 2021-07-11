@@ -40,6 +40,8 @@ alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/sans/'
 alias wgu='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/wgu/'
 
 ### Editing
+# Export e.g. RST=README.rst PDF=output.pdf
+alias r2p='pandoc -V geometry:a4paper -f rst --toc -o $PDF $RST'
 
 ### Networking
 

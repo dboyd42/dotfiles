@@ -31,7 +31,7 @@ sudo ln -sf $PWD/scripts/other-dotfiles/.* $HOME/ # gitconfig, tmux.conf, zsh_al
 # Autojump
 sudo apt install autojump -y
 # ccat
-sudo apt instal golang-go -y
+sudo apt install golang-go -y
 go get -u github.com/owenthereal/ccat
 sudo cp ccat /usr/bin/
 

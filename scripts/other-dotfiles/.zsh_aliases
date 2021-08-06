@@ -42,6 +42,8 @@ alias wgu='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/wgu/'
 ### Editing
 # Export e.g. RST=README.rst PDF=output.pdf
 alias r2p='pandoc -V geometry:a4paper -f rst --toc -o $PDF $RST'
+alias r2pall='for file in ./*; do if [ ${file: -4} = '.rst' ]; then RST=$file;
+PDF=${file%.*}.pdf; r2p; fi; done'
 
 ### Networking
 

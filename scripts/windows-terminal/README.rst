@@ -6,6 +6,8 @@ README
 
 Windows Terminal
 ================
+:<C-,>: Open Settings
+:<C-S-,>: Open settings.json
 
 Installation
 ------------
@@ -43,4 +45,9 @@ To-Do List
 **********
 
 Link OneDrive $profile to PS script.
+
+Issues
+======
+
+When transitioning to a new system, the GUID changes and the linked files may malfunction.  If you overwite the GUID, you can use `NewGUID()` cmdlet to generate a new one, or reinstall Windows Terminal to fetch the GUIDs.
 

@@ -73,10 +73,10 @@ YouCompleteMe --Install
 -----------------------
 :@pre: Install VS Build Tools 2019 => https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16
 :@pre: cmake => https://cmake.org/download/*.msi
-:@pre: vim+py/dyn => https://github.com/vim/vim-win32-installer
+:@pre: vim+py/dyn => https://github.com/vim/vim-win32-installer (x64 arch)
 :@pre: python3 => https://www.python.org/downloads/
 :@pre: go => https://golang.org/doc/install
-:@pre: node, and npm
+:@pre: node (includes: npm)
 :@pre: echo "set encoding=utf-8" >> ~/.vimrc  //Note: @src/settings.vim
 :Note: d/l x86 & x64 python3 architectures.
 

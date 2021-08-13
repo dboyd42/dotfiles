@@ -15,8 +15,8 @@ function! WaitToLoadTplLinux()
     source $VIM/src/gui.vim
     source $VIM/src/functions.vim
     source $VIM/src/mappings.vim
-    source $VIM/src/plug-ins.vim
     source $VIM/src/settings.vim
+    source $VIM/src/plug-ins.vim
 endfunction
 function! WaitToLoadTplWindows()
     source $VIM\abbrev\abbreviations.vim
@@ -24,8 +24,8 @@ function! WaitToLoadTplWindows()
     source $VIM\src\gui.vim
     source $VIM\src\functions.vim
     source $VIM\src\mappings.vim
-    source $VIM\src\plug-ins.vim
     source $VIM\src\settings.vim
+    source $VIM\src\plug-ins.vim
 endfunction
 
 " Templates

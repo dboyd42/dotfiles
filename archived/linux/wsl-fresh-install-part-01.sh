@@ -2,7 +2,7 @@
 # Copyright 2021 David Boyd, all rights reserved
 
 # Install preliminary programs
-sudo apt-get install vim-gtk3 -y
+#sudo apt-get install vim-gtk3 -y ... using vim-nox now
 sudo apt-get install tree -y
 
 ###

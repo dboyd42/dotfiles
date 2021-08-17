@@ -85,6 +85,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 plugins=(
     git
     zsh-autosuggestions
+    autojump
 )
 
 source $ZSH/oh-my-zsh.sh

@@ -18,7 +18,7 @@ fi
 ###
 
 ### JOB ###------------------------------------------------------------------
-alias jobs='cd /Volumes/GoogleDrive/My\ Drive/jobs'
+#alias jobs='cd /Volumes/GoogleDrive/My\ Drive/jobs' # conflicts *Nix 'jobs'
 alias box='cd /System/Volumes/Data/Users/steno/Box'
 alias findhelp='echo "find ./ -name +JOBN+ -type d -maxdepth 1"'
 ### END   ###------------------------------------------------------------------

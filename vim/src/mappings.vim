@@ -31,6 +31,7 @@ inoremap " ""<Left>
 "inoremap ' ''<Left>
 " <C-o>l !=work with 'matching braces' fns "
 inoremap <C-l> <Esc>la
+inoremap <C-h> <Esc>i
 
 " Normal Mode
 """"""""""""""""""""""""""""""""""""""""
@@ -78,6 +79,7 @@ nnoremap <Space> za
 inoremap <C-d> <Del>
 
 " Disable arrow keys (no operation)
+
 noremap <Left>  <nop>
 noremap <Right> <nop>
 noremap <Up>    <nop>
@@ -100,4 +102,8 @@ nnoremap <C-h> :bp<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn off search highligh
 nnoremap <leader><Space> :nohl<CR>
+
+" Set Syntax Regions in filetype"
+nnoremap <leader>p :call Python_Region()<CR>
+nnoremap <leader>c :call Cpp_Region()<CR>
 

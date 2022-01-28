@@ -120,16 +120,13 @@ source $ZSH/oh-my-zsh.sh
 ### Imported from dotfiles/.install.linux.zsh ###\n\
 ###-------------------------------------------###\n\
 bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar\n\
+# !work
+#bindkey '^ ' autosuggest-accept # Accept autosuggest through Spacebar\n\
 source ~/.zsh_aliases           # Source ZSH aliases\n\
 setopt NO_BEEP                  # Annoying beep goes away" \
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-###-------------------------------------------###
-### Imported from dotfiles/.install.linux.zsh ###
-###-------------------------------------------###
-bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar
-source ~/.zsh_aliases           # Source ZSH aliases
-setopt NO_BEEP                  # Annoying beep goes away
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+

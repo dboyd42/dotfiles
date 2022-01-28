@@ -78,6 +78,11 @@ augroup filetype_html
     au FileType html inoremap <td> <td></td><Esc>%i
 augroup END
 
+augroup filetype_md
+    " Set tab width
+    au FileType markdown setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
 augroup filetype_python
     au!
     " Copyright Year
@@ -96,7 +101,10 @@ augroup filetype_rst
     " Un/comment
     au FileType rst noremap <buffer> <LocalLeader>c I.. <Esc>
     au FileType rst noremap <buffer> <LocalLeader>u 03x<Esc>
-    au BufRead,BufNewFile,BufWrite *.rst setlocal noexpandtab tw=79 wm=0
+    " Wtf do I have noet in an RST file?  Or does RST req \t?  idk, forgot*
+    " either way, switch to f*ing md... rst is getting ridiculous 1/23/22
+    "au BufRead,BufNewFile,BufWrite *.rst setlocal noexpandtab tw=79 wm=0
+    au BufRead,BufNewFile,BufWrite *.rst setlocal tw=79 wm=0
     " Insert program name
     au BufNewFile *.rst %s/+TITLE+/\=expand('%:r:t')/
     " Today's Date

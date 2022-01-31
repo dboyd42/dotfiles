@@ -15,8 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="robbyrussel"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
+ZSH_THEME="robbyrussel"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -119,14 +119,20 @@ source $ZSH/oh-my-zsh.sh
 ###-------------------------------------------###\n\
 ### Imported from dotfiles/.install.linux.zsh ###\n\
 ###-------------------------------------------###\n\
-bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar\n\
-# !work
-#bindkey '^ ' autosuggest-accept # Accept autosuggest through Spacebar\n\
-source ~/.zsh_aliases           # Source ZSH aliases\n\
-setopt NO_BEEP                  # Annoying beep goes away" \
-
+source ~/.zsh_aliases           # Source ZSH aliases
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh_tmp_local
+setopt NO_BEEP                  # Annoying beep goes away
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+#  BINDKEYS: '^['->ALT '[Z'->Shift
+bindkey '^P' up-line-or-search  # Prevent Kali's ZSH from doing stupid shit
+#"^X^F" vi-find-next-char       ## Default: Ctrl+X + Ctrl F
+bindkey '^X^D' vi-find-prev-char
+bindkey '^;' vi-repeat-find     # Ctrl+;
+bindkey '^,' vi-rev-repeat-find     # Ctrl+.
+#bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar
+bindkey '^ ' autosuggest-accept # Accept autosuggest through Spacebar
 

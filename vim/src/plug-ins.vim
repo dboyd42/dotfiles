@@ -3,24 +3,22 @@
 " [Guide] https://github.com/junegunn/vim-plug/wiki/tutorial
 
 " Plugins will be downloaded under the specified directory.
-if has("win32")
-	call plug#begin('$HOME\.vim\plugged')
-else
+if has("unix")
 	call plug#begin('$HOME/.vim/plugged')
+    " [YCM] Code-completion engine
+    Plug 'ycm-core/YouCompleteMe'               ### TODO: fix to run on Win
+elseif has("win32")
+	call plug#begin('$HOME\.vim\plugged')
 endif
 
 " [Airline] Lean & mean status/tabline for vim that's light as air.
 Plug 'vim-airline/vim-airline'
-" [Codi] Interactive scratchpad // NOTE: !support in Windows
-Plug 'metakirby5/codi.vim'
 " [Table-Mode] Automatic table creator & formatter
 Plug 'dhruvasagar/vim-table-mode'
 " [Surroundings] Surrounds providing mappings to pairs
 Plug 'tpope/vim-surround'
 " [Fugitive] Plugin for Git
 Plug 'tpope/vim-fugitive'
-" [YCM] Code-completion engine
-Plug 'ycm-core/YouCompleteMe'
 
 " Initialize plugin system
 call plug#end()

@@ -9,14 +9,14 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/home/kbhatw/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#source ~/powerlevel10k/powerlevel10k.zsh-theme
-ZSH_THEME="robbyrussel"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -31,14 +31,13 @@ ZSH_THEME="robbyrussel"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -53,8 +52,9 @@ ZSH_THEME="robbyrussel"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -78,14 +78,11 @@ ZSH_THEME="robbyrussel"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-### Plugins references:
-# https://github.com/romkatv/powerlevel10k
-# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
-
 plugins=(
     git
-    zsh-autosuggestions
     autojump
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -120,19 +117,22 @@ source $ZSH/oh-my-zsh.sh
 ### Imported from dotfiles/.install.linux.zsh ###\n\
 ###-------------------------------------------###\n\
 source ~/.zsh_aliases           # Source ZSH aliases
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/.zsh_tmp_local
+source ~/.zsh_tmp_local         # Source tmp zsh aliases
 setopt NO_BEEP                  # Annoying beep goes away
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 #  BINDKEYS: '^['->ALT '[Z'->Shift
+bindkey -r '^[.'                # unbind clear line from ^.
 bindkey '^P' up-line-or-search  # Prevent Kali's ZSH from doing stupid shit
 #"^X^F" vi-find-next-char       ## Default: Ctrl+X + Ctrl F
 bindkey '^X^D' vi-find-prev-char
 bindkey '^;' vi-repeat-find     # Ctrl+;
-bindkey '^,' vi-rev-repeat-find     # Ctrl+.
-#bindkey '^@' autosuggest-accept # Accept autosuggest through Spacebar
+bindkey '^,' vi-rev-repeat-find # Ctrl+.
 bindkey '^ ' autosuggest-accept # Accept autosuggest through Spacebar
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# workaround to get my Ctrl-L back up and running
+bindkey -r '^L'           # -release bindkey mapping
+bindkey '^L' clear-screen # Bind custom widget to Ctrl-L
 

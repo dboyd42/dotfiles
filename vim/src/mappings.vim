@@ -28,6 +28,7 @@ inoremap {<CR> {<CR>}<Esc>O
 inoremap [ []<Left>
 inoremap ( ()<Left>
 inoremap " ""<Left>
+inoremap ```<CR> ```{CR}```<Esc><S-a>
 "inoremap ' ''<Left>
 " <C-o>l !=work with 'matching braces' fns "
 inoremap <C-l> <Esc>la

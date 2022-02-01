@@ -3,12 +3,12 @@
 " [Guide] https://github.com/junegunn/vim-plug/wiki/tutorial
 
 " Plugins will be downloaded under the specified directory.
-if has("unix")
-	call plug#begin('$HOME/.vim/plugged')
-    " [YCM] Code-completion engine
-    Plug 'ycm-core/YouCompleteMe'               ### TODO: fix to run on Win
-elseif has("win32")
-	call plug#begin('$HOME\.vim\plugged')
+if has("win32")
+    call plug#begin('$HOME\.vim\plugged')
+elseif has("unix")
+    call plug#begin('$HOME/.vim/plugged')
+    " [YCM] Code-completion engin               ### TODO: fix to run on Wine
+    Plug 'ycm-core/YouCompleteMe'
 endif
 
 " [Airline] Lean & mean status/tabline for vim that's light as air.

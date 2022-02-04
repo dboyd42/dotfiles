@@ -81,6 +81,9 @@ augroup END
 augroup filetype_md
     " Set tab width
     au FileType markdown setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    inoremap ```bash<CR> ```bash<CR>```<Esc><S-o>
+    inoremap ```python<CR> ```python<CR>```<Esc><S-o>
+    inoremap ```cpp<CR> ```cpp<CR>```<Esc><S-o>
 augroup END
 
 augroup filetype_python

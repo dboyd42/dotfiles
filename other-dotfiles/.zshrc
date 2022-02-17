@@ -117,7 +117,6 @@ source $ZSH/oh-my-zsh.sh
 ### Imported from dotfiles/.install.linux.zsh ###\n\
 ###-------------------------------------------###\n\
 source ~/.zsh_aliases           # Source ZSH aliases
-source ~/.zsh_tmp_local         # Source tmp zsh aliases
 setopt NO_BEEP                  # Annoying beep goes away
 
 #  BINDKEYS: '^['->ALT '[Z'->Shift
@@ -136,3 +135,4 @@ bindkey '^ ' autosuggest-accept # Accept autosuggest through Spacebar
 bindkey -r '^L'           # -release bindkey mapping
 bindkey '^L' clear-screen # Bind custom widget to Ctrl-L
 
+source /home/kbhatx/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

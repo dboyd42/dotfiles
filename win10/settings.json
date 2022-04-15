@@ -35,7 +35,7 @@
         [
           {
             // PowerShell 7
-            "backgroundImage": "C:/Users/boydd/OneDrive/Pictures/bg/rom1.jpg",
+            "backgroundImage": "C:/Users/[user/cloud]/Pictures/bg/rom1.jpg",
             "fontFace": "Cascadia Code PL",
             "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
             "hidden": false,
@@ -44,7 +44,7 @@
           },
           {
             // Kali-Linux
-            "backgroundImage": "C:/Users/boydd/OneDrive/Pictures/bg/angel0.jpg",
+            "backgroundImage": "C:/Users/[user/cloud]/Pictures/bg/angel0.jpg",
             "fontFace": "MesloLGS NF",
             "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
             "hidden": false,

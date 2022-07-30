@@ -40,19 +40,19 @@ autocmd BufNewFile * silent! call LoadTemplate('%:e')
 
 " OS Restrictions
 """"""""""""""""""""""""""""""""""""""""
-if has("mac")
-    call WaitToLoadTplLinux()
-elseif has("win32")
-    colorscheme industry
-    call WaitToLoadTplWindows()
-    " Rm cursorline due to blinding cursorline UI
-    set nocursorline
-elseif has("unix")
-    colorscheme industry
-    call WaitToLoadTplLinux()
-    set nocursorline
-    hi Normal guibg=NONE ctermbg=NONE
-endif
+""if has("mac")
+""    call WaitToLoadTplLinux()
+""elseif has("win32")
+""    colorscheme industry
+""    call WaitToLoadTplWindows()
+""    " Rm cursorline due to blinding cursorline UI
+""    set nocursorline
+""elseif has("unix")
+""    colorscheme industry
+""    call WaitToLoadTplLinux()
+""    set nocursorline
+""    hi Normal guibg=NONE ctermbg=NONE
+""endif
 
 " Temporary Configurations
 """"""""""""""""""""""""""

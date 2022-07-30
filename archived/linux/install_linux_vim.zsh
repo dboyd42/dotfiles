@@ -14,9 +14,14 @@ VPLUG="$HOME/.vim/plugged/"
 ###---------------###
 ### Link dotfiles ###
 ###---------------###
-sudo ln -sf $PWD/vim/.vimrc ~/.vimrc		# .vimrc
-sudo ln -sf $PWD/vim/* $VDIR			# abbrev, src, templates
-sudo ln -sf $PWD/other-dotfiles/.* $HOME/	# giconfig, tmux.conf, zsh_aliases
+# Local user's dotfiles
+ln -sf $PWD/vim/.vimrc ~/.vimrc             # .vimrc
+ln -sf $PWD/other-dotfiles/* $HOME/         # giconfig, tmux.conf, zsh_aliases
+# Root user's dotfiles
+sudo ln -sf $PWD/vim/.vimrc ~/.vimrc        # .vimrc
+sudo ln -sf $PWD/other-dotfiles/* $HOME/    # giconfig, tmux.conf, zsh_aliases
+# Requires sudo to link files into /usr/ directory
+sudo ln -sf $PWD/vim/* $VDIR                # abbrev, src, templates
 
 # Configure .bashrc
 echo "Configuring .bashrc"

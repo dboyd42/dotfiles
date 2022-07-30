@@ -2,6 +2,7 @@ Dotfiles
 ########
 :Author: David Boyd
 :Date: Spring 2019
+:Revised: Fall 2022
 
 This repository holds my dotfiles for Linux, macOS, and Windows with
 an emphasis on Vim configurations.
@@ -14,11 +15,7 @@ Included Plug-ins
 +=================+=============================+================================+
 | Airline         | Fancy-schmancy Statusline   |                                |
 +-----------------+-----------------------------+--------------------------------+
-| Codi            | RunTime Interpreter/Wrapper | Codi!!, Codi!                  |
-+-----------------+-----------------------------+--------------------------------+
 | Fugitive        | Git Wrapper                 | Allows gVim to use Git         |
-+-----------------+-----------------------------+--------------------------------+
-| [-] Python-Mode | a Ptyhon IDE for Vimmerz    | <leader>r ; :PymodeLint        |
 +-----------------+-----------------------------+--------------------------------+
 | Surround        | Surrounding Things          |                                |
 +-----------------+-----------------------------+--------------------------------+
@@ -31,40 +28,20 @@ Installation
 ************
 :Note: Installation/Compilation of Vim requires Python3!
 
-ZShell
-======
-
-- To autocomplete current directory files: Tab
-- To autocomplete suggestions: Ctrl+Spacebar
-
-
 Vim
 ===
 
-.. code-block:: Bash
-
-	# Check if Vim's compiled with Python3
-	vim --version | grep python
-
-	# IF false; THEN uninstall
-
-	# Use feature-rich Vim with multiple language support
-	sudo apt install vim-gtk3
+*Under revision* - Fall 2022
 
 macOS
 =====
-:Release: BigSur 20.3.0
 
-`sudo./install.macOS.zsh`
+*Under revision* - Fall 2022
 
 Linux
 =====
 
-**Run as root**
-
-.. code-block:: Bash
-
-	sudo ./linux-link-dotfiles.sh
+*Under revision* - Fall 202
 
 Windows
 =======

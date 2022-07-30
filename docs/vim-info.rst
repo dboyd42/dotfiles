@@ -57,12 +57,12 @@ Install
 Linux and macOS
 ===============
 
-.. code-block:: Bash
+*Under revision* - Fall 2022
 
 Windows
 =======
 
-.. code-block:: PowerShell
+*Under revision* - Fall 2022
 
 Execution Policies
 ==================

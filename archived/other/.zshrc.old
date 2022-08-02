@@ -33,7 +33,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -78,32 +78,11 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
-### ----------------------------------------------------------------------- ###
-### --------------------------  Plugins Install --------------------------- ###
-# colorize                                                                    #
-#    1. install python3-pygments golang-chroma                                #
-#    2. Reboot shell                                                          #
-# zsh-syntax-higlighting                                                      #
-#     1. git clone \                                                          #
-#       https://github.com/zsh-users/zsh-syntax-highlighting.git \            #
-#       ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting    #
-# zsh-autosuggestions                                                         #
-#     1. git clone                                                            #
-#       https://github.com/zsh-users/zsh-autosuggestions \                    #
-#       ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions        #
-# autojump                                                                    #
-#    1. install autojump                                                      #
-### ----------------------------------END---------------------------------- ###
-### ----------------------------------------------------------------------- ###
-
 plugins=(
-    autojump
-    colored-man-pages
-    colorize 
     git
-    zsh-autosuggestions 
-    zsh-syntax-highlighting 
+    autojump
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,30 +108,31 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-### ----------------------------------------------------------------------- ###
-### ---------------------------- ZSH Settings ----------------------------- ###
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.              #
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh                                  #
-#                                                                             #
-source ~/.zsh_aliases              # Source ZSH aliases                       #
-setopt NO_BEEP                     # Annoying beep goes away                  #
-#                                                                             #
-### ----------------------------- ZSH Bindkeys ---------------------------- ###
-# Bindkeys Key:                                                               #
-#  '^[' => ALT                                                                #
-#  '[Z' => Shift  *Note: Shift is not 100% compatabile                        #
-#bindkey "^X^F" vi-find-next-char  # built-in default                         #
-bindkey '^X^D' vi-find-prev-char                                              #
-bindkey '^;' vi-repeat-find        # Ctrl+;                                   #
-bindkey '^,' vi-rev-repeat-find    # Ctrl+.                                   #
-bindkey '^ ' autosuggest-accept    # Accept autosuggest through Spacebar      #
-#                                                                             #
-### ------------------------------- Kali OS ------------------------------- ###
-#bindkey -r '^[.'                  # Unbind clear line from ^.                #
-bindkey -r '^P'                    # Release bindkey: 'change prompt'         #
-bindkey '^P' up-line-or-search     # Prevent Kali's ZSH from doing stupid shit#
-bindkey -r '^L'                    # Release bindkey: ?                       #
-bindkey '^L' clear-screen          # Bind custom widget to Ctrl-L             #
-### ----------------------------------END---------------------------------- ###
-### ----------------------------------------------------------------------- ###
+###-------------------------------------------###\n\
+### Imported from dotfiles/.install.linux.zsh ###\n\
+###-------------------------------------------###\n\
+source ~/.zsh_aliases           # Source ZSH aliases
+setopt NO_BEEP                  # Annoying beep goes away
+
+#  BINDKEYS: '^['->ALT '[Z'->Shift
+bindkey -r '^[.'                # unbind clear line from ^.
+bindkey '^P' up-line-or-search  # Prevent Kali's ZSH from doing stupid shit
+#"^X^F" vi-find-next-char       ## Default: Ctrl+X + Ctrl F
+bindkey '^X^D' vi-find-prev-char
+bindkey '^;' vi-repeat-find     # Ctrl+;
+bindkey '^,' vi-rev-repeat-find # Ctrl+.
+bindkey '^ ' autosuggest-accept # Accept autosuggest through Spacebar
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# workaround to get my Ctrl-L back up and running
+bindkey -r '^L'           # -release bindkey mapping
+bindkey '^L' clear-screen # Bind custom widget to Ctrl-L
+
+source /home/kbhatx/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

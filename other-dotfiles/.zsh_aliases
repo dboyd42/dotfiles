@@ -31,7 +31,7 @@ alias com='g++ -std=c++1z -o main *.cpp'
 alias py='python3'
 
 ### Directories
-alias gith='cd ~/Documents/code/repos/github/dboyd42/'
+alias gith='cd ~/Documents/code/repos/'
 alias sbox='cd ~/Documents/code/sandbox/'
 
 # WSL dirs
@@ -49,7 +49,7 @@ PDF=${file%.*}.pdf; r2p; fi; done'
 
 ### Vim
 alias v='vim'
-alias vR='vim README.rst'
+alias vR='vim README.md'
 
 ###
 ### Bash Customization

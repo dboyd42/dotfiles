@@ -14,8 +14,6 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 " Buffer Prev/Next
 nnoremap <C-h> :bp<CR>
 nnoremap <C-l> :bn<CR>
-" Quit all (use :bd to quit one buffer)
-cnoremap q<CR> :qa<CR>
 
 " UI --Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

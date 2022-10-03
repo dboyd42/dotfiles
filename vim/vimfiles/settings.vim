@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible        " disable compatibility to old-time vi
 
 " Functionality "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,8 +25,8 @@ set mouse=a             " Enable use of the mouse for all modes
 " Tabs, Tabbing, and Tabbies; Tablature for the People
 set expandtab           " tabs are spaces
 set shiftround          " set indent to round to nearest shiftwidth
-set shiftwidth=4        " applies to '>>' and '<<' commands
-set softtabstop=4       " number of spaces in tab when editing
+set shiftwidth=4        " applies to '>>' and '<<' commands (widths for ai)
+set softtabstop=4       " nSpaces in TAB when editing so <BS> works 'correctly'
 set tabstop=4           " number of visual spaces per TAB
 
 " Wrapping it Tight
@@ -33,7 +34,7 @@ set tw=79               " physical width of document
 set wrap                " visual/virtual line wrapping
 
 " Visual autocomplete for command menu
-set wildmode=longest,list,full
+set wildmode=longest,list,full  " get bash-like tab completions
 
 " Directory Browsing (NERDTree, netrw, ctags, tagbar) "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -47,6 +48,7 @@ set confirm             " Use a dialog when an operation has to be confirmed
 set hidden              " Re-use the same win & switch from unsaved buffers
 set isfname+=32         " Supports filenames with spaces when using gf
 set printoptions=number:y " Enables printing with line numbers *Use w 'ha'
+filetype plugin indent on " allows auto-indenting depending on filetype
 
 " Folding "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,8 +61,10 @@ set foldmethod=indent   " fold based on indent level (manual, indent, syntax)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch           " search as characters are entered
 set hlsearch            " highlight search matches
+" Remove highlighted matches
+nnoremap <leader><Space> :nohl<CR>
 " Use case insensitive search, except when using capital letters
-set ignorecase          " ignores the case of normal letters
+set ignorecase          " case insensitive matching
 set smartcase           " identifies case specific patterns
 
 " --UI Config "

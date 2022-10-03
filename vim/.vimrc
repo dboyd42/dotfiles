@@ -1,1 +1,2 @@
-/home/bhatmag1ck/.vimrc
+" Neovim 
+source $HOME/.config/nvim/vimfiles/*

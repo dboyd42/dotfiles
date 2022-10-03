@@ -61,8 +61,6 @@ set foldmethod=indent   " fold based on indent level (manual, indent, syntax)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch           " search as characters are entered
 set hlsearch            " highlight search matches
-" Remove highlighted matches
-nnoremap <leader><Space> :nohl<CR>
 " Use case insensitive search, except when using capital letters
 set ignorecase          " case insensitive matching
 set smartcase           " identifies case specific patterns
@@ -84,6 +82,9 @@ set numberwidth=4       " n cols to use for the line number
 "set showcmd             " show partial commands in bottom bar !=Airline
 set showmatch           " highlight matching [{()}]
 set showmode            " show INSERT, VISUAL, etc
+" Always show the signcolumn, 
+" else it'd shift the txt each time diagnostics appear/become resolved.
+set signcolumn=yes      
 set splitbelow splitright " Splits open at bottom and right
 set visualbell          " Use visual bell instead of beeping
 syntax on               " Enable syntax highlighting

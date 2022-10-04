@@ -1,30 +1,32 @@
 " Vim-Plug, plug-in manager
 call plug#begin('$HOME/.config/nvim/plugged')
 
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'flazz/vim-colorschemes'
-Plug 'honza/vim-snippets'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'preservim/nerdtree'
-Plug 'SirVer/ultisnips'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'dhruvasagar/vim-table-mode'                       " Table Generator
+Plug 'flazz/vim-colorschemes'                           " Theme: various
+Plug 'honza/vim-snippets'                               " Code Completion
+Plug 'kyoz/purify', { 'rtp': 'vim' }                    " Theme: Purify
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " Fuzzy Finder
+Plug 'junegunn/fzf.vim'                                 " Fuzzy Finder
+Plug 'junegunn/vim-easy-align'                          " Align Columns
+Plug 'NLKNguyen/papercolor-theme'                       " Theme: PaperColor
+Plug 'preservim/nerdtree'                               " File Explorer
+Plug 'SirVer/ultisnips'                                 " Code Completion
+Plug 'terryma/vim-multiple-cursors'                     " Edit: Multi Cursors
+Plug 'tpope/vim-fugitive'                               " Git integration
+Plug 'tpope/vim-repeat'                                 " Repeat macros
+Plug 'tpope/vim-surround'                               " Edit: pattern borders
+Plug 'vim-airline/vim-airline'                          " Theme: Status/Tabline
+Plug 'vim-airline/vim-airline-themes'                   " Theme: Purify
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' } " Code Completion
+Plug 'ycm-core/YouCompleteMe'                           " Code Completion
 
 " initialize plugin system
 call plug#end()
 
-" VIM-TABLE-MODE
+" FZF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" For Markdown-compatible tables use (default)
-let g:table_mode_corner='|'
-" For RST-compatible tables use
-" let g:table_mode_corner_corner='+'
-" let g:table_mode_header_fillchar='='
+" Ctrl-P shorthand for FZF ':Files' searching
+nnoremap <C-p> :Files<CR>   
 
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,10 +40,20 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+'
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | 
     \ execute 'buffer'.buf | endif
 
-" FZF
+" Colorschemes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"colorscheme badwolf                         " Dark Theme
+let g:airline_theme='purify'                " Vim-Airline-Themes 
+set background=light                        " PaperColor-Theme
+colorscheme PaperColor                      " PaperColor-Theme
+
+" Vim-Table-Mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ctrl-P shorthand for FZF ':Files' searching
-nnoremap <C-p> :Files<CR>   
+" For Markdown-compatible tables use (default)
+let g:table_mode_corner='|'
+" For RST-compatible tables use
+" let g:table_mode_corner_corner='+'
+" let g:table_mode_header_fillchar='='
 
 " YCM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

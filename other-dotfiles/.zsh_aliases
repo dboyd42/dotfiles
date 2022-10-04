@@ -48,8 +48,9 @@ PDF=${file%.*}.pdf; r2p; fi; done'
 ### Networking
 
 ### Vim
-alias v='vim'
-alias vR='vim README.md'
+alias v='nvim'
+alias vR='nvim README.md'
+alias vim='nvim'
 
 ###
 ### Bash Customization

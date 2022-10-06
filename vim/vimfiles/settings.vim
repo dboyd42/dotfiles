@@ -67,6 +67,7 @@ set smartcase           " identifies case specific patterns
 
 " --UI Config "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"colorscheme fx         " See: plugins.vim
 set cmdheight=2         " Set the command window height to 2 lines
 set colorcolumn=80      " highlight column number
 " 1 == red; 233!=tmux

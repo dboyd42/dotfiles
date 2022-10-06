@@ -46,9 +46,9 @@ nnoremap -- :NERDTreeToggle<CR>
 
 " Vim-Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark                             " - Transparent bg ------------
-colors deep-space                               " - Transparent bg ------------
-colorscheme fx                                  " - Colorscheme    ------------
+"colorscheme fx                                 " - Colorscheme ---------------
+colorscheme dracula                             " - Colorscheme ---------------
+hi Normal ctermbg=NONE                          " - Transparent Bg ------------
 let g:airline_theme='jellybeans'                " - Statusline Theme ----------
 "------------------------------------------------------------------------------
 " Powerline fonts

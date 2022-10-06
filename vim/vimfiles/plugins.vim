@@ -6,8 +6,7 @@ Plug 'flazz/vim-colorschemes'                           " Theme: various
 Plug 'dracula/vim', {'as': 'dracula'}                   " Theme: dracula
 Plug 'honza/vim-snippets'                               " Code Completion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " Fuzzy Finder
-Plug 'junegunn/fzf.vim'                                 " Fuzzy Finder
-Plug 'junegunn/vim-easy-align'                          " Align Columns
+Plug 'junegunn/fzf.vim'                                 " Fuzzy Finder Plug 'junegunn/vim-easy-align'                          " Align Columns
 Plug 'NLKNguyen/papercolor-theme'                       " Theme: PaperColor
 Plug 'preservim/nerdtree'                               " File Explorer
 Plug 'SirVer/ultisnips'                                 " Code Completion
@@ -47,9 +46,9 @@ nnoremap -- :NERDTreeToggle<CR>
 
 " Vim-Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme fx                                  " -- Colorscheme --------------
 set background=dark                             " - Transparent bg ------------
 colors deep-space                               " - Transparent bg ------------
+colorscheme fx                                  " - Colorscheme    ------------
 let g:airline_theme='jellybeans'                " - Statusline Theme ----------
 "------------------------------------------------------------------------------
 " Powerline fonts

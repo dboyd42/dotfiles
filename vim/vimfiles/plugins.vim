@@ -31,31 +31,34 @@ nnoremap <C-p> :Files<CR>
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Start NERDTree.  If a file is specified, move the cursor to its window
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 " If another buffer tries to replace NERDTree,
 "    put it in the other window, and bring back NERDTREE
 "autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+'
 "    \ && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
 "    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" |
 "    \ execute 'buffer'.buf | endi f
+
 " CWD is set to current file's directory
 let g:NERDTreeChDirMode=3
-
 " Toggle NERDTREE view
 nnoremap -- :NERDTreeToggle<CR>
 
 " Vim-Airline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme fx
-let g:airline_theme='jellybeans'
+colorscheme fx                                  " -- Colorscheme --------------
+set background=dark                             " - Transparent bg ------------
+colors deep-space                               " - Transparent bg ------------
+let g:airline_theme='jellybeans'                " - Statusline Theme ----------
+"------------------------------------------------------------------------------
 " Powerline fonts
 let g:airline_powerline_fonts = 1
 " Extensions
 let g:airline#extensions#ycm#enabled = 1
 let g:airline#extensions#fzf#enabled = 1
 let g:airline#extensions#tabline#enabled = 1  " Show all buffers
-"let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Vim-Table-Mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

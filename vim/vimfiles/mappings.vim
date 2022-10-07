@@ -11,6 +11,9 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Navigation
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move Prev/Next in Insert Mode
+inoremap <C-h> <Esc>i
+inoremap <C-l> <Esc>la
 " Buffer Prev/Next
 nnoremap <C-h> :bp<CR>
 nnoremap <C-l> :bn<CR>

@@ -85,14 +85,10 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 #    1. install python3-pygments golang-chroma                                #
 #    2. Reboot shell                                                          #
 # zsh-syntax-higlighting                                                      #
-#     1. git clone \                                                          #
-#       https://github.com/zsh-users/zsh-syntax-highlighting.git \            #
-#       ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting    #
+#     1. git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # zsh-autosuggestions                                                         #
-#     1. git clone                                                            #
-#       https://github.com/zsh-users/zsh-autosuggestions \                    #
-#       ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions        #
-# autojump                                                                    #
+#     1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# autojump                                                                    
 #    1. install autojump                                                      #
 ### ----------------------------------END---------------------------------- ###
 ### ----------------------------------------------------------------------- ###

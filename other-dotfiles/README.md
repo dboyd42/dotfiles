@@ -2,8 +2,6 @@
 
 ## Pinning
 
-|              |                                                     |
-|--------------|-----------------------------------------------------|
 | Date         | 2022-10-17                                          |
 | File         | `preferences`                                       |
 | Code         | `sudo ln -sf $PWD/preferences /etc/apt/preferences` |

@@ -1,9 +1,5 @@
-###
-### ZSH Aliases
-###
-
+###-----------------------------WSL_CONFIG-------------------------------------
 OS_RELEASE=`uname -r`
-
 # WSL2
 if [[ $OS_RELEASE =~ microsoft ]]; then
     WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
@@ -12,64 +8,30 @@ else
     #WIN_USERNAME=`powershell.exe '$env:UserName'`
     WIN_USERNAME="--WIN_USERNAME--"    # old
 fi
-
-###
-### ~/.zsh_aliases
-###
-
-### JOB ###------------------------------------------------------------------
-#alias jobs='cd /Volumes/GoogleDrive/My\ Drive/jobs' # conflicts *Nix 'jobs'
-alias box='cd /System/Volumes/Data/Users/steno/Box'
-alias findhelp='echo "find ./ -name +JOBN+ -type d -maxdepth 1"'
-### END   ###------------------------------------------------------------------
-
-### Display
-alias ll='ls -alh'
-
-### Compiling / Interpreters
-alias com='g++ -std=c++1z -o main *.cpp'
-alias py='python3'
-
-### Directories
-alias gith='cd ~/Documents/code/repos/'
-alias sbox='cd ~/Documents/code/sandbox/'
-
-# WSL dirs
-alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
-alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/sans/'
-alias wgu='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/wgu/'
-
-### Editing
-# Git
-alias ginit='git add .; git ci -m "init commit"; git push'
-# Export e.g. RST=README.rst PDF=output.pdf
-alias r2p='pandoc -V geometry:a4paper -f rst --toc -o $PDF $RST'
-alias r2pall='for file in ./*; do if [ ${file: -4} = '.rst' ]; then RST=$file;
-PDF=${file%.*}.pdf; r2p; fi; done'
-
-### Networking
-
-### Vim
-alias v='nvim'
-alias vR='nvim README.md'
-alias vim='nvim'
-
-###
-### Bash Customization
-###
-
-# Prompt does NOT work with WSL > Powerline config
-alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
-alias ps2="export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '"
-alias ps3="export PS1='\[\033[01;31m\]\u:\[\033[01;34m\]\W\[\033[00m\]\$ '"
-alias sba='source ~/.bash_aliases'
-
 ### WSL > Powerline configuration
-# apt install powerline
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 	powerline-daemon -q
 	POWERLINE_BASH_CONTINUATION=1
 	POWERLINE_BASH_SELECT=1
 	source /usr/share/powerline/bindings/bash/powerline.sh
 fi
-
+#------------------------------------------------------------------------------
+###----------------------------ZSH_Aliases-------------------------------------
+alias com='g++ -std=c++1z -o main *.cpp'
+alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
+alias ginit='git add .; git ci -m "init commit"; git push'
+alias gith='cd ~/Documents/code/repos/'
+alias icat='kitty icat'
+alias ll='ls -alh'
+alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
+alias ps2="export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '"
+alias ps3="export PS1='\[\033[01;31m\]\u:\[\033[01;34m\]\W\[\033[00m\]\$ '"
+alias py='python3'
+alias r2p='pandoc -V geometry:a4paper -f rst --toc -o $PDF $RST'
+alias r2pall='for file in ./*; do if [ ${file: -4} = '.rst' ]; then RST=$file; PDF=${file%.*}.pdf; r2p; fi; done'
+alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/sans/'
+alias sbox='cd ~/Documents/code/sandbox/'
+alias v='nvim'
+alias vR='nvim README.md'
+alias vim='nvim'
+#------------------------------------------------------------------------------

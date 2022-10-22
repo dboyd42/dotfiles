@@ -17,6 +17,7 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 fi
 #------------------------------------------------------------------------------
 ###----------------------------ZSH_Aliases-------------------------------------
+alias bat='batcat'
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 alias ginit='git add .; git ci -m "init commit"; git push'

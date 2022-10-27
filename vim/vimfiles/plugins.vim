@@ -16,7 +16,7 @@ Plug 'tpope/vim-repeat'                                 " Repeat macros
 Plug 'tpope/vim-surround'                               " Edit: pattern borders
 Plug 'vim-airline/vim-airline'                          " Theme: Status/Tabline
 Plug 'vim-airline/vim-airline-themes'                   " Theme: Collections
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' } " Code Completion
+"Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' } " Code Completion
 Plug 'ycm-core/YouCompleteMe'                           " Code Completion
 
 " initialize plugin system

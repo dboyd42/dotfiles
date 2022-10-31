@@ -26,10 +26,10 @@ alias gacp='if git add .; then \
                 git ci -m $CMSG; \
             fi'
 alias ginit='git add .; git ci -m "init commit"; git push'
-alias gitaddcip='git add .; git commit -m $CI; git push'
-alias gitstatusall='for dir in ./*; do \
-                        [[ -d $dir ]]  && [[ -d $dir/.git ]] \
-                            && echo $dir && cd $dir && git status && cd ../; \
+alias gitstatusall='for DIR in ./*; do \
+                        [[ -d $DIR ]] && [[ -d $DIR/.git ]] \
+                            && echo $DIR && cd $DIR && git status \
+                            && echo "---\n" && cd ../; \
                     done'
 alias icat='kitty icat'
 alias ll='ls -alh'

@@ -21,6 +21,10 @@ fi
 alias bat='batcat'
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
+alias gacp='if git add .; then \
+                read CMSG\?"Enter commit message: "; \
+                git ci -m $CMSG; \
+            fi'
 alias ginit='git add .; git ci -m "init commit"; git push'
 alias gitaddcip='git add .; git commit -m $CI; git push'
 alias gitstatusall='for dir in ./*; do \

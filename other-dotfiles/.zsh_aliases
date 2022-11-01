@@ -1,7 +1,9 @@
 #------------------------------------------------------------------------------
-###-----------------------------WSL_CONFIG-------------------------------------
+###-----------------------------CONFLICTS--------------------------------------
 OS_RELEASE=`uname -r`
-# WSL2
+OS_NAME=`uname -s`
+
+# >>>>> WSL2
 if [[ $OS_RELEASE =~ microsoft ]]; then
     WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
 else
@@ -16,31 +18,41 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 	POWERLINE_BASH_SELECT=1
 	source /usr/share/powerline/bindings/bash/powerline.sh
 fi
+# <<<<< End WSL2
+# >>>>> macoS Linux
+if [[ $OS_NAME == 'Darwin' ]]; then
+    echo "Hello, $OS_NAME!"
+# >>>>> Linux
+elif [[ $OS_NAME == 'Linux' ]]; then
+    alias bat='batcat'
+else
+    echo "Wtf is: $OS_Name?!"
+fi
+# <<<<< End macOS
 #---------------------------------[END]----------------------------------------
 ###----------------------------ZSH_Aliases-------------------------------------
-alias bat='batcat'
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 # >>>> Git aliases
+alias gac='if git add .; then \
+               read CMSG\?"Enter commit message: "; \
+               git ci -m $CMSG; \
+           fi'
 alias gacp='if git add .; then \
                 read CMSG\?"Enter commit message: "; \
                 git ci -m $CMSG; \
+                git push
             fi'
 alias ginit='git add .; git ci -m "init commit"; git push'
+alias gpa='for dir in ./*; do \
+             [[ -d $dir ]]  && [[ -d $dir/.git ]] \
+               && echo $dir && cd $dir && git pull && cd ../; \
+           done'
 alias gsa='for DIR in ./*; do \
                         [[ -d $DIR ]] && [[ -d $DIR/.git ]] \
                             && echo $DIR && cd $DIR && git status \
                             && echo "---\n" && cd ../; \
                     done'
-alias gac='git add .; git commit -m $CI; git push'
-alias gpa='for dir in ./*; do \
-             [[ -d $dir ]]  && [[ -d $dir/.git ]] \
-               && echo $dir && cd $dir && git pull && cd ../; \
-           done'
-alias gsa='for dir in ./*; do \
-             [[ -d $dir ]]  && [[ -d $dir/.git ]] \
-                && echo $dir && cd $dir && git status && cd ../; \
-           done'
 # <<<<< END Git aliases
 alias icat='kitty icat'
 alias ll='ls -alh'

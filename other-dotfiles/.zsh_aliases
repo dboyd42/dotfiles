@@ -22,10 +22,13 @@ fi
 # >>>>> macoS Linux
 if [[ $OS_NAME == 'Darwin' ]]; then
     echo "Hello, $OS_NAME!"
+    alias firefox='open -a /Applications/Firefox.app'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
+    echo "Hello, $OS_NAME!"
     alias bat='batcat'
 else
+    echo "Hello, $OS_NAME!"
     echo "Wtf is: $OS_Name?!"
 fi
 # <<<<< End macOS

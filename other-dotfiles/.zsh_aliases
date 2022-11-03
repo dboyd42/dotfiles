@@ -23,8 +23,7 @@ fi
 if [[ $OS_NAME == 'Darwin' ]]; then
     alias firefox='open -a /Applications/Firefox.app'
     # Convert x86_64 arch to run on M1's UTM Hypervisor
-    alias vmdk2qcow2='f() \
-                      {qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}; f'
+    alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
     alias bat='batcat'

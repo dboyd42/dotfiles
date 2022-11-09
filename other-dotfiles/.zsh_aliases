@@ -22,11 +22,13 @@ fi
 # >>>>> macoS Linux
 if [[ $OS_NAME == 'Darwin' ]]; then
     alias firefox='open -a /Applications/Firefox.app'
+    alias gith='cd $HOME/Documents/code/repos/github/dboyd42'
     # Convert x86_64 arch to run on M1's UTM Hypervisor
     alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
     alias bat='batcat'
+    alias gith='cd $HOME/Documents/code/repos/dboyd42'
 else
     echo "Hello, $OS_NAME!"
     echo "Wtf is: $OS_Name?!"
@@ -37,6 +39,7 @@ fi
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 # >>>> Git aliases
+alias g='git'
 alias gac='if git add .; then \
                read CMSG\?"Enter commit message: "; \
                git ci -m $CMSG; \

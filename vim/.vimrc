@@ -1,6 +1,7 @@
 " Vim Stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source Files
+source $HOME/.config/nvim/vimfiles/au.vim
 source $HOME/.config/nvim/vimfiles/mappings.vim
 source $HOME/.config/nvim/vimfiles/settings.vim
 source $HOME/.config/nvim/vimfiles/plugins.vim

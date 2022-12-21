@@ -97,10 +97,13 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 ### ----------------------------------------------------------------------- ###
 
 plugins=(
+    autopep8
     autojump
     colored-man-pages
     colorize 
     git
+    sudo
+    torrent
     zsh-autosuggestions 
     zsh-syntax-highlighting 
 )

@@ -8,6 +8,7 @@ Plug 'honza/vim-snippets'                               " Code Completion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " Fuzzy Finder
 Plug 'junegunn/fzf.vim'                                 " Fuzzy Finder Plug 'junegunn/vim-easy-align'                          " Align Columns
 Plug 'NLKNguyen/papercolor-theme'                       " Theme: PaperColor
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}	" PL Parser/Hl
 Plug 'preservim/nerdtree'                               " File Explorer
 Plug 'SirVer/ultisnips'                                 " Code Completion
 Plug 'terryma/vim-multiple-cursors'                     " Edit: Multi Cursors
@@ -17,7 +18,7 @@ Plug 'tpope/vim-surround'                               " Edit: pattern borders
 Plug 'vim-airline/vim-airline'                          " Theme: Status/Tabline
 Plug 'vim-airline/vim-airline-themes'                   " Theme: Collections
 "Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' } " Code Completion
-Plug 'ycm-core/YouCompleteMe'                           " Code Completion
+"Plug 'ycm-core/YouCompleteMe'                           " Code Completion
 
 " initialize plugin system
 call plug#end()

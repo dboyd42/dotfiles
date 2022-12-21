@@ -18,8 +18,8 @@
 |              |                                               |
 |--------------|-----------------------------------------------|
 | Date         | 2022-10-17                                    |
-| File         | `logid.cfg`                                 |
-| Link         | `sudo ln -sf $PWD/preferences /etc/logid.cfg` |
+| File         | `logid.cfg`                                   |
+| Link         | `sudo ln -sf $PWD/logid.cfg /etc/logid.cfg`   |
 
 <dl>
   <dt>LogiOps</dt>

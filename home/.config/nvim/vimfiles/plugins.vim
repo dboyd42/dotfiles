@@ -7,6 +7,7 @@ Plug 'dracula/vim', {'as': 'dracula'}                   " Theme: dracula
 Plug 'honza/vim-snippets'                               " Code Completion
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " Fuzzy Finder
 Plug 'junegunn/fzf.vim'                                 " Fuzzy Finder Plug 'junegunn/vim-easy-align'                          " Align Columns
+Plug 'mfussenegger/nvim-dap'                            " DAP 
 Plug 'NLKNguyen/papercolor-theme'                       " Theme: PaperColor
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}	" PL Parser/Hl
 Plug 'preservim/nerdtree'                               " File Explorer
@@ -15,6 +16,8 @@ Plug 'terryma/vim-multiple-cursors'                     " Edit: Multi Cursors
 Plug 'tpope/vim-fugitive'                               " Git integration
 Plug 'tpope/vim-repeat'                                 " Repeat macros
 Plug 'tpope/vim-surround'                               " Edit: pattern borders
+Plug 'williamboman/mason.nvim'                          " LSP Pkg Mgr
+Plug 'williamboman/mason-lspconfig.nvim'                " LSP Pkg Mgr
 Plug 'vim-airline/vim-airline'                          " Theme: Status/Tabline
 Plug 'vim-airline/vim-airline-themes'                   " Theme: Collections
 "Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' } " Code Completion

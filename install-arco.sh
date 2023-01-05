@@ -23,6 +23,10 @@ gem environment
 # Nodejs & Npm
 npm install -g neovim
 
+### MASON LSP ###
+pacman -S go luarocks cargo composer php julia powershell \
+          jdk-openjdk jdr-openjdk --noconfirm
+
 ########## LINKING  ########## 
 ln -sf $PWD/home/.tmux.conf    $HOME/.tmux.conf; \
 ln -sf $PWD/home/.gitconfig    $HOME/.gitconfig; \
@@ -31,7 +35,8 @@ sudo ln -sf $PWD/etc/logid.cfg /etc/logid.cfg
 
 ### NVIM ###
 mkdir -p $HOME/.config/nvim/vimfiles; \
-ln -sf $PWD/home/.config/nvim/init.vim              $HOME/.config/nvim/init.vim; \
+ln -sf $PWD/home/.config/nvim/vimrc.vim             $HOME/.config/nvim/vimrc.vim; \
+ln -sf $PWD/home/.config/nvim/init.lua              $HOME/.config/nvim/init.lua; \
 ln -sf $PWD/home/.config/nvim/vimfiles/au.vim       $HOME/.config/nvim/vimfiles/au.vim; \
 ln -sf $PWD/home/.config/nvim/vimfiles/mappings.vim $HOME/.config/nvim/vimfiles/mappings.vim; \
 ln -sf $PWD/home/.config/nvim/vimfiles/settings.vim $HOME/.config/nvim/vimfiles/settings.vim; \

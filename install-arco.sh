@@ -1,3 +1,6 @@
+# Dependencies
+sudo pacman -S xclip neovim tmux
+
 # Link basic dotfiles
 ln -sf $PWD/home/.tmux.conf /home/$USER/.tmux.conf
 ln -sf $PWD/home/.gitconfig /home/$USER/.gitconfig

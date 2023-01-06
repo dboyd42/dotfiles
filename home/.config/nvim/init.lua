@@ -1,4 +1,9 @@
--- Load local modules
+----- Global Settings ---------------------------------------------------------
+vim.g.python3_host_prog = '/usr/bin/python'
+vim.g.ruby_host_prog = '/home/bhatm/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-host'
+vim.g.loaded_perl_provider = 0
+
+---- Load local modules -------------------------------------------------------
 require('barbar-config')               -- tabline
 require('colorschemes-config.dracula')
 require('lsp-config.language-servers')

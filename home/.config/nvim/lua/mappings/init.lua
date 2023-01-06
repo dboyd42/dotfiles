@@ -5,14 +5,14 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = ' '
 
 ----- META_FILE_EDITS ---------------------------------------------------------
-map('n', '<leader>sv', ':source $MYVIMRC<CR>', { noremap = true }) 
+map('n', '<leader>sv', ':source $MYVIMRC<CR>', { noremap = true })
 map('n', '<leader>r', ':luafile %<CR>', { noremap = true })
 
 ------ PLUGIN_CALLS -----------------------------------------------------------
 -- map( MODE([nci], KEYS, CMD, OPTIONS )
 map('n', '<leader>e', 'e:NvimTreeToggle<CR>', opts)
 
---- BARBAR .................................................................<<<
+--- BARBAR .................................................................>>>
 -- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)                --> 'A' = Alt
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
@@ -55,7 +55,7 @@ map('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- :BarbarDisable - very bad command, should never be used
 -- END barbar ..............................................................<<<
 
---- Telescope ..............................................................<<<
+--- Telescope ..............................................................>>>
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 map('n', '<leader>gb', ':Telescope git_branches<CR>', opts)
@@ -71,10 +71,15 @@ map('i', '<C-l>', '<ESC>la', opts)  -- Next char
 map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 
 ----- FILE_EDITS --------------------------------------------------------------
+--map('c', 'delduprows', '%s/^\(.*\)\(\n\1\)\+$/\1/', opts) -- Del duplicate rows
+map('i', '<C-d>', '<Del>', opts)       -- Del char on cursor
+map('i', '<leader>d', '<C-R>=strftime("%F")<CR>', opts) -- Insert today's date
 map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char
-map('n', '<C-J>', 'o<ESC>k',     opts) -- Insert newline below cursor
-map('n', '<C-O>', 'O<ESC>j',     opts) -- Insert newline above cursor
+map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
+map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
+map('n', '<leader>d', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert today's date
 
 ----- SEARCHES ----------------------------------------------------------------
 map('n', '\\ ', ':nohl<CR>', opts)  -- Remove search highlighting
+
 

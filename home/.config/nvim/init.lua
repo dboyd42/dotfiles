@@ -11,6 +11,6 @@ require('nvim-notify-config')	       -- notifications
 require('nvim-tree-config')	           -- file-explorer
 require('packer-config')	           -- plugin mgr
 require('settings')
-require('shade-config')                -- window dimmer
+--require('shade-config')                -- window dimmer
 require('treesitter-config')           -- syntax hl & language parser
 

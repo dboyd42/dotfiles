@@ -143,6 +143,11 @@ set 'nrformats' 'nf'
 	0b0110			# binary
 	0xAF9			# hex
 
+reload file #NeoVim
+===================
+
+`:luafile %`
+
 Tabs & Windows
 **************
 :Association: vimdiff

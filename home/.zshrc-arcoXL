@@ -15,6 +15,10 @@ export ZSH=/usr/share/oh-my-zsh/
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
 ZSH_THEME="random"
 #ZSH_THEME="jonathan"
+#ZSH_THEME="crcandy"
+#ZSH_THEME="steeef"
+#ZSH_THEME="jispwoso"
+#ZSH_THEME="mlh"    # Red, White, & Blue ~= US Flag
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -85,13 +89,10 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 
 ### ----------------------------------------------------------------------- ###
 ### --------------------------  Plugins Install --------------------------- ###
-# colorize                                                                    #
-#    1. install python3-pygments golang-chroma                                #
-#    2. Reboot shell                                                          #
 # zsh-syntax-higlighting                                                      #
-#     1. sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#     sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # zsh-autosuggestions                                                         #
-#     1. git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # autojump                                                                    
 #    1. pacman -S autojump                                                      #
 ### ----------------------------------END---------------------------------- ###

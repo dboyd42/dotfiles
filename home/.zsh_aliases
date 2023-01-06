@@ -54,6 +54,7 @@ alias gpa='for dir in ./*; do \
              [[ -d $dir ]]  && [[ -d $dir/.git ]] \
                && echo $dir && cd $dir && git pull && cd ../; \
            done'
+alias gs='git status'
 alias gsa='for DIR in ./*; do \
                         [[ -d $DIR ]] && [[ -d $DIR/.git ]] \
                             && echo $DIR && cd $DIR && git status \

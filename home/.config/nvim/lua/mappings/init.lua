@@ -64,7 +64,11 @@ map('n', '<leader>gc', ':Telescope git_commits<CR>', opts)
 map('n', '<leader>gf', ':Telescope git_files<CR>', opts)
 map('n', '<leader>gs', ':Telescope git_status<CR>', opts)
 -- END Telescope ...........................................................<<<
-
+--
+--- Table-Mode ..............................................................>>>
+map('n', '<leader>t', ':TableModeToggle<CR>', opts)
+-- END Table-Mode ...........................................................<<<
+--
 ---- NAVIGATION --------------------------------------------------------------
 map('n', '<C-l>', ':bn<CR>', opts)  -- Next buffer
 map('n', '<C-h>', ':bp<CR>', opts)  -- Previous buffer

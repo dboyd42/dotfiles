@@ -44,6 +44,7 @@ return require'packer'.startup(function()
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x',  --> Telescope: fzf
     requires = { 'nvim-lua/plenary.nvim' }
   }
+  use 'tpope/vim-fugitive'                          --> Git integration
   use 'tpope/vim-repeat'                            --> Repeater: macros
   use 'tpope/vim-surround'                          --> Surroundings
   use 'dhruvasagar/vim-table-mode'                  --> Table Generator

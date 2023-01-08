@@ -155,6 +155,11 @@ _G.packer_plugins = {
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/vim-better-whitespace",
     url = "https://github.com/ntpeters/vim-better-whitespace"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-repeat"] = {
     loaded = true,
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/vim-repeat",

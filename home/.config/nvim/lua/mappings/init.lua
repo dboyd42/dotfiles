@@ -1,17 +1,25 @@
 --fns to pass args to create key mappings
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
+local opts2 = { silent = true }
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
 ----- META_FILE_EDITS ---------------------------------------------------------
-map('n', '<leader>sv', ':source $MYVIMRC<CR>', { noremap = true })
-map('n', '<leader>r', ':luafile %<CR>', { noremap = true })
+map('n', '<localleader>r', ':luafile %<CR>', { noremap = true })
+map('n', '<localleader>sv', ':source $MYVIMRC<CR>', { noremap = true })
+map('n', '<localleader>s', ':echo "Use \\<localleader\\>s[s|v]"<CR>', opts )
 
 ------ PLUGIN_CALLS -----------------------------------------------------------
--- map( MODE([nci], KEYS, CMD, OPTIONS )
+-- map( MODE([nci], KEYS, CMD, OPTIONS )    --SYNTAX
 map('n', '<leader>e', 'e:NvimTreeToggle<CR>', opts)
+map('n', '<localleader>ss', ':PackerSync<CR>', opts)
+
+--- Comment ................................................................>>>
+map('n', '//', 'gcc', opts2 )
+map('v', '//', 'gc',  opts2 )
+--- END Comment ............................................................<<<
 
 --- BARBAR .................................................................>>>
 -- Move to previous/next
@@ -57,12 +65,13 @@ map('n', '<leader>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- END barbar ..............................................................<<<
 
 --- Telescope ..............................................................>>>
-map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
-map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
+map('n', '<leader>ff', ':Telescope find_files<CR>',   opts)
+map('n', '<leader>fg', ':Telescope live_grep<CR>',    opts)
 map('n', '<leader>gb', ':Telescope git_branches<CR>', opts)
-map('n', '<leader>gc', ':Telescope git_commits<CR>', opts)
-map('n', '<leader>gf', ':Telescope git_files<CR>', opts)
-map('n', '<leader>gs', ':Telescope git_status<CR>', opts)
+map('n', '<leader>gc', ':Telescope git_commits<CR>',  opts)
+map('n', '<leader>gf', ':Telescope git_files<CR>',    opts)
+map('n', '<leader>gs', ':Telescope git_status<CR>',   opts)
+map('n', '<leader>r',  ':Telescope registers<CR>',    opts)
 -- END Telescope ...........................................................<<<
 --
 --- Table-Mode ..............................................................>>>
@@ -86,5 +95,6 @@ map('n', '<leader>d', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert today's 
 
 ----- SEARCHES ----------------------------------------------------------------
 map('n', '<localleader> ', ':nohl<CR>', opts)  -- Remove search highlighting
+
 
 

@@ -80,5 +80,7 @@ alias se='sudoedit'
 alias v='nvim'
 alias vR='nvim README.md'
 alias vim='nvim'
+alias restart-kde_plasma='kquitapp 5 plasmashell || \
+                          killall plasmashell && kstart5 plasmashell'
 #---------------------------------[END]----------------------------------------
 

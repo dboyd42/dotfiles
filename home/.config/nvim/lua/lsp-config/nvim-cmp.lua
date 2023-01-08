@@ -42,7 +42,7 @@ cmp.setup {
     end, { 'i', 's' }),
   }),
   ----- srcs for the snippets -----
-  sources = { 
+  sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
@@ -52,7 +52,7 @@ cmp.setup {
   formatting = {
     format = lspkind.cmp_format({
       -- defines how annotations are shown
-      mode = 'symbol_text', 
+      mode = 'symbol_text',
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
       -- The function below will be called before any actual modifications from lspkind

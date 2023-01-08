@@ -41,21 +41,104 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-require('lspconfig')['pyright'].setup{
+
+require('lspconfig')["golangci_lint_ls"].setup{         --go
     on_attach = on_attach,
     flags = lsp_flags,
-    capabilities = capabilities,
 }
--- require('lspconfig')['rust_analyzer'].setup{
---     on_attach = on_attach,
---     flags = lsp_flags,
---     -- Server-specific settings...
---     settings = {
---       ["rust-analyzer"] = {}
---     }
--- }
--- require('lspconfig')['tsserver'].setup{
---     on_attach = on_attach,
---     flags = lsp_flags,
--- }
-
+require('lspconfig')["gopls"].setup{        --go
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["clangd"].setup{       --c/cpp
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["cssls"].setup{        --css
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["cssmodules_ls"].setup{        --css
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["html"].setup{         --html
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["jdtls"].setup{        --java
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["quick_lint_js"].setup{        --javascript
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["jsonls"].setup{       --json
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["kotlin_language_server"].setup{       --kotlin
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["sumneko_lua"].setup{      --lua
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["marksman"].setup{         --markdown
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["prosemd_lsp"].setup{      --markdown
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["intelephense"].setup{         ---php
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["perlnavigator"].setup{        --perl
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["powershell_es"].setup{        --powershell
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["pyright"].setup{      --python
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["ruby_ls"].setup{      --ruby
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["rust_analyzer"].setup{        --rust
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["sqlls"].setup{        --sql
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["sqls"].setup{         --sql
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["terraformls"].setup{      --terraform
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["tsserver"].setup{         --typescript
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["lemminx"].setup{      --xml
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')["yamlls"].setup{       --yaml
+    on_attach = on_attach,
+    flags = lsp_flags,
+}

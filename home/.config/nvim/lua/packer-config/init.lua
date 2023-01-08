@@ -6,20 +6,20 @@ return require'packer'.startup(function()
   use {'romgrk/barbar.nvim',                        --> Barbar 2nd: Tabliner
     wants = 'nvim-web-devicons'
   }
-  use {                                             --> Commenter
-  'numToStr/Comment.nvim',
-  config = function()
-    require('Comment').setup()
-  end
-  }
+  use 'numToStr/Comment.nvim' 			            --> Commenter
   use 'Mofiqul/dracula.nvim'                        --> Dracula: Theme
   use { 'nvim-lualine/lualine.nvim',                --> LuaLine
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   --> LSP plugins ---------------------------------------------------------->>>
-  use { 'williamboman/mason.nvim' }                 --> 1st: LSP Mgr
-  use 'williamboman/mason-lspconfig.nvim'           --> 2nd: LSP Pkg Mgr
-  use 'neovim/nvim-lspconfig'                       --> 3rd: LSP Configs
+  use {
+      'williamboman/mason.nvim',                    --> 1st: LSP Mgr
+      'williamboman/mason-lspconfig.nvim',          --> 2nd: LSP Pkg Mgr
+      'neovim/nvim-lspconfig'                       --> 3rd: LSP Configs
+  }
+  use 'mfussenegger/nvim-dap'                       --> DAP
+  use 'mfussenegger/nvim-lint'                      --> ALE
+  use 'mhartington/formatter.nvim'                  --> Formatter
   use 'L3MON4D3/LuaSnip'                            --> Snippets plugin
   use 'hrsh7th/cmp-nvim-lsp'                        --> LSP src for nvim-cmp
   use 'hrsh7th/nvim-cmp'                            --> Autocompletion

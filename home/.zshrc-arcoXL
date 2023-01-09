@@ -490,7 +490,7 @@ alias personal='cp -Rf /personal/* ~'
 
 # reporting tools - install when not installed
 #neofetch | lolcat
-neofetch --ascii "$(cowfortune -W 30)" | lolcat
+neofetch --ascii "$(cowpy -rx "$(fortune -n 50)")" | lolcat
 #screenfetch
 #alsi
 #paleofetch

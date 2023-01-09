@@ -19,6 +19,7 @@ ZSH_THEME="random"
 #ZSH_THEME="steeef"
 #ZSH_THEME="jispwoso"
 #ZSH_THEME="mlh"    # Red, White, & Blue ~= US Flag
+#ZSH_THEME="smt"    # Chinese lettering
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -488,7 +489,8 @@ alias personal='cp -Rf /personal/* ~'
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
 # reporting tools - install when not installed
-neofetch | lolcat
+#neofetch | lolcat
+neofetch --ascii "$(cowfortune -W 30)" | lolcat
 #screenfetch
 #alsi
 #paleofetch

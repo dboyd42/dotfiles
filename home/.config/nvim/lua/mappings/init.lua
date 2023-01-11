@@ -88,11 +88,11 @@ map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 ----- FILE_EDITS --------------------------------------------------------------
 --map('c', 'delduprows', '%s/^\(.*\)\(\n\1\)\+$/\1/', opts) -- Del duplicate rows
 map('i', '<C-d>', '<Del>', opts)       -- Del char on cursor
-map('i', '<localleader>d', '<C-R>=strftime("%F")<CR>', opts) -- Insert today's date
+map('i', '<localleader>t', '<C-R>=strftime("%F")<CR>', opts) -- Insert today's date
 map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char
 map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
 map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
-map('n', '<leader>d', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert today's date
+map('n', '<leader>t', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert today's date
 
 ----- SEARCHES ----------------------------------------------------------------
 map('n', '<localleader> ', ':nohl<CR>', opts)  -- Remove search highlighting

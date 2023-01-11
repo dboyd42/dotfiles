@@ -1,3 +1,4 @@
 {
-  "Lua.telemetry.enable": true
+  "Lua.telemetry.enable": true,
+  "suggest.noselect": true, // Select 1st item by default in suggestion popup
 }

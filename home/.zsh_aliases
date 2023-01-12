@@ -36,8 +36,15 @@ fi
 # <<<<< End macOS
 #---------------------------------[END]----------------------------------------
 ###----------------------------ZSH_Aliases-------------------------------------
+alias backup-arco='\
+    sudo mount /dev/nvme1n1p1 /mnt/backup; \
+    sudo rsync -ahAX --info=progress2 \
+        / \
+        --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
+        /mnt/backup/"$(date --rfc-3339=s)"'
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
+alias fdisk='sudo fdisk'
 # >>>> Git aliases
 alias g='git'
 alias gac='if git add .; then \

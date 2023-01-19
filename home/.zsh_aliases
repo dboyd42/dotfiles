@@ -45,6 +45,7 @@ alias backup-arco='\
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 alias fdisk='sudo fdisk'
+alias flipper='/home/bhatm/Documents/code/repos/dboyd42/scripting/bash/web-scrapers/flipper-zero.sh'
 # >>>> Git aliases
 alias g='git'
 alias gac='if git add .; then \
@@ -80,6 +81,8 @@ alias r2p='pandoc -V geometry:a4paper -f rst --toc -o $PDF $RST'
 alias r2pall='for file in ./*; do if [ ${file: -4} = '.rst' ]; then RST=$file; PDF=${file%.*}.pdf; r2p; fi; done'
 # Read Markdown files in Kitty term
 rmd() { pandoc -f gfm $1 | lynx -stdin }
+alias revEngBin-crkPasswd1="objdump -d $FILE | grep cmp | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
+alias revEngBin-crkPasswd2="objdump -d $FILE | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
 alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/sans/'
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 alias sbox='cd ~/Documents/code/sandbox/'

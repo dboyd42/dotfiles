@@ -13,8 +13,11 @@ export ZSH=/usr/share/oh-my-zsh/
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
-ZSH_THEME="random"
+#ZSH_THEME="random"
+ZSH_THEME="juanghurtado" # Simpler UI
 #ZSH_THEME="jonathan"
+#ZSH_THEME="jonathan"    # Matching KDE theme
+#ZSH_THEME='duellj'      # Simple UI +time
 #ZSH_THEME="crcandy"
 #ZSH_THEME="steeef"
 #ZSH_THEME="jispwoso"

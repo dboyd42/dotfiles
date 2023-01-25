@@ -1,5 +1,11 @@
 {
   "Lua.telemetry.enable": true,
   "suggest.noselect": true,
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd", // Select 1st item by default in suggestion popup
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
+  "cSpell.userWords": [
+    "cmds",
+    "dsync",
+    "krbtgt",
+    "lsadump"
+  ], // Select 1st item by default in suggestion popup
 }

@@ -4,6 +4,7 @@ vim.g.ruby_host_prog = '/home/bhatm/.local/share/gem/ruby/3.0.0/bin/neovim-ruby-
 vim.g.loaded_perl_provider = 0
 
 ---- Load local modules -------------------------------------------------------
+require('abbreviations') 		        --> Abbreviations
 require('barbar-config')                --> Tabline
 require('coc-config')                   --> LSP mgr
 require('colorschemes-config.dracula')  --> Theme

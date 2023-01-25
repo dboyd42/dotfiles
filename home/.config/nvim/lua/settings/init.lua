@@ -36,7 +36,7 @@ set.expandtab   = true  -- tabs are spaces
 set.shiftround  = true  -- indents round to nearest shiftwidth
 set.shiftwidth  = 4     -- applies to '<<' and '>>' indentions
 set.smartindent = true  -- indents are based off FileType
-set.smarttab    = true  -- 
+set.smarttab    = true  --
 set.softtabstop = 4     -- nSpaces in <TAB>
 set.tabstop     = 4     -- nVisual_Spaces in <TAB>
 

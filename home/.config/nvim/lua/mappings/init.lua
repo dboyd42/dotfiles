@@ -10,6 +10,7 @@ vim.g.maplocalleader = '\\'
 map('n', '<localleader>r', ':luafile %<CR>', { noremap = true })
 map('n', '<localleader>sv', ':source $MYVIMRC<CR>', { noremap = true })
 map('n', '<localleader>s', ':echo "Use \\<localleader\\>s[s|v]"<CR>', opts )
+map('c', 'w<CR>', ':StripWhitespaceOnChangedLines<CR>:w<CR>', opts)
 map('c', 'W<CR>', ':w<CR>', opts)
 
 ------ PLUGIN_CALLS -----------------------------------------------------------

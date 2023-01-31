@@ -1,5 +1,5 @@
 {
-  "lastUpdate": 1673169306968,
+  "lastUpdate": 1675183792607,
   "dependencies": {
     "@yaegassy/coc-intelephense": ">=0.25.2",
     "@yaegassy/coc-nginx": ">=0.3.6",

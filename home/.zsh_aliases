@@ -42,6 +42,7 @@ alias backup-arco='\
         / \
         --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
         /mnt/backup/"$(date --rfc-3339=s)"'
+alias bandit0='sshpass -p bandit0 ssh bandit0'
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 alias fdisk='sudo fdisk'
@@ -98,3 +99,4 @@ alias restart-kde_plasma='kquitapp 5 plasmashell || \
                           killall plasmashell && kstart5 plasmashell'
 #---------------------------------[END]----------------------------------------
 
+alias p2='ping -c2'

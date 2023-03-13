@@ -13,16 +13,17 @@ export ZSH=/usr/share/oh-my-zsh/
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
-#ZSH_THEME="random"
-ZSH_THEME="juanghurtado" # Simpler UI
-#ZSH_THEME="jonathan"
-#ZSH_THEME="jonathan"    # Matching KDE theme
-#ZSH_THEME='duellj'      # Simple UI +time
-#ZSH_THEME="crcandy"
-#ZSH_THEME="steeef"
-#ZSH_THEME="jispwoso"
-#ZSH_THEME="mlh"    # Red, White, & Blue ~= US Flag
-#ZSH_THEME="smt"    # Chinese lettering
+# ZSH_THEME="random"
+# ZSH_THEME="kphoen"  # --Con: EOL (#2) markings
+# ZSH_THEME="juanghurtado" # Simpler UI  --Con: end of 2nd line text
+# ZSH_THEME="jonathan"    # Matching KDE theme  --Con: Too much text
+# ZSH_THEME='duellj'      # Simple UI +time  --Con: EOL (2nd) markings
+# ZSH_THEME="crcandy"       # Con: too much text, no good UI
+# ZSH_THEME="steeef"    # --Con: too much text
+# ZSH_THEME="jispwoso"  # --Con: too much text
+# ZSH_THEME="mlh"    # Red, White, & Blue ~= US Flag    --Con: too plain
+# ZSH_THEME="smt"    # Chinese lettering        --Con: too much text
+ZSH_THEME="gnzh"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -493,7 +494,7 @@ alias personal='cp -Rf /personal/* ~'
 
 # reporting tools - install when not installed
 #neofetch | lolcat
-neofetch --ascii "$( cowpy -rx "$(fortune -a )")" | lolcat
+# neofetch --ascii "$( cowpy -rx "$(fortune -a )")" | lolcat        #Con: Slow
 #screenfetch
 #alsi
 #paleofetch
@@ -536,3 +537,7 @@ bindkey -r '^L'                    # Release bindkey: ?                       #
 bindkey '^L' clear-screen          # Bind custom widget to Ctrl-L             #
 ### ----------------------------------END---------------------------------- ###
 ### ----------------------------------------------------------------------- ###
+
+# Prevent remnant characters when tab completing with ZSH (+) TMUX
+#   -Defaults in /etc/locale.[{gen}{cong}] != "LC_ALL" but LC_<x>="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"

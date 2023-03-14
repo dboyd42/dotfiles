@@ -3,6 +3,7 @@
   "suggest.noselect": true,
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.6/clangd_15.0.6/bin/clangd",
   "cSpell.userWords": [
+    "Backdoors",
     "Distro",
     "Exfiltration",
     "GPOs",
@@ -15,6 +16,7 @@
     "Nikto",
     "OSINT",
     "OWASP",
+    "TTPs",
     "Walkthrough",
     "cmds",
     "dsync",
@@ -22,6 +24,7 @@
     "lsadump",
     "metasploit",
     "pentest",
+    "pentesting",
     "schtasks",
     "searchsploit"
   ],

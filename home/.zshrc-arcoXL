@@ -24,6 +24,7 @@ export ZSH=/usr/share/oh-my-zsh/
 # ZSH_THEME="mlh"    # Red, White, & Blue ~= US Flag    --Con: too plain
 # ZSH_THEME="smt"    # Chinese lettering        --Con: too much text
 ZSH_THEME="gnzh"
+# ZSH_THEME="josh"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -153,7 +154,7 @@ unsetopt SHARE_HISTORY
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
+# Make NeoVim the default editor
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -173,9 +174,26 @@ fi
 #list
 alias ls='ls --color=auto'
 alias la='ls -a'
-alias ll='ls -alFh --color=auto'
+alias ll='ls -alFhS --color=auto'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
+alias listdir="ls -d */ > list"
+
+#pacman
+alias sps='sudo pacman -S'
+alias spr='sudo pacman -R'
+alias sprs='sudo pacman -Rs'
+alias sprdd='sudo pacman -Rdd'
+alias spqo='sudo pacman -Qo'
+alias spsii='sudo pacman -Sii'
+
+# show the list of packages that need this package - depends mpv as example
+function_depends()  {
+    search=$(echo "$1")
+    sudo pacman -Sii $search | grep "Required" | sed -e "s/Required By     : //g" | sed -e "s/  /\n/g"
+    }
+
+alias depends='function_depends'
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -336,6 +354,17 @@ alias isoo="cat /etc/dev-rel"
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
+# This will generate a list of explicitly installed packages
+alias list="sudo pacman -Qqe"
+#This will generate a list of explicitly installed packages without dependencies
+alias listt="sudo pacman -Qqet"
+# list of AUR packages
+alias listaur="sudo pacman -Qqem"
+# add > list at the end to write to a file
+
+# install packages from list
+# pacman -S --needed - < my-list-of-packages.txt
+
 #clear
 alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
 
@@ -411,7 +440,7 @@ alias sysfailed="systemctl list-units --failed"
 
 #shutdown or reboot
 alias ssn="sudo shutdown now"
-alias sr="sudo reboot"
+alias sr="reboot"
 
 #update betterlockscreen images
 alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
@@ -481,8 +510,12 @@ alias atm="arcolinux-tellme"
 alias avs="arcolinux-vbox-share"
 alias awa="arcolinux-welcome-app"
 
-#remove
+#git
 alias rmgitcache="rm -r ~/.cache/git"
+alias grh="git reset --hard"
+
+#pamac
+alias pamac-unlock="sudo rm /var/tmp/pamac/dbs/db.lock"
 
 #moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'

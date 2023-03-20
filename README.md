@@ -28,7 +28,8 @@ git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 
 # 2. Install various shell programs
-pacman -S bat fzf cpanminus xclip neovim tmux zsh npm ruby python3 python-pip mlocate firefox --noconfirm
+pacman -S bat fzf cpanminus xclip neovim tmux zsh npm ruby python3 python-pip mlocate firefox qutebrowser virt-manager vivaldi --noconfirm
+yay -S ungoogled-chromium-bin librewolf
 
 ### Installing ZSH Guide: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 # 3. Verify zsh installation
@@ -110,3 +111,7 @@ sudo npm install -g neovim
 sudo cpanm -n Neovim::Ext
 ```
 
+## 3. Other Notes
+
+OBS Flickering: System Settings > Display & Monitor > Compositor > 
+[Uncheck] Allow applications to block compositing

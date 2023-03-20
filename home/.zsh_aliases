@@ -1,4 +1,5 @@
-#------------------------------------------------------------------------------
+#--------------------------------EXPORTS---------------------------------------
+export VISUAL=nvim
 ###-----------------------------CONFLICTS--------------------------------------
 OS_RELEASE=`uname -r`
 OS_NAME=`uname -s`
@@ -100,3 +101,5 @@ alias restart-kde_plasma='kquitapp 5 plasmashell || \
 #---------------------------------[END]----------------------------------------
 
 alias p2='ping -c2'
+alias dolphin='org.kde.dolphin'
+alias systemctl='sudo systemctl'

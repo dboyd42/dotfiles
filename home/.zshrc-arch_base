@@ -1,6 +1,7 @@
 ###
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# If you come from bash you might have to change your $PATH, 
+# and for PIP pkgs.
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 #installation via script from github
@@ -13,17 +14,9 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
-ZSH_THEME="random"
-# ZSH_THEME="kphoen"  # --Con: EOL (#2) markings
-# ZSH_THEME="juanghurtado" # Simpler UI  --Con: end of 2nd line text
-# ZSH_THEME="jonathan"    # Matching KDE theme  --Con: Too much text
-# ZSH_THEME='duellj'      # Simple UI +time  --Con: EOL (2nd) markings
-# ZSH_THEME="crcandy"       # Con: too much text, no good UI
-# ZSH_THEME="steeef"    # --Con: too much text
-# ZSH_THEME="jispwoso"  # --Con: too much text
-# ZSH_THEME="mlh"    # Red, White, & Blue ~= US Flag    --Con: too plain
-# ZSH_THEME="smt"    # Chinese lettering        --Con: too much text
-# ZSH_THEME="gnzh"
+#ZSH_THEME="random"
+#ZSH_THEME=""
+ ZSH_THEME="gnzh"
 # ZSH_THEME="josh"
 
 # Set list of themes to pick from when loading at random
@@ -107,6 +100,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 plugins=(
     autojump
     colored-man-pages
+    emoji
     git
     sudo
     torrent
@@ -157,6 +151,8 @@ export HISTCONTROL=ignoreboth:erasedups
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+#export VIMCONFIG=/.config/nvim
+#export VIMDATA=/.local/share/nvim
 
 #PS1='[\u@\h \W]\$ '
 

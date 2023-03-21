@@ -1,4 +1,4 @@
-# Dotfile Installation Guide
+# Post-Arch Install Guide
 
 > Author: David Boyd<br>
 > Date: 2023-03-20
@@ -24,11 +24,12 @@ echo "alias systemctl='sudo systemctl'" >> ~/.bashrc
 ###
 # 1. Install Yay AUR Helper
 pacman -S --needed git base-devel
+pacman -S fakeroot
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 
 # 2. Install various shell programs
-pacman -S bat fzf cpanminus xclip neovim tmux zsh npm ruby python3 python-pip mlocate firefox qutebrowser virt-manager vivaldi --noconfirm
+pacman -S bat cups fzf cpanminus xclip neovim tmux zsh npm ruby python3 python-pip mlocate firefox qutebrowser virt-manager vivaldi --noconfirm
 yay -S ungoogled-chromium-bin librewolf
 
 ### Installing ZSH Guide: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
@@ -83,6 +84,26 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # (Optional) Update the .zshrc ZSH_THEME accordingly
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
+
+## X. Printers
+
+1. Install cups
+2. `systemctl enable --now cups`
+3. Install GUI program: 
+    - `pacman -S system-config-printer` # Auto-detect printer
+    - KDE Plasma: `pacman -S print-manager` # KDE GUI for printers
+4. Install printer driver: https://wiki.archlinux.org/title/CUPS/Printer-specific_problems
+    - `yay -S brlaser`   # Bother Laser Printers
+    - `pacman -S hplip`  # HP Printers
+5. Setup Avahi (Network Discovery): https://wiki.archlinux.org/title/Avahi#Hostname_resolution
+    - `pacman -S nss-mdns`
+    - Install, enable, and start Avahi: 
+      `pacman -S avahi && systemctl enable --now avahi.service`
+    - Edit and change the `hosts` line in the `/etc/nsswitch.conf` file:
+    	- `hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns`
+?. Start cups-browsed service (Network printers)
+
+NOTE: May need to restart the Avahi service.
 
 ## 3. NeoVim-ing Providers
 

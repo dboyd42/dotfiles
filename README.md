@@ -101,7 +101,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
       `pacman -S avahi && systemctl enable --now avahi.service`
     - Edit and change the `hosts` line in the `/etc/nsswitch.conf` file:
     	- `hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns`
-?. Start cups-browsed service (Network printers)
+6. Set up Line Print Options:
+    1. Check the term's default printer setup: `lpstat -d`
+    2. If none appear, list all available printers: `lpstat -p`
+    3. Set term's default printer: `lpoptions -d <printerName>`
+
+?. Start cups-browsed service (Network printers) ## Doesn't seem necessary
 
 NOTE: May need to restart the Avahi service.
 

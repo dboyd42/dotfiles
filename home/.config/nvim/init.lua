@@ -14,11 +14,11 @@ require('lualine-config/lualine-cfg')       --> statusline
 require('nvim-autopairs-config/autopairs')  --> autopairs
 require('nvim-notify-config/notify')        --> notifications
 require('nvim-tree-config/tree')            --> file-explorer
-require('treesitter-config/treesitter')     --> syntax hl & language parser
+-- require('treesitter-config/treesitter')     --> syntax hl & language parser
 
 -- Load Local Settings --------------------------------------------------------
 require('abbreviations/abbrev')             --> Abbreviations
 require('settings/my-settings')             --> personal settings
 require('mappings/keybindings')             --> key-bindings
-vim.notify = require("notify")		    --> notifications
-
+vim.notify = require("notify")		          --> notifications
+require("notify").history()		          --> notifications

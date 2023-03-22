@@ -36,7 +36,8 @@ dracula.setup({
   italic_comment = true, -- default false
   -- overrides the default highlights see `:h synIDattr`
   overrides = {
-    -- Examples
+    -- Reference: https://github.com/dracula/vim/blob/eb577d47b0cfc9191bf04c414b4042d5f1a980f8/colors/dracula.vim
+    -- Examples:
     -- NonText = { fg = dracula.colors().white }, -- set NonText fg to white
     -- NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
     -- Nothing = {} -- clear highlight of Nothing

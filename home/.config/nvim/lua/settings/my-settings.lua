@@ -1,9 +1,9 @@
------ Basic Options -----------------------------------------------------------
--- vim.opt: a lua table to allow setting/getting neovim options
--- :help option-list  --show a list of one-liner explanations for ea option
-local set = vim.opt
-
-vim.notify = require("notify")
+-- GENERAL SETTINGS -----------------------------------------------------------
+-- vim.opt => API for vim options ---
+-- -- :help option-list => show all available options
+local set = vim.opt -- Vim Options
+local setw = vim.wo  -- Window Options
+local setg = vim.g -- Global Options
 
 --- APPEARANCE ---
 set.colorcolumn    = '80'
@@ -21,7 +21,7 @@ set.mouse         = a    -- Mouse ctrl
 
 --- FILE MGMT ---
 set.fileencoding = 'utf-8'
-set.hidden       = true --puts unsaved file->'hidden' buffer wo req :w
+set.hidden       = true -- puts unsaved file->'hidden' buffer !req :w
 set.nf = 'alpha', 'bin', 'octal', 'hex'  -- format special chars
 set.autoread     = true -- " watch for file changes
 set.confirm      = true  -- " Use a dialog when an operation has to be confirmed
@@ -43,6 +43,8 @@ set.tabstop     = 4     -- nVisual_Spaces in <TAB>
 --- TEXT-MGMT ---
 set.tw    = 79    -- textwidth
 set.wrap  = true  -- Wrapping enabled
+set.breakindent = false -- Enable break indent (default=false)
+set.undofile = true -- Save undo history
 
 --- SEARCHING ---
 set.hlsearch   = true   -- highlight searched matches
@@ -58,7 +60,19 @@ set.scrolloff     = 5	   --start scrolling at nLines before end-of-screen
 set.splitbelow    = true
 set.splitright    = true
 set.termguicolors = true
+set.updatetime = 250 -- Decrease update time
+setw.signcolumn = 'yes' -- Decrease update time
 
 --- UNKNOWN ---
 set.completeopt = 'menuone,noselect'
 
+-- Highlight blink on yank.
+vim.api.nvim_exec(
+  [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+  ]],
+  false
+)

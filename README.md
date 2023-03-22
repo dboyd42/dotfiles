@@ -137,7 +137,27 @@ sudo npm install -g neovim
 sudo cpanm -n Neovim::Ext
 ```
 
-## 3. Other Notes
+## 4. Neovim Dotfiles
+
+### CheckHealth Pass
+
+1. Install dependencies.  Use `:checkhealth` to verify installs & integration:
+- `pacman -S fd`
+2. Resolve Perl provider write access: 
+`cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)`
+
+#### Notes 
+
+- Python & Ruby's `vim.g.{}_host_prog` are set in the `init.lua`
+- TMUX issues are resolved in the `$HOME/.tmux.conf` file.
+
+### Packer - Plugin Manager
+
+1. When using Arch, install via AUR: `yay -S nvim-packer-git`
+2. Compile, Install, Sync Packer: `vim +PackerCompile`, `:PackerInstall`,
+   `:PackerSync`
+
+## ?. Other Notes
 
 OBS Flickering: System Settings > Display & Monitor > Compositor > 
 [Uncheck] Allow applications to block compositing

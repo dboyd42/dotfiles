@@ -90,6 +90,11 @@ _G.packer_plugins = {
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/lspkind-nvim",

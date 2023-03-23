@@ -1,12 +1,12 @@
--- For language parsers, 
+-- For language parsers,
 --  if already supported by treesitter, then
 --      install via: :TSInstall <language_to_install>
 -- :TSInstall lua
 
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { 
-      'c', 
+  ensure_installed = {
+      'c',
       'cpp',
       'go',
       'javascript',

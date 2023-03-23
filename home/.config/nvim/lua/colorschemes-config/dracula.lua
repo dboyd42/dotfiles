@@ -36,13 +36,16 @@ dracula.setup({
   italic_comment = true, -- default false
   -- overrides the default highlights see `:h synIDattr`
   overrides = {
-    -- Reference: https://github.com/dracula/vim/blob/eb577d47b0cfc9191bf04c414b4042d5f1a980f8/colors/dracula.vim
+    -- Reference:
+    -- ~/.local/share/nvim/site/pack/packer/start/dracula.nvim/lua/dracula/groups.lua
     -- Examples:
     -- NonText = { fg = dracula.colors().white }, -- set NonText fg to white
     -- NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
     -- Nothing = {} -- clear highlight of Nothing
+    -- Overrides:
     ColorColumn = { bg = '#540B0C' }, -- Rustic Red
-    CursorLine = { bg = '#1F2022'}, -- Rich Gray
+    CursorLine = { bg = '#1F2022' }, -- Rich Gray
+    CursorLineNr = { fg = '#FF79C6', bold = true, },
   },
 })
 

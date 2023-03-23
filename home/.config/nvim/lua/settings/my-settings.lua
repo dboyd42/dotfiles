@@ -16,7 +16,7 @@ set.numberwidth    = 4    -- nCols to use for the line number
 --set.notimeout     = true -- timeouts on keycodes #ERR
 set.ttimeout      = true --   *doesn't affect mappings
 set.ttimeoutlen   = 200  --   self-explantory
-set.mouse         = 'a'    -- Mouse ctrl
+set.mouse         = '' --a'    -- Mouse ctrl
 --set.wildmode = 'longest', 'list', 'full' -- Visual autocomplete for cmd-menu
 
 --- FILE MGMT ---
@@ -64,7 +64,7 @@ set.updatetime = 250 -- Decrease update time
 setw.signcolumn = 'yes' -- Decrease update time
 
 --- UNKNOWN ---
-set.completeopt = 'menuone,noselect'
+-- set.completeopt = 'menuone,noselect'
 
 -- Highlight blink on yank.
 vim.api.nvim_exec(

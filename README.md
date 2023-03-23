@@ -157,7 +157,14 @@ sudo cpanm -n Neovim::Ext
 2. Compile, Install, Sync Packer: `vim +PackerCompile`, `:PackerInstall`,
    `:PackerSync`
 
+### COC (Code of Completion)
+
+**REF:** https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+
+1. `CocInstall <extensionNames>`
+
 ## ?. Other Notes
 
-OBS Flickering: System Settings > Display & Monitor > Compositor > 
+OBS Flickering: System Settings > Display & Monitor > Compositor >
 [Uncheck] Allow applications to block compositing
+

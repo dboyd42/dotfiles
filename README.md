@@ -76,7 +76,7 @@ systemctl enable --now keyd
 ``` bash
 # Install various fonts
 pacman -S ttf-meslo-nerd otf-cascadia-code-nerd otf-firamono-nerd \
-ttf-liberation noto-fonts powerline-fonts;
+  ttf-liberation noto-fonts powerline-fonts noto-fonts-cjk
 yay -S gsfonts
 
 # Powerlevel10K Install Guide: https://github.com/romkatv/powerlevel10k

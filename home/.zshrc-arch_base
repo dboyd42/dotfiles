@@ -595,3 +595,11 @@ export LC_ALL="en_US.UTF-8"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+### IME/IMF Support (Chinese):    ###
+## Google's FCITX IME:
+# GTK_IM_MOUDULE=fcitx
+# QT_IM_MODULE=fcitx
+# XMODIFIERS=@im=fcitx
+### END IME/IMF Support (Chinese) ###

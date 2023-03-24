@@ -154,7 +154,8 @@ sudo cpanm -n Neovim::Ext
 ### Packer - Plugin Manager
 
 1. When using Arch, install via AUR: `yay -S nvim-packer-git`
-2. Compile, Install, Sync Packer: `vim +PackerCompile`, `:PackerInstall`,
+2. Setup plugins: `~/.config/nvim/lua/plugins.lua`
+3. Compile, Install, Sync Packer: `vim +PackerCompile`, `:PackerInstall`,
    `:PackerSync`
 
 ### COC (Code of Completion)

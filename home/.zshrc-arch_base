@@ -599,7 +599,11 @@ export LC_ALL="en_US.UTF-8"
 
 ### IME/IMF Support (Chinese):    ###
 ## Google's FCITX IME:
-# GTK_IM_MOUDULE=fcitx
+export GTK_IM_MODULE=fcitx
 # QT_IM_MODULE=fcitx
 # XMODIFIERS=@im=fcitx
+## IBus:
+# GTK_IM_MOUDULE=ibus
+# QT_IM_MODULE=ibus
+# XMODIFIERS=@im=ibus
 ### END IME/IMF Support (Chinese) ###

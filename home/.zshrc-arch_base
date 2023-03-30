@@ -124,7 +124,9 @@ fi
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+# Attempt to resolve Chinese chars not showing in Konsole terminal
+# export LANG="zh_CN.UTF-8 UTF-8 en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -599,9 +601,9 @@ export LC_ALL="en_US.UTF-8"
 
 ### IME/IMF Support (Chinese):    ###
 ## Google's FCITX IME:
-export GTK_IM_MODULE=fcitx
-# QT_IM_MODULE=fcitx
-# XMODIFIERS=@im=fcitx
+GTK_IM_MODULE=fcitx5
+QT_IM_MODULE=fcitx5
+XMODIFIERS=@im=fcitx5
 ## IBus:
 # GTK_IM_MOUDULE=ibus
 # QT_IM_MODULE=ibus

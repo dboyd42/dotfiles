@@ -101,5 +101,6 @@ alias vR='nvim README.md'
 alias vim='nvim'
 alias restart-kde_plasma='kquitapp 5 plasmashell || \
                           killall plasmashell && kstart5 plasmashell'
+alias pwrstat='sudo pwrstat'    # CyberPower UPS / PowerPanel
 alias systemctl='sudo systemctl'
 #---------------------------------[END]----------------------------------------

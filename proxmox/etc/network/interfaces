@@ -1,0 +1,56 @@
+# Author: David Boyd
+# Date  : 2023-04-11
+# Descr : This file is the modified version of Ben Heater's
+#       : pfSense/CyberRange GUI setup.
+#    Ref: https://benheater.com/proxmox-lab-pfsense-firewall/
+#     Bg: Changing switches from Linux->OVS isn't readily available via GUI.
+
+# Loopback Interface
+auto lo
+iface lo inet loopback
+
+# Physical Interfaces (eno1-4)
+auto eno1
+iface eno1 inet static
+	address 192.168.0.111/24
+	gateway 192.168.0.1
+
+iface eno2 inet manual
+
+iface eno3 inet manual
+
+iface eno4 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+	address 192.168.0.111/24
+	gateway 192.168.0.1
+	ovs_type OVSBridge
+	ovs_ports eno1 vmbr0_mgmt
+#Production Switch
+
+auto vmbr0_mgmt
+iface vmbr0_mgmt inet static
+	address 192.168.0.111/24
+	gateway 192.168.0.1
+	ovs_type OVSIntPort
+	ovs_bridge vmbr0
+#Web mgmt interface
+
+auto vmbr1
+iface vmbr1 inet manual
+	ovs_type OVSBridge
+	ovs_ports vmbr1_666 vmbr1_999
+#pfSense Internal Switch
+
+auto vmbr1_666
+iface vmbr1_666 inet manual
+	ovs_type OVSIntPort
+	ovs_bridge vmbr1
+#pfSense Sec Egress (Internet-Facing Insecure VMs)
+
+auto vmbr1_999
+iface vmbr1_999 inet manual
+	ovs_type OVSIntPort
+	ovs_bridge vmbr1
+#pfSense Sec Isolated (Isolated Insecure VMs)

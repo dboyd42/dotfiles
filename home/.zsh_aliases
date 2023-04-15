@@ -28,7 +28,7 @@ if [[ $OS_NAME == 'Darwin' ]]; then
     alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
-    #alias bat='batcat'
+    # alias bat='batcat'
     alias gith='cd $HOME/Documents/code/repos/dboyd42'
 else
     echo "Hello, $OS_NAME!"
@@ -72,9 +72,9 @@ alias gsa='for DIR in ./*; do \
                             && echo "---\n" && cd ../; \
                     done'
 # <<<<< END Git aliases
-alias cat='lolcat'
-alias dolphin='org.kde.dolphin'
-alias icat='kitty icat'
+# alias cat='lolcat'
+# alias dolphin='org.kde.dolphin'
+# alias icat='kitty icat'
 alias killme='read NAME\?"Prgm Name: "; \
               ps aux | grep $NAME | cut -d" " -f5 | xargs kill -9'
 alias ll='ls -alhs'

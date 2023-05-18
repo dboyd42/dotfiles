@@ -56,7 +56,7 @@ set.smartcase  = true	-- capitalized sensitive case queries
 --set.nomodeline    = true -- disabled due to security vulns #ERR
 
 --- WINDOW MGMT ---
-set.scrolloff     = 5	   --start scrolling at nLines before end-of-screen
+set.scrolloff     = 1	   --start scrolling at nLines before end-of-screen
 set.splitbelow    = true
 set.splitright    = true
 set.termguicolors = true

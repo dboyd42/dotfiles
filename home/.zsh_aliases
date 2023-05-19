@@ -43,7 +43,8 @@ alias backup-arco='\
         / \
         --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
         /mnt/backup/"$(date --rfc-3339=s)"'
-alias bandit0='sshpass -p bandit0 ssh bandit0'
+# alias bandit0='sshpass -p bandit0 ssh bandit0'
+alias bandit0='sshpass -p bandit0 ssh bandit0@bandit.labs.overthewire.org -p 2220'
 alias com='g++ -std=c++1z -o main *.cpp'
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 alias fdisk='sudo fdisk'

@@ -587,8 +587,6 @@ zstyle :compinstall filename '/home/bhatm/.zshrc'
 [[ -s /home/bhatm/.autojump/etc/profile.d/autojump.sh ]] && source /home/bhatm/.autojump/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
-autoload -Uz compinit
-compinit
 ### END Autojump reqs ###
 
 # Prevent remnant characters when tab completing with ZSH (+) TMUX
@@ -609,3 +607,5 @@ XMODIFIERS=@im=fcitx5
 # QT_IM_MODULE=ibus
 # XMODIFIERS=@im=ibus
 ### END IME/IMF Support (Chinese) ###
+
+

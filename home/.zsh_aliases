@@ -78,6 +78,10 @@ alias gsa='for DIR in ./*; do \
 # alias icat='kitty icat'
 alias killme='read NAME\?"Prgm Name: "; \
               ps aux | grep $NAME | cut -d" " -f5 | xargs kill -9'
+# Konsole Terminal
+alias kprint='konsoleprofile colors=BlackOnWhiteFixed'
+alias ksolid="konsoleprofile colors=Utterly-Sweet-Solid-Konsole"
+alias ktrans="konsoleprofile colors=Utterly-Sweet-Konsole"
 alias ll='ls -alhs'
 alias p2='ping -c2'
 alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"

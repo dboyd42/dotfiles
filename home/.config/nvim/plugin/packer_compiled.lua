@@ -139,7 +139,7 @@ _G.packer_plugins = {
   ["cmp-spell"] = {
     loaded = true,
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/cmp-spell",
-    url = "https://github.com/hrsh7th/cmp-spell"
+    url = "https://github.com/f3fora/cmp-spell"
   },
   cmp_luasnip = {
     loaded = true,

@@ -46,6 +46,19 @@ alias backup-arco='\
 # alias bandit0='sshpass -p bandit0 ssh bandit0'
 alias bandit0='sshpass -p bandit0 ssh bandit0@bandit.labs.overthewire.org -p 2220'
 alias com='g++ -std=c++1z -o main *.cpp'
+# Print xterm-256-color chart in terminal
+function clicolors() {
+    i=1
+    for color in {000..255}; do;
+        c=$c"$FG[$color]$color✔$reset_color  ";
+        if [ `expr $i % 8` -eq 0 ]; then
+            c=$c"\n"
+        fi
+        i=`expr $i + 1`
+    done;
+    echo $c | sed 's/%//g' | sed 's/{//g' | sed 's/}//g' | sed '$s/..$//';
+    c=''
+}
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
 alias fdisk='sudo fdisk'
 alias flipper='/home/bhatm/Documents/code/repos/dboyd42/scripting/bash/web-scrapers/flipper-zero.sh'

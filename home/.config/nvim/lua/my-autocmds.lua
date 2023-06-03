@@ -7,7 +7,6 @@
 
 local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
-local map = vim.keymap.set                    -- Set keymap
 
 -- General settings:
 --------------------
@@ -30,13 +29,6 @@ autocmd('Filetype', {
     'typescript', 'scss', 'xml', 'xhtml', 'yaml'
   },
   command = 'setlocal shiftwidth=2 tabstop=2'
-})
--- Set indentation to 4 spaces
-augroup('setIndent', { clear = true })
-autocmd('Filetype', {
-  group = 'setIndent',
-  pattern = { 'python', 'go', 'txt' },
-  command = 'setlocal shiftwidth=4 tabstop=4'
 })
 
 -- Terminal settings:

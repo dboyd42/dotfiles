@@ -93,7 +93,7 @@ return require('packer').startup(function(use)
           {'hrsh7th/cmp-nvim-lua'},     -- Opt'l
           {'hrsh7th/cmp-look'},         -- Opt'l
           {'hrsh7th/cmp-path'},         -- Opt'l: filesystem suggestions
-          -- {'hrsh7th/cmp-spell'},     -- Opt'l
+          {'hrsh7th/cmp-spell'},        -- Opt'l
           {'hrsh7th/nvim-cmp'},         -- Required
           {'saadparwaiz1/cmp_luasnip'}, -- Opt'l: custom snippet suggestions
 

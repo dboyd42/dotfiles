@@ -29,7 +29,7 @@ git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -si
 
 # 2. Install various shell programs
-pacman -S bat cups fzf cpanminus xclip neovim tmux zsh npm ruby python3 python-pip mlocate firefox qutebrowser virt-manager vivaldi --noconfirm
+pacman -S bat cups fzf cpanminus xclip neovim tmux zsh npm ruby python3 python-pip mlocate firefox qutebrowser virt-manager vivaldi ripgrep --noconfirm
 yay -S ungoogled-chromium-bin librewolf
 
 ### Installing ZSH Guide: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
@@ -75,7 +75,7 @@ systemctl enable --now keyd
 
 ``` bash
 # Install various fonts
-pacman -S ttf-meslo-nerd otf-cascadia-code-nerd otf-firamono-nerd \
+pacman -S ttf-meslo-nerd ttf-cascadia-code-nerd otf-firamono-nerd \
   ttf-liberation noto-fonts powerline-fonts noto-fonts-cjk
 yay -S gsfonts
 
@@ -123,7 +123,7 @@ nvim -c "py3 print('hello')"
 
 ### Ruby
 # 1. Add to PATH 
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin' \
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin" \
 && gem list && gem update 
 # 2. Install Ruby's NeoVim module
 gem install neovim

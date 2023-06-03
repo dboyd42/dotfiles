@@ -99,7 +99,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 #    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # zsh-autosuggestions                                                         #
 #     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# autojump                                                                    
+# autojump
 #    1. pacman -S autojump                                                      #
 ### ----------------------------------END---------------------------------- ###
 ### ----------------------------------------------------------------------- ###
@@ -120,6 +120,7 @@ if [ -f $ZSH/oh-my-zsh.sh ]; then
 fi
 
 # User configuration
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=92,bold" #,bold,bg=#ff00ff,bold"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

@@ -3,7 +3,7 @@
 -- -- :help option-list => show all available options
 local set = vim.opt -- Vim Options
 local setw = vim.wo  -- Window Options
-local setg = vim.g -- Global Options
+-- local setg = vim.g -- Global Options
 
 --- APPEARANCE ---
 set.colorcolumn    = '80'

@@ -73,4 +73,4 @@ map('n', '<leader>rl', ':sp<CR> :term lua %<CR>')     -- Run Lua
 
 -- Concealment
 map('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>')
-map('n', '<leader>mg', '<cmd>CellularAutomaton game_of_life<CR>')
+map('n', '<leader>mgof', '<cmd>CellularAutomaton game_of_life<CR>')

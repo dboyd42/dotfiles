@@ -9,7 +9,7 @@ vim.opt.termguicolors = true  --> Opacity issues (Notify)
 vim.opt.guicursor = 'a:ver100'  --> Un-hides cursorline word on 1st char
 
 -- Load Local Settings --------------------------------------------------------
-require('plugins')              -- Packer Plugins
+require('packer')              -- Packer Plugins
 require('my-abbrev')            -- Abbreviations
 require('my-autocmds')          -- Autocommands
 require('my-settings')          -- Personal Settings

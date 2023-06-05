@@ -2,7 +2,7 @@
 --local map = vim.api.nvim_set_keymap -- depcrecated
 local map = vim.keymap.set -- Nvim API func (Lua exclusive)
 local opts = { noremap = true, silent = true }
-local opts2 = { silent = true }
+-- local opts2 = { silent = true } --Unused local `opts2`
 
 vim.g.mapleader = ' '	-- Space
 vim.g.maplocalleader = '\\' -- Backslash
@@ -15,6 +15,9 @@ map('n', '<localleader>rl', ':luafile %<CR>', { noremap = true })
 map('n', '<localleader>s', ':echo "Use \\<localleader\\>s[s|v]"<CR>', opts )
 map('n', '<localleader>sv', ':source $MYVIMRC<CR>', { noremap = true })
 map('n', '<localleader>w', ':set wrap!<CR>', opts)
+-- Toggle spell
+-- nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
+map('n', '<F7>', ':setlocal spell! spellang=en_us<CR>')
 
 --[[ PLUGIN_CALLS -----------------------------------------------------------]]
 -- map( MODE([nci], KEYS, CMD, OPTIONS )    --SYNTAX

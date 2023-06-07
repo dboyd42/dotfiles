@@ -18,19 +18,15 @@ return require('packer').startup(function(use)
   use 'dhruvasagar/vim-table-mode'                    -- Table Generator
   --use { 'dracula/vim', as = 'dracula' }               -- Colorscheme
   use 'eandrju/cellular-automaton.nvim'               -- Obfuscate code
-  use 'iamcco/markdown-preview.nvim'                  --[[ Markdown Preview
-    0. pacman -S yarn
-    1. cd ~/.local/share/nvim/site/pack/packer/start/
-    2. git clone https://github.com/iamcco/markdown-preview.nvim.git
-    2. cd markdown-preview.nvim
-    3. yarn install
-    4. yarn build
-  --]]
+  use({ "iamcco/markdown-preview.nvim",               -- Markdown Preview
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  })
   use 'lambdalisue/suda.vim'                          -- rw buffers w/ sudo
   use 'mbbill/undotree'                               -- Undo history tree
   use 'Mofiqul/dracula.nvim'                          -- Colorscheme: Dracula
   use 'ntpeters/vim-better-whitespace'                -- Whitespace editor
-  -- use 'numToStr/Comment.nvim'                         -- Un/Commenting '//'
   use {'numToStr/Comment.nvim',                       -- Un/Commenting '//'
         config = function()
           require('Comment').setup()
@@ -54,10 +50,6 @@ return require('packer').startup(function(use)
         tag = 'nightly', -- opt'l, updated every week.  (see issue #1193)
         requires = { 'kyazdani42/nvim-web-devicons', } -- opt'l file icons
   }
-  -- use {'neoclide/coc.nvim',			      -- LSP Mgr* (1 of 2) -- Conflicts w/
-        -- branch = 'master',			      -- (Req: nodejs, yarn) -- lsp-zero!!!
-	      -- run = 'yarn install --frozen-lockfile'
-  -- }
   use { 'nvim-lualine/lualine.nvim',                  -- LuaLine
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
@@ -67,11 +59,26 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter-refactor',    -- TS Refactor
          requires = "nvim-treesitter/nvim-treesitter"
   }
-  use { "nvim-treesitter/nvim-treesitter-textobjects",-- TS Add'l txtobjs
-         after = "nvim-treesitter",
-         requires = "nvim-treesitter/nvim-treesitter"
+  use { 'nvim-treesitter/nvim-treesitter-textobjects',-- TS Add'l txtobjs
+         after = 'nvim-treesitter',
+         requires = 'nvim-treesitter/nvim-treesitter'
   }
-  ----use ('nvim-treesitter/playground' )   -- TS's AST (Abstract Syntax Tree)
+  --  [markdown markmap]
+  --  https://github.com/Zeioth/markmap.nvim
+  -- use { 'Zeioth/markmap.nvim',
+  --   build = 'yarn global add markmap-cli',
+  --   cmd = {'MarkmapOpen', 'MarkmapSave', 'MarkmapWatch', 'MarkmapWatchStop'},
+  --   opts = {
+  --     html_output = '/tmp/markmap.html', -- (default) Setting a empty string ""
+  --                                        -- here means:
+  --                                        --     [Current buffer path].html
+  --     hide_toolbar = false, -- (default)
+  --     grace_period = 3600000 -- (default) Stops markmap watch after 60 minutes.
+  --                            -- Set it to 0 to disable the grace_period.
+  --   },
+  --   config = function(_, opts) require("markmap").setup(opts) end
+  -- },
+  -- use ('nvim-treesitter/playground' )   -- TS's AST (Abstract Syntax Tree)
   use { 'VonHeikemen/lsp-zero.nvim',                  -- LSP Mgr* (2 of 2)
         branch = 'v2.x',
         requires = {

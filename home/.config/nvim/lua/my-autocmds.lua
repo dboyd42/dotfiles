@@ -76,3 +76,4 @@ autocmd( { 'FileType', 'Buffer' }, {
   autocmd FileType bash,sh nnoremap <buffer> <leader>r
     \ :sp<CR> :term bash %<CR> :startinsert<CR>
 --]]
+

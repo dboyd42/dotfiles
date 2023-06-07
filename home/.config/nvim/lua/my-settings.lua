@@ -21,7 +21,7 @@ set.mouse         = '' --a'    -- Mouse ctrl
 --set.wildmode = 'longest', 'list', 'full' -- Visual autocomplete for cmd-menu
 
 --- FILE MGMT ---
-set.fileencoding = {'utf-8', 'cp936', 'gb18030', 'big5'}  -- Add Chinese support
+set.fileencoding = 'utf-8' --, 'cp936', 'gb18030', 'big5'}  -- Add Chinese support
 set.hidden       = true -- puts unsaved file->'hidden' buffer !req :w
 set.nf = {'alpha', 'bin', 'octal', 'hex'}  -- format special chars
 set.autoread     = true -- " watch for file changes

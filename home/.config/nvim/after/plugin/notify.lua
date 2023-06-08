@@ -7,5 +7,7 @@ notify.setup({
 require('notify').history() -- List past notifictions
 
 -- Display a sample notification
-map('n', '<leader>ne', ':lua require("notify")("My super important message")<CR>')
+map('n', '<leader>ne', ':lua require("notify")("Hi, Mom!")<CR>')
+-- Close current notification windows
+map('n', '<leader>nc', function() notify.dismiss( { silent = true }) end)
 

@@ -63,13 +63,10 @@ return require('packer').startup(function(use)
          after = 'nvim-treesitter',
          requires = 'nvim-treesitter/nvim-treesitter'
   }
-  --  [markdown markmap]
-  --  https://github.com/Zeioth/markmap.nvim
-  use { 'Zeioth/markmap.nvim',
-    -- build = 'yarn global add markmap-cli',
-    run = 'yarn global add markmap-cli',
-    } -- END markmap
-  -- use ('nvim-treesitter/playground' )   -- TS's AST (Abstract Syntax Tree)
+  use { 'Zeioth/markmap.nvim',                        -- Mindmap Generator
+        -- REQUIRES: `sudo npm install -g markmap-cli`
+  }
+  use ('nvim-treesitter/playground' )   -- TS's AST (Abstract Syntax Tree)
   use { 'VonHeikemen/lsp-zero.nvim',                  -- LSP Mgr* (2 of 2)
         branch = 'v2.x',
         requires = {

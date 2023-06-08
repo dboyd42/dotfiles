@@ -183,6 +183,11 @@ _G.packer_plugins = {
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["markmap.nvim"] = {
+    loaded = true,
+    path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/markmap.nvim",
+    url = "https://github.com/Zeioth/markmap.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",

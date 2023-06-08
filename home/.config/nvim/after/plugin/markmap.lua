@@ -1,5 +1,5 @@
 local markmap = require('markmap')
--- local map = vim.keymap.set
+local map = vim.keymap.set
 
 markmap.setup({
   cmd = {"MarkmapOpen", "MarkmapSave", "MarkmapWatch", "MarkmapWatchStop"}--,
@@ -10,3 +10,6 @@ markmap.setup({
   -- },
   -- config = function(_, opts) require("markmap").setup(opts) end
 })
+
+map('n', '<leader>mmw', '<cmd>MarkmapWatch<CR>')
+map('n', '<leader>mms', '<cmd>MarkmapSave<CR>')

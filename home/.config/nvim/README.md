@@ -13,6 +13,7 @@
 - Fix [BarBar][BB] keymaps
 - Document keymaps:
   - `:nmap`, `:vmap`, `imap`
+- List [Plugins](./lua/plugins.lua)
 
 ---
 
@@ -103,7 +104,7 @@ cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mloca
 
 ## 3. Packer - the Plugin Manager
 
-1. Install **Packer**
+### 3.1. Install **Packer**
 
 ``` bash
 yay -S nvim-packer-git
@@ -111,6 +112,13 @@ yay -S nvim-packer-git
 
 The config file will need to be created/symlinked to
 `$HOME/.config/nvim/lua/plugins.lua`.
+
+### 3.2 Awkward Plugin Dependencies
+
+``` bash
+# Required for Markmap
+sudo npm install -g markmap-cli
+```
 
 ## 4. SymLink the Dotfiles
 

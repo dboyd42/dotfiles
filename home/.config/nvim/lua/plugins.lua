@@ -15,13 +15,13 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' ---------------------- -- Must remain on top!!!
 
   use 'cvigilv/esqueleto.nvim'                        -- Skeleton files
+  use 'derektata/lorem.nvim'                          -- Lorem Ipsum generator
   use 'dhruvasagar/vim-table-mode'                    -- Table Generator
-  --use { 'dracula/vim', as = 'dracula' }               -- Colorscheme
   use 'eandrju/cellular-automaton.nvim'               -- Obfuscate code
-  use({ "iamcco/markdown-preview.nvim",               -- Markdown Preview
-    run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-    ft = { "markdown" },
+  use({ 'iamcco/markdown-preview.nvim',               -- Markdown Preview
+    run = 'cd app && npm install',
+    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
+    ft = { 'markdown' },
   })
   use 'lambdalisue/suda.vim'                          -- rw buffers w/ sudo
   use 'mbbill/undotree'                               -- Undo history tree

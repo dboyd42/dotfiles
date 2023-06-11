@@ -26,10 +26,11 @@ software/tools, access credentials, knowledge).*
 *Briefly describe the question or problem.*
 
 <details>
-<summary>Expand for answer: </summary>
-**A:** *[Answer 1]*
+  <summary>Expand for answer: </summary>
+  <strong> (answer)
+  </strong>
 
-*Provide the answer or solution to the question.*
+  *Provide the answer or solution to the question.*
 
 </details>
 
@@ -38,10 +39,11 @@ software/tools, access credentials, knowledge).*
 *Briefly describe the question or problem.*
 
 <details>
-<summary>Expand for answer: </summary>
-**A:** *[Answer 2]*
+  <summary>Expand for answer: </summary>
+  <strong> (answer)
+  </strong>
 
-*Provide the answer or solution to the question.*
+  *Provide the answer or solution to the question.*
 
 </details>
 
@@ -50,10 +52,11 @@ software/tools, access credentials, knowledge).*
 *Briefly describe the question or problem.*
 
 <details>
-<summary>Expand for answer: </summary>
-**A:** *[Answer 3]*
+  <summary>Expand for answer: </summary>
+  <strong> (answer)
+  </strong>
 
-*Provide the answer or solution to the question.*
+  *Provide the answer or solution to the question.*
 
 </details>
 
@@ -62,10 +65,11 @@ software/tools, access credentials, knowledge).*
 *Briefly describe the question or problem.*
 
 <details>
-<summary>Expand for answer: </summary>
-**A:** *[Answer 4]*
+  <summary>Expand for answer: </summary>
+  <strong> (answer)
+  </strong>
 
-*Provide the answer or solution to the question.*
+  *Provide the answer or solution to the question.*
 
 </details>
 
@@ -74,10 +78,11 @@ software/tools, access credentials, knowledge).*
 *Briefly describe the question or problem.*
 
 <details>
-<summary>Expand for answer: </summary>
-**A:** *[Answer 5]*
+  <summary>Expand for answer: </summary>
+  <strong> (answer)
+  </strong>
 
-*Provide the answer or solution to the question.*
+  *Provide the answer or solution to the question.*
 
 ## Conclusion
 

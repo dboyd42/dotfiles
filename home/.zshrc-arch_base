@@ -610,3 +610,5 @@ XMODIFIERS=@im=fcitx5
 ### END IME/IMF Support (Chinese) ###
 
 
+
+eval $(thefuck --alias)

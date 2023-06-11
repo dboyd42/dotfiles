@@ -14,11 +14,11 @@ local map = vim.keymap.set
 -- map('n', '<leader>fb', builtin.buffers, {})      --default = fb
 -- map('n', '<leader>fh', builtin.help_tags, {})    --default = fh
 --- Telescope ..............................................................>>>
-map('n', '<leader>ff', ':Telescope find_files<CR>',   opts)
-map('n', '<leader>fg', ':Telescope live_grep<CR>',    opts)
-map('n', '<leader>gb', ':Telescope git_branches<CR>', opts)
-map('n', '<leader>gc', ':Telescope git_commits<CR>',  opts)
-map('n', '<leader>gf', ':Telescope git_files<CR>',    opts)
-map('n', '<leader>tgs', ':Telescope git_status<CR>',   opts)
-map('n', '<leader>reg',  ':Telescope registers<CR>',    opts)
+map('n', '<leader>ff', ':Telescope find_files<CR>')
+map('n', '<leader>tgg', ':Telescope live_grep<CR>')
+map('n', '<leader>tgb', ':Telescope git_branches<CR>')
+map('n', '<leader>tgc', ':Telescope git_commits<CR>')
+map('n', '<leader>tgf', ':Telescope git_files<CR>')
+map('n', '<leader>tgs', ':Telescope git_status<CR>')
+map('n', '<leader>reg',  ':Telescope registers<CR>')
 -- END Telescope ...........................................................<<<

@@ -2,24 +2,48 @@
 require('bufferline').setup {
     -- Enable/disable animations
     animation = true,
+
     -- Enable/disable current/total tabpages indicator (top right corner)
     closable = true,
+
     -- Configure icons on the bufferline.
     -- icon_separator_active = '',          -- DEPRECATED 4/8/23
     -- icon_separator_inactive = '',        -- DEPRECATED 4/8/23
     -- Enable/Disable icons
     -- if set to 'numbers', will show buffer index in the tabline
     -- if set to 'both', will show buffer index and icons in the tabline
-    -- icons = numbers,
+
     -- Enable/disable current/total tabpages indicator (top right corner)
     tabpages = true,
+
+    -- Hide file extensions (refer to statusline for file extension labels)
+    hide = {extensions = true},
+
+    -- Enables/disable clickable tabs
+    --  - left-click: go to buffer
+    --  - middle-click: delete buffer
+    clickable = true,
+
+    -- If true, add an additional separator at the end of the buffer list
+    separator_at_end = true,
 }
 
 --- Barbar Keybindings ........................................................
+--[[
+
+| Key | Description |
+|-----+-------------|
+| 'A' | Alt         |
+
+-- ]]
+
 local map = vim.keymap.set
+local opts = { noremap = true, silent = true }
 -- Move to previous/next
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)                --> 'A' = Alt
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts) -- Similar mapping:
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)     -- 'n', C-h/l
+map('n', '<A-h>', '<Cmd>BufferPrevious<CR>', opts) -- Similar mapping:
+map('n', '<A-l>', '<Cmd>BufferNext<CR>', opts)     -- 'n', C-h/l
 -- Re-order to previous/next
 map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
@@ -44,9 +68,10 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 --                 :BufferCloseAllButCurrent
 --                 :BufferCloseAllButPinned
 --                 :BufferCloseAllButCurrentOrPinned
+map('n', '<leader>bc', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
+-- Magic buffer-Picking mode
 map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 -- Sort automatically by...
 map('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)

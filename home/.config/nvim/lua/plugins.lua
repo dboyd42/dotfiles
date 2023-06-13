@@ -23,6 +23,16 @@ return require('packer').startup(function(use)
     setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
     ft = { 'markdown' },
   })
+  -- use({ "jackMort/ChatGPT.nvim",                     -- ChatGPT
+  --   config = function()                               -- #TODO:
+  --     require("chatgpt").setup()                      --  1. implement pwMgr
+  --   end,                                              --     sess w/ API key
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- })
   use 'lambdalisue/suda.vim'                          -- rw buffers w/ sudo
   use 'mbbill/undotree'                               -- Undo history tree
   use 'Mofiqul/dracula.nvim'                          -- Colorscheme: Dracula

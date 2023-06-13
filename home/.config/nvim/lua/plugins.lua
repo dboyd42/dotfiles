@@ -35,7 +35,8 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'                          -- Icons (LSP completion)
   use 'rcarriga/nvim-notify'                          -- Notification Mgr
   use { 'romgrk/barbar.nvim',                         -- Barbar 2nd: Tabliner
-        wants = 'nvim-web-devicons' }
+        wants = {'nvim-tree/nvim-web-devicons',
+                 'lewis6991/gitsigns.nvim' }}
   use { 'theprimeagen/harpoon',                       -- File marker
         requires = { 'nvim-lua/plenary.nvim' }}
   use 'tpope/vim-fugitive'                            -- Git integration

@@ -28,8 +28,10 @@ map('n', '<localleader>ss', ':w<CR>:so<CR>:PackerSync<CR>', opts)
 map('n', '<leader>tm', ':TableModeToggle<CR>', opts)
 
 --[[ NAVIGATION -------------------------------------------------------------]]
+-- Normal mode
 map('n', '<C-l>', ':bn<CR>', opts)  -- Next buffer
 map('n', '<C-h>', ':bp<CR>', opts)  -- Previous buffer
+-- Insert mode
 map('i', '<C-l>', '<ESC>la', opts)  -- Next char
 map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 

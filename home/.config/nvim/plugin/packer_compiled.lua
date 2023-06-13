@@ -89,7 +89,7 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim",
-    wants = { "nvim-web-devicons" }
+    wants = { "nvim-tree/nvim-web-devicons", "lewis6991/gitsigns.nvim" }
   },
   ["cellular-automaton.nvim"] = {
     loaded = true,

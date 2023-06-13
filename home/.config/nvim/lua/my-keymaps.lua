@@ -39,7 +39,7 @@ map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 --map('c', 'delduprows', '%s/^\(.*\)\(\n\1\)\+$/\1/', opts) -- Del duplicate rows
 map('i', '<C-d>', '<Del>', opts)       -- Del char on cursor
 map('i', '<localleader>ts', '<C-R>=strftime("%F")<CR>', opts) -- Insert today's date
-map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char
+map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char --TMUX <prefix>
 map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
 map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
 map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert today's date

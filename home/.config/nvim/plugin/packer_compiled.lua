@@ -161,6 +161,11 @@ _G.packer_plugins = {
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["lorem.nvim"] = {
+    loaded = true,
+    path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/lorem.nvim",
+    url = "https://github.com/derektata/lorem.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/bhatm/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",

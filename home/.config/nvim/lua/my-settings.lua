@@ -10,7 +10,7 @@ set.colorcolumn    = '80'
 set.cursorline     = true
 set.number         = true -- display ascending line numbers
 set.numberwidth    = 4    -- nCols to use for the line number
---set.guicursor      = ""   -- fat cursor **see dracula.lua
+set.guicursor      = ""   -- fat cursor **works w/ dracula.lua
 
 --- BACKEND ---
 --set.nostartofline = true -- Off: cursor is kept in the same column #ERR

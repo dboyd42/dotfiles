@@ -9,7 +9,7 @@ vim.g.maplocalleader = '\\' -- Backslash
 
 --[[ META_FILE_EDITS --------------------------------------------------------]]
 map('c', 'W<CR>', ':w<CR>', opts)
-map('c', 'w<CR>', ':StripWhitespaceOnChangedLines<CR>:w<CR>', opts)
+-- map('c', 'w<CR>', ':StripWhitespaceOnChangedLines<CR>:w<CR>', opts)
 -- Reload Lua file (Checks for syntax errors)
 map('n', '<localleader>rl', ':luafile %<CR>', { noremap = true })
 map('n', '<localleader>s', ':echo "Use \\<localleader\\>s[s|v]"<CR>', opts )

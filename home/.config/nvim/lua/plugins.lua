@@ -74,6 +74,7 @@ return require('packer').startup(function(use)
          after = 'nvim-treesitter',
          requires = 'nvim-treesitter/nvim-treesitter'
   }
+  -- use { "svermeulen/text-to-colorscheme.nvim" }    -- AI Colorschemes
   use { 'Zeioth/markmap.nvim',                        -- Mindmap Generator
         -- REQUIRES: `sudo npm install -g markmap-cli`
   }

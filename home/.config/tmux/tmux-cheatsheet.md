@@ -5,14 +5,20 @@
 
 ## From Terminal
 
-| Category       | Shortcut                  | Description            |
-|----------------|---------------------------|------------------------|
-| General        |                           |                        |
-|                | `new-window "<shellCmd>"` | In new window, run cmd |
-|                |                           |                        |
-| Sessions       | `attach -t <sessName>`    | attach des`t`ination   |
-| \|---> Windows |                           |                        |
-| \|---> Panes   |                           |                        |
+| Category       | Shortcut                  | Description                |
+|----------------|---------------------------|----------------------------|
+| General        |                           |                            |
+|                | `new-window "<shellCmd>"` | In new window, run cmd     |
+|                |                           |                            |
+| Sessions       | `attach -t <sessName>`    | attach `t`arget            |
+|                | `<...> -d`                | `d`etach upon creation     |
+|                | `send-keys -t <sessName>` | Send following cmd -> sess |
+|                | ... `'cd ~/devprj' C-m`   | ..cmd -> sess (use quotes) |
+|                | ... `C-m`                 | ..`Enter` key -> sess      |
+|                |                           |                            |
+|                |                           |                            |
+| \|---> Windows |                           |                            |
+| \|---> Panes   |                           |                            |
 
 ## Inside Tmux
 

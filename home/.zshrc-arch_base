@@ -10,6 +10,13 @@ fi
 # and for PIP pkgs.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
+# Add Ruby to $PATH
+if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ] ;
+  then PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+else
+  echo "Install Ruby, yo!"
+fi
+
 # Path to your oh-my-zsh installation.
 #installation via script from github
 export ZSH="/home/$USER/.oh-my-zsh"

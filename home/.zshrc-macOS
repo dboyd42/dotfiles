@@ -90,7 +90,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source /opt/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /opt/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -137,8 +137,22 @@ bindkey '^ ' autosuggest-accept # Accept autosuggest through Spacebar
 bindkey -r '^L'           # -release bindkey mapping
 bindkey '^L' clear-screen # Bind custom widget to Ctrl-L
 
+###
+### Autojump Config
+###
+export FPATH="$FPATH:/opt/local/share/zsh/site-functions/"
+if [ -f /opt/local/etc/profile.d/autojump.sh ]; then
+. /opt/local/etc/profile.d/autojump.sh
+fi
+# To use zsh tab completion, load compinit in your .zshrc:
+autoload -U compinit; compinit
+
+###
+### p10k
+###
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Resolve remnant characters when tab completing in ZSH
+# ZSH & TMUX: Resolve remnant characters when using tab completion
 export LC_ALL="en_US.UTF-8"
+source /Users/bhatm/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

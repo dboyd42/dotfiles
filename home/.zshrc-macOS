@@ -122,6 +122,7 @@ source $ZSH/oh-my-zsh.sh
 ### Imported from dotfiles/.install.linux.zsh ###\n\
 ###-------------------------------------------###\n\
 source ~/.zsh_aliases           # Source ZSH aliases
+source ~/.kayes
 setopt NO_BEEP                  # Annoying beep goes away
 
 #  BINDKEYS: '^['->ALT '[Z'->Shift
@@ -156,3 +157,21 @@ autoload -U compinit; compinit
 # ZSH & TMUX: Resolve remnant characters when using tab completion
 export LC_ALL="en_US.UTF-8"
 source /Users/bhatm/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+eval 
+            fuck () {
+                TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+                export TF_SHELL=zsh;
+                export TF_ALIAS=fuck;
+                TF_SHELL_ALIASES=$(alias);
+                export TF_SHELL_ALIASES;
+                TF_HISTORY="$(fc -ln -10)";
+                export TF_HISTORY;
+                export PYTHONIOENCODING=utf-8;
+                TF_CMD=$(
+                    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+                ) && eval $TF_CMD;
+                unset TF_HISTORY;
+                export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+                test -n "$TF_CMD" && print -s $TF_CMD
+            }
+        

@@ -19,9 +19,10 @@ return require('packer').startup(function(use)
   use 'dhruvasagar/vim-table-mode'                    -- Table Generator
   use 'eandrju/cellular-automaton.nvim'               -- Obfuscate code
   use({ 'iamcco/markdown-preview.nvim',               -- Markdown Preview
-    run = 'cd app && npm install',
-    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
-    ft = { 'markdown' },
+   run = 'cd app && npm install',
+   setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
+   ft = { 'markdown' },
+   -- still need to run `:call mkdp#util#install()`
   })
   use({ "jackMort/ChatGPT.nvim",                     -- ChatGPT
     config = function()                               -- #TODO:

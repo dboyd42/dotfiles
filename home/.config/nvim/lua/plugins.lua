@@ -18,11 +18,19 @@ return require('packer').startup(function(use)
   use 'derektata/lorem.nvim'                          -- Lorem Ipsum generator
   use 'dhruvasagar/vim-table-mode'                    -- Table Generator
   use 'eandrju/cellular-automaton.nvim'               -- Obfuscate code
-  use({ 'iamcco/markdown-preview.nvim',               -- Markdown Preview
-   run = 'cd app && npm install',
-   setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
-   ft = { 'markdown' },
-   -- still need to run `:call mkdp#util#install()`
+  use({ "iamcco/markdown-preview.nvim",               -- Markdown Preview
+    run = function() vim.fn["mkdp#util#install"]() end,
+    --[[ ArchLinux:
+      1. May still need to run `:call mkdp#util#install()`
+      *Note: testing is required: macOS works with current configs
+    --]]
+    --[[
+      macOS:
+        1. Install the plugin normally
+        2. `cd $HOME/.local/share/nvim/site/pack/packer/start`
+        ?. `export NODE_OPTIONS=--openssl-legacy-provider`
+        3. `yarn install && yarn upgrade`
+    --]]
   })
   use({ "jackMort/ChatGPT.nvim",                     -- ChatGPT
     config = function()                               -- #TODO:

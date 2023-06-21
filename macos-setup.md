@@ -10,13 +10,13 @@
 1. Install Dependencies:
 
 ``` bash
-### Environment setup
-
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Other dependencies
-sudo port install lsd neovim ripgrep npm9 go yarn
+brew install rust php luarocks
+sudo port install lsd neovim ripgrep npm9 go yarn fd wget openjdk20 julia
+sudo gem install neovim
 
 # Install a bunch of fonts --OPTIONAL (Or just install what you need)
 # 1. Add Cask-Fonts to Formulae
@@ -31,11 +31,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 # Powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# MarkdownPreview plugin dependency
+# Nvim plugin dependencies
 sudo npm install markdown-cli --global
-# Markmap plugin Dependency
-sudo npm install markdown-cli --global
-
+sudo npm install markmap-cli --global
+# PHP Composer (pkgMgr)
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer 
+sudo chmod +x /usr/local/bin/composer
 
 # Install Packer --a NeoVim plugin manager
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\

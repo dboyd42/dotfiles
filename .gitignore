@@ -1,6 +1,7 @@
 #Vim
 *~
 *.swp
+packer_compiled.lua
 
 #C/C++
 *.o

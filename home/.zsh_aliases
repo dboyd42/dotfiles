@@ -108,8 +108,8 @@ alias r2pall='for file in ./*; do if [ ${file: -4} = '.rst' ]; then RST=$file; P
 rmd() { pandoc -f gfm $1 | lynx -stdin }
 alias revEngBin-crkPasswd1="objdump -d $FILE | grep cmp | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
 alias revEngBin-crkPasswd2="objdump -d $FILE | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
-alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/sans/'
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+# alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/sans/'
+# [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 alias sbox='cd ~/Documents/code/sandbox/'
 alias se='sudoedit'
 alias sz='source ~/.zshrc'

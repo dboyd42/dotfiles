@@ -90,7 +90,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-#source /opt/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -156,7 +155,6 @@ autoload -U compinit; compinit
 
 # ZSH & TMUX: Resolve remnant characters when using tab completion
 export LC_ALL="en_US.UTF-8"
-source /Users/bhatm/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval 
             fuck () {
                 TF_PYTHONIOENCODING=$PYTHONIOENCODING;

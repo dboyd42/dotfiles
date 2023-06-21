@@ -19,9 +19,20 @@ return require('packer').startup(function(use)
   use 'dhruvasagar/vim-table-mode'                    -- Table Generator
   use 'eandrju/cellular-automaton.nvim'               -- Obfuscate code
   use({ 'iamcco/markdown-preview.nvim',               -- Markdown Preview
-    run = 'cd app && npm install',
-    setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
-    ft = { 'markdown' },
+   run = 'cd app && npm install',
+   setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
+   ft = { 'markdown' },
+   -- still need to run `:call mkdp#util#install()`
+  })
+  use({ "jackMort/ChatGPT.nvim",                     -- ChatGPT
+    config = function()                               -- #TODO:
+      require("chatgpt").setup()                      --  1. implement pwMgr
+    end,                                              --     sess w/ API key
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   })
   use 'lambdalisue/suda.vim'                          -- rw buffers w/ sudo
   use 'mbbill/undotree'                               -- Undo history tree
@@ -35,7 +46,8 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'                          -- Icons (LSP completion)
   use 'rcarriga/nvim-notify'                          -- Notification Mgr
   use { 'romgrk/barbar.nvim',                         -- Barbar 2nd: Tabliner
-        wants = 'nvim-web-devicons' }
+        wants = {'nvim-tree/nvim-web-devicons',
+                 'lewis6991/gitsigns.nvim' }}
   use { 'theprimeagen/harpoon',                       -- File marker
         requires = { 'nvim-lua/plenary.nvim' }}
   use 'tpope/vim-fugitive'                            -- Git integration
@@ -63,6 +75,7 @@ return require('packer').startup(function(use)
          after = 'nvim-treesitter',
          requires = 'nvim-treesitter/nvim-treesitter'
   }
+  -- use { "svermeulen/text-to-colorscheme.nvim" }    -- AI Colorschemes
   use { 'Zeioth/markmap.nvim',                        -- Mindmap Generator
         -- REQUIRES: `sudo npm install -g markmap-cli`
   }

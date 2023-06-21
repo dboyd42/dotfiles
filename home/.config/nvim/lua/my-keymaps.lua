@@ -9,7 +9,7 @@ vim.g.maplocalleader = '\\' -- Backslash
 
 --[[ META_FILE_EDITS --------------------------------------------------------]]
 map('c', 'W<CR>', ':w<CR>', opts)
-map('c', 'w<CR>', ':StripWhitespaceOnChangedLines<CR>:w<CR>', opts)
+-- map('c', 'w<CR>', ':StripWhitespaceOnChangedLines<CR>:w<CR>', opts)
 -- Reload Lua file (Checks for syntax errors)
 map('n', '<localleader>rl', ':luafile %<CR>', { noremap = true })
 map('n', '<localleader>s', ':echo "Use \\<localleader\\>s[s|v]"<CR>', opts )
@@ -28,8 +28,10 @@ map('n', '<localleader>ss', ':w<CR>:so<CR>:PackerSync<CR>', opts)
 map('n', '<leader>tm', ':TableModeToggle<CR>', opts)
 
 --[[ NAVIGATION -------------------------------------------------------------]]
+-- Normal mode
 map('n', '<C-l>', ':bn<CR>', opts)  -- Next buffer
 map('n', '<C-h>', ':bp<CR>', opts)  -- Previous buffer
+-- Insert mode
 map('i', '<C-l>', '<ESC>la', opts)  -- Next char
 map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 
@@ -37,7 +39,7 @@ map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 --map('c', 'delduprows', '%s/^\(.*\)\(\n\1\)\+$/\1/', opts) -- Del duplicate rows
 map('i', '<C-d>', '<Del>', opts)       -- Del char on cursor
 map('i', '<localleader>ts', '<C-R>=strftime("%F")<CR>', opts) -- Insert today's date
-map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char
+map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char --TMUX <prefix>
 map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
 map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
 map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert today's date

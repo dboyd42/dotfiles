@@ -10,14 +10,12 @@
 ( 2023-06-03 )
 
 - Finish this  README.md
-- Fix [BarBar][BB] keymaps
 - Document keymaps:
   - `:nmap`, `:vmap`, `imap`
 - List [Plugins](./lua/plugins.lua)
 
 ---
 
-<!-- #TODO
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -35,8 +33,6 @@
 - [Support](#support)
 - [License](#license)
 
--->
-
 ## Introduction
 
 After 3.5 years of using Vim, 6 months of using NeoVim, 2 weeks of learning
@@ -50,6 +46,8 @@ from the NeoVim community and their amazing plugin developers.
 process.*
 
 ### 1. Prerequisites
+
+#### Arch Linux
 
 1. Install a bunch of packages:
 
@@ -197,6 +195,26 @@ issues I've come across:
     1. Check the plugin's official github page
     2. [Reddit][RED] and [StackOverflow][SO] have proven to point towards the
         correct docs.
+
+#### macOS
+
+:warning: This setup is incomplete as it's been built on top of a previous
+build.
+
+#### Fonts and Icons
+
+``` bash
+# Install Homebrew Fonts 
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font
+```
+
+#### Post-Install Plugins
+
+``` bash
+# For MarkdownPreview post install (run inside NVim)
+:call mkdp#util#install()
+```
 
 <!-- #TODO
 ## FAQ

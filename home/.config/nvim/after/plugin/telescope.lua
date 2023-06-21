@@ -15,7 +15,7 @@ local map = vim.keymap.set
 -- map('n', '<leader>fh', builtin.help_tags, {})    --default = fh
 --- Telescope ..............................................................>>>
 map('n', '<leader>ff', ':Telescope find_files<CR>')
-map('n', '<leader>tgg', ':Telescope live_grep<CR>')
+map('n', '<leader>tlg', ':Telescope live_grep<CR>')
 map('n', '<leader>tgb', ':Telescope git_branches<CR>')
 map('n', '<leader>tgc', ':Telescope git_commits<CR>')
 map('n', '<leader>tgf', ':Telescope git_files<CR>')

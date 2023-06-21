@@ -3,6 +3,9 @@
 *.swp
 packer_compiled.lua
 
+#NVim
+packer_compiled.lua
+
 #C/C++
 *.o
 *.d

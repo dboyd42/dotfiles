@@ -50,5 +50,23 @@
 | Layouts   | `<prefix>Space` | Cycle through pane layouts        |
 | Kill Pane | `<prefix>x`     | All my e`x`es are panes in my ass |
 
+# Other
+
+## Install TMUX Plugin Manager (tpm)
+
+1. Install TPM 
+
+`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
+2. Install your plugins
+
+``` bash
+# 1. Open TMUX 
+tmux
+
+# 2. Install plugins from $HOME/.config/tmux.conf
+<prefix>I
+```
+
 <!-- Reference Links -->
 

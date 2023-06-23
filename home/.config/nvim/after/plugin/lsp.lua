@@ -8,15 +8,15 @@ lsp.preset("recommended")
 -- Install new LSPs here!
 -- Ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp.ensure_installed({
-  'bashls',
+  -- 'bashls',
   -- 'html',
-  'glint', -- Go lint
-  'gopls', -- Go LSP
+  -- 'glint', -- Go lint
+  -- 'gopls', -- Go LSP
   -- 'jq-lsp', -- JQ LSP ;; Manual Installation Required: `:MasonInstall jq-lsp`
-  'jsonls',
+  -- 'jsonls',
   'lua_ls', --lua-language-server
-  'powershell_es',
-  'pylsp', -- python-lsp-server
+  -- 'powershell_es',
+  -- 'pylsp', -- python-lsp-server
   -- 'tsserver', --typescript
 })
 

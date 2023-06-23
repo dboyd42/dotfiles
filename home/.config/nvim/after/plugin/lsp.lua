@@ -9,7 +9,7 @@ lsp.preset("recommended")
 -- Ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp.ensure_installed({
   'bashls',
-  'html',
+  -- 'html',
   'glint', -- Go lint
   'gopls', -- Go LSP
   -- 'jq-lsp', -- JQ LSP ;; Manual Installation Required: `:MasonInstall jq-lsp`
@@ -17,7 +17,7 @@ lsp.ensure_installed({
   'lua_ls', --lua-language-server
   'powershell_es',
   'pylsp', -- python-lsp-server
-  'tsserver',
+  -- 'tsserver', --typescript
 })
 
 -- Fix Undefined global 'vim' lsp.configure('lua-language-server', {

@@ -24,8 +24,7 @@ return require('packer').startup(function(use)
       1. May still need to run `:call mkdp#util#install()`
       *Note: testing is required: macOS works with current configs
     --]]
-    --[[
-      macOS:
+    --[[ macOS:
         1. Install the plugin normally
         2. `cd $HOME/.local/share/nvim/site/pack/packer/start`
         ?. `export NODE_OPTIONS=--openssl-legacy-provider`
@@ -99,6 +98,7 @@ return require('packer').startup(function(use)
               end,
           },
           {'williamboman/mason-lspconfig.nvim'}, -- Opt'l
+          {'jose-elias-alvarez/null-ls.nvim'}, -- for formatters and linters
 
           -- Autocompletion
           {'hrsh7th/cmp-buffer'},       -- Opt'l: curr->file suggestions

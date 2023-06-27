@@ -57,7 +57,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ### Neovim 
 
-#### tree-siiter executable not installed
+#### tree-siiter 
+
+##### 1. tree-sitter executable not installed
 
 | Resolved | :heavy_check_mark: |
 |----------|--------------------|
@@ -68,9 +70,23 @@ Open Neovim and install tree-sitter via Mason:
 :MasonInstall tree-sitter-cli
 ```
 
+##### 2. clang: error: no such file or directory: 'src/scanner.cc' 
+
+| Resolved  | :heavy_check_mark:   |
+|-----------|----------------------|
+| Reference | [Github #4428][4428] |
+
+Update nvim-treesitter before syncing Packer plugins.
+
+``` bash
+nvim +PackerUpdate
+:PackerSync
+```
+
 <!-- References -->
 
 [brew]: https://brew.sh/
 [port-install]: https://guide.macports.org/chunked/installing.macports.html
 [nvim-install]: https://github.com/neovim/neovim/wiki/Installing-Neovim
 [omz-install]: https://ohmyz.sh/#install
+[4428]: https://github.com/nvim-treesitter/nvim-treesitter/issues/4428

@@ -53,6 +53,21 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 1. Install NeoVim's plugins and configs
   i. Open NeoVim and run `:PackerSync` a few times. You may need to exit then reopen NeoVim to successfully install all the plugins; including Mason's LSPs.
 
+## Troubleshooting
+
+### Neovim 
+
+#### tree-siiter executable not installed
+
+| Resolved | :heavy_check_mark: |
+|----------|--------------------|
+
+Open Neovim and install tree-sitter via Mason:
+
+``` bash
+:MasonInstall tree-sitter-cli
+```
+
 <!-- References -->
 
 [brew]: https://brew.sh/

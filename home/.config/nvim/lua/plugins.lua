@@ -111,7 +111,7 @@ return require('packer').startup(function(use)
           {'hrsh7th/cmp-nvim-lua'},     -- Opt'l
           {'hrsh7th/cmp-look'},         -- Opt'l
           {'hrsh7th/cmp-path'},         -- Opt'l: filesystem suggestions
-          {'jose-elias-alvarez/null-ls.nvim'}, -- formatters and linters: spell
+          -- {'jose-elias-alvarez/null-ls.nvim'}, -- formatters and linters: spell
           -- {'hrsh7th/cmp-spell'},        -- Opt'l
           -- {'f3fora/cmp-spell'},         -- Opt'l: spell checker
           -- {'uga-rosa/cmp-dictionary',

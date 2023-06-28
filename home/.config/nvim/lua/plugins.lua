@@ -92,7 +92,8 @@ return require('packer').startup(function(use)
   use { 'Zeioth/markmap.nvim',                        -- Mindmap Generator
         -- REQUIRES: `sudo npm install -g markmap-cli`
   } --end markmap
-  use ('nvim-treesitter/playground' )   -- TS's AST (Abstract Syntax Tree)
+  use 'nvim-treesitter/playground'    -- TS's AST (Abstract Syntax Tree)
+  use 'voldikss/vim-floaterm'                         -- FloatermToggle
   use { 'VonHeikemen/lsp-zero.nvim',                  -- LSP Mgr* (2 of 2)
         branch = 'v2.x',
         requires = {

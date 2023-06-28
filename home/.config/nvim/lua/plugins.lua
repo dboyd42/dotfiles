@@ -98,7 +98,6 @@ return require('packer').startup(function(use)
               end,
           },
           {'williamboman/mason-lspconfig.nvim'}, -- Opt'l
-          -- {'jose-elias-alvarez/null-ls.nvim'}, -- for formatters and linters
 
           -- Autocompletion
           {'hrsh7th/cmp-buffer'},       -- Opt'l: curr->file suggestions
@@ -111,6 +110,10 @@ return require('packer').startup(function(use)
           {'hrsh7th/cmp-path'},         -- Opt'l: filesystem suggestions
           -- {'hrsh7th/cmp-spell'},        -- Opt'l
           -- {'f3fora/cmp-spell'},         -- Opt'l: spell checker
+          -- {'uga-rosa/cmp-dictionary',
+          {'jose-elias-alvarez/null-ls.nvim'}, -- for formatters and linters
+          --     wants = {'kkharji/sqlite.lua'}, -- Opt'l: Only if SQLite enabled
+          -- },
           {'hrsh7th/nvim-cmp'},         -- Required
           {'saadparwaiz1/cmp_luasnip'}, -- Opt'l: custom snippet suggestions
 

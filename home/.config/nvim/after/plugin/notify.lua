@@ -1,7 +1,9 @@
-vim.notify = require("notify")  -- Global: all plugins set to use notify
 local notify = require('notify') -- Set as local default notify function
 local map = vim.keymap.set -- Nvim API func (Lua exclusive)
 local opts = { silent = true }
+
+-- Redirect Vim's builtin notification system for all plugins set to use notify
+vim.notify = require("notify")
 
 notify.setup({
   background_colour = "#000000",

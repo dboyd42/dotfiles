@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
         ?. `export NODE_OPTIONS=--openssl-legacy-provider`
         3. `yarn install && yarn upgrade`
     --]]
-  })
+  }) --end markdown-preview
   use({ "jackMort/ChatGPT.nvim",                     -- ChatGPT
     config = function()                               -- #TODO:
       require("chatgpt").setup()                      --  1. implement pwMgr
@@ -39,11 +39,8 @@ return require('packer').startup(function(use)
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
-    }
+    } --end requires
   }) --end ChatGPT
-  -- use {'jose-elias-alvarez/null-ls.nvim', -- for formatters and linters: spell
-      -- wants = {'kkharji/sqlite.lua'}, -- Opt'l: Only if SQLite enabled
-  -- } --end Null-LS
   use 'lambdalisue/suda.vim'                          -- rw buffers w/ sudo
   use 'mbbill/undotree'                               -- Undo history tree
   use 'Mofiqul/dracula.nvim'                          -- Colorscheme: Dracula
@@ -51,14 +48,15 @@ return require('packer').startup(function(use)
   use {'numToStr/Comment.nvim',                       -- Un/Commenting '//'
         config = function()
           require('Comment').setup()
-        end}
+        end
+  } --end comment
   use 'nvim-tree/nvim-web-devicons'                   -- Barbar 1st: Icons
   use 'onsails/lspkind-nvim'                          -- Icons (LSP completion)
   use 'preservim/tagbar'                              -- Class outline viewer
   --[[ macos: https://docs.ctags.io/en/latest/osx.html
                 brew tap universal-ctags/universal-ctags
                 brew install --HEAD universal-ctags
-  --]]
+  --]] --end tagbar
   use 'rcarriga/nvim-notify'                          -- Notification Mgr
   use { 'romgrk/barbar.nvim',                         -- Barbar 2nd: Tabliner
         wants = {'nvim-tree/nvim-web-devicons',
@@ -72,28 +70,28 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim',              -- Fuzzy Finder
         tag = '0.1.x',
         requires = { 'nvim-lua/plenary.nvim' }
-  }
+  } --end telescope
   use { 'kyazdani42/nvim-tree.lua',                   -- File Explorer
         tag = 'nightly', -- opt'l, updated every week.  (see issue #1193)
         requires = { 'kyazdani42/nvim-web-devicons', } -- opt'l file icons
-  }
+  } --end nvim-tree
   use { 'nvim-lualine/lualine.nvim',                  -- LuaLine
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  } --end lualine
   use { 'nvim-treesitter/nvim-treesitter',            -- Treesitter
         run = ':TSUpdate'
-  }
+  } --end treesitter
   use {'nvim-treesitter/nvim-treesitter-refactor',    -- TS Refactor
          requires = "nvim-treesitter/nvim-treesitter"
-  }
+  } --end refractor
   use { 'nvim-treesitter/nvim-treesitter-textobjects',-- TS Add'l txtobjs
          after = 'nvim-treesitter',
          requires = 'nvim-treesitter/nvim-treesitter'
-  }
+  } --end treesitter-textobjects
   -- use { "svermeulen/text-to-colorscheme.nvim" }    -- AI Colorschemes
   use { 'Zeioth/markmap.nvim',                        -- Mindmap Generator
         -- REQUIRES: `sudo npm install -g markmap-cli`
-  }
+  } --end markmap
   use ('nvim-treesitter/playground' )   -- TS's AST (Abstract Syntax Tree)
   use { 'VonHeikemen/lsp-zero.nvim',                  -- LSP Mgr* (2 of 2)
         branch = 'v2.x',
@@ -104,7 +102,7 @@ return require('packer').startup(function(use)
               run = function()
                   pcall(vim.cmd, 'MasonUpdate')
               end,
-          },
+          }, --end mason
           {'williamboman/mason-lspconfig.nvim'}, -- Opt'l
 
           -- Autocompletion
@@ -116,18 +114,15 @@ return require('packer').startup(function(use)
           {'hrsh7th/cmp-nvim-lua'},     -- Opt'l
           {'hrsh7th/cmp-look'},         -- Opt'l
           {'hrsh7th/cmp-path'},         -- Opt'l: filesystem suggestions
-          -- {'jose-elias-alvarez/null-ls.nvim'}, -- formatters and linters: spell
-          -- {'hrsh7th/cmp-spell'},        -- Opt'l
-          -- {'f3fora/cmp-spell'},         -- Opt'l: spell checker
-          -- {'uga-rosa/cmp-dictionary',
+          -- {'uga-rosa/cmp-dictionary'},
           {'hrsh7th/nvim-cmp'},         -- Required
           {'saadparwaiz1/cmp_luasnip'}, -- Opt'l: custom snippet suggestions
 
           -- Snippets
           {'L3MON4D3/LuaSnip'},                  -- Required
           {'rafamadriz/friendly-snippets'},      -- Opt'l
-      }
-  }
+      } --end requre
+  } --end lsp-zero
 
 end) -- end Packer
 --[[ ------------------------------------------------------------------------]]

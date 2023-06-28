@@ -98,7 +98,7 @@ return require('packer').startup(function(use)
               end,
           },
           {'williamboman/mason-lspconfig.nvim'}, -- Opt'l
-          {'jose-elias-alvarez/null-ls.nvim'}, -- for formatters and linters
+          -- {'jose-elias-alvarez/null-ls.nvim'}, -- for formatters and linters
 
           -- Autocompletion
           {'hrsh7th/cmp-buffer'},       -- Opt'l: curr->file suggestions

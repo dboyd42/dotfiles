@@ -74,6 +74,7 @@ cmp.setup({
   mapping = {
     -- Confirm w/o selecting the item
     ['<C-Space>'] = cmp.mapping.confirm({select = true}),
+    ['<CR>'] = cmp.mapping.confirm({select = true}),
     -- ['<CR>'] = cmp.mapping.confirm({select = true}),
   }, -- END mapping
   -- Make the first item in completion menu always be selected

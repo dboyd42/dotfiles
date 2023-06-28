@@ -5,7 +5,7 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
--- Install new LSPs here!
+-- Install new LSPs here! (via Mason)
 -- Ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp.ensure_installed({
   'bashls',
@@ -75,6 +75,7 @@ cmp.setup({
     -- Confirm w/o selecting the item
     ['<C-Space>'] = cmp.mapping.confirm({select = true}),
     ['<CR>'] = cmp.mapping.confirm({select = true}),
+    ['C-c'] = cmp.mapping.abort(),
     -- ['<CR>'] = cmp.mapping.confirm({select = true}),
   }, -- END mapping
   -- Make the first item in completion menu always be selected

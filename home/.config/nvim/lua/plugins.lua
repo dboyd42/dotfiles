@@ -40,7 +40,10 @@ return require('packer').startup(function(use)
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
     }
-  })
+  }) --end ChatGPT
+  -- use {'jose-elias-alvarez/null-ls.nvim', -- for formatters and linters: spell
+      -- wants = {'kkharji/sqlite.lua'}, -- Opt'l: Only if SQLite enabled
+  -- } --end Null-LS
   use 'lambdalisue/suda.vim'                          -- rw buffers w/ sudo
   use 'mbbill/undotree'                               -- Undo history tree
   use 'Mofiqul/dracula.nvim'                          -- Colorscheme: Dracula
@@ -108,12 +111,10 @@ return require('packer').startup(function(use)
           {'hrsh7th/cmp-nvim-lua'},     -- Opt'l
           {'hrsh7th/cmp-look'},         -- Opt'l
           {'hrsh7th/cmp-path'},         -- Opt'l: filesystem suggestions
+          {'jose-elias-alvarez/null-ls.nvim'}, -- formatters and linters: spell
           -- {'hrsh7th/cmp-spell'},        -- Opt'l
           -- {'f3fora/cmp-spell'},         -- Opt'l: spell checker
           -- {'uga-rosa/cmp-dictionary',
-          {'jose-elias-alvarez/null-ls.nvim'}, -- for formatters and linters
-          --     wants = {'kkharji/sqlite.lua'}, -- Opt'l: Only if SQLite enabled
-          -- },
           {'hrsh7th/nvim-cmp'},         -- Required
           {'saadparwaiz1/cmp_luasnip'}, -- Opt'l: custom snippet suggestions
 
@@ -122,8 +123,8 @@ return require('packer').startup(function(use)
           {'rafamadriz/friendly-snippets'},      -- Opt'l
       }
   }
-end)
 
+end) -- end Packer
 --[[ ------------------------------------------------------------------------]]
 --[[ ------------------------ Help Documentation ----------------------------]]
 --[[

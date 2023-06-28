@@ -54,6 +54,11 @@ return require('packer').startup(function(use)
         end}
   use 'nvim-tree/nvim-web-devicons'                   -- Barbar 1st: Icons
   use 'onsails/lspkind-nvim'                          -- Icons (LSP completion)
+  use 'preservim/tagbar'                              -- Class outline viewer
+  --[[ macos: https://docs.ctags.io/en/latest/osx.html
+                brew tap universal-ctags/universal-ctags
+                brew install --HEAD universal-ctags
+  --]]
   use 'rcarriga/nvim-notify'                          -- Notification Mgr
   use { 'romgrk/barbar.nvim',                         -- Barbar 2nd: Tabliner
         wants = {'nvim-tree/nvim-web-devicons',

@@ -148,7 +148,7 @@ export LANG=en_US.UTF-8
 
 
 ####   ARCH-LINUX SETTINGS   ####
-export PAGER='bat --color=always'
+export PAGER='bat --color=always --theme=Dracula'
 
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

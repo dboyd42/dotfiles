@@ -45,6 +45,7 @@ alias backup-arco='\
         /mnt/backup/"$(date --rfc-3339=s)"'
 # alias bandit0='sshpass -p bandit0 ssh bandit0'
 alias bandit0='sshpass -p bandit0 ssh bandit0@bandit.labs.overthewire.org -p 2220'
+alias bat=' bat --color=always --theme=Dracula'
 alias com='g++ -std=c++1z -o main *.cpp'
 # Print xterm-256-color chart in terminal
 function clicolors() {

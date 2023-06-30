@@ -10,7 +10,7 @@ vim.opt.guicursor = 'a:ver100'  --> Un-hides cursorline word on 1st char
 
 -- Load Local Settings --------------------------------------------------------
 require('plugins')              -- Packer Plugins
-require('my-abbrev')            -- Abbreviations
-require('my-autocmds')          -- Autocommands
-require('my-settings')          -- Personal Settings
-require('my-keymaps')           -- Mappings
+require('abbrev')            -- Abbreviations
+require('autocmds')          -- Autocommands
+require('settings')          -- Personal Settings
+require('keymaps')           -- Mappings

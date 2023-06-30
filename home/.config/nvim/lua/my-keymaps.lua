@@ -18,6 +18,7 @@ map('n', '<localleader>w', ':set wrap!<CR>', opts)
 -- Toggle spell
 -- nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 map('n', '<F7>', ':setlocal spell! spellang=en_us<CR>')
+map('n', '<leader>7', ':setlocal spell! spellang=en_us<CR>')
 
 --[[ PLUGIN_CALLS -----------------------------------------------------------]]
 -- map( MODE([nci], KEYS, CMD, OPTIONS )    --SYNTAX

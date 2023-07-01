@@ -1,5 +1,5 @@
 --fns to pass args to create key mappings
---local map = vim.api.nvim_set_keymap -- depcrecated
+--local map = vim.api.nvim_set_keymap -- deprecated
 local map = vim.keymap.set -- Nvim API func (Lua exclusive)
 local opts = { noremap = true, silent = true }
 -- local opts2 = { silent = true } --Unused local `opts2`
@@ -16,9 +16,8 @@ map('n', '<localleader>s', ':echo "Use \\<localleader\\>s[s|v]"<CR>', opts )
 map('n', '<localleader>sv', ':source $MYVIMRC<CR>', { noremap = true })
 map('n', '<localleader>w', ':set wrap!<CR>', opts)
 -- Toggle spell
--- nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
-map('n', '<F7>', ':setlocal spell! spellang=en_us<CR>')
-map('n', '<leader>7', ':setlocal spell! spellang=en_us<CR>')
+map('n', '<F7>', ':setlocal spell!<CR>')
+map('n', '<leader>7', ':setlocal spell!<CR>')
 
 --[[ PLUGIN_CALLS -----------------------------------------------------------]]
 -- map( MODE([nci], KEYS, CMD, OPTIONS )    --SYNTAX

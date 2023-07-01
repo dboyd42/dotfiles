@@ -47,6 +47,7 @@ set.tw    = 79    -- textwidth
 set.wrap  = true  -- Wrapping enabled
 set.breakindent = false -- Enable break indent (default=false)
 set.undofile = true -- Save undo history
+set.spelllang = "en_us"
 
 --- SEARCHING ---
 set.hlsearch   = true   -- highlight searched matches

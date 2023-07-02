@@ -8,29 +8,29 @@ vim.g.mapleader = ' '	-- Space
 vim.g.maplocalleader = '\\' -- Backslash
 
 --[[ META_FILE_EDITS --------------------------------------------------------]]
-map('c', 'W<CR>', ':w<CR>', opts)
--- map('c', 'w<CR>', ':StripWhitespaceOnChangedLines<CR>:w<CR>', opts)
+map('c', 'W<CR>', '<Cmd>w<CR>', opts)
+-- map('c', 'w<CR>', '<Cmd>StripWhitespaceOnChangedLines<CR>:w<CR>', opts)
 -- Reload Lua file (Checks for syntax errors)
-map('n', '<localleader>rl', ':luafile %<CR>', { noremap = true })
-map('n', '<localleader>s', ':echo "Use \\<localleader\\>s[s|v]"<CR>', opts )
-map('n', '<localleader>sv', ':source $MYVIMRC<CR>', { noremap = true })
-map('n', '<localleader>w', ':set wrap!<CR>', opts)
+map('n', '<localleader>rl', '<Cmd>luafile %<CR>', { noremap = true })
+map('n', '<localleader>s', '<Cmd>echo "Use \\<localleader\\>s[s|v]"<CR>', opts )
+map('n', '<localleader>sv', '<Cmd>source $MYVIMRC<CR>', { noremap = true })
+map('n', '<localleader>w', '<Cmd>set wrap!<CR>', opts)
 -- Toggle spell
-map('n', '<F7>', ':setlocal spell!<CR>')
-map('n', '<leader>7', ':setlocal spell!<CR>')
+map('n', '<F7>', '<Cmd>setlocal spell!<CR>')
+map('n', '<leader>7', '<Cmd>setlocal spell!<CR>')
 
 --[[ PLUGIN_CALLS -----------------------------------------------------------]]
 -- map( MODE([nci], KEYS, CMD, OPTIONS )    --SYNTAX
 map('n', '<leader>e', 'e:NvimTreeToggle<CR>', opts)
-map('n', '<localleader>ss', ':w<CR>:so<CR>:PackerSync<CR>', opts)
+map('n', '<localleader>ss', '<Cmd>w<CR>:so<CR>:PackerSync<CR>', opts)
 
 --[[ Table-Mode -------------------------------------------------------------]]
-map('n', '<leader>tm', ':TableModeToggle<CR>', opts)
+map('n', '<leader>tm', '<Cmd>TableModeToggle<CR>', opts)
 
 --[[ NAVIGATION -------------------------------------------------------------]]
 -- Normal mode
-map('n', '<C-l>', ':bn<CR>', opts)  -- Next buffer
-map('n', '<C-h>', ':bp<CR>', opts)  -- Previous buffer
+map('n', '<C-l>', '<Cmd>bn<CR>', opts)  -- Next buffer
+map('n', '<C-h>', '<Cmd>bp<CR>', opts)  -- Previous buffer
 -- Insert mode
 map('i', '<C-l>', '<ESC>la', opts)  -- Next char
 map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
@@ -47,12 +47,12 @@ map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert to
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --[[ SEARCHES ---------------------------------------------------------------]]
-map('n', '<localleader> ', ':nohl<CR>', opts)  -- Remove search highlighting
+map('n', '<localleader> ', '<Cmd>nohl<CR>', opts)  -- Remove search highlighting
 
 --[[ Bonus Bindings - Woot! Woot! -------------------------------------------]]
 -- Move visual sel up/down and within wrapping lines
-map('v', 'J', ':m \'>+1<CR>gv=gv')
-map('v', 'K', ':m \'<-2<CR>gv=gv')
+map('v', 'J', '<Cmd>m \'>+1<CR>gv=gv')
+map('v', 'K', '<Cmd>m \'<-2<CR>gv=gv')
 
 map('n', 'Y', 'yg$') -- Yank to EOL
 map('n', 'J', 'mzJ`z') --Append line & ret cursor to prev->position
@@ -66,16 +66,16 @@ map('i', '<C-[>', '<Esc>') -- Assists with plugins that don't map C-[ to Esc
 
 --[[ Interactive Sessions ---------------------------------------------------]]
 -- Make curr->file executable
-map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+map("n", "<leader>x", "<Cmd>!chmod +x %<CR>", { silent = true })
 
 -- Run Prgm in split terminal then quit (doesn't close buffer)
 --map('n', '<leader>rp', ':sp<CR> :term python3 %<CR> :startinsert<CR>')
-map('n', '<leader>rp', ':sp<CR> :term python3 %<CR>') -- Run Python
-map('n', '<leader>rj', ':sp<CR> :term nodejs %<CR>')  -- Run JS prgm
-map('n', '<leader>rb', ':sp<CR> :term bash %<CR>')    -- Run Bash
-map('n', '<leader>rg', ':sp<CR> :term go %<CR>')      -- Run Go
-map('n', '<leader>rl', ':sp<CR> :term lua %<CR>')     -- Run Lua
+map('n', '<leader>rp', '<Cmd>sp<CR> <Cmd>term python3 %<CR>') -- Run Python
+map('n', '<leader>rj', '<Cmd>sp<CR> <Cmd>term nodejs %<CR>')  -- Run JS prgm
+map('n', '<leader>rb', '<Cmd>sp<CR> <Cmd>term bash %<CR>')    -- Run Bash
+map('n', '<leader>rg', '<Cmd>sp<CR> <Cmd>term go %<CR>')      -- Run Go
+map('n', '<leader>rl', '<Cmd>sp<CR> <Cmd>term lua %<CR>')     -- Run Lua
 
 -- Concealment
-map('n', '<leader>mr', '<cmd>CellularAutomaton make_it_rain<CR>')
-map('n', '<leader>mgof', '<cmd>CellularAutomaton game_of_life<CR>')
+map('n', '<leader>mr', '<Cmd>CellularAutomaton make_it_rain<CR>')
+map('n', '<leader>mgof', '<Cmd>CellularAutomaton game_of_life<CR>')

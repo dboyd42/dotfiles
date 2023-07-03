@@ -14,7 +14,7 @@ lsp.ensure_installed({
   -- 'gopls', -- Go LSP
   -- 'jq-lsp', -- JQ LSP ;; Manual Installation Required: `:MasonInstall jq-lsp`
   'jsonls', -- JSON
-  'ltex', -- LTeX LSP for Language Tool with support for: md, txt, etc
+  -- 'ltex', -- LTeX LSP for Language Tool with support for: md, txt, etc
   'lua_ls', --lua-language-server
   -- 'powershell_es',
   'pylsp', -- Python-lsp-server

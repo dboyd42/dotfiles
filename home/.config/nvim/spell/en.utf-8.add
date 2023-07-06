@@ -6,3 +6,7 @@ keymap
 Proxmox
 Proxmox
 passthrough
+nmap
+IPs
+NSE
+SMB

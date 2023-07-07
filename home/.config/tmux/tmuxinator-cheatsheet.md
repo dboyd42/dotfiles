@@ -3,6 +3,16 @@
 **Author:** David Boyd<br>
 **Date:** 2023-06-17
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Commands](#commands)
+
+## Introduction
+
+Create and manage tmux sessions easily.
+
 ## Installation
 
 - Dependencies: Ruby
@@ -14,6 +24,8 @@ gem install tmuxinator
 # 2. Add Ruby to $PATH if not already added to your RC file
 export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 ```
+
+## Commands
 
 | Command                   | Description                                   |
 |---------------------------|-----------------------------------------------|

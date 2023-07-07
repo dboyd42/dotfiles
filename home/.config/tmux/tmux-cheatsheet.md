@@ -30,9 +30,9 @@
 
 ## Sessions
 
-| Action | Shortcut | Description |
-|--------|----------|-------------|
-|        |          |             |
+| Action     | Shortcut    | Description    |
+|------------|-------------|----------------|
+| Navigation | `<prefix>s` | `s`ession mgmt |
 
 ## Windows
 
@@ -45,10 +45,12 @@
 
 ## Panes
 
-| Action    | Shortcut        | Description                       |
-|-----------|-----------------|-----------------------------------|
-| Layouts   | `<prefix>Space` | Cycle through pane layouts        |
-| Kill Pane | `<prefix>x`     | All my e`x`es are panes in my ass |
+| Action         | Shortcut        | Description                       |
+|----------------|-----------------|-----------------------------------|
+| Layouts        | `<prefix>Space` | Cycle through pane layouts        |
+| Kill Pane      | `<prefix>x`     | All my e`x`es are panes in my ass |
+| Join self.pane | `<prefix>j`     | Joins this.pane to another w.p    |
+| Send self.pane | `<prefix><C-s>` | Sends another w.pane to this.pane |
 
 # Other
 

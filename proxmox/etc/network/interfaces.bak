@@ -1,5 +1,6 @@
 # Author: David Boyd
-# Date  : 2023-04-11
+# Update: 2023-07-18
+#   Date: 2023-04-11
 # Descr : This file serves as the backup config for a Linux-Bridge.
 
 auto lo
@@ -9,8 +10,8 @@ iface eno1 inet manual
 
 auto vmbr1
 iface vmbr1 inet static
-	address 192.168.0.111/24
-	gateway 192.168.0.1
+	address x.x.x.x/24 # PVE's actual IP RFC 1918 address
+	gateway x.x.x.1    # PVE's gateway address
 	bridge-ports eno1
 	bridge-stp off
 	bridge-fd 0

@@ -61,6 +61,7 @@ function clicolors() {
     c=''
 }
 alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
+alias docker-daddy='docker run -it kalilinux/kali-rolling'
 alias fdisk='sudo fdisk'
 alias flipper='/home/bhatm/Documents/code/repos/dboyd42/scripting/bash/web-scrapers/flipper-zero.sh'
 # >>>> Git aliases
@@ -113,7 +114,7 @@ alias revEngBin-crkPasswd2="objdump -d $FILE | cut -d'x' -f2 | cut -d',' -f1 | x
 # [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 alias sbox='cd ~/Documents/code/sandbox/'
 alias se='sudoedit'
-alias sz='source ~/.zshrc'
+alias sz='source ~/.zshrc && echo "sourced ~/.zshrc"'
 alias t='if ta; then ta; else tmux; fi'
 alias ta='tmux attach'
 alias tl='tmux ls'

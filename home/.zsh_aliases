@@ -3,6 +3,7 @@ export VISUAL=nvim
 ###-----------------------------CONFLICTS--------------------------------------
 OS_RELEASE=`uname -r`
 OS_NAME=`uname -s`
+NODENAME=`uname --nodename`
 
 # >>>>> WSL2
 if [[ $OS_RELEASE =~ microsoft ]]; then
@@ -28,8 +29,12 @@ if [[ $OS_NAME == 'Darwin' ]]; then
     alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
-    # alias bat='batcat'
     alias gith='cd $HOME/Documents/code/repos/dboyd42'
+    if [[ $NODENAME != 'kali' ]]; then
+        alias bat='bat --color=always --theme=Dracula'
+    else
+        alias bat='batcat --color=always --theme=Dracula'
+    fi
 else
     echo "Hello, $OS_NAME!"
     echo "Wtf is: $OS_Name?!"
@@ -45,7 +50,6 @@ alias backup-arco='\
         /mnt/backup/"$(date --rfc-3339=s)"'
 # alias bandit0='sshpass -p bandit0 ssh bandit0'
 alias bandit0='sshpass -p bandit0 ssh bandit0@bandit.labs.overthewire.org -p 2220'
-alias bat=' bat --color=always --theme=Dracula'
 alias com='g++ -std=c++1z -o main *.cpp'
 # Print xterm-256-color chart in terminal
 function clicolors() {

@@ -3,7 +3,7 @@ export VISUAL=nvim
 ###-----------------------------CONFLICTS--------------------------------------
 OS_RELEASE=`uname -r`
 OS_NAME=`uname -s`
-NODENAME=`uname --nodename`
+NODENAME=`uname -n`
 
 # >>>>> WSL2
 if [[ $OS_RELEASE =~ microsoft ]]; then

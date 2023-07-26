@@ -1,3 +1,10 @@
+" This file is to be used as a basic Vim config file for support on non-IDE
+" environments such as servers.
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme peachpuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -83,9 +90,9 @@ set numberwidth=4       " n cols to use for the line number
 "set showcmd             " show partial commands in bottom bar !=Airline
 set showmatch           " highlight matching [{()}]
 set showmode            " show INSERT, VISUAL, etc
-" Always show the signcolumn, 
+" Always show the signcolumn,
 " else it'd shift the txt each time diagnostics appear/become resolved.
-set signcolumn=yes      
+set signcolumn=yes
 set splitbelow splitright " Splits open at bottom and right
 set visualbell          " Use visual bell instead of beeping
 syntax on               " Enable syntax highlighting

@@ -6,7 +6,7 @@
 ## 1. Prerequesites
 
 1. Install macOS Package Managers: [Brew][brew], [MacPorts][port-install]
-  i. Update Package Managers: `brew update && sudo port selfupdate`
+    - Update Package Managers: `brew update && sudo port selfupdate`
 1. Install Dependencies:
 
 ``` bash
@@ -44,20 +44,23 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-1. Link necessary dotifles
+1. Link the necessary dotifles:
 
-  i. Environment
-  i. TMUX
-  i. NeoVim
+  - Environment
+  - TMUX
+  - NeoVim
 
-1. Install NeoVim's plugins and configs
-  i. Open NeoVim and run `:PackerSync` a few times. You may need to exit then reopen NeoVim to successfully install all the plugins; including Mason's LSPs.
+2. Install NeoVim's plugins and configs
+
+  - Open NeoVim and run `:PackerSync` a few times. 
+  - :bulb: You may need to exit then reopen NeoVim to successfully install 
+           all the plugins; including Mason's LSPs via `:MasonUpdate:`
 
 ## Troubleshooting
 
 ### Neovim 
 
-#### tree-siiter 
+#### tree-sitter 
 
 ##### 1. tree-sitter executable not installed
 

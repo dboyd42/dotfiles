@@ -9,15 +9,16 @@ lsp.preset("recommended")
 -- Ref: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 lsp.ensure_installed({
   'bashls',
-  -- 'html',
-  -- 'glint', -- Go lint
-  -- 'gopls', -- Go LSP
+  -- codelldb (DAP): C, C++, Rust --REQ: Manual install
+  -- 'glint', -- Go lint --REQ: MasonInstall glint
+  -- 'gopls', -- Go LSP --REQ: MasonInstall gopls
   -- 'jq-lsp', -- JQ LSP ;; Manual Installation Required: `:MasonInstall jq-lsp`
   'jsonls', -- JSON
   -- 'ltex', -- LTeX LSP for Language Tool with support for: md, txt, etc
   'lua_ls', --lua-language-server
   -- 'powershell_es',
   'pylsp', -- Python-lsp-server
+  'rust_analyzer', --rust-analyzer
   -- 'tsserver', --typescript
 })
 

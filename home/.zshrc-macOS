@@ -12,12 +12,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Yarn: (override default path to not conflict with NPM)
 export PREFIX=$HOME/.config/yarn/bin
 export PATH=$PREFIX:$PATH
-export PATH=/usr/local/bin:/opt/local/bin/:$HOME/bin:$PATH
-# | @loc           | Description               |
-# |----------------+---------------------------|
-# | /usr/local/bin | websites (ie. python.org) |
-# | /opt/local/bin | macports                  |
-# | /opt/homebrew  | brew                      |
+export PATH=/usr/local/bin:/opt/local/bin/:$HOME/.new_local/bin:$HOME/bin:$PATH
+# | @loc               | Description               |
+# |--------------------+---------------------------|
+# | /usr/local/bin     | websites (ie. python.org) |
+# | /opt/local/bin     | macports                  |
+# | /opt/homebrew      | brew                      |
+# | ~/.new_local/bin   | spice-space.org (jhbuild) |
 
 
 # Path to your oh-my-zsh installation.

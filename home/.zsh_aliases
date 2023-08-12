@@ -27,13 +27,17 @@ if [[ $OS_NAME == 'Darwin' ]]; then
     alias gith='cd $HOME/Documents/code/repos/github/dboyd42'
     # Convert x86_64 arch to run on M1's UTM Hypervisor
     alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
+    alias bat='bat --color=always --theme=Dracula'
+    alias bat2='bat --color=never --wrap=never --theme=Dracula'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
     alias gith='cd $HOME/Documents/code/repos/dboyd42'
     if [[ $NODENAME != 'kali' ]]; then
         alias bat='bat --color=always --theme=Dracula'
+        alias bat2='bat --color=never --wrap=never --theme=Dracula'
     else
         alias bat='batcat --color=always --theme=Dracula'
+        alias bat2='batcat --color=never --wrap=never --theme=Dracula'
     fi
 else
     echo "Hello, $OS_NAME!"

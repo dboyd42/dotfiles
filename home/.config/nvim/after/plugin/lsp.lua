@@ -75,7 +75,7 @@ cmp.setup({
   mapping = {
     -- Confirm w/o selecting the item
     ['<C-Space>'] = cmp.mapping.confirm({select = true}),
-    ['<CR>'] = cmp.mapping.confirm({select = true}),
+    -- ['<CR>'] = cmp.mapping.confirm({select = true}), 
     ['C-c'] = cmp.mapping.abort(),
     -- ['<CR>'] = cmp.mapping.confirm({select = true}),
   }, -- END mapping

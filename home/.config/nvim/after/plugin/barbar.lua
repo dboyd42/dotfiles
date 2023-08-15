@@ -44,7 +44,7 @@ map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts) -- Similar mapping:
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)     -- 'n', C-h/l
 map('n', '<A-h>', '<Cmd>BufferPrevious<CR>', opts) -- Similar mapping:
 map('n', '<A-l>', '<Cmd>BufferNext<CR>', opts)     -- 'n', C-h/l
--- Re-order to previous/next
+-- Re-order to previous/next #reorder tabs
 -- map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts) -- conflicts w/ macOS
 -- map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)    -- Amethyst tiling mgr
 map('n', '<A-j>', '<Cmd>BufferMovePrevious<CR>', opts)

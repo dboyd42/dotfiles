@@ -7,6 +7,7 @@ require("esqueleto").setup(
       -- Can be either (i) file names or (ii) file types.
       -- Exact file name match have priority
       patterns = {
+        "html",
         "markdown",
         "python"
       },

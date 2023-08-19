@@ -102,4 +102,3 @@ information, community forums, or support channels.]*
 *[Specify the program's license and any additional terms or conditions.]*
 
 <!-- Reference Links -->
-

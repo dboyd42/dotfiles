@@ -94,4 +94,3 @@ Complete the walkthrough by cleaning up any traces and documenting findings.
 Summarize the walkthrough and key takeaways from the Hack-the-Box machine.
 
 <!-- Reference Links -->
-

@@ -1,5 +1,8 @@
 # Craft a Descriptive Title
 
+> **Author:** David Boyd<br>
+> **Date:** ts
+
 *Step 1: Craft a Descriptive Title*
 
 :bulb: <u>***Tips:***</u>
@@ -11,10 +14,6 @@
 <u>***Example:***</u>
 
 *IDOR on hxxps://example.com/.../... Leads to Account Takeover for All Users*
-
-
-> **Author:** David Boyd<br>
-> **Date:** ts
 
 ## Summary
 
@@ -44,8 +43,8 @@ else's password by manipulating the `user_id` parameter.
 - [CVSS](https://www.first.org/cvss)
 - [Bugcrowd's VRT](https://bugcrowd.com/vulnerability-rating-taxonomy)
 
-| Severity                   | Vulnerability |
-|----------------------------|---------------|
+| Severity                 | Vulnerability |
+|--------------------------|---------------|
 | Low/Medium/High/Critical |               |
 
 <u>***Example:***</u>
@@ -81,7 +80,7 @@ else's password by manipulating the `user_id` parameter.
 
 ## Impact and Attack Scenarios
 
-*Step  6: Describe the Impact and Attack Scenarios*
+*Step 6: Describe the Impact and Attack Scenarios*
 
 <u>***Example:***</u>
 

@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'                              -- Macros repeater
   use 'tpope/vim-surround'                            -- Surroundings
   use 'windwp/nvim-autopairs'                         -- Autopairing [{()}]
+  use 'windwp/nvim-ts-autotag'                        -- " <tags></tags>
   use { 'nvim-telescope/telescope.nvim',              -- Fuzzy Finder
         tag = '0.1.x',
         requires = { 'nvim-lua/plenary.nvim' }

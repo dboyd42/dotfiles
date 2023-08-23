@@ -4,6 +4,10 @@
 -- :TSInstall lua
 
 require'nvim-treesitter.configs'.setup {
+  -- Used for windwp/nvim-ts-autotag plugin
+  autotag = {
+    enable = true,
+  },
   -- A list of parser names, or "all"
   ensure_installed = {
       'c',
@@ -15,6 +19,7 @@ require'nvim-treesitter.configs'.setup {
       'markdown',
       'python',
       'ruby',
+      'rust',
       'sql',
       'typescript'
   },

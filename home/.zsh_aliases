@@ -29,6 +29,7 @@ if [[ $OS_NAME == 'Darwin' ]]; then
     alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
     alias bat='bat --color=always --theme=Dracula'
     alias bat2='bat --color=never --wrap=never --theme=Dracula'
+    alias onedrive='cd $HOME/Documents/OneDrive/'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
     alias gith='cd $HOME/Documents/code/repos/dboyd42'

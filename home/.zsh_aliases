@@ -30,6 +30,9 @@ if [[ $OS_NAME == 'Darwin' ]]; then
     alias bat='bat --color=always --theme=Dracula'
     alias bat2='bat --color=never --wrap=never --theme=Dracula'
     alias onedrive='cd $HOME/Documents/OneDrive/'
+    alias pip='/opt/homebrew/bin/pip3'
+    alias python='/opt/homebrew/bin/python3'
+    alias py='/opt/homebrew/bin/python3'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
     alias gith='cd $HOME/Documents/code/repos/dboyd42'

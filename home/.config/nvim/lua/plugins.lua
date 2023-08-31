@@ -44,6 +44,8 @@ return require('packer').startup(function(use)
   use 'lambdalisue/suda.vim'                          -- rw buffers w/ sudo
   use 'mbbill/undotree'                               -- Undo history tree
   use 'Mofiqul/dracula.nvim'                          -- Colorscheme: Dracula
+  use ( 'mzlogin/vim-markdown-toc',                   -- Markdown TOC generator
+        {run = ':python3 install.py'})
   use 'ntpeters/vim-better-whitespace'                -- Whitespace editor
   use {'numToStr/Comment.nvim',                       -- Un/Commenting '//'
         config = function()

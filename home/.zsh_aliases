@@ -23,16 +23,23 @@ fi
 # <<<<< End WSL2
 # >>>>> macoS Linux
 if [[ $OS_NAME == 'Darwin' ]]; then
-    alias firefox='open -a /Applications/Firefox.app'
-    alias gith='cd $HOME/Documents/code/repos/github/dboyd42'
-    # Convert x86_64 arch to run on M1's UTM Hypervisor
-    alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
     alias bat='bat --color=always --theme=Dracula'
     alias bat2='bat --color=never --wrap=never --theme=Dracula'
+    alias firefox='open -a /Applications/Firefox.app'
+    alias gith='cd $HOME/Documents/code/repos/github/dboyd42'
     alias onedrive='cd $HOME/Documents/OneDrive/'
     alias pip='/opt/homebrew/bin/pip3'
-    alias python='/opt/homebrew/bin/python3'
     alias py='/opt/homebrew/bin/python3'
+    alias python='/opt/homebrew/bin/python3'
+    alias txt2pdf='function _txt2pdf() { \
+                    enscript --no-header -p output.ps "$1" && \
+                    ps2pdf output.ps "${1%.*}.pdf" && \
+                    rm output.ps && \
+                    open "${1%.*}.pdf";
+                  };
+                  _txt2pdf'
+    # Convert x86_64 arch to run on M1's UTM Hypervisor
+    alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
 # >>>>> Linux
 elif [[ $OS_NAME == 'Linux' ]]; then
     alias gith='cd $HOME/Documents/code/repos/dboyd42'

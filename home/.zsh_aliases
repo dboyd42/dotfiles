@@ -35,7 +35,11 @@ if [[ $OS_NAME == 'Darwin' ]]; then
                     enscript --no-header -p output.ps "$1" && \
                     ps2pdf output.ps "${1%.*}.pdf" && \
                     rm output.ps && \
-                    open "${1%.*}.pdf";
+                    open "${1%.*}.pdf" && \
+                    echo && \
+                    echo "Are the words are cut off at EOL and newline?" && \
+                    echo -e "\tThen: #1) Set \`tw=79\` on txt file and" && \
+                    echo -e "\t      #2) re-run txt2pdf";
                   };
                   _txt2pdf'
     # Convert x86_64 arch to run on M1's UTM Hypervisor

@@ -160,10 +160,11 @@ fi
 ###
 ### Linux Aarch64/arm64/M1
 ###
-if [[ $OS_RELEASE == *'arm64'* ]]; then
-    # Nvim: No stable builds
-    alias v='vim'
-    alias vR='vim README.md'
-    alias vim='vim'
-fi
+# if [[ $OS_RELEASE == *'arm64'* ]]; then
+    # Nvim: Resolved install via Snap
+    # alias v='vim'
+    # alias vR='vim README.md'
+    # alias vim='vim'
+    # export VISUAL=vim
+# fi
 #---------------------------------[END]----------------------------------------

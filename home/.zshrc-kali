@@ -311,4 +311,5 @@ else
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
-export PATH="$PATH:/home/kali/.local/bin"
+export PATH="$PATH:i$HOME/.local/bin"
+export PATH="$PATH:/snap/bin" # Required for arm64 Neovim

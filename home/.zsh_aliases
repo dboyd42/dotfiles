@@ -1,65 +1,5 @@
 #--------------------------------EXPORTS---------------------------------------
 export VISUAL=nvim
-###-----------------------------CONFLICTS--------------------------------------
-OS_RELEASE=`uname -r`
-OS_NAME=`uname -s`
-NODENAME=`uname -n`
-
-# >>>>> WSL2
-if [[ $OS_RELEASE =~ microsoft ]]; then
-    WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
-else
-    # Grab using PS
-    #WIN_USERNAME=`powershell.exe '$env:UserName'`
-    WIN_USERNAME="--WIN_USERNAME--"    # old
-fi
-### WSL > Powerline configuration
-if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
-	powerline-daemon -q
-	POWERLINE_BASH_CONTINUATION=1
-	POWERLINE_BASH_SELECT=1
-	source /usr/share/powerline/bindings/bash/powerline.sh
-fi
-# <<<<< End WSL2
-# >>>>> macoS Linux
-if [[ $OS_NAME == 'Darwin' ]]; then
-    alias bat='bat --color=always --theme=Dracula'
-    alias bat2='bat --color=never --wrap=never --theme=Dracula'
-    alias firefox='open -a /Applications/Firefox.app'
-    alias gith='cd $HOME/Documents/code/repos/github/dboyd42'
-    alias onedrive='cd $HOME/Documents/OneDrive/'
-    alias pip='/opt/homebrew/bin/pip3'
-    alias py='/opt/homebrew/bin/python3'
-    alias python='/opt/homebrew/bin/python3'
-    alias txt2pdf='function _txt2pdf() { \
-                    enscript --no-header -p output.ps "$1" && \
-                    ps2pdf output.ps "${1%.*}.pdf" && \
-                    rm output.ps && \
-                    open "${1%.*}.pdf" && \
-                    echo && \
-                    echo "Are the words are cut off at EOL and newline?" && \
-                    echo -e "\tThen: #1) Set \`tw=79\` on txt file and" && \
-                    echo -e "\t      #2) re-run txt2pdf";
-                  };
-                  _txt2pdf'
-    # Convert x86_64 arch to run on M1's UTM Hypervisor
-    alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
-# >>>>> Linux
-elif [[ $OS_NAME == 'Linux' ]]; then
-    alias gith='cd $HOME/Documents/code/repos/dboyd42'
-    if [[ $NODENAME != 'kali' ]]; then
-        alias bat='bat --color=always --theme=Dracula'
-        alias bat2='bat --color=never --wrap=never --theme=Dracula'
-    else
-        alias bat='batcat --color=always --theme=Dracula'
-        alias bat2='batcat --color=never --wrap=never --theme=Dracula'
-    fi
-else
-    echo "Hello, $OS_NAME!"
-    echo "Wtf is: $OS_Name?!"
-fi
-# <<<<< End macOS
-#---------------------------------[END]----------------------------------------
 ###----------------------------ZSH_Aliases-------------------------------------
 alias backup-arco='\
     sudo mount /dev/nvme1n1p1 /mnt/backup; \
@@ -144,9 +84,87 @@ alias tl='tmux ls'
 alias v='nvim'
 alias vR='nvim README.md'
 alias vim='nvim'
+alias reboot='sudo reboot'
 alias restart-kde_plasma='kquitapp 5 plasmashell || \
                           killall plasmashell && kstart5 plasmashell'
 alias pwrstat='sudo pwrstat'    # CyberPower UPS / PowerPanel
 alias systemctl='sudo systemctl'
 #---------------------------------[END]----------------------------------------
-alias reboot='sudo reboot'
+###-----------------------------CONFLICTS--------------------------------------
+OS_RELEASE=`uname -r`
+OS_NAME=`uname -s`
+NODENAME=`uname -n`
+
+###
+### WSL2
+###
+if [[ $OS_RELEASE =~ microsoft ]]; then
+    WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
+else
+    # Grab using PS
+    #WIN_USERNAME=`powershell.exe '$env:UserName'`
+    WIN_USERNAME="--WIN_USERNAME--"    # old
+fi
+# Powerline configuration
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+	powerline-daemon -q
+	POWERLINE_BASH_CONTINUATION=1
+	POWERLINE_BASH_SELECT=1
+	source /usr/share/powerline/bindings/bash/powerline.sh
+fi
+
+###
+### Linux - x64
+###
+if [[ $OS_NAME == 'Linux' ]]; then
+    alias gith='cd $HOME/Documents/code/repos/dboyd42'
+    if [[ $NODENAME != 'kali' ]]; then
+        alias bat='bat --color=always --theme=Dracula'
+        alias bat2='bat --color=never --wrap=never --theme=Dracula'
+    else
+        alias bat='batcat --color=always --theme=Dracula'
+        alias bat2='batcat --color=never --wrap=never --theme=Dracula'
+    fi
+else
+    echo "Hello, $OS_NAME!"
+    echo "Wtf is: $OS_Name?!"
+fi
+
+###
+### macOS - Aarch64/arm64/M1
+###
+if [[ $OS_NAME == 'Darwin' ]]; then
+    alias bat='bat --color=always --theme=Dracula'
+    alias bat2='bat --color=never --wrap=never --theme=Dracula'
+    alias firefox='open -a /Applications/Firefox.app'
+    alias gith='cd $HOME/Documents/code/repos/github/dboyd42'
+    alias onedrive='cd $HOME/Documents/OneDrive/'
+    alias pip='/opt/homebrew/bin/pip3'
+    alias py='/opt/homebrew/bin/python3'
+    alias python='/opt/homebrew/bin/python3'
+    alias txt2pdf='function _txt2pdf() { \
+                    enscript --no-header -p output.ps "$1" && \
+                    ps2pdf output.ps "${1%.*}.pdf" && \
+                    rm output.ps && \
+                    open "${1%.*}.pdf" && \
+                    echo && \
+                    echo "Are the words are cut off at EOL and newline?" && \
+                    echo -e "\tThen: #1) Set \`tw=79\` on txt file and" && \
+                    echo -e "\t      #2) re-run txt2pdf";
+                  };
+                  _txt2pdf'
+    # Convert x86_64 arch to run on M1's UTM Hypervisor
+    alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
+fi
+
+###
+### Linux Aarch64/arm64/M1
+###
+if [[ $OS_RELEASE == *'arm64'* ]]; then  
+    # Nvim: No stable builds
+    alias v='vim'
+    alias vR='vim README.md'
+    alias vim='vim'
+    export VISUAL=vim
+fi
+#---------------------------------[END]----------------------------------------

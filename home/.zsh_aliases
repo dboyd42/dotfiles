@@ -125,9 +125,9 @@ if [[ $OS_NAME == 'Linux' ]]; then
         alias bat='batcat --color=always --theme=Dracula'
         alias bat2='batcat --color=never --wrap=never --theme=Dracula'
     fi
-else
+elif [[ $OS_NAME != 'Darwin' ]]; then
     echo "Hello, $OS_NAME!"
-    echo "Wtf is: $OS_Name?!"
+    echo "Wtf is: $OS_NAME?!"
 fi
 
 ###

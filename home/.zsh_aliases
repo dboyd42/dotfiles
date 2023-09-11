@@ -124,6 +124,7 @@ if [[ $OS_NAME == 'Linux' ]]; then
     else
         alias bat='batcat --color=always --theme=Dracula'
         alias bat2='batcat --color=never --wrap=never --theme=Dracula'
+	alias apt='sudo apt'
     fi
 elif [[ $OS_NAME != 'Darwin' ]]; then
     echo "Hello, $OS_NAME!"
@@ -161,10 +162,10 @@ fi
 ### Linux Aarch64/arm64/M1
 ###
 # if [[ $OS_RELEASE == *'arm64'* ]]; then
-    # Nvim: Resolved install via Snap
-    # alias v='vim'
-    # alias vR='vim README.md'
-    # alias vim='vim'
-    # export VISUAL=vim
+# Nvim: Resolved install via Snap		#TODO: migrate(packer->lazy)
+    alias v='vim'
+    alias vR='vim README.md'
+    alias vim='vim'
+    export VISUAL=vim
 # fi
 #---------------------------------[END]----------------------------------------

@@ -301,7 +301,7 @@ zstyle :compinstall filename '/home/bhatm/.zshrc'
 # Prevent remnant characters when tab completing with ZSH (+) TMUX
 #   -Defaults in /etc/locale.[{gen}{cong}] != "LC_ALL" but LC_<x>="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-source ~/.kayes
+#source ~/.kayes
 
 eval $(thefuck --alias)
 
@@ -311,5 +311,5 @@ else
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
-export PATH="$PATH:i$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/snap/bin" # Required for arm64 Neovim

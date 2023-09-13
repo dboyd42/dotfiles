@@ -1,5 +1,6 @@
-require("esqueleto").setup(
-    {
+--require("esqueleto").setup(
+--    {
+return }
       -- Template directories
       directories = {"~/.config/nvim/skeletons/"},
 
@@ -15,4 +16,4 @@ require("esqueleto").setup(
       -- whether to auto-use a template if it's the only one for a pattern
       autouse = true
     }
-)
+--)

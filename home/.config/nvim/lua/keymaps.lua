@@ -4,8 +4,10 @@ local map = vim.keymap.set -- Nvim API func (Lua exclusive)
 local opts = { noremap = true, silent = true }
 -- local opts2 = { silent = true } --Unused local `opts2`
 
+--[[ Moved to lua/lazy.lua
 vim.g.mapleader = ' '	-- Space
 vim.g.maplocalleader = '\\' -- Backslash
+]]
 
 --[[ META_FILE_EDITS --------------------------------------------------------]]
 map('c', 'W<CR>', '<Cmd>w<CR>', opts)

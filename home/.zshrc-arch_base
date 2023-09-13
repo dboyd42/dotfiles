@@ -11,10 +11,8 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Add Ruby to $PATH
-if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ] ;
-  then PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-else
-  echo "Install Ruby, yo!"
+if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ]; then 
+    PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -147,8 +145,6 @@ export LANG=en_US.UTF-8
 # export ARCHFLAGS="-arch x86_64"
 
 
-####   ARCH-LINUX SETTINGS   ####
-export PAGER='bat --color=always --theme=Dracula'
 
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -554,7 +550,13 @@ alias personal='cp -Rf /personal/* ~'
 #cpufetch
 #colorscript random
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+if [[ $(uname -r) =~ 'kali' ]]; then
+    export PAGER='batcat --color=always --theme=Dracula' -- affects git branch
+    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+else
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    export PAGER='bat --color=always --theme=Dracula'
+fi
 
 ### ----------------------------------------------------------------------- ###
 ### ---------------------------- ZSH Settings ----------------------------- ###

@@ -1,0 +1,5 @@
+[bun]
+curl -fsSL https://bun.sh/install | bash
+
+[pylsp <> mason-lspconfig.nvim]
+sudo apt install python3-full

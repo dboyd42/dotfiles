@@ -1,4 +1,11 @@
-# Dotfiles Setup for macOS
+# My Master Dotfiles
+
+**TODO: Update**
+- convert and update bottom half to a macOS section
+- create a Linux section
+- create a simple server section
+
+## Dotfiles Setup for macOS
 
 **Author:** David Boyd<br>
 **Dated:** 2023-06-20

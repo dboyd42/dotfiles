@@ -620,3 +620,10 @@ XMODIFIERS=@im=fcitx5
 ### END IME/IMF Support (Chinese) ###
 
 eval $(thefuck --alias)
+
+# bun completions
+[ -s "/home/kali/.bun/_bun" ] && source "/home/kali/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

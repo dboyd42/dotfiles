@@ -551,7 +551,7 @@ alias personal='cp -Rf /personal/* ~'
 #colorscript random
 
 if [[ $(uname -r) =~ 'kali' ]]; then
-    export PAGER='batcat --color=always --theme=Dracula' -- affects git branch
+    export PAGER="batcat --color=always --theme=Dracula" # affects git branch
     export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 else
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"

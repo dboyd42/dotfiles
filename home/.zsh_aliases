@@ -139,7 +139,7 @@ NODENAME=`uname -n`
 ###
 ### Kali ----------------------------------------------------------------------
 ###
-if [[ $OS_NAME =~ 'kali' ]]; then
+if [[ $OS_RELEASE =~ 'kali' ]]; then
         alias bat='batcat --color=always --theme=Dracula'
         alias bat2='batcat --color=never --wrap=never --theme=Dracula'
 fi

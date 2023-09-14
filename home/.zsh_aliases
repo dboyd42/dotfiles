@@ -1,15 +1,113 @@
-#--------------------------------EXPORTS---------------------------------------
-export VISUAL=nvim
-###----------------------------ZSH_Aliases-------------------------------------
-alias backup-arco='\
-    sudo mount /dev/nvme1n1p1 /mnt/backup; \
-    sudo rsync -ahAX --info=progress2 \
-        / \
-        --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
-        /mnt/backup/"$(date --rfc-3339=s)"'
-# alias bandit0='sshpass -p bandit0 ssh bandit0'
-alias bandit0='sshpass -p bandit0 ssh bandit0@bandit.labs.overthewire.org -p 2220'
+##############################---EXPORTS---####################################
+export VISUAL=nvim  #TODO: mv to .zshrc
+
+############################---ZSH_Aliases---##################################
+
+###
+# Directory Shortcts ---------------------------------------------------------
+###  *NOTE: These aliases have primarily been replaced with `autojump`
+alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
+alias gith='cd $HOME/Documents/code/repos/dboyd42'
+alias sbox='cd ~/Documents/code/sandbox/'
+
+###
+# File Processing -------------------------------------------------------------
+###
+alias r2p='pandoc -V geometry:a4paper -f rst --toc -o $PDF $RST'
+alias r2pall='for file in ./*; do if [ ${file: -4} = '.rst' ]; then RST=$file; PDF=${file%.*}.pdf; r2p; fi; done'
+alias tl='tmux ls'
+alias v='nvim'
+alias vR='nvim README.md'
+alias vim='nvim'
+# Read Markdown files in Kitty term
+rmd() { pandoc -f gfm $1 | lynx -stdin }
+
+###
+# Git aliases -----------------------------------------------------------------
+###
+alias g='git'
+alias gac='if git add .; then \
+               read CMSG\?"Enter commit message: "; \
+               git ci -m $CMSG; \
+fi'
+alias gacp='if git add .; then \
+                read CMSG\?"Enter commit message: "; \
+                git ci -m $CMSG; \
+                git push
+fi'
+alias ginit='git add .; git ci -m "init commit"; git push'
+alias gla='for dir in ./*; do \
+             [[ -d $dir ]]  && [[ -d $dir/.git ]] \
+               && echo $dir && cd $dir && git pull && cd ../; \
+done'
+alias gl='git pull'
+alias gs='git status'
+alias gsa='for DIR in ./*; do \
+            [[ -d $DIR ]] && [[ -d $DIR/.git ]] \
+            && echo $DIR && cd $DIR && git status \
+                && echo "---\n" && cd ../; \
+done'
+
+###
+# KDE++ -----------------------------------------------------------------------
+###
+alias kprint='konsoleprofile colors=BlackOnWhiteFixed'
+alias ksolid="konsoleprofile colors=Utterly-Sweet-Solid-Konsole"
+alias ktrans="konsoleprofile colors=Utterly-Sweet-Konsole"
+alias kdsktop-restart='kquitapp 5 plasmashell || \
+                       killall plasmashell && kstart5 plasmashell'
+
+###
+# Linux-ie Stuff --------------------------------------------------------------
+###
+alias bat='bat --color=always --theme=Dracula'
+alias bat2='bat --color=never --wrap=never --theme=Dracula'
+alias ll='lsd -alh'
+alias ls='lsd'
+
+###
+# Networking ------------------------------------------------------------------
+###
+alias p2='ping -c2'
+
+###
+# Prgmming Langs --------------------------------------------------------------
+###
 alias com='g++ -std=c++1z -o main *.cpp'
+alias py='python3'
+
+###
+# Remote Computing ------------------------------------------------------------
+###
+alias bandit0='sshpass -p bandit0 ssh bandit0@bandit.labs.overthewire.org -p 2220'
+
+###
+# Reverse Engineering ---------------------------------------------------------
+###
+alias revEngBin-crkPasswd1="objdump -d $FILE | grep cmp | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
+alias revEngBin-crkPasswd2="objdump -d $FILE | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
+
+###
+# Sudo pre-pending ------------------------------------------------------------
+###
+alias apt='sudo apt'
+alias fdisk='sudo fdisk'
+alias pwrstat='sudo pwrstat'  # CyberPower UPS / PowerPanel
+alias reboot='sudo reboot'
+alias systemctl='sudo systemctl'
+
+###
+# System Processes ------------------------------------------------------------
+###
+alias killme='read NAME\?"Prgm Name: "; \
+              ps aux | grep $NAME | cut -d" " -f5 | xargs kill -9'
+
+###
+# Terminal Jazz ---------------------------------------------------------------
+###
+alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
+alias ps2="export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '"
+alias ps3="export PS1='\[\033[01;31m\]\u:\[\033[01;34m\]\W\[\033[00m\]\$ '"
 # Print xterm-256-color chart in terminal
 function clicolors() {
     i=1
@@ -23,80 +121,53 @@ function clicolors() {
     echo $c | sed 's/%//g' | sed 's/{//g' | sed 's/}//g' | sed '$s/..$//';
     c=''
 }
-alias csbox='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/sandbox/'
+
+###
+# VMs & Containers ------------------------------------------------------------
+###
 alias docker-daddy='docker run -it kalilinux/kali-rolling'
-alias fdisk='sudo fdisk'
-alias flipper='/home/bhatm/Documents/code/repos/dboyd42/scripting/bash/web-scrapers/flipper-zero.sh'
-# >>>> Git aliases
-alias g='git'
-alias gac='if git add .; then \
-               read CMSG\?"Enter commit message: "; \
-               git ci -m $CMSG; \
-           fi'
-alias gacp='if git add .; then \
-                read CMSG\?"Enter commit message: "; \
-                git ci -m $CMSG; \
-                git push
-            fi'
-alias ginit='git add .; git ci -m "init commit"; git push'
-alias gla='for dir in ./*; do \
-             [[ -d $dir ]]  && [[ -d $dir/.git ]] \
-               && echo $dir && cd $dir && git pull && cd ../; \
-           done'
-alias gl='git pull'
-alias gs='git status'
-alias gsa='for DIR in ./*; do \
-                        [[ -d $DIR ]] && [[ -d $DIR/.git ]] \
-                            && echo $DIR && cd $DIR && git status \
-                            && echo "---\n" && cd ../; \
-                    done'
-# <<<<< END Git aliases
-# alias cat='lolcat'
-# alias dolphin='org.kde.dolphin'
-# alias icat='kitty icat'
-alias killme='read NAME\?"Prgm Name: "; \
-              ps aux | grep $NAME | cut -d" " -f5 | xargs kill -9'
-# Konsole Terminal
-alias kprint='konsoleprofile colors=BlackOnWhiteFixed'
-alias ksolid="konsoleprofile colors=Utterly-Sweet-Solid-Konsole"
-alias ktrans="konsoleprofile colors=Utterly-Sweet-Konsole"
-alias ll='lsd -alh'
-alias ls='lsd'
-alias p2='ping -c2'
-alias ps1="export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '"
-alias ps2="export PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '"
-alias ps3="export PS1='\[\033[01;31m\]\u:\[\033[01;34m\]\W\[\033[00m\]\$ '"
-alias py='python3'
-alias r2p='pandoc -V geometry:a4paper -f rst --toc -o $PDF $RST'
-alias r2pall='for file in ./*; do if [ ${file: -4} = '.rst' ]; then RST=$file; PDF=${file%.*}.pdf; r2p; fi; done'
-# Read Markdown files in Kitty term
-rmd() { pandoc -f gfm $1 | lynx -stdin }
-alias revEngBin-crkPasswd1="objdump -d $FILE | grep cmp | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
-alias revEngBin-crkPasswd2="objdump -d $FILE | cut -d'x' -f2 | cut -d',' -f1 | xxd -r -p"
-# alias sans='cd /mnt/c/Users/$WIN_USERNAME/OneDrive/Documents/edu/sans/'
-# [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
-alias sbox='cd ~/Documents/code/sandbox/'
-alias se='sudoedit'
-alias sz='source ~/.zshrc && echo "sourced ~/.zshrc"'
-alias t='if ta; then ta; else tmux; fi'
-alias ta='tmux attach'
-alias tl='tmux ls'
-alias v='nvim'
-alias vR='nvim README.md'
-alias vim='nvim'
-alias reboot='sudo reboot'
-alias restart-kde_plasma='kquitapp 5 plasmashell || \
-                          killall plasmashell && kstart5 plasmashell'
-alias pwrstat='sudo pwrstat'    # CyberPower UPS / PowerPanel
-alias systemctl='sudo systemctl'
+# Convert x86_64 arch to run on M1's UTM Hypervisor
+alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
+
 #---------------------------------[END]----------------------------------------
-###-----------------------------CONFLICTS--------------------------------------
+
+#############################---OS-SPECIFIC---#################################
 OS_RELEASE=`uname -r`
 OS_NAME=`uname -s`
 NODENAME=`uname -n`
 
 ###
-### WSL2
+### Kali ----------------------------------------------------------------------
+###
+if [[ $OS_NAME =~ 'kali' ]]; then
+        alias bat='batcat --color=always --theme=Dracula'
+        alias bat2='batcat --color=never --wrap=never --theme=Dracula'
+fi
+
+###
+# macOS (Aarch64/arm64/M1) ----------------------------------------------------
+###
+if [[ $OS_NAME =~ 'Darwin' ]]; then
+    alias firefox='open -a /Applications/Firefox.app'
+    alias onedrive='cd $HOME/Documents/OneDrive/'
+    # alias pip='/opt/homebrew/bin/pip3'
+    # alias py='/opt/homebrew/bin/python3'
+    # alias python='/opt/homebrew/bin/python3'
+    alias txt2pdf='function _txt2pdf() { \
+                    enscript --no-header -p output.ps "$1" && \
+                    ps2pdf output.ps "${1%.*}.pdf" && \
+                    rm output.ps && \
+                    open "${1%.*}.pdf" && \
+                    echo && \
+                    echo "Are the words are cut off at EOL and newline?" && \
+                    echo -e "\tThen: #1) Set \`tw=79\` on txt file and" && \
+                    echo -e "\t      #2) re-run txt2pdf";
+                  };
+                  _txt2pdf'
+fi
+
+###
+# WSL2 ------------------------------------------------------------------------
 ###
 if [[ $OS_RELEASE =~ microsoft ]]; then
     WIN_USERNAME=`cmd.exe /c "echo %USERNAME%" 2>/dev/null | cut -d$'\r' -f1`
@@ -113,59 +184,18 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 	source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
-###
-### Linux - x64
-###
-if [[ $OS_NAME == 'Linux' ]]; then
-    alias gith='cd $HOME/Documents/code/repos/dboyd42'
-    if [[ $NODENAME != 'kali' ]]; then
-        alias bat='bat --color=always --theme=Dracula'
-        alias bat2='bat --color=never --wrap=never --theme=Dracula'
-    else
-        alias bat='batcat --color=always --theme=Dracula'
-        alias bat2='batcat --color=never --wrap=never --theme=Dracula'
-	alias apt='sudo apt'
-    fi
-elif [[ $OS_NAME != 'Darwin' ]]; then
-    echo "Hello, $OS_NAME!"
-    echo "Wtf is: $OS_NAME?!"
-fi
+#############################---MACHINE-SPECIFIC---############################
 
 ###
-### macOS - Aarch64/arm64/M1
+### Linux (Aarch64/arm64/M1) --------------------------------------------------
 ###
-if [[ $OS_NAME == 'Darwin' ]]; then
-    alias bat='bat --color=always --theme=Dracula'
-    alias bat2='bat --color=never --wrap=never --theme=Dracula'
-    alias firefox='open -a /Applications/Firefox.app'
-    alias gith='cd $HOME/Documents/code/repos/github/dboyd42'
-    alias onedrive='cd $HOME/Documents/OneDrive/'
-    alias pip='/opt/homebrew/bin/pip3'
-    alias py='/opt/homebrew/bin/python3'
-    alias python='/opt/homebrew/bin/python3'
-    alias txt2pdf='function _txt2pdf() { \
-                    enscript --no-header -p output.ps "$1" && \
-                    ps2pdf output.ps "${1%.*}.pdf" && \
-                    rm output.ps && \
-                    open "${1%.*}.pdf" && \
-                    echo && \
-                    echo "Are the words are cut off at EOL and newline?" && \
-                    echo -e "\tThen: #1) Set \`tw=79\` on txt file and" && \
-                    echo -e "\t      #2) re-run txt2pdf";
-                  };
-                  _txt2pdf'
-    # Convert x86_64 arch to run on M1's UTM Hypervisor
-    alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
+if [[ $OS_RELEASE == *'arm64'* ]]; then
+# Nvim: Resolved install via Snap		#TODO: test
+    #alias v='vim'
+    #alias vR='vim README.md'
+    #alias vim='vim'
+    #export VISUAL=vim
+    echo "test ~/.zsh_aliases for nvim + Lazy"
 fi
-
-###
-### Linux Aarch64/arm64/M1
-###
-# if [[ $OS_RELEASE == *'arm64'* ]]; then
-# Nvim: Resolved install via Snap		#TODO: migrate(packer->lazy)
-    alias v='vim'
-    alias vR='vim README.md'
-    alias vim='vim'
-    export VISUAL=vim
-# fi
 #---------------------------------[END]----------------------------------------
+

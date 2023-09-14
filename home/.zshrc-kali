@@ -313,3 +313,11 @@ fi
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/snap/bin" # Required for arm64 Neovim
+# bun completions
+# [ -s "/home/kali/.bun/_bun" ] && source "/home/kali/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+

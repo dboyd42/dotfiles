@@ -20,14 +20,14 @@ OS_RELEASE=`uname -r`
 # | Linux   | $HOME/.local/bin |                               |
 # |         | /snap/bin        | Snap package manager installs |
 
-
 ###
-### macOS ---------------------------------------------------------------------
-if [[ OS_TYPE =~ "Darwin" ]]; then
+### macOS
+if [[ $OS_TYPE =~ "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    export PATH="/opt/homebrew:$PATH"
     export PAGER="bat --color=always --theme=Dracula"
 ###
-### Linux ---------------------------------------------------------------------
+### Linux
 elif [[ $OS_TYPE =~ "Linux" ]]; then
     export PATH="$PATH:$HOME/.local/bin"
     export PATH="$PATH:/snap/bin"

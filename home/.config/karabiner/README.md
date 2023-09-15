@@ -1,7 +1,8 @@
 # Karabiner
 
 **Author:** David Boyd<br>
-**Date:** 2023-07-25
+**Date:** 2023-07-25<br>
+**Updated:** 2023-09-15
 
 ## Table of Contents
 
@@ -22,7 +23,34 @@ So far the [karabiner.json][kb-json] is set to:
 
 1. Switch Razer's DeathAdder V2 keyboard's `left_option` <> `left_command` to
    match a PC keyboard's layout to Apple's.
-2. Configure a [10-key layout][numeric-keypad-mode] while holding the `capslock`.
+2. Configure a [10-key layout][numeric-keypad-mode] while holding the `caps_lock`.
+3. Insert the following code to modify the `caps_lock + w` to `backspace`:
+
+``` json
+{
+  "description": "Numeric Keypad Mode [w as backspace]",
+  "manipulators": [
+    {
+      "conditions": [
+        {
+          "name": "numeric_keypad_mode",
+          "type": "variable_if",
+          "value": 1
+        }
+      ],
+      "from": {
+        "key_code": "w"
+      },
+      "to": [
+        {
+          "key_code": "delete_or_backspace"
+        }
+      ],
+      "type": "basic"
+    }
+  ]
+},
+```
 
 <!-- Reference Links -->
 

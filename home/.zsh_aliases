@@ -14,8 +14,6 @@ alias sbox='cd ~/Documents/code/sandbox/'
 ###
 
 # Colorize followin commands' output for ease of use (good for log files)
-alias bat='bat --color=always --theme=Dracula'
-alias bat2='bat --color=never --wrap=never --theme=Dracula'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -174,9 +172,14 @@ NODENAME=`uname -n`
 
 ###
 ### Kali
-if [[ $OS_RELEASE =~ 'kali' ]]; then
+if [[ $OS_RELEASE =~ "kali" ]]; then
         alias bat='batcat --color=always --theme=Dracula'
         alias bat2='batcat --color=never --wrap=never --theme=Dracula'
+###
+### Linux (Aarch64/arm64/M1)
+else #[[ $OS_NAME == "Linux" ]]; then
+    alias bat='bat --color=always --theme=Dracula'
+    alias bat2='bat --color=never --wrap=never --theme=Dracula'
 fi
 
 ###

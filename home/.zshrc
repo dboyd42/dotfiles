@@ -2,27 +2,40 @@
 ###                             Local Vars                                  ###
 ###############################################################################
 OS_TYPE=`uname -s`
-OS_RELASE=`uname -r`
+OS_RELEASE=`uname -r`
 
 
 ###############################################################################
 ###                         Environmental Variables                         ###
 ###############################################################################
 
+### Known PATHs
+#
+# | OS_TYPE | PATHs            | Description                   |
+# |---------+------------------+-------------------------------|
+# | macOS   | /usr/local/bin   | websites (ie. python.org)     |
+# |         | /opt/local/bin   | macports                      |
+# |         | /opt/homebrew    | brew                          |
+# |         | ~/.new_local/bin | spice-space.org (jhbuild)     |
+# | Linux   | $HOME/.local/bin |                               |
+# |         | /snap/bin        | Snap package manager installs |
+
+
 ###
 ### macOS ---------------------------------------------------------------------
-###
-#
-# | PATHs            | Description               |
-# |------------------+---------------------------|
-# | /usr/local/bin   | websites (ie. python.org) |
-# | /opt/local/bin   | macports                  |
-# | /opt/homebrew    | brew                      |
-# | ~/.new_local/bin | spice-space.org (jhbuild) |
-#
 if [[ OS_TYPE =~ "Darwin" ]]; then
-    # Homebrew
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    export PAGER="bat --color=always --theme=Dracula"
+###
+### Linux ---------------------------------------------------------------------
+elif [[ $OS_TYPE =~ "Linux" ]]; then
+    export PATH="$PATH:$HOME/.local/bin"
+    export PATH="$PATH:/snap/bin"
+    if [[ $OS_RELEASE =~ "kali" ]]; then
+        export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+    else
+        export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    fi
 fi
 
 ###
@@ -34,9 +47,6 @@ eval $(thefuck --alias)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set pager (man-pages) to use Bat
-export PAGER="bat --color=always --theme=Dracula"
 
 # Resolve remnant characters when using tab completion b/t Tmux and ZSH
 export LC_ALL="en_US.UTF-8"
@@ -54,24 +64,11 @@ fi
 ###
 ### Bun
 ###
-bun_me() {
-    # bun completions
-    [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-    # bun
-    export BUN_INSTALL="$HOME/.bun"
-    export PATH="$BUN_INSTALL/bin:$PATH"
-}
-
-if command -v bun >/dev/null 2>&1; then
-    bun_me
-else
-    echo "The program Bun is not installed."
-    read -p "Do you want to install it? (y/n): " choice
-    if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
-        curl -fsSL https://bun.sh/install | bash
-        bun_me
-    fi
-fi
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 
 ###############################################################################
@@ -112,9 +109,6 @@ plugins=(
     zsh-syntax-highlighting  # https://github.com/zsh-users/zsh-syntax-highlighting.git
 )
 
-# User configuration
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=92,bold" # Purple
-
 ###
 ### Autojump Config
 ###
@@ -126,18 +120,47 @@ fi
 autoload -U compinit; compinit
 
 ###
-### General Settings
+### ZSH Autosuggestions
 ###
-# Remove annoying beep on error
-setopt NO_BEEP
-unsetopt beep                                                                 #
+# Change suggestion color
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=92,bold" # Purple
+# Enable auto-suggestions based on the history
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+###
+### General Settings ----------------------------------------------------------
+###
+
 # Auto-update ZSH without asking
 zstyle ':omz:update' mode auto
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd extendedglob nomatch notify
+
+setopt extendedglob
+
+setopt NO_BEEP             # Remove annoying beep on error
+unsetopt beep              # Ensure removal of annoying beep on error
+setopt autocd              # Change directory just by typing its name
+#setopt correct            # Auto correct mistakes
+setopt interactivecomments # Allow comments in interactive mode
+setopt magicequalsubst     # Enable filename expansion for arguments of the form ‘anything=expression’
+setopt nonomatch           # Hide error message if there is no match for the pattern
+setopt notify              # Report the status of background jobs immediately
+setopt numericglobsort     # Sort filenames numerically when it makes sense
+setopt promptsubst         # Enable command substitution in prompt
+
+# hide EOL sign ('%')
+PROMPT_EOL_MARK=""
+
+# force zsh to N0T show the complete history
+alias history="history 0"
+
+
 
 
 ###############################################################################

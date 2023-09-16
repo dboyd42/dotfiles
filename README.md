@@ -4,6 +4,8 @@
 - convert and update bottom half to a macOS section
 - create a Linux section
 - create a simple server section
+- `keyd` prgm does not work on UTM virtualization
+  - Note: macOS already has this namespace mapped with Karabiner
 
 ## Dotfiles Setup for macOS
 

@@ -50,29 +50,6 @@
             ]
           },
           {
-            "description": "Numeric Keypad Mode [w as backspace]",
-            "manipulators": [
-              {
-                "conditions": [
-                  {
-                    "name": "numeric_keypad_mode",
-                    "type": "variable_if",
-                    "value": 1
-                  }
-                ],
-                "from": {
-                  "key_code": "w"
-                },
-                "to": [
-                  {
-                    "key_code": "delete_or_backspace"
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "Numeric Keypad Mode [spacebar as 0]",
             "manipulators": [
               {

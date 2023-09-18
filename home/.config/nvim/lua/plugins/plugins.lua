@@ -40,6 +40,9 @@ return {
     lazy = false,
   },
   {
+    "lukas-reineke/indent-blankline.nvim"
+  },
+  {
     "mbbill/undotree",
     lazy = false,
   },

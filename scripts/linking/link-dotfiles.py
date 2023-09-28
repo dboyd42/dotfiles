@@ -5,6 +5,9 @@
 # Author     : DBoyd
 # Date       : 2023-09-13
 # Updated    : 2023-09-15 - added 'create_symlinks()', and `link`*`files()` fns
+# Updated    : 2023-09-28 - create `/etc/` dirs
+#
+# Instructions: Run: `sudo python3 ./link-dotfiles.py`
 ###############################################################################
 
 import platform
@@ -52,7 +55,16 @@ def link_etc_dotfiles(os_name, git_root_dir):
     etc_dir = "/etc/"
 
     if os_name == "Linux":
+        target_dirs = ["/etc/keyd"]
         etc_files = ["keyd/default.conf", "logid.cfg"]
+
+        # Create the target directory if it doesn't exist with sudo
+        for target_dir in target_dirs:
+            try:
+                # Use sudo to create the directory
+                subprocess.run(['sudo', 'mkdir', '-p', target_dir], check=True)
+            except subprocess.CalledProcessError:
+                print(f"Failed to create {target_dir} with sudo.")
 
         for etc_file in etc_files:
             source_item = git_root_dir + etc_dir + etc_file

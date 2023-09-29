@@ -31,6 +31,7 @@ if [[ $OS_TYPE =~ "Darwin" ]]; then
 elif [[ $OS_TYPE =~ "Linux" ]]; then
     export PATH="$PATH:$HOME/.local/bin"
     export PATH="$PATH:/snap/bin"
+    export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
     if [[ $OS_RELEASE =~ "kali" ]]; then
         export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
     else

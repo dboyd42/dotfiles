@@ -162,15 +162,26 @@ PROMPT_EOL_MARK=""
 alias history="history 0"
 
 
-
-
 ###############################################################################
 ###                            Source External Files                        ###
 ###############################################################################
+# ZSH and OMZ
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 if [[ -f $HOME/.kayes/.kayze ]]; then
     source $HOME/.kayes/.kayze
+fi
+# Rust
+if [[ ! -f $HOME/.cargo/env ]]; then
+    echo "----------------------"
+    echo "Rust is not installed."
+    read -p "Install Rust? [y/n]" choice
+    if [[ choice == "y" ]]; then
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    fi
+fi
+if [[ -f $HOME/.cargo/env ]]; then
+    source "$HOME/.cargo/env"
 fi
 
 

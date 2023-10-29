@@ -23,7 +23,7 @@ map('n', '<leader>7', '<Cmd>setlocal spell!<CR>')
 
 --[[ PLUGIN_CALLS -----------------------------------------------------------]]
 -- map( MODE([nci], KEYS, CMD, OPTIONS )    --SYNTAX
-map('n', '<leader>e', 'e:NvimTreeToggle<CR>', opts)
+map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 map('n', '<localleader>ss', '<Cmd>w<CR>:so<CR>:PackerSync<CR>', opts)
 
 --[[ Table-Mode -------------------------------------------------------------]]

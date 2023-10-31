@@ -5,6 +5,7 @@ return {
       require("esqueleto").setup {
         directories = {"~/.config/nvim/skeletons/"},
         patterns = {
+          "cobol",
           "html",
           "markdown",
           "python"

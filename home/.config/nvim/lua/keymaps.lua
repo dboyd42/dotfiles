@@ -73,14 +73,19 @@ map("n", "<leader>x", "<Cmd>!chmod +x %<CR>", { silent = true })
 
 -- Run Prgm in split terminal then quit (doesn't close buffer)
 -- map('n', '<leader>rp', ':sp<CR> :term python3 %<CR> :startinsert<CR>')
+
+-- Run Prgm in split terminal then quit (auto-close buffer)
 map('n', '<leader>rb', '<Cmd>sp<CR> <Cmd>term bash %<CR>')    -- Run Bash
 map('n', '<leader>ro', '<Cmd>sp<CR> <Cmd>term ./%<<CR>')      -- Run COBOL
+map('n', '<leader>rc', '<Cmd>sp<CR> <Cmd>term ./%<<CR>')      -- Run C++
+
 map('n', '<leader>rg', '<Cmd>sp<CR> <Cmd>term go %<CR>')      -- Run Go
 map('n', '<leader>rj', '<Cmd>sp<CR> <Cmd>term nodejs %<CR>')  -- Run JS prgm
 map('n', '<leader>rl', '<Cmd>sp<CR> <Cmd>term lua %<CR>')     -- Run Lua
 map('n', '<leader>rp', '<Cmd>sp<CR> <Cmd>term python3 %<CR>') -- Run Python
 -- Compile & Run
 map('n', '<leader>co', '<Cmd>sp<CR> <Cmd>term cobc -x -o %< % && ./%<<CR>')  -- COBOL
+map('n', '<leader>cc', '<Cmd>sp<CR> <Cmd>term g++ -std=c++1z -o %< % && ./%<<CR>')  -- C++
 
 -- Concealment
 map('n', '<leader>mr',   '<Cmd>CellularAutomaton make_it_rain<CR>')

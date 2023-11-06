@@ -78,7 +78,7 @@ map("n", "<leader>x", "<Cmd>!chmod +x %<CR>", { silent = true })
 map('n', '<leader>rb', '<Cmd>sp<CR> <Cmd>term bash %<CR>')    -- Run Bash
 map('n', '<leader>rc', '<Cmd>sp<CR> <Cmd>term ./%<<CR>')      -- Run comipiled
 map('n', '<leader>rg', '<Cmd>sp<CR> <Cmd>term go %<CR>')      -- Run Go
-map('n', '<leader>rj', '<Cmd>sp<CR> <Cmd>term nodejs %<CR>')  -- Run JS prgm
+map('n', '<leader>rj', '<Cmd>sp<CR> <Cmd>term node %<CR>')  -- Run JS prgm
 map('n', '<leader>rl', '<Cmd>sp<CR> <Cmd>term lua %<CR>')     -- Run Lua
 map('n', '<leader>rp', '<Cmd>sp<CR> <Cmd>term python3 %<CR>') -- Run Python
 -- Compile & Run

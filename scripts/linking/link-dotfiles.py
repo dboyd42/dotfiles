@@ -87,7 +87,7 @@ def link_home_dotConfig_prgmfiles(os_name, git_root_dir):
 
 def link_home_dotfiles(os_name, git_root_dir):
 
-    home_dotfiles = [".gitconfig", ".p10k.zsh", ".zsh_aliases"]
+    home_dotfiles = [".gitconfig", ".p10k.zsh", ".zsh_aliases", ".zshrc"]
     if os_name == "Darwin":
         pass
         # home_dotfiles.append[...]

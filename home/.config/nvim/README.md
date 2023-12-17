@@ -3,7 +3,8 @@
 |             |            |                                          |
 |------------:|------------|------------------------------------------|
 | **Author:** | David Boyd |                                          |
-|  **Dates:** | 2023-09-13 | Migrated to [Lazy.nvim][lazy]            |
+|  **Dates:** | 2023-12-17 | Including Arch Linux instructions        |
+|             | 2023-09-13 | Migrated to [Lazy.nvim][lazy]            |
 |             | 2023-06-03 | Migrated to [Packer][pkr] *(deprecated)* |
 
 ---
@@ -60,8 +61,11 @@ pacman -S neovim tmux npm ruby python3 python-pip cpanm fd ripgrep
 
 ``` bash
 ### 1. Python
-# Enable the Python3 Provider
-pip3 install --user --upgrade pynvim  # (Note: 'neovim' is deprecated)
+# Enable the Python3 Provider (Note: `neovim` is deprecated)
+#Arch
+pacman -S python-pynvim
+#macOS 
+pip3 install --user --upgrade pynvim
 
 ### 2. Ruby
 # Add Ruby to PATH

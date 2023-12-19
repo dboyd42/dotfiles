@@ -23,7 +23,7 @@ return {
     -- end,
     lazy = false,
   },
-  {
+  --[[ {  -- Removed because I don't ever f*ing use this shit
     "jackMort/ChatGPT.nvim",
     config = function()
       require("chatgpt").setup()
@@ -34,7 +34,7 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     lazy = false,
-  },
+  }, ]]
   {
     "lambdalisue/suda.vim",
     lazy = false,

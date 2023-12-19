@@ -1,4 +1,4 @@
-return {
+--[[ return {  -- Removed because I don't ever f*ing use this shit
   {
     "jackMort/ChatGPT.nvim",
     config = function()
@@ -142,4 +142,4 @@ return {
       })
     end,
   }
-}
+} ]]

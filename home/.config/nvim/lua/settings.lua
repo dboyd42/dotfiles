@@ -22,12 +22,12 @@ set.mouse         = '' --a'    -- Mouse ctrl
 --set.wildmode = 'longest', 'list', 'full' -- Visual autocomplete for cmd-menu
 
 --- FILE MGMT ---
-set.fileencoding = 'utf-8' --, 'cp936', 'gb18030', 'big5'}  -- Add Chinese support
-set.hidden       = true -- puts unsaved file->'hidden' buffer !req :w
-set.nf = {'alpha', 'bin', 'octal', 'hex'}  -- format special chars
 set.autoread     = true -- " watch for file changes
 set.confirm      = true  -- " Use a dialog when an operation has to be confirmed
+set.fileencoding = 'utf-8' --, 'cp936', 'gb18030', 'big5'}  -- Add Chinese support
 set.hidden       = true -- " Re-use the same win & switch from unsaved buffers
+set.hidden       = true -- puts unsaved file->'hidden' buffer !req :w
+set.nf = {'alpha', 'bin', 'octal', 'hex'}  -- format special chars
 --set.isfname      +=32   -- " Supports filenames with spaces when using gf
 --set.isfname:append("@-@")
 --set.printoptions=number:y -- " Enables printing with line numbers *Use w 'ha'
@@ -44,11 +44,12 @@ set.softtabstop = 4     -- nSpaces in <TAB>
 set.tabstop     = 4     -- nVisual_Spaces in <TAB>
 
 --- TEXT-MGMT ---
-set.tw    = 79    -- textwidth
-set.wrap  = true  -- Wrapping enabled
 set.breakindent = false -- Enable break indent (default=false)
-set.undofile = true -- Save undo history
+set.linebreak = true -- Make it not wrap in the middle of a word
 set.spelllang = "en_us"
+set.tw    = 79    -- textwidth
+set.undofile = true -- Save undo history
+set.wrap  = true  -- Wrapping enabled
 
 --- SEARCHING ---
 set.hlsearch   = true   -- highlight searched matches

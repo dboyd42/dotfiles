@@ -16,12 +16,22 @@ return {
     "eandrju/cellular-automaton.nvim",
     lazy = false,
   },
-  {
+  --[[ {  -- old version
     "iamcco/markdown-preview.nvim",
     -- build = function()
     --   vim.fn["mkdp#util#install"]()
     -- end,
     lazy = false,
+  }, ]]
+  {
+    "iamcco/markdown-preview.nvim",
+    -- install with yarn or npm
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
   },
   --[[ {  -- Removed because I don't ever f*ing use this shit
     "jackMort/ChatGPT.nvim",

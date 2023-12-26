@@ -33,4 +33,19 @@ require("autocmds")               -- Autocommands
 require("keymaps")                -- Mappings
 require("settings")               -- Personal Settings
 
+-- Get the operating system type
+local is_windows = vim.fn.has("win32") == 1
+local is_mac = vim.fn.has("mac") == 1
+local is_linux = vim.fn.has("unix") == 1 and not is_mac
+
+-- Set g:python3_host_prog based on the operating system
+if is_windows then
+  vim.g.python3_host_prog = 'C:/tools/python3.exe'
+elseif is_mac then
+  vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
+elseif is_linux then
+  vim.g.python3_host_prog = '/bin/python3'
+end
+
 -- Troubleshooting ------------------------------------------------------------
+

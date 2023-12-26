@@ -26,6 +26,8 @@ if [[ $OS_TYPE =~ "Darwin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     export PATH="/opt/homebrew:$PATH"
     export PAGER="bat --color=always --theme=Dracula"
+    # brew install perl :: Persist modules' updates
+    eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 ###
 ### Linux
 elif [[ $OS_TYPE =~ "Linux" ]]; then

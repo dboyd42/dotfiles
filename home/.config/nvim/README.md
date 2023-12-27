@@ -1,24 +1,27 @@
 <h1 align="center">✨ My NeoVim Dotfiles ✨</h1>
 
-<!--
-|             |            |                                          |
-|------------:|------------|------------------------------------------|
-| **Author:** | David Boyd |                                          |
-|  **Dates:** | 2023-12-27 | Added Troubleshooting section            |
-|             | 2023-12-17 | Included Arch Linux instructions         |
-|             | 2023-09-13 | Migrated to [Lazy.nvim][lazy]            |
-|             | 2023-06-03 | Migrated to [Packer][pkr] *(deprecated)* |
--->
-
 |  **Author:** | David Boyd |
 |-------------:|------------|
 | **Updated:** | 2023-12-27 |
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Installation](#installation)
-- [Troubleshooting](#troubleshooting)
+
+<!-- vim-markdown-toc GFM -->
+
+* [Introduction](#introduction)
+* [Installation](#installation)
+  * [1. Prerequisites](#1-prerequisites)
+  * [2. Install and enable **NeoVim providers**](#2-install-and-enable-neovim-providers)
+* [2. Lazy Plugin Manager](#2-lazy-plugin-manager)
+  * [Introduction](#introduction-1)
+  * [2.2 Awkward Plugin Dependencies](#22-awkward-plugin-dependencies)
+* [3. SymLink the Dotfiles](#3-symlink-the-dotfiles)
+* [Troubleshooting](#troubleshooting)
+  * [Perl Troubleshooting](#perl-troubleshooting)
+  * [ERROR: Failed to source ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua](#error-failed-to-source-localsharenvimlazyluasnippluginluasniplua)
+
+<!-- vim-markdown-toc -->
 
 ## Introduction
 
@@ -44,7 +47,7 @@ from the NeoVim community and their amazing plugin developers.
     - Also, I think I installed `go` from [go.dev](https://go.dev/doc/install).
 
 ``` bash
-# Arch
+# Arch /* TODO: Update && confirm pkgs */
 pacman -S neovim tmux npm ruby python3 python-pip cpanm fd ripgrep
 
 # Kali
@@ -61,60 +64,60 @@ brew install font-hack-nerd-font
 port install tmux yarn fd ripgrep ruby
 ```
 
-2. Install and enable **NeoVim providers**
+### 2. Install and enable **NeoVim providers**
 
-    1. :snake: Python :snake:
-    - :pencil: `neovim` is deprecated
+  1. :snake: Python :snake:
+  - :pencil: Python's `neovim` is deprecated
 
-    ``` bash
-    # Arch
-    pacman -S python-pynvim
+  ``` bash
+  # Arch
+  pacman -S python-pynvim
 
-    # Kali & macOS
-    pip3 install --user --upgrade pynvim
-    ```
+  # Kali & macOS
+  pip3 install --user --upgrade pynvim
+  ```
 
-    2. Ruby
+  2. Ruby
 
-    ``` bash
-    # Add Ruby to PATH /* TODO: Confirm for Kali & macOS */
-    export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-    gem list && gem update
+  ``` bash
+  # Add Ruby to PATH /* TODO: Confirm for Kali & macOS */
+  export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+  gem list && gem update
 
-    # Install Ruby's NeoVim module
-    gem install neovim
+  # Install Ruby's NeoVim module
+  gem install neovim
 
-    # (Optional) Get PATH of Ruby in case of $PATH error above
-    gem environment
-    ```
+  # (Optional) Get PATH of Ruby in case of $PATH error above
+  gem environment
+  ```
 
-    3. NodeJS
+  3. NodeJS
 
-    ``` bash
-    sudo npm install -g neovim
-    ```
+  ``` bash
+  sudo npm install -g neovim
+  ```
 
-    4. Perl
-      - :warning: Perl is fucking mess :arrow_right: review
-      [Perl Troubleshooting](#perl-troubleshooting)
+  4. Perl
+    - :warning: Perl is fucking mess :arrow_right: review
+    [Perl Troubleshooting](#perl-troubleshooting)
 
-    ``` bash
-    # Arch
-    sudo cpanm -n Neovim::Ext
+  ``` bash
+  # Arch
+  sudo cpanm -n Neovim::Ext
 
-    # Kali /* Goddamn Perl */
-    ``` bash
-    sudo cpan local::lib
-    sudo cpan Neovim::Ext
+  # Kali /* Goddamn Perl */
+  ``` bash
+  sudo cpan local::lib
+  sudo cpan Neovim::Ext
 
-    # macOS /* TODO: fuck Perl */
-    PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" cpan local::lib
-    sudo cpan local::lib
-    sudo cpan Neovim::Ext
-    sudo cpan App::cpanminus
-    ```
+  # macOS /* TODO: fuck Perl */
+  PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" cpan local::lib
+  sudo cpan local::lib
+  sudo cpan Neovim::Ext
+  sudo cpan App::cpanminus
+  ```
 
-## 3. Lazy Plugin Manager
+## 2. Lazy Plugin Manager
 
 ### Introduction
 
@@ -122,7 +125,7 @@ port install tmux yarn fd ripgrep ruby
 2. `lua/plugins.lua` contains your main plugin specs
 3. `lua/plugins/*.lua` contain additional plugin specs which will automatically be merged into the main plugin spec. :bulb: The `plugins` directory is the recommended location for these additional spec files.
 
-### 3.2 Awkward Plugin Dependencies
+### 2.2 Awkward Plugin Dependencies
 
 ``` bash
 # Markmap
@@ -132,12 +135,16 @@ sudo npm install -g markmap-cli markmap
 sudo npm install -g markdown-cli
 ```
 
-## 4. SymLink the Dotfiles
+## 3. SymLink the Dotfiles
 
 - :warning: The files will need to be ***INDIVIDUALLY*** linked as the Neovim's
 package managers won't recognize directory links.
 
 ## Troubleshooting
+
+- :pencil: **Python** & **Ruby**'s `vim.g.{}_host_prog` are set in the `init.lua`
+- :pencil: **TMUX** issues are resolved in the `$HOME/.tmux.conf` file.
+
 
 When facing issues, it generally has to do with either a plugin's config file
 or a syntax error.  This geralized 3-step process has resolved *most* of the
@@ -152,8 +159,7 @@ issues I've come across:
 
 ### Perl Troubleshooting
 
-- :pencil: **Python** & **Ruby**'s `vim.g.{}_host_prog` are set in the `init.lua`
-- :pencil: **TMUX** issues are resolved in the $HOME/.tmux.conf file.
+:bulb: ***THIS WILL BE UPDATED SHORTLY:exclamation::exclamation::exclamation:***
 
 1. Verify NeoVim and its providers are able to communicate
 
@@ -170,7 +176,7 @@ vim +checkhealth
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 ```
 
-### ERROR Failed to source ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua
+### ERROR: Failed to source ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua
 
 | [Full Error](./docs/error-failed-to-source-luasnip.txt) |
 |---------------------------------------------------------|
@@ -210,3 +216,12 @@ E5113: Error while calling lua chunk: vim/_options.lua:0: E21: Cannot make chang
 [SO]: https://stackoverflow.com/
 [lazy]: https://github.com/folke/lazy.nvim#%EF%B8%8F-configuration
 [pkr]: https://github.com/wbthomason/packer.nvim
+
+<!-- Date Tracking
+|------------:|------------|------------------------------------------|
+|  **Dates:** | 2023-12-27 | Added Troubleshooting section            |
+|             | 2023-12-17 | Included Arch Linux instructions         |
+|             | 2023-09-13 | Migrated to [Lazy.nvim][lazy]            |
+|             | 2023-06-03 | Migrated to [Packer][pkr] *(deprecated)* |
+-->
+

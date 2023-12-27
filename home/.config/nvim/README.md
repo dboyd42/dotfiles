@@ -1,39 +1,24 @@
 <h1 align="center">✨ My NeoVim Dotfiles ✨</h1>
 
+<!--
 |             |            |                                          |
 |------------:|------------|------------------------------------------|
 | **Author:** | David Boyd |                                          |
-|  **Dates:** | 2023-12-17 | Including Arch Linux instructions        |
+|  **Dates:** | 2023-12-27 | Added Troubleshooting section            |
+|             | 2023-12-17 | Included Arch Linux instructions         |
 |             | 2023-09-13 | Migrated to [Lazy.nvim][lazy]            |
 |             | 2023-06-03 | Migrated to [Packer][pkr] *(deprecated)* |
+-->
 
----
-
-#### TODO
-
-- Finish this  README.md
-- Document keymaps:
-  - `:nmap`, `:vmap`, `imap`
-- List [Plugins](./lua/plugins.lua)
-
----
+|  **Author:** | David Boyd |
+|-------------:|------------|
+| **Updated:** | 2023-12-27 |
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-- [Getting Started](#getting-started)
-  - [Command Line Interface](#command-line-interface) *BONUS: If N/A: del*
-  - [Examples](#examples) *BONUS: If N/A: del*
-    - [Example 1: Perform a basic operation](#example-1-perform-a-basic-operation)
-    - [Example 2: Configure advanced settings](#example-2-configure-advanced-settings)
-    - [Example 3: Generate a report](#example-3-generate-a-report)
-- [Features](#features)
-- [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
-- [FAQ](#faq)
-- [Support](#support)
-- [License](#license)
 
 ## Introduction
 
@@ -44,48 +29,128 @@ from the NeoVim community and their amazing plugin developers.
 
 ## Installation
 
-- :bulb: *Run `nvim +checkhealth` to check the status throughout the Neovim
-process.*
-
 ### 1. Prerequisites
 
-#### Arch Linux
-
 1. Install a bunch of packages:
+  - Kali Linux notes:
+    - :pencil: Kali requires [Snap](https://snapcraft.io) to install 
+    [Neovim v0.8+](https://snapcraft.io/nvim). Otherwise, the APT repo will only
+    install versions 0.7.2-8. Some plugins require version 0.8 and greater.
+    - :crossed_swords: Kali and Perl will hurt you, so be prepared
+    :person_fencing: as we'll build our libraries from source in our [Perl
+    Troubleshooting with Kali](#perl-troubleshooting-with-kali) section.
+  - macOS notes:
+    - After experimenting with [Brew](https://brew.sh/) and [MacPorts](https://www.macports.org/), I have some packages installed from either without rhyme or reason. Overall, I haven't found much difference (other than an occasional package available on one or the other). So no need to follow my steps to a tee, they're just what I currently have and "it's working on my machine."
+    - Also, I think I installed `go` from [go.dev](https://go.dev/doc/install).
 
 ``` bash
+# Arch
 pacman -S neovim tmux npm ruby python3 python-pip cpanm fd ripgrep
+
+# Kali
+sudo apt install tmux npm yarnpkg python3-all fd-find ripgrep snapd
+sudo systemctl start snapd  # Other than installs, I keep Snap disabled
+sudo snap install nvim --classic
+sudo snap install julia --classic
+
+# macOS
+brew install tmux npm python3 perl ripgrep julia
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font
+
+port install tmux yarn fd ripgrep ruby
 ```
 
-2. Install and enable NeoVim providers
+2. Install and enable **NeoVim providers**
+
+    1. :snake: Python :snake:
+    - :pencil: `neovim` is deprecated
+
+    ``` bash
+    # Arch
+    pacman -S python-pynvim
+
+    # Kali & macOS
+    pip3 install --user --upgrade pynvim
+    ```
+
+    2. Ruby
+
+    ``` bash
+    # Add Ruby to PATH /* TODO: Confirm for Kali & macOS */
+    export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+    gem list && gem update
+
+    # Install Ruby's NeoVim module
+    gem install neovim
+
+    # (Optional) Get PATH of Ruby in case of $PATH error above
+    gem environment
+    ```
+
+    3. NodeJS
+
+    ``` bash
+    sudo npm install -g neovim
+    ```
+
+    4. Perl
+      - :warning: Perl is fucking mess :arrow_right: review
+      [Perl Troubleshooting](#perl-troubleshooting)
+
+    ``` bash
+    # Arch
+    sudo cpanm -n Neovim::Ext
+
+    # Kali /* Goddamn Perl */
+    ``` bash
+    sudo cpan local::lib
+    sudo cpan Neovim::Ext
+
+    # macOS /* TODO: fuck Perl */
+    PERL_MM_OPT="INSTALL_BASE=$HOME/perl5" cpan local::lib
+    sudo cpan local::lib
+    sudo cpan Neovim::Ext
+    sudo cpan App::cpanminus
+    ```
+
+## 3. Lazy Plugin Manager
+
+### Introduction
+
+1. `init.lua` contains `require("lazy").setup("plugins")` to initialize Lazy.
+2. `lua/plugins.lua` contains your main plugin specs
+3. `lua/plugins/*.lua` contain additional plugin specs which will automatically be merged into the main plugin spec. :bulb: The `plugins` directory is the recommended location for these additional spec files.
+
+### 3.2 Awkward Plugin Dependencies
 
 ``` bash
-### 1. Python
-# Enable the Python3 Provider (Note: `neovim` is deprecated)
-#Arch
-pacman -S python-pynvim
-#macOS 
-pip3 install --user --upgrade pynvim
+# Markmap
+sudo npm install -g markmap-cli markmap
 
-### 2. Ruby
-# Add Ruby to PATH
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-gem list && gem update
-
-# Install Ruby's NeoVim module
-gem install neovim
-
-# (Optional) Get PATH of Ruby in case of $PATH error above
-gem environment
-
-### 3. NodeJS
-sudo npm install -g neovim
-
-### 4. Perl
-sudo cpanm -n Neovim::Ext
+# MarkdownPreview
+sudo npm install -g markdown-cli
 ```
 
-### 2. NeoVim (Basic) Setup
+## 4. SymLink the Dotfiles
+
+- :warning: The files will need to be ***INDIVIDUALLY*** linked as the Neovim's
+package managers won't recognize directory links.
+
+## Troubleshooting
+
+When facing issues, it generally has to do with either a plugin's config file
+or a syntax error.  This geralized 3-step process has resolved *most* of the
+issues I've come across:
+
+1. Identify the **plugin** causing the issue.
+2. Examine the plugin's **config file**.
+3. Read the plugin's **documentation**:
+    1. Check the plugin's official github page
+    2. [Reddit][RED] and [StackOverflow][SO] have proven to point towards the
+        correct docs.
+
+### Perl Troubleshooting
 
 - :pencil: **Python** & **Ruby**'s `vim.g.{}_host_prog` are set in the `init.lua`
 - :pencil: **TMUX** issues are resolved in the $HOME/.tmux.conf file.
@@ -105,126 +170,38 @@ vim +checkhealth
 cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 ```
 
-## 3. Lazy Plugin Manager
+### ERROR Failed to source ~/.local/share/nvim/lazy/LuaSnip/plugin/luasnip.lua
 
-### Introduction
+| [Full Error](./docs/error-failed-to-source-luasnip.txt) |
+|---------------------------------------------------------|
 
-1. `init.lua` contains `require("lazy").setup("plugins")` to initialize Lazy.
-2. `lua/plugins.lua` contains your main plugin specs
-3. `lua/plugins/*.lua` contain additional plugin specs which will automatically be merged into the main plugin spec. :bulb: The `plugins` directory is the recommended location for these additional spec files.
+| Related Errors                                                               |
+|------------------------------------------------------------------------------|
+| E5113: Error while calling lua chunk: Cannot make changes, modifiable is off |
 
-### 3.2 Awkward Plugin Dependencies
+This error tends to occur when I haven't updated/upgraded a machine in long
+time. It's most likely has to do with a new release of the plugin and cannot
+update the current (outdated?) configs. Granted, *this* error is for the
+LuaSnip plugin, but the following steps should resolve the error for any plugin
+(just replace `LuaSnip` with your specific plugin). Anyways, we can resolve
+this by forcing Neovim to reinstall the plugin.
 
-``` bash
-# Required for Markmap
-sudo npm install -g markmap-cli
-```
-
-## 4. SymLink the Dotfiles
-
-- :warning: This has not *yet* been tested on a new distro install!
-
-``` bash
-cd
-ln -sf $PWD/nvim/ $HOME/.config/
-```
-
-<!-- #TODO
-
-## Getting Started
-
-`#TODO`
-
-### Command Line Interface
-
-`#TODO`
-
-### Examples
-
-
-- [Example 1: Perform a basic operation](#example-1-perform-a-basic-operation)
-- [Example 2: Configure advanced settings](#example-2-configure-advanced-settings)
-- [Example 3: Generate a report](#example-3-generate-a-report)
-
-#### Example 1: Perform a basic operation
-
+1. Delete the local folder.
 
 ``` bash
-program-name --option1 value1 --option2 value2
+rm -rf $HOME/.local/share/nvim/lazy/LuaSnip
 ```
 
-*[Explain the purpose of this example and provide a step-by-step breakdown of
-the command and its options. Include expected output or results.]*
-
-#### Example 2: Configure advanced settings
+2. Open vim and wait for Mason will auto-install LuaSnip plugin.
+  - :warning: The following error will occur, but this is perfectly normal.
 
 ``` bash
-program-name --option1 value1 --option2 value2 --advanced
+E5113: Error while calling lua chunk: vim/_options.lua:0: E21: Cannot make changes, 'mod ifiable' is off
 ```
 
-*[Explain the purpose of this example and provide a step-by-step breakdown of
-the command and its options. Include expected output or results.]*
-
-#### Example 3: Generate a report
-
-``` bash
-program-name --option1 value1 --option2 value2 --output-file out.txt --report
-```
-
-*[Explain the purpose of this example and provide a step-by-step breakdown of
-the command and its options. Include expected output or results.]*
-
-## Features
-
-*[List and describe the main features and functionalities of the program.]*
-
-## Usage
-
-*[Provide comprehensive instructions on how to use the program, including
-detailed explanations of each feature, commands, and options.]*
-
--->
-
-## Troubleshooting
-
-When facing issues, it generally has to do with either a plugin's config file
-or a syntax error.  This geralized 3-step process has resolved *most* of the
-issues I've come across:
-
-1. Identify the **plugin** causing the issue.
-2. Examine the plugin's **config file**.
-3. Read the plugin's **documentation**:
-    1. Check the plugin's official github page
-    2. [Reddit][RED] and [StackOverflow][SO] have proven to point towards the
-        correct docs.
-
-#### macOS
-
-:warning: This setup is incomplete as it's been built on top of a previous
-build.
-
-#### Fonts and Icons
-
-``` bash
-# Install Homebrew Fonts 
-brew tap homebrew/cask-fonts
-brew install font-hack-nerd-font
-```
-
-#### Post-Install Plugins
-
-``` bash
-# For MarkdownPreview post install (run inside NVim)
-:call mkdp#util#install()
-```
-
-<!-- #TODO
-## FAQ
-
-*[Compile a list of frequently asked questions related to the program, along
-with their answers.]*
-
--->
+3. Press `Enter` to dismiss the notification.
+4. In Neovim, update Mason packages: `:MasonUpdate`
+5. Close then re-open Neovim to confirm
 
 <!------------------------------ Refereences --------------------------------->
 

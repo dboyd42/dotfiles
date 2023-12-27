@@ -67,7 +67,8 @@ port install tmux yarn fd ripgrep ruby
 ### 2. Install and enable **NeoVim providers**
 
 [Neovim Providers](https://neovim.io/doc/user/provider.html) are dynamic
-"providers" that delegate *'some'* :P features in Neovim.
+"providers" that delegate *'some'* :stuck_out_tongue_winking_eye: features in
+Neovim.
 
   1. :snake: Python :snake:
   - :pencil: Python's `neovim` is deprecated

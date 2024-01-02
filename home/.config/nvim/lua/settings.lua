@@ -16,6 +16,7 @@ set.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 --- BACKEND ---
 --set.nostartofline = true -- Off: cursor is kept in the same column #ERR
 --set.notimeout     = true -- timeouts on keycodes #ERR
+set.clipboard = {'unnamed', 'unnamedplus'}  -- '*' (vim cb), '+' (system cb)
 set.ttimeout      = true --   *doesn't affect mappings
 set.ttimeoutlen   = 200  --   self-explantory
 set.mouse         = '' --a'    -- Mouse ctrl

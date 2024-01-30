@@ -46,7 +46,7 @@ map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char --TMUX <prefix>
 map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
 map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
 map('n', '<leader>tc', '<Cmd>.s/\\(\\w\\+\\)/\\u\\L\\1/g<CR><Cmd>nohl<CR>', opts) -- Title Case
-map('v', '<leader>tc', '<Cmd>s/\\%V\\(\\w\\+\\)/\\u\\L\\1/g<CR><Cmd>nohl<CR>', opts) -- Title Case
+map('v', '<leader>tc', '<Cmd>s/\\%V\\(\\w\\+\\)/\\u\\L\\1/g<CR>Esc<Cmd>nohl<CR>', opts) -- Title Case
 map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>',  opts) -- Insert today's date
 
 -- Refactor curr->word in curr->file

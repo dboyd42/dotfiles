@@ -6,7 +6,7 @@ local opts = { noremap = true, silent = true }
 
 --[[ Moved to lua/lazy.lua
 vim.g.mapleader = ' '	-- Space
-vim.g.maplocalleader = '\\' -- Backslash
+vimg.g.maplocalleader = '\\' -- backslash
 ]]
 
 --[[ META_FILE_EDITS --------------------------------------------------------]]
@@ -39,15 +39,18 @@ map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 
 --[[ FILE EDITS -------------------------------------------------------------]]
 --map('c', 'delduprows', '%s/^\(.*\)\(\n\1\)\+$/\1/', opts) -- Del duplicate rows
-map('i', '<C-d>', '<Del>', opts)       -- Del char on cursor
+map('i', '<C-d>', '<Del>',       opts)       -- Del char on cursor
 map('i', '<localleader>ts', '<C-R>=strftime("%F")<CR>', opts) -- Insert today's date
-map('i', '<C-f>', '<C-x><C-n>', opts) -- Autocomplete from prev->words
+map('i', '<C-f>', '<C-x><C-n>',  opts) -- Autocomplete from prev->words
 map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char --TMUX <prefix>
 map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
 map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
-map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>', opts) -- Insert today's date
+map('n', '<leader>tc', '<Cmd>.s/\\(\\w\\+\\)/\\u\\L\\1/g<CR><Cmd>nohl<CR>', opts) -- Title Case
+map('v', '<leader>tc', '<Cmd>s/\\%V\\(\\w\\+\\)/\\u\\L\\1/g<CR><Cmd>nohl<CR>', opts) -- Title Case
+map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>',  opts) -- Insert today's date
+
 -- Refactor curr->word in curr->file
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --[[ SEARCHES ---------------------------------------------------------------]]
 map('n', '<localleader> ', '<Cmd>nohl<CR>', opts)  -- Remove search highlighting

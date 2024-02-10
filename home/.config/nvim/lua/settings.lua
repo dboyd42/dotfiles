@@ -11,7 +11,7 @@ set.cursorline     = true
 set.number         = true -- display ascending line numbers
 set.numberwidth    = 4    -- nCols to use for the line number
 -- set.guicursor      = ""   -- fat cursor **works w/ dracula.lua
-set.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+set.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20'
 
 --- BACKEND ---
 --set.nostartofline = true -- Off: cursor is kept in the same column #ERR
@@ -46,17 +46,18 @@ set.tabstop     = 4     -- nVisual_Spaces in <TAB>
 
 --- TEXT-MGMT ---
 set.breakindent = false -- Enable break indent (default=false)
-set.linebreak = true -- Make it not wrap in the middle of a word
-set.spelllang = "en_us"
-set.tw    = 79    -- textwidth
-set.undofile = true -- Save undo history
-set.wrap  = true  -- Wrapping enabled
+set.linebreak = true    -- Make it not wrap in the middle of a word
+set.spelllang = 'en_us'
+set.spellsuggest = '5'  -- Limit spellsuggest list to 5 words
+set.tw    = 79          -- textwidth
+set.undofile = true     -- Save undo history
+set.wrap  = true        -- Wrapping enabled
 
 --- SEARCHING ---
 set.hlsearch   = true   -- highlight searched matches
 set.ignorecase = true   -- insensitive case queries
 set.incsearch  = true   -- display matches while typing
-set.smartcase  = true	-- capitalized sensitive case queries
+set.smartcase  = true	  -- capitalized sensitive case queries
 
 --- SECURITY ---
 --set.nomodeline    = true -- disabled due to security vulns #ERR
@@ -67,8 +68,8 @@ set.splitbelow    = true
 set.splitright    = true
 set.termguicolors = true
 --set.updatetime = 250 -- Decrease update time
-set.updatetime = 50 -- fast update time
-setw.signcolumn = 'yes' -- Decrease update time
+set.updatetime    = 50  -- fast update time
+setw.signcolumn   = 'yes' -- Decrease update time
 
 --- UNKNOWN ---
 -- set.completeopt = 'menuone,noselect'

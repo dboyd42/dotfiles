@@ -48,6 +48,11 @@ map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
 map('n', '<leader>tc', '<Cmd>.s/\\(\\w\\+\\)/\\u\\L\\1/g<CR><Cmd>nohl<CR>', opts) -- Title Case
 map('v', '<leader>tc', '<Cmd>s/\\%V\\(\\w\\+\\)/\\u\\L\\1/g<CR>Esc<Cmd>nohl<CR>', opts) -- Title Case
 map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>',  opts) -- Insert today's date
+-- Ctrl-[80] and Alt-[80] do not work
+-- map('i', '<M-8>', '<C-o>:set tw=79<CR>', opts)
+-- map('i', '<M-7>', '<C-o>:set tw=0<CR>', opts)
+-- map('n', '<M-8>', '<C-o>:set tw=79<CR>', opts)
+-- map('n', '<M-7>', '<C-o>:set tw=0<CR>', opts)
 
 -- Refactor curr->word in curr->file
 map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

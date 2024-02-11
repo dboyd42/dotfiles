@@ -39,20 +39,17 @@ map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 
 --[[ FILE EDITS -------------------------------------------------------------]]
 --map('c', 'delduprows', '%s/^\(.*\)\(\n\1\)\+$/\1/', opts) -- Del duplicate rows
-map('i', '<C-d>', '<Del>',       opts)       -- Del char on cursor
-map('i', '<localleader>ts', '<C-R>=strftime("%F")<CR>', opts) -- Insert today's date
+map('i', '<C-d>', '<Del>',       opts) -- Del char on cursor
 map('i', '<C-f>', '<C-x><C-n>',  opts) -- Autocomplete from prev->words
+map('i', '<localleader>ts', '<C-R>=strftime("%F")<CR>', opts)  -- Insert today's date
+map('i', '<localleader>tw', '<C-o>:lua ToggleTextwidth()<CR>') -- Textwidth Toggle (0,79)
 map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char --TMUX <prefix>
 map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
 map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
 map('n', '<leader>tc', '<Cmd>.s/\\(\\w\\+\\)/\\u\\L\\1/g<CR><Cmd>nohl<CR>', opts) -- Title Case
-map('v', '<leader>tc', '<Cmd>s/\\%V\\(\\w\\+\\)/\\u\\L\\1/g<CR>Esc<Cmd>nohl<CR>', opts) -- Title Case
 map('n', '<localleader>ts', 'i<C-R>=strftime("%F")<CR><Esc>',  opts) -- Insert today's date
--- Ctrl-[80] and Alt-[80] do not work
--- map('i', '<M-8>', '<C-o>:set tw=79<CR>', opts)
--- map('i', '<M-7>', '<C-o>:set tw=0<CR>', opts)
--- map('n', '<M-8>', '<C-o>:set tw=79<CR>', opts)
--- map('n', '<M-7>', '<C-o>:set tw=0<CR>', opts)
+map('n', '<localleader>tw', ':lua ToggleTextwidth()<CR>', opts)      -- Textwidth Toggle (0,79)
+map('v', '<leader>tc', '<Cmd>s/\\%V\\(\\w\\+\\)/\\u\\L\\1/g<CR>Esc<Cmd>nohl<CR>', opts) -- Title Case
 
 -- Refactor curr->word in curr->file
 map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -97,3 +94,21 @@ map('n', '<leader>cc', '<Cmd>sp<CR> <Cmd>term gcc -o %< % && ./%<<CR>')  -- C
 -- Concealment
 map('n', '<leader>mir',  '<Cmd>CellularAutomaton make_it_rain<CR>')
 map('n', '<leader>mgof', '<Cmd>CellularAutomaton game_of_life<CR>')
+
+--[[ User-defined Functions -------------------------------------------------]]
+
+-- Echo a Buffer Option's Value to the User -----------------------------------
+function EchoBufferOption(option)
+    print(option .. " is set to " .. vim.bo[option])
+end
+
+-- Textwidth: Toggle between values 0 and 79 ----------------------------------
+function ToggleTextwidth()
+    if vim.bo.textwidth == 0 then
+        vim.bo.textwidth = 79
+    else
+        vim.bo.textwidth = 0
+    end
+    EchoBufferOption("textwidth")
+end
+

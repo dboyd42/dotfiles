@@ -42,7 +42,8 @@ map('i', '<C-h>', '<ESC>i',  opts)  -- Previous char
 map('i', '<C-d>', '<Del>',       opts) -- Del char on cursor
 map('i', '<C-f>', '<C-x><C-n>',  opts) -- Autocomplete from prev->words
 map('i', '<localleader>ts', '<C-R>=strftime("%F")<CR>', opts)  -- Insert today's date
-map('i', '<localleader>tw', '<C-o>:lua ToggleTextwidth()<CR>') -- Textwidth Toggle (0,79)
+-- map('i', '<localleader>tw', '<C-o>:lua ToggleTextwidth()<CR>') -- Textwidth Toggle (0,79)
+map('i', '<localleader>tw', '<Cmd>lua ToggleTextwidth()<CR>') -- Textwidth Toggle (0,79)
 map('n', '<C-Space>', 'i <ESC>', opts) -- Insert space char --TMUX <prefix>
 map('n', '<C-j>', 'o<ESC>k',     opts) -- Insert newline below cursor
 map('n', '<C-o>', 'O<ESC>j',     opts) -- Insert newline above cursor
@@ -98,8 +99,12 @@ map('n', '<leader>mgof', '<Cmd>CellularAutomaton game_of_life<CR>')
 --[[ User-defined Functions -------------------------------------------------]]
 
 -- Echo a Buffer Option's Value to the User -----------------------------------
-function EchoBufferOption(option)
+function EchoBufferOptionInCmdLine(option)
     print(option .. " is set to " .. vim.bo[option])
+end
+
+function EchoBufferOptionInNotify(option)
+    vim.notify(option .. " is set to " .. vim.bo[option])
 end
 
 -- Textwidth: Toggle between values 0 and 79 ----------------------------------
@@ -109,6 +114,6 @@ function ToggleTextwidth()
     else
         vim.bo.textwidth = 0
     end
-    EchoBufferOption("textwidth")
+      EchoBufferOptionInNotify("textwidth")
 end
 

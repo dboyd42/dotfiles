@@ -56,7 +56,7 @@ map('v', '<leader>tc', '<Cmd>s/\\%V\\(\\w\\+\\)/\\u\\L\\1/g<CR>Esc<Cmd>nohl<CR>'
 map('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --[[ SEARCHES ---------------------------------------------------------------]]
-map('n', '<localleader> ', '<Cmd>nohl<CR>', opts)  -- Remove search highlighting
+-- map('n', '<localleader> ', '<Cmd>nohl<CR>', opts)  -- moved to plugins/notify.lua
 
 --[[ Bonus Bindings - Woot! Woot! -------------------------------------------]]
 -- Move visual sel up/down and within wrapping lines

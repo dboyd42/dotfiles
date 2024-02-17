@@ -116,14 +116,26 @@ plugins=(
 )
 
 ###
-### Autojump Config
+### `cd` Jumping Configs ------------------------------------------------------
 ###
+
+### Autojump Config
+##
 export FPATH="$FPATH:/opt/local/share/zsh/site-functions/"
 if [ -f /opt/local/etc/profile.d/autojump.sh ]; then
-. /opt/local/etc/profile.d/autojump.sh
+    . /opt/local/etc/profile.d/autojump.sh
 fi
-# To use zsh tab completion, load compinit in your .zshrc:
+
+### To use zsh tab completion, load compinit in your .zshrc:
+##
 autoload -U compinit; compinit
+
+### Zoxide Config (Autojump alternative)
+##
+# The following line must be added after compinit is called!
+eval "$(zoxide init zsh)"
+
+### END `cd` Jumping Configs --------------------------------------------------
 
 ###
 ### ZSH Autosuggestions
@@ -256,3 +268,5 @@ bindkey "^ " autosuggest-accept  # Ctrl+Space
 ###
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

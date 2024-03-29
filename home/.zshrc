@@ -3,6 +3,7 @@
 ###############################################################################
 OS_TYPE=`uname -s`
 OS_RELEASE=`uname -r`
+UNAME_ALL=`uname -a`
 
 
 ###############################################################################
@@ -35,7 +36,7 @@ elif [[ $OS_TYPE =~ "Linux" ]]; then
     export PATH="$PATH:/snap/bin"
     export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
     eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-    if [[ $OS_RELEASE =~ "kali" ]]; then
+    if [[ $UNAME_ALL =~ "kali" ]]; then
         export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
     else
         export MANPAGER="sh -c 'col -bx | bat -l man -p'"

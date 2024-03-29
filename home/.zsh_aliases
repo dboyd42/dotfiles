@@ -167,6 +167,7 @@ alias vmdk2qcow2='(){qemu-img convert -p -O qcow2 "$1" "${1%%vmdk}qcow2"}'
 ###############################################################################
 OS_RELEASE=`uname -r`
 OS_NAME=`uname -s`
+UNAME_ALL=`uname -a`
 NODENAME=`uname -n`
 
 ###
@@ -181,7 +182,7 @@ fi
 
 ###
 ### Kali
-if [[ $OS_RELEASE =~ "kali" ]]; then
+if [[ $UNAME_ALL =~ "kali" ]]; then
     alias bat='batcat --color=always --theme=Dracula'
     alias bat2='batcat --color=never --wrap=never --theme=Dracula'
 ###

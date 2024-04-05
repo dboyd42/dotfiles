@@ -5,6 +5,7 @@
 #  ___) | || (_| | |  | |_    \ V  V / (_| | |_| | |_) | (_| | |    
 # |____/ \__\__,_|_|   \__|    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
 #                                           |___/                   
+#
 # ----------------------------------------------------- 
 
 # ----------------------------------------------------------------------------
@@ -15,5 +16,11 @@ killall waybar
 # ----------------------------------------------------------------------------
 # Load the configuration
 # ----------------------------------------------------------------------------
-waybar -c ~/.config/waybar/waybar.config & -s ~/.config/waybar/style.css
+configFile="~/.config/waybar/waybar.config"
+if [ -f $configFile ]; then
+    waybar -c ~/.config/waybar/waybar.config & \
+    -s ~/.config/waybar/style.css
+else
+    waybar &
+fi
 

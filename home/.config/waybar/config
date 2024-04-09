@@ -4,16 +4,16 @@
   "height": 24,
   "spacing": 4,
   "modules-left": [
-    "wlr/workspaces",
-    "wlr/taskbar"
+    "wlr/taskbar",
+    "hyprland/window"
   ],
   "modules-center": [
-    "hyprland/window"
+    "wlr/workspaces"
   ],
   "modules-right": [
     "tray",
     "hyprland/language",
-    "custom/weather",
+    "tray",
     "clock"
   ],
   "wlr/taskbar": {

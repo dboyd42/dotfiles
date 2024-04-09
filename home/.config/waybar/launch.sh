@@ -16,12 +16,14 @@ killall waybar
 # ----------------------------------------------------------------------------
 # Load the configuration
 # ----------------------------------------------------------------------------
-configFile="~/.config/waybar/waybar.config"
-styleFile="~/.config/waybar/style.css"
+configFile="$HOME/.config/waybar/config3"
+styleFile="$HOME/.config/waybar/style.css"
 
-if [ -f $configFile ]; then
-    waybar -c $configFile -s $styleFile &
-else
-    waybar &
-fi
+waybar -c $configFile -s $styleFile &
+
+#if [ -f $configFile ]; then
+#    waybar -c $configFile -s $styleFile &
+#else
+#    #waybar &
+#fi
 

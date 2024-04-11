@@ -1,0 +1,13 @@
+[system]
+- setup hibernation: https://confluence.jaytaala.com/display/TKB/Use+a+swap+file+and+enable+hibernation+on+Arch+Linux+-+including+on+a+LUKS+root+partition
+- setup swaylock
+
+[hyprland]
+
+# idle (logout & hibernation)
+swayidle -w timeout 600 "swaylock" before-sleep "swaylock" & # lock screen after 10 min of idle
+swayidle -w timeout 1200 "systemctl hibernate" &             # hibernate after 20 mins of idle
+
+[Login Mgr]
+Config = /usr/lib/sddm/sddm.conf.d/default.conf
+ThemeDir = /usr/share/sdd/themes/<folder>

@@ -1,0 +1,200 @@
+# -----------------------------------------------------------------------------
+# Installation (PacStrap)
+# -----------------------------------------------------------------------------
+
+pacstrap -K /mnt
+    base linux linux-firmware
+    git
+    intel-ucode
+    iwd
+    man-db man-pages
+    networkmanager
+    openssh
+    plocate             # A much faster mlocate
+    posix-c-development
+    posix-software-development
+    posix-user-portability
+    posix-xsi
+    reflector
+    sudo
+    tree
+    tmux
+    unzip
+    wev
+    vim
+
+# -----------------------------------------------------------------------------
+# Post-Installation
+# -----------------------------------------------------------------------------
+
+# Package Managers
+# -----------------------------------------------------------------------------
+# *Note: flatpak & snap -> Requires restart
+
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+sudo pacman -S flatpak
+
+git clone https://aur.archlinux.org/snapd.git && cd snapd && makepkg -si
+sudo systemctl enable --now snapd.socket
+sudo systemctl enable --now snapd.apparmor
+
+
+
+echo "alias yay='yay --aur'" >> ~/.bashrc
+echo "alias ll='ls -alh'" >> ~/.bashrc
+
+# -----------------------------------------------------------------------------
+# GUI System Pkgs
+# -----------------------------------------------------------------------------
+
+# Hyprland
+pacman -S hyprpaper hyperidle hyperlock
+
+# Display Server
+yay -S qt6-wayland
+
+# Desktop Compositor (Environment)
+yay -S hyprland
+
+# Display Manager (Login Manager)
+yay -S sddm
+    *Note: /etc/sddm.conf.d << Theme
+    * sudo systemctl enable sddm; sudo systemctl start display-manager
+    * verify symlink: /etc/systemd/system/
+
+# Audio Server
+yay -S pipewire  # also req for screen-sharing
+yay -S wireplumber
+
+# GUI Authn Agent
+yay -S polkit-kde-agent
+
+# Status Bar
+yay -S waybar
+yay -S otf-fonts-awesome-5
+
+# Notification Agent
+yay -S swaync
+
+yay -S wl-clipboard
+yay -S brightnessctl-git
+
+
+# Programming Languages
+# -----------------------------------------------------------------------------
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# JQ
+pacman -S jq
+# Ruby + Gem
+sudo pacman -S ruby
+# Nodejs (If not already installed)
+pacman -S nodejs
+# Bun (JS)
+curl -fsSL https://bun.sh/install | bash
+    #bun was installed successfully to ~/.bun/bin/bun
+    #Added "~/.bun/bin" to $PATH in "~/.bashrc"
+# NPM (JS)
+pacman -S npm
+
+
+export PATH=$HOME/.cargo/bin:$PATH
+
+
+# -----------------------------------------------------------------------------
+# Applications
+# -----------------------------------------------------------------------------
+
+# Neovim
+# ------
+# Nvim Official:
+sudo pacman -S neovim
+sudo pacman -S python-pynvim
+sudo yay -S ruby-neovim
+
+# Nvim :checkhealth
+# -----------------
+
+# NodeJS
+sudo npm install -g neovim
+
+# Perl
+cpan local::lib
+cpan App:cpanminus
+cpan Neovim:Ext
+cpanm --local-lib=~/perl5 local::lib && eval PERL_MB_OPT="--install_base \"/home/bhatm/perl5\""; export PERL_MB_OPT; PERL_MM_OPT="INSTALL_BASE=/home/bhatm/perl5"; export PERL_MM_OPT;
+sudo cpan local::lib
+sudo cpan App::cpanminus
+sudo cpan Neovim:Ext
+sudo cpanm --local-lib=~/perl5 local::lib && eval PERL_MB_OPT="--install_base \"/home/bhatm/perl5\""; export PERL_MB_OPT; PERL_MM_OPT="INSTALL_BASE=/home/bhatm/perl5"; export PERL_MM_OPT;
+
+
+# Browsers
+# --------
+# (Yay)
+yay -S brave-bin
+yay -S qutebrowser-bin
+yay -S firefox-bin
+yay -S firefox-developer-edition
+yay -S ungoogled-chromium-bin
+
+# Media Players
+# -------------
+pacman -S mpv
+# MPV requires youtube-dl but errors out b/c out-of-date
+pacman -S yt-dlp
+sudo ln -sf /usr/bin/yt-dlp /usr/bin/youtube-dl
+
+
+# Utilities
+# ---------
+yay -S diffoscope
+
+# Tmux Plugin Manager (TPM)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# Type this in terminal if tmux is already running
+tmux source ~/.config/tmux/tmux.conf
+# Then install the plugins
+<C-B>I
+
+
+# Virtualiaztion
+# --------------
+yay -S qt-virt-manager
+
+# -----------------------------------------------------------------------------
+# Themes and Customizations 
+# -----------------------------------------------------------------------------
+
+# Fonts
+# -----
+# Covers most of the [] found on webpages
+pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
+
+# Dracula Theme                     | App
+# ----------------------------------------------------------------
+git clone https://github.com/dracula/qutebrowser-dracula-theme.git
+git clone https://github.com/dracula/waybar.git
+yay -S ttc-iosevka
+
+# Sway
+yay -S nerd-fonts-noto-sans-mono-extended
+
+
+# Terminal
+pacman -S fzf
+    # 
+pacman -S zoxide
+yay -s bat
+yay -S lsd
+yay -S thefuck
+yay -S btop
+
+
+# -----------------------------------------------------------------------------
+# Fun Shit
+# -----------------------------------------------------------------------------
+
+# 

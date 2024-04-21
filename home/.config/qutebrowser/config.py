@@ -1,4 +1,3 @@
-
 # https://www.qutebrowser.org/doc/help/settings.html#content.local_content_can_access_file_urls
 
 # -----------------------------------------------------------------------------

@@ -5,6 +5,7 @@
     font-family: Iosevka;
     font-size: 11pt;
     min-height: 0;
+    padding: 0 1px;
 }
 window#waybar {
     opacity: 0.9;

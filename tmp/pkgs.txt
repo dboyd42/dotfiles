@@ -53,6 +53,7 @@ pacman -S hyprpaper hyperidle hyperlock
 
 # Display Server
 yay -S qt6-wayland
+yay -S qt6ct
 
 # Desktop Compositor (Environment)
 yay -S hyprland
@@ -171,6 +172,9 @@ yay -S qt-virt-manager
 # -----
 # Covers most of the [] found on webpages
 pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
+# Waybar Icons: Brightness, Network (Fix Missing)
+pacman -S ttf-nerd-fonts-symbols-mono
 
 
 # Dracula Theme                     | App

@@ -1,0 +1,484 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+/*
+ ******************************************************************************
+ * Waybar
+ ******************************************************************************
+*/
+window#waybar {
+    /*Transparent background*/
+    background-color: rgba(12, 12, 12, 0.0);
+    /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
+    color: #ffffff;
+    /*transition-property: background-color;*/
+    transition-duration: .5s;
+}
+/* TODO: Define */
+window#waybar.hidden {
+    opacity: 0.2;
+}
+/* When no windows are present */
+window#waybar.empty {
+    /*Transparent background*/
+    background-color: rgba(12, 12, 12, 0.0);
+}
+/* When only 1 window is present */
+window#waybar.solo {
+    /*Transparent background*/
+    background-color: rgba(12, 12, 12, 0.0);
+}
+
+/*
+ * --------------------
+ * App-Specific Styling
+ * --------------------
+*/
+/*
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+*/
+
+/*
+ * ---------------------
+ * Workspaces' Button(s)
+ * ---------------------
+ *   -> https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect
+*/
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    /* Workspaces - Active*/
+    border-radius: 25px;
+}
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+/* TODO: Diff(button, workspaces buton)? */
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    /*border-radius: 25px;*/
+    color: #ffffff;
+}
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+/*
+ ******************************************************************************
+ * MODULES' TEMPLATE
+ ******************************************************************************
+*/
+
+#battery,
+#clock,
+#clock.2,
+#custom-media,            /* TODO: Test */
+#custom-power,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray,                   /* TODO: Configure */
+#backlight,                 /* TODO: Place in Tray */
+#cpu,                       /* TODO: Place in Tray */
+#disk,                      /* TODO: Place in Tray */
+#memory,                    /* TODO: Place in Tray */
+#temperature,               /* TODO: Place in Tray */
+#idle_inhibitor,         /* TODO: Define */
+#mode,                   /* TODO: Define */
+#power-profiles-daemon,  /* TODO: DELETE */
+#scratchpad {            /* TODO: DELETE */
+    padding: 0 4px;
+    color: #ffffff;
+}
+
+/*
+ ******************************************************************************
+ * CUSTOM COLORSCHEMES BELOW
+ ******************************************************************************
+*/
+
+/*
+ * Windows && Workspaces
+*/
+/* TODO: Define window */
+#window, 
+#workspaces {
+    margin: 0 4px;
+    border-radius: 25px;
+}
+/* Highlight current workspace */
+#workspaces button.active {
+    background-color: green;
+    box-shadow: inset 0 -3px #ffffff;
+}
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/*
+ * Battery
+ * -------
+*/
+#battery {
+    background-color: #ffffff;
+    border-radius: 25px;
+    color: #000000;
+}
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/*
+ * Wayland Logout
+ * --------------
+*/
+#custom-power {
+    /* Archlinux blue */
+    background-color: #2980b9;
+    padding: 0 2px;
+    border-radius: 25;
+}
+
+/*
+ * Clock && Clock.2
+ * ----------------
+*/
+#clock {
+    background-color: #454545;
+    border-radius: 25px;
+}
+
+/*
+ * Media
+ * -----
+*/
+/* TODO: Test */
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+/*
+ * Network
+ * -------
+*/
+#network {
+    background-color: #2980b9;
+    border-radius: 25px;
+}
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+/*
+ * Audio (PulseAudio, WirePlumber)
+*/
+#pulseaudio {
+    background-color: #f1c40f;
+    border-radius: 25px;
+    color: #000000;
+}
+#pulseaudio:hover {
+    background-color: #a37800;
+    border-radius: 25px;
+}
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+
+/*
+ * **************
+ * Tray
+ * **************
+*/
+#tray {
+    background-color: #2980b9;
+    /* TODO: Showed no difference between colors */
+    /*background-color: transparent;*/
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/*
+ * Place in Tray
+ * **************
+*/
+/*
+ * Screen Brightness
+ * -----------------
+*/
+#backlight {
+    background-color: #90b1b1;
+    border-radius: 25px;
+}
+
+/*
+ * CPU
+ * ---
+*/
+/* TODO: Place in tray */
+#cpu {
+    background-color: #2ecc71;
+    border-radius: 25px;
+    color: #000000;
+}
+
+/*
+ * Memory
+ * ------
+*/
+/* TODO: Place in tray */
+#memory {
+    background-color: #9b59b6;
+    border-radius: 25px;
+}
+
+/*
+ * Disk
+ * ----
+*/
+/* TODO: Place in tray */
+#disk {
+    background-color: #964B00;
+    border-radius: 25px;
+}
+
+/*
+ * Temperature
+ * -----------
+*/
+/* TODO: Place in tray */
+#temperature {
+    background-color: #f0932b;
+    border-radius: 25px;
+}
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+/*
+ * MPD
+*/
+/* TODO: Define 
+ *     :   -- provides left & right padding for bg colors of text
+ *     :   -- deals with the text
+ *     :   -- Music Player Daemon
+*/
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+}
+#mpd {
+    background-color: #66cc99;
+    border-radius: 25px;
+    color: #2a5c45;
+}
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+/*
+ * Languages
+ * ---------
+*/
+/* TODO: Get more info */
+#language {
+    background: #00b093;
+    border-radius: 25px;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+/*
+ * Keyboard States (Locks: Caps, Nums)
+*/
+#keyboard-state {
+    background: #97e1ad;
+    border-radius: 25px;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+/* CAPS lock ON - highlight */
+#keyboard-state > label {
+    border-radius: 25px;
+    padding: 0 5px;
+}
+/* NUMS lock ON - highlight */
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+
+/*
+ * Privacy (Audio Recording, Screenshare, etc)
+ * -------
+*/
+#privacy {
+    padding: 0;
+    border-radius: 25px;
+}
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
+
+/*
+ * Idle Inhibitor
+ * --------------
+*/
+/* TODO: Define */
+/*
+#idle_inhibitor {
+    background-color: #2d3436;
+    border-radius: 25px;
+}
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+*/
+
+/*
+ * Mode
+ * ----
+*/
+/* TODO: Define */
+/*
+#mode {
+    background-color: #64727D;
+    border-radius: 25px;
+    box-shadow: inset 0 -3px #ffffff;
+}
+*/
+
+
+/*
+ * Scratchpad (Unused)
+ * ----------
+*/
+/*
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+#scratchpad.empty {
+	background-color: transparent;
+}
+*/
+
+/*
+ * Power Profiles (Unused)
+ * --------------
+*/
+/*
+#power-profiles-daemon {
+    border-radius: 25px;
+    padding-right: 15px;
+}
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #000000;
+}
+*/
+
+/*
+ * Label
+ * -----
+*/
+/* TODO: Define */
+/*
+label:focus {
+    background-color: #000000;
+}
+*/

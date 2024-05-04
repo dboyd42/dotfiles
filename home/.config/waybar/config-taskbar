@@ -1,0 +1,15 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 100,
+    "spacing": 4,
+    "modules-center": ["wlr/taskbar"],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 100,
+        //"icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
+    }
+}

@@ -6,7 +6,6 @@
 
 ## Table of Contents
 
-
 <!-- vim-markdown-toc GFM -->
 
 * [Introduction](#introduction)

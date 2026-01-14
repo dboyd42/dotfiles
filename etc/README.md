@@ -7,6 +7,12 @@ Remaps keys through the use of "levels."
 - Dependencies: https://github.com/rvaiya/keyd
 - File location: `/etc/keyd/default.conf`
 
+``` bash
+sudo pacman -S keyd
+sudo ln -s $PWD/default.conf /etc/keyd/default.conf
+sudo systemctl enable --now keyd.service
+```
+
 ## logid.cfg 
 
 The `logiops` service configuration file for remapping LogiTech mice.
@@ -16,6 +22,7 @@ The `logiops` service configuration file for remapping LogiTech mice.
 
 ``` bash
 yay -S logiops
+sudo ln -s $PWD/logind.conf /etc/default.conf
 sudo systemctl enable --now logid.service
 ```
 

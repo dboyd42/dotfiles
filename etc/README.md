@@ -14,6 +14,11 @@ The `logiops` service configuration file for remapping LogiTech mice.
 - Dependencies: https://github.com/PixlOne/logiops
 - File location: `/etc/logid.cfg`
 
+``` bash
+yay -S logiops
+sudo systemctl enable --now logid.service
+```
+
 ## X11 > xorg.conf.d > 20-evdi.conf | DisplayLink
 
 :warning: DisplayLink pkg is out-of-date as of 2023-03-15

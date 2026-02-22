@@ -22,7 +22,7 @@ The `logiops` service configuration file for remapping LogiTech mice.
 
 ``` bash
 yay -S logiops
-sudo ln -s $PWD/logid.conf /etc/logid.conf
+sudo ln -s $PWD/logid.cfg /etc/logid.cfg
 sudo systemctl enable --now logid.service
 ```
 

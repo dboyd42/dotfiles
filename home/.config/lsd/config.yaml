@@ -1,0 +1,97 @@
+# ~/.config/lsd/config.yaml
+# Date: 2026-02-22
+#
+# Configuration file for lsd (LSDeluxe).
+# This controls behavior and rendering before ANSI codes
+# are emitted to the terminal (Alacritty in your case).
+#
+# Rendering chain:
+#   lsd → ANSI escape codes → Alacritty → GPU render
+
+# ==========================
+# Color Configuration
+# ==========================
+color:
+  when: always        # Always emit color codes.
+                      # Equivalent to --color=always.
+                      # Since your alias forces color,
+                      # this keeps behavior consistent
+                      # even if alias changes.
+
+  theme: custom      # Use ~/.config/lsd/colors.yaml
+                      # instead of built-in theme.
+                      #
+                      # Built-in themes:
+                      #   default
+                      #   no-color
+                      #   custom
+
+# ==========================
+# Icons
+# ==========================
+icons:
+  when: auto         # Show icons only when output is a TTY.
+                      # Options: always | auto | never
+
+  theme: fancy       # Icon set style.
+                      # "fancy" requires Nerd Font (you use JetBrainsMono Nerd Font).
+                      # Alternatives: unicode
+
+# ==========================
+# Layout
+# ==========================
+layout: grid         # Default display layout.
+                      # grid   → column-based
+                      # tree   → directory tree
+                      # oneline → one entry per line
+
+# ==========================
+# Sorting
+# ==========================
+sorting:
+  column: name       # Sort by: name | size | time | extension | version
+  reverse: false     # Reverse order
+  dir-grouping: first  # Directories appear first.
+                       # Options: first | last | none
+
+# ==========================
+# Display Behavior
+# ==========================
+display: almost-all  # Show hidden files except . and ..
+                      # Equivalent to -A.
+                      #
+                      # Options:
+                      #   all
+                      #   almost-all
+                      #   directory-only
+
+# ==========================
+# Date Formatting
+# ==========================
+date: relative       # Show relative timestamps (e.g., "2h ago")
+                      # Alternatives:
+                      #   date
+                      #   relative
+                      #   +<strftime-format>
+
+# ==========================
+# Size Formatting
+# ==========================
+size: default        # Human-readable sizes.
+                      # Options:
+                      #   default
+                      #   short
+                      #   bytes
+
+# ==========================
+# Permission Format
+# ==========================
+permission: rwx      # Show rwx format.
+                      # Alternative:
+                      #   octal
+
+# ==========================
+# Hyperlink Support
+# ==========================
+hyperlink: auto      # Emit clickable file paths if terminal supports it.
+                      # Alacritty supports OSC 8 hyperlinks.

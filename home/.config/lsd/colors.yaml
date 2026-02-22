@@ -1,0 +1,44 @@
+# ~/.config/lsd/colors.yaml
+# Date: 2026-02-22
+#
+# This file defines custom color mappings for lsd.
+# Values must be ANSI 256-color palette indexes (0–255).
+#
+# ANSI color structure:
+#   0–15   → standard + bright colors (theme dependent in Alacritty)
+#   16–231 → 6×6×6 RGB color cube
+#   232–255 → grayscale ramp
+#
+# We are assigning a specific 256-color index to directories.
+
+directory: 33   # ANSI index 33
+                # 33 is in the 6×6×6 RGB color cube (range 16–231).
+                #
+                # Decode:
+                #   33 - 16 = 17
+                #   17 = (36 × R) + (6 × G) + B
+                #
+                #   R = 0
+                #   G = 2
+                #   B = 5
+                #
+                # RGB levels available in the cube:
+                #   {0, 95, 135, 175, 215, 255}
+                #
+                # Therefore:
+                #   R = 0
+                #   G = 135
+                #   B = 255
+                #
+                # Final color:
+                #   rgb(0,135,255)
+                #
+                # Result: medium blue
+                #
+                # Note:
+                # - If you instead used a value 0–15 (e.g., 4),
+                #   that would reference the base ANSI palette.
+                # - Base palette colors are controlled by Alacritty's
+                #   [colors.normal] and [colors.bright] sections.
+                # - 256-color entries (like 33) bypass those and render
+                #   directly as fixed RGB values.

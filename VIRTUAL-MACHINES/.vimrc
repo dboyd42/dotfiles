@@ -14,7 +14,7 @@ set encoding=utf-8
 
 " --- Interface ---
 set number
-set relativenumber
+"set relativenumber
 set cursorline
 set showmatch
 set ruler

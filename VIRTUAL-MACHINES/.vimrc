@@ -33,7 +33,7 @@ set softtabstop=4
 
 " --- Text Wrapping ---
 set textwidth=79        " Auto-insert newline at column 79
-set wrap                " Enable visual line wrapping by default
+set wrap
 
 " Toggle wrap with \w
 nnoremap <silent> <leader>w :set wrap!<CR>
@@ -47,9 +47,15 @@ set hlsearch
 " Toggle search highlight with \ + Space
 nnoremap <silent> <leader><Space> :set hlsearch!<CR>
 
-" --- Insert Current Date (\ts) ---
-" Inserts YYYY-MM-DD at cursor position
+" --- Insert Current Date (Normal Mode) ---
 nnoremap <silent> <leader>ts a<C-R>=strftime('%Y-%m-%d')<CR><Esc>
+
+" --- Insert Current Date (Insert Mode) ---
+inoremap <silent> <leader>ts <C-R>=strftime('%Y-%m-%d')<CR>
+
+" --- Insert Mode Cursor Movement ---
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 " --- Color Column ---
 set colorcolumn=80
@@ -74,4 +80,5 @@ set nobackup
 
 " --- Visual ---
 set termguicolors
-colorscheme desert
+colorscheme zaibatsu
+

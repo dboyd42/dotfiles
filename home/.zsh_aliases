@@ -218,6 +218,8 @@ if [[ $OS_NAME =~ 'Darwin' ]]; then
                     echo -e "\t      #2) re-run txt2pdf";
                   };
                   _txt2pdf'
+    alias sayThai='for i in $(seq -w 1 $TOTAL_WORDS); do WORDS="W$i"; \
+                   echo "${(P)WORDS}"; say -v Kanya "${(P)WORDS}"; done'
 fi
 
 ###

@@ -271,3 +271,6 @@ bindkey "^ " autosuggest-accept  # Ctrl+Space
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Created by `pipx` on 2025-03-31 02:18:28
+export PATH="$PATH:/Users/bhatm/.local/bin"

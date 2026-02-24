@@ -1,6 +1,7 @@
 " ==========================
 " Basic Vim Configuration
 " ==========================
+" filepath: $HOME/.vimrc
 
 " --- Leader Key ---
 let mapleader="\\"

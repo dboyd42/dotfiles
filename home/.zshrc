@@ -29,6 +29,7 @@ if [[ $OS_TYPE =~ "Darwin" ]]; then
     export PAGER="bat --color=always --theme=Dracula"
     # brew install perl :: Persist modules' updates
     eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+    alias cpan-error="sudo cpan local::lib"
 ###
 ### Linux
 elif [[ $OS_TYPE =~ "Linux" ]]; then

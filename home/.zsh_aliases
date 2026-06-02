@@ -190,6 +190,10 @@ if [[ $UNAME_ALL =~ "kali" ]]; then
 else #[[ $OS_NAME == "Linux" ]]; then
     alias bat='bat --color=always --theme=Dracula'
     alias bat2='bat --color=never --wrap=never --theme=Dracula'
+    alias update='echo -e "\nUpdating MacPorts..." && \
+                  sudo port selfupdate -c && sudo port upgrade outdated -c && \
+                  echo "" && \
+                  brew update && brew upgrade'
 fi
 
 ###
